@@ -1,0 +1,24 @@
+.purple {
+  color : #9859D8;
+}
+
+.orange {
+  color : #F7950E;
+}
+
+.blue {
+  color : #4FC3D6;
+}
+
+.red {
+  color : red;
+}
+
+.darkred {
+  color : darkred;
+}
+
+.tooltip-inner {
+    max-width: 400px; 
+} 
+

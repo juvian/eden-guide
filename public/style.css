@@ -1,0 +1,58 @@
+.purple {
+  color : #9859D8;
+}
+
+.orange {
+  color : #F7950E;
+}
+
+.blue {
+  color : #4FC3D6;
+}
+
+.fixed-table-body {
+  height: auto;
+}
+
+body {
+  width : 80%;
+  margin : auto;
+  position: relative;
+}
+
+div.text-left {
+  margin-bottom: 10px;
+  margin-left : 10px;
+}
+
+.planned {
+  margin-top : 50px
+}
+
+.title {
+  margin-bottom : 20px;
+}
+
+.type {
+    text-transform : capitalize;
+}
+
+.red {
+  color : red;
+}
+
+.darkred {
+  color : darkred;
+}
+
+html{
+  margin-bottom : 30px;
+}
+
+
+.footer {
+  line-height: 60px;
+  background-color: #f5f5f5;
+  position: sticky;
+  bottom: 0px;
+}

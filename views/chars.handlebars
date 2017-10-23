@@ -1,0 +1,51 @@
+{{#each heroTypes}}
+  <div class = "title text-center text-capitalize">
+    <h1>{{translate this}}</h1>
+  </div>
+  <div class="card-group">
+    {{#each ../chars}}
+      {{#if (eq (lookup (lookup @root.builds this) 'type') ../this)}}
+        <div class="card text-center" style="max-width: 20rem;min-width: 20rem;">
+        <img class="card-img-top" src="{{getImage (lookup @root.builds this)}}"></img>
+        <div class="card-body">
+          <h4 class="card-title text-capitalize">{{this}}</h4>
+          <p class="card-text"></p>
+          <a href = "/chars/{{this}}"class="btn btn-primary">View Item Build</a>
+        </div>
+      </div>
+      {{/if}}
+    {{/each}}
+  </div>
+{{/each}}
+
+<div class = "footer text-center">
+    <a class = "btn btn-info" href = "/">Back to main</a>
+</div>
+
+<style>
+
+  img {
+    width: 100%;
+    height: 150px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  .card-group {
+    margin: auto;
+    justify-content: center;
+  }
+
+  .card-group .card{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .card-group {
+    padding: 20px;
+  }
+  
+</style>
