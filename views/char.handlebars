@@ -1,0 +1,126 @@
+<div class = "content container-fluid d-flex h-100 flex-column" style="padding:20px">
+  <div class = "row bg-faded fill d-flex justify-content-start">
+    <div class = "col-3">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+        {{#each types}} 
+            <a class="nav-link text-capitalize {{#if @first}}active{{/if}}" id="{{this}}-tab" data-toggle="pill" href="#{{this}}" role="tab" aria-controls="{{this}}" aria-expanded="{{@first}}">{{this}}</a>
+        {{/each}} 
+      </div>
+    </div>
+    <div class = "col-9 container-fluid d-flex h-100 flex-column">
+      <div class="tab-content" id="v-pills-tabContent">
+            {{#each types}}
+              <div class="tab-pane fade {{#if @first}}show active{{/if}}" id="{{this}}" role="tabpanel" aria-labelledby="{{this}}-tab" aria-expanded="{{@first}}>
+                <ul class="list-group">
+                  {{#each (lookup @root.build this)}}
+                    <li class="list-group-item">
+                      {{#with (lookup @root.items this)}}
+                        {{{item this}}}
+                        {{#if materials}}
+                          <button style="margin-left: 20px" data-item="{{../this}}" class = "btn btn-info build-tree" data-toggle="modal" data-target="#item-tree-modal">View Build Tree</button>
+                        {{/if}}
+                      {{/with}}
+                    </li>
+                  {{/each}}
+                </ul>
+              </div>
+            {{/each}}
+      </div>
+      <div style = "margin:20px" class = "fill d-flex justify-content-start">
+        <div class = "img"></div>
+      </div>
+    </div>
+  </div>
+<div class = "footer text-center">
+    <a class = "btn btn-info" href = "/chars">Back to characters</a>
+</div>
+</div>
+
+
+  <div class="modal fade" id="item-tree-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center col-12"></h5>
+        </div>
+        <div class="modal-body">
+          <div id="item-tree" style="width:100%;height:500px"></div>    
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+  <style>
+
+  html,body {
+      height: 100%;
+  }
+
+  .fill {
+      flex:1;
+  }
+
+  .img { 
+    flex: 1;
+    width: auto;
+    height: 100%;
+    background-size: contain; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-image: url("{{getImage build}}");
+  }
+  .node { 
+    padding: 0 2px;
+    min-width: 60px;
+    text-align: center;
+    height: 30px;
+    background: #fff; 
+  }
+
+  .node.node-name {
+    line-height: 30px;
+    color: #9B9B9B;
+  }
+
+  </style>
+
+  <script>
+
+  window.onload = function(){
+
+    var simple_chart_config = {
+        chart: {
+            container: "#item-tree",
+            rootOrientation: "EAST",
+            nodeAlign: "BOTTOM",
+            connectors: {
+              type: "step",
+              style: {
+                "stroke-width": 2
+              }
+            },
+            levelSeparation:    45,
+        },
+        nodeStructure: null
+    };
+
+    $('#item-tree-modal').on('shown.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      var item = button.data('item') // Extract info from data-* attributes
+      simple_chart_config.nodeStructure = getItemTree(item);
+      item = items[item];
+      var modal = $(this);
+      modal.find(".modal-title").html(`Build Tree for <span class = '${item.color}'>${item.label}</span>`)
+      console.log("ggg")
+      new Treant(simple_chart_config);
+      $(".item-tooltip").tooltip()
+    })
+
+    $(".item-tooltip").tooltip()
+
+  }
+
+</script>
+
+</html>
