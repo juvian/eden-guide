@@ -1,0 +1,45 @@
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Eden guide</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+  <style>
+      html {
+        padding: 20px;
+      }
+  </style>
+  
+  <script>
+    config = {
+      version : "{{version}}",
+      changeLog: {{{toJSON changeLog}}},
+      lang: "{{lang}}"
+    }
+    
+    serverRender = false
+  </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112999284-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112999284-1');
+</script>
+  
+  
+  <script src= "/common.js"></script> 
+  <script src= "/translations.js"></script> 
+  <link rel="stylesheet" href="/common.css"></link>
+  
+  {{> common-scripts}}
+        
+</head>

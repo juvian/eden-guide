@@ -1,0 +1,48 @@
+<html>
+  
+  {{> header}}
+
+	<body>
+    <h1 class = "text-center title">{{text 'changelog' lang}}</h1>
+    
+    {{#each changeLog}}
+      <div class="card">
+        <div class="card-header">
+          {{text 'changes_on' @root.lang}} {{version}} - {{text 'released_on' @root.lang}} {{released}}
+        </div>
+        <div class="card-block">
+          <ul class="list-group"> 
+            {{#if (eq @root.lang 'eng')}}
+              {{#each changes}}
+                <li class="list-group-item">{{this}}</li>
+              {{/each}}
+              {{else}}
+              {{#each k_changes}}
+                <li class="list-group-item">{{this}}</li>
+              {{/each}}
+            {{/if}}
+          </ul>
+        </div>
+      </div>     
+    {{/each}}
+
+    <div class = "footer text-center">
+        <a class = "btn btn-info" href = "/">{{text 'back_main' lang}}</a>
+    </div>    
+    
+  </body>
+  
+  <style>
+    .card, .footer {
+      margin-top: 30px;
+    }  
+    .card-header {
+      background-color: #d9edf7
+    }
+    
+    
+  </style>
+  
+  {{> common-scripts}}
+  
+</html>
