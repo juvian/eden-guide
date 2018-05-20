@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> header}}
+
+<link rel="stylesheet" href="/register.css">
+  
+<form class="form-register" action="{{url}}" method="post">
+  <img class="mb-4" src="https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2Fimage.png?1526618163809" alt="" width="200" height="200">
+  
+  {{> show-errors}}
+
+  <label for="inputUsername" class="sr-only">{{text 'username'}}</label>
+  <input pattern=".{3,20}" oninput="setCustomValidity('')" oninvalid="setCustomValidity('3-20 {{text "characters" lang}}')" id="username" name="username" class="form-control" placeholder="{{text 'username' lang}}" required autofocus>
+  <label for="inputPassword" class="sr-only">{{text 'password'}}</label>
+  <input pattern=".{5,30}" oninput="setCustomValidity('')" oninvalid="setCustomValidity('5-30 {{text "characters" lang}}')" title = "5 to 30 characters" type="password" name="password" id="password" class="form-control" placeholder="{{text 'password' lang}}" required>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">{{text url lang}}</button>
+</form>
+
+  

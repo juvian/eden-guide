@@ -2538,7 +2538,7 @@ var items = {
 			"agi" : 6700
 		},
 		"label" : "Archangel's Sword +3",
-    "k_label": "대천사의 생명지팡이 +3",
+    "k_label": "대천사의 소검 +3",
 		"effects" : ["Each attack has a 13% chance to deal 70000 + (STR + AGI) x19.5 bonus damage","On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x135 damage (80s cd)"],
 		"k_effects" : ["기본공격시 일정확률로 대천사의 죽음의심판생성 (13% 기회 70000 + (STR + AGI) x19.5)","사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x135)(쿨타임 80초)"],
 		"id" : "I09C"
@@ -3579,16 +3579,17 @@ var items = {
     "materials" : ["archangel_treasure_piece", "archangel_treasure_piece", "archangel_treasure_piece", "archangel_treasure_piece", "archangel_treasure_piece"],
     "raid" : "Archangel of Valor",
     "label" : "Archangel’s Sigil",
-    "k_label": "대천사의 힘의 근원",
+    "k_label": "대천사의 증표",
     "id" : "I0AC",
     "chances" : 4
   },
   "archangel_sourcewell" : {
     "type" : "material",
     "color" : "black",
+    "materials": ["superlative_aggregate_energy"],
     "raid" : "Archangel of Valor",
     "label" : "Archangel’s Sourcewell",
-    "k_label": "대천사의 증표",
+    "k_label": "대천사의 힘의 근원",
     "id" : "I0FB",
     "chances" : 4
   },
@@ -3597,8 +3598,8 @@ var items = {
     "color" : "black",
     "chest" : ["Archangel’s Trinket", "Archangel’s Assistance"],
     "label" : "Archangel Treasure Piece",
-    "k_label": "대천사의 보물함",
-    "id" : "I0AB",
+    "k_label": "대천사의 보물조각",
+    "id" : "I04Z",
     "chances" : [100, 100]
   },
   "archangel_essence" : {
@@ -4941,7 +4942,7 @@ var items = {
 	    	"damage_taken" : -27
 	    },
 	    "label" : "Chaotic Shadow Greaves",
-      "k_label": "대혼돈의 수호 갑옷",
+      "k_label": "대혼돈의 수호 경갑",
 	    "id" : "I0E8"
 	},
 	"chaotic_amber_robes" : {

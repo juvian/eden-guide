@@ -9,11 +9,11 @@ var translations = {
   },
   "view_characters": {
     "eng": "View Characters",
-    "kor": "보기 문자"
+    "kor": "캐릭터 보기"
   },
   "view_item_build": {
     "eng": "View Item Build",
-    "kor": "항목 빌드보기"
+    "kor": "추천 아이템 빌드 보기"
   },
   "create_custom_build" : {
     "eng": "Create Custom Build",
@@ -21,11 +21,11 @@ var translations = {
   },
   "back_characters": {
     "eng": "Back to Characters",
-    "kor": "문자로 돌아 가기"
+    "kor": "캐릭터로 돌아가기"
   },
-  "save_build": {
-    "eng": "Save build",
-    "kor": "빌드를 저장하다"
+  "save-to-account": {
+    "eng": "Save to account",
+    "kor": "계정에 저장"
   },
   "custom_build": {
     "eng": "Custom Build",
@@ -59,6 +59,45 @@ var translations = {
     "eng": "View Changelog",
     "kor": "변경 내역보기"
   },
+  "username": {
+    "eng": "Username",
+    "kor": "사용자 이름"
+  },
+  "password": {
+    "eng": "Password",
+    "kor": "암호"
+  },
+  "register": {
+    "eng": "Register",
+    "kor": "레지스터"
+  },
+  "login": {
+    "eng": "Login",
+    "kor": "로그인"
+  },
+  "bad-user": {
+    "eng": "Wrong username",
+    "kor": "잘못된 사용자 이름"
+  },
+  "bad-password": {
+    "eng": "Wrong password",
+    "kor": "잘못된 비밀번호"
+  },
+  "logout": {
+    "eng": "Logout",
+    "kor": "로그 아웃"
+  },
+  "get-url": {
+    "eng": "Get URL",
+    "kor": "URL 가져 오기"
+  },
+  "not-logged-in": {
+    "eng": "Not logged in",
+    "kor": "로그인하지 않았습니다"
+  },
+  "items": "항목",
+  "characters": "문자들",
+  "already exists": "이미 존재 함",
   'Name': '이름',
   'Type': '유형',
   'Actions': '행위',
@@ -71,14 +110,14 @@ var translations = {
   'accessory': '악세서리',
   'Helmet': '투구',
   'helmet': '투구',
-  'Artifact': '보조장비',
-  'artifact': '보조장비',
+  'Artifact': '아티팩트',
+  'artifact': '아티팩트',
   'Auxiliary': '보조장비',
   'auxiliary': '보조장비',
-  'Material' : '자료',
-  'material' : '자료',
-  'Stats': '스텟을',
-  'stats': '스텟을',
+  'Material' : '재료',
+  'material' : '재료',
+  'Stats': '스텟',
+  'stats': '스텟',
   'Chest': '보물함',
   'chest': '보물함',
   'Mythic +3': '신화 +3',
@@ -114,7 +153,7 @@ var translations = {
   'Build Tree for': '에 대한 트리 만들기',
   'chance': '기회',
   'View Build Tree': '빌드 트리보기',
-  'Choose raid / Boss / Chest': '습격 / 보스 / 가슴 선택',
+  'Choose raid / Boss / Chest': '레이드 / 보스 / 보물함 선택',
   'Amon of Hellfire': '지옥불의 아몬',
   'Archangel of Valor': '용기의 대천사장',
   'Archangel Treasure Chest': '대천사의 보물함',
@@ -137,29 +176,30 @@ var translations = {
   'Silverback Wolf': '무력의 은빛 늑대',
   'Remnants of the Archdemon': '대악마의 잔재',
   'Revenant of Meditation': '명상의 레버넌트',
-  'Item guide': '상품 안내',
-  "acerola": "블러드 로드",
-  "hurk": "그레이트 소드",
-  "zero": "레귤러 헌터",
-  "shinobu": "혈검사",
-  "krul": "버서커",
+  'Item guide': '아이템 안내',
+  "acerola": "철혈의 흡혈귀",
+  "hurk": "허크",
+  "zero": "Zero",
+  "shinobu": "오시노 시노부",
+  "krul": "쿠루루 체페시",
   "roselinde": "빛의 수호자",
-  "enju": "격투가",
-  "shiki": "암살자(료우기)",
-  "sinon": "스나이퍼",
-  "mari": "레인지마스터",
-  "ayase": "무도가",
-  "homura": "타임 솔저",
-  "scathach": "랜서",
-  "shinoa": "데스사이즈",
-  "kanna": "일렉트로 마스터",
-  "lawmaker": "오버마인드",
-  "megumin": "폭렬마법사",
-  "tatsumaki": "염동술사",
-  "pio": "포션메이커",
-  "mashiro": "프리스트",
-  "bard": "바드",
-  "hayate": "야천의 마도사"
+  "darkness": "라라티나",
+  "enju": "아이하라 엔쥬",
+  "shiki": "나나야 시키",
+  "sinon": "시논",
+  "mari": "마리",
+  "ayase": "아라가키 아야세",
+  "homura": "아케미 호무라",
+  "scathach": "스카자하",
+  "shinoa": "히이라기 시노아",
+  "kanna": "칸나 카무이",
+  "lawmaker": "법덕후",
+  "megumin": "메구밍",
+  "tatsumaki": "타츠마키",
+  "pio": "피오",
+  "mashiro": "시이나 마시로",
+  "kaede": "카에데",
+  "hayate": "야가미 하야테"
 }
 
 
