@@ -18,8 +18,12 @@
     <br/> 
     
     <div class = "text-center">
-      <a class = "btn btn-primary save-build" href="#" target="_blank">{{text 'save_build' lang}}</a>
+      <a class = "btn btn-primary get-url" href="#" target="_blank">{{text 'get-url' lang}}</a>
+      {{#if loggedIn}}
+        <a class = "btn btn-primary save-build" href="#" target="_blank">{{text 'save-to-account' lang}}</a>
+      {{/if}}
     </div> 
+    
 
     <div class = "footer text-center">
         <a class = "btn btn-info" href = "/chars">{{text 'back_characters' lang}}</a>

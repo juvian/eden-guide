@@ -25,13 +25,33 @@ function refreshBuild() {
   })
 }
 
-$(".save-build").click(function(){
-  var ids = Object.keys(build).map(v => items[v].id).sort().join()
+$(".get-url").click(function(){
+  var ids = Object.keys(build).map(v => items[v].id).join()
   var hash = btoa(ids)
   
   $(this).attr("href", hash)
 })
 
-function saveBuild () {
+$(".save-build").click(function(){
+  var ids = Object.keys(build).map(v => items[v].id).join()
   
-}
+  $(this).addClass("disabled").blur();
+    
+  fetch("/save-build", {
+    method: 'post',
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json'
+    },
+    credentials: 'include',
+    body: JSON.stringify({items: ids, char: char})
+  }).then(res=>res.json())
+    .then(res => {
+      if (res.error) {
+        alert(res.error);
+        $(".save-build").removeClass("disabled");
+      }
+    });
+    
+  return false;
+})

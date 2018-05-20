@@ -3,15 +3,20 @@
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
 
-  "name": "my-glitch-app",
+  "name": "eden-item-guide",
   "version": "0.0.1",
-  "description": "What am I about?",
+  "description": "Item guide for eden rpg warcraft 3",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "nedb" : "*",
+    "express-handlebars": "*",
+    "cookie-session": "*",
+    "body-parser": "*",
+    "password-hash": "*"
   },
   "engines": {
     "node": "6.10.x"

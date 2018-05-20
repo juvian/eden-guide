@@ -8,3 +8,26 @@
 div .btn:not(:first-child) {
   margin-left: 20px;
 }
+
+body {
+  padding-top: 5rem;
+}
+
+.header {
+  background-color: #4a92d0 !important;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.header a.nav-link:not(.dropdown-toggle) {
+  text-transform: uppercase;
+}
+
+
+
+.header .dropdown-menu {
+    right: 0 !important;
+    left: auto !important;
+}
