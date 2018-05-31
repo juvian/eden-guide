@@ -1,30 +1,64 @@
-<div class = "content container-fluid d-flex h-100 flex-column" style="padding:20px">
+<div class = "content container-fluid d-flex h-100 flex-column" style="padding: 0px 20px 20px 20px">
+  {{#if data._id}}
+    <div class = "row">
+      <div class=" col-3 text-center" style="margin-bottom:10px;font-size:24px;">
+        <span class="text-capitalize">{{data.title}}</span> {{text 'by' @root.lang}} {{data.username}}
+        <a class = "{{#if (and loggedIn (not canEdit))}}star{{/if}} noselect" data-url="./{{data._id}}/">
+          <i class="{{#unless isFavorite}}far{{/unless}} fa fa-star"></i>
+        </a>
+        <span class = "favorites">{{size data.favorites}}</span>
+      </div>
+    </div>
+  {{/if}}
   <div class = "row bg-faded fill d-flex justify-content-start">
     <div class = "col-3">
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
         {{#each types}} 
             <a class="nav-link text-capitalize {{#if @first}}active{{/if}}" id="{{this}}-tab" data-toggle="pill" href="#{{this}}" role="tab" aria-controls="{{this}}" aria-expanded="{{@first}}">{{text this @root.lang}}</a>
         {{/each}} 
+        {{#if data._id}}
+          <ul style='margin-top:20px' class="list-group">
+            <li class="list-group-item">
+              <pre>{{data.description}}</pre>
+            </li>
+          </ul>
+        {{/if}}
       </div>
     </div>
     <div class = "col-9 container-fluid d-flex h-100 flex-column">
       <div class="tab-content" id="v-pills-tabContent">
-            {{#each types}}
-              <div class="tab-pane fade {{#if @first}}show active{{/if}}" id="{{this}}" role="tabpanel" aria-labelledby="{{this}}-tab" aria-expanded="{{@first}}>
-                <ul class="list-group">
-                  {{#each (lookup @root.build this)}}
-                    <li class="list-group-item">
-                      {{#with (lookup @root.items this)}}
-                        {{{item this @root.lang}}}
-                        {{#if materials}}
-                          <button style="margin-left: 20px" data-item="{{../this}}" class = "btn btn-info build-tree" data-toggle="modal" data-target="#item-tree-modal">{{text 'View Build Tree' @root.lang}}</button>
-                        {{/if}}
-                      {{/with}}
-                    </li>
-                  {{/each}}
-                </ul>
-              </div>
-            {{/each}}
+        {{#each types}}
+          <div class="tab-pane fade {{#if @first}}show active{{/if}}" id="{{this}}" role="tabpanel" aria-labelledby="{{this}}-tab" aria-expanded="{{@first}}">
+            <ul style='display:inline-flex' class="list-group">
+              {{#with (lookup @root.byType this)}} 
+                <li class="list-group-item"><b>{{text 'main' @root.lang}} </b></li>
+                {{#if this.switching.length}}
+                  <li class="list-group-item">
+                    <b>{{text 'switching' @root.lang}} </b>
+                  </li> 
+                {{/if}}  
+              {{/with}}
+            </ul>
+            <ul style='display:inline-flex' class="list-group">
+              {{#with (lookup @root.byType this)}}              
+                <li class="list-group-item">
+                    {{{item (lookup @root.items this.main) @root.lang}}}
+                    {{#if materials}}
+                      <button style="margin-left: 20px" data-item="{{this.main}}" class = "btn btn-primary build-tree" data-toggle="modal" data-target="#item-tree-modal">{{text 'View Build Tree' @root.lang}}</button>
+                    {{/if}}
+                </li>
+                {{#each this.switching}}
+                  <li class="list-group-item">
+                      {{{item (lookup @root.items this) @root.lang}}}
+                      {{#if (lookup (lookup @root.items this) 'materials')}}
+                        <button style="margin-left: 20px" data-item="{{this}}" class = "btn btn-primary build-tree" data-toggle="modal" data-target="#item-tree-modal">{{text 'View Build Tree' @root.lang}}</button>
+                      {{/if}}
+                  </li>
+              {{/each}}
+            {{/with}}
+            </ul>
+          </div>
+        {{/each}}
       </div>
       <div style = "margin:20px" class = "fill d-flex justify-content-start">
         <div class = "img"></div>
@@ -33,6 +67,13 @@
   </div>
 <div class = "footer text-center">
     <a class = "btn btn-info" href = "/chars">{{text 'back_characters' lang}}</a>
+    {{#if canEdit}}
+      <a class = "btn btn-primary" href = "./{{data._id}}/edit">{{text 'edit' lang}}</a>                                    
+    {{/if}}
+    {{#if (and (eq build.status 'pending') isMod)}}
+      <a class = "btn btn-success text-capitalize" href = "./{{data._id}}/approve">{{text 'approve' lang}}</a>     
+      <a class = "btn btn-danger text-capitalize" href = "./{{data._id}}/reject">{{text 'reject' lang}}</a>     
+    {{/if}}
 </div>
 </div>
 
@@ -54,7 +95,7 @@
     background-size: contain; 
     background-position: center center; 
     background-repeat: no-repeat; 
-    background-image: url("{{getImage build}}");
+    background-image: url("{{getImage data}}");
   }
   </style>
 

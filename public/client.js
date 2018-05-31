@@ -22,11 +22,11 @@ var columns = [
       var html = "";
 
       if (page == "custom-build" && translate(["weapon", "armor", "accessory", "helmet", "artifact", "auxiliary"]).indexOf(item.type) != -1) {
-          html += `<button data-item="${item.key}" class = "btn btn-info add-build">${translate('add_build')}</button>`  
+          html += `<button data-item="${item.key}" class = "btn btn-primary add-build">${translate('add_build')}</button>`  
       }
       
       if (item.materials) {
-        html += `<button data-item="${item.key}" class = "btn btn-info build-tree" data-toggle="modal" data-target="#item-tree-modal">${translate('View Build Tree')}</button>`; 
+        html += `<button data-item="${item.key}" class = "btn btn-primary build-tree" data-toggle="modal" data-target="#item-tree-modal">${translate('View Build Tree')}</button>`; 
       }
       
       return html;

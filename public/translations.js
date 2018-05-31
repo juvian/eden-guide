@@ -1,4 +1,5 @@
-var translations = {
+(function(exports) {
+  exports.translations = {
   "350-tip" : {
     "eng": "Note that this guide is intended for levels 350+. Some items you might need to be up to level 400 before you can use them",
     "kor": "이 가이드는 레벨 350 이상을 대상으로합니다. 일부 아이템은 사용하기 전에 레벨을 400까지 올려야 할 수도 있습니다."
@@ -95,6 +96,84 @@ var translations = {
     "eng": "Not logged in",
     "kor": "로그인하지 않았습니다"
   },
+  "invalid-id": {
+    "eng": "Invalid id",
+    "kor": "잘못된 ID"
+  },
+  "my-builds": {
+    "eng": "My Builds",
+    "kor": "내 빌드"
+  },
+  "view": {
+    "eng": "View",
+    "kor": "전망"
+  },
+  "edit": {
+    "eng": "Edit",
+    "kor": "편집하다"
+  },
+  "confirm": {
+    "eng": "Are you sure?",
+    "kor": "확실합니까?"
+  },
+  "yes": {
+    "eng": "Yes",
+    "kor": "예"
+  },
+  "no": {
+    "eng": "No",
+    "kor": "아니"
+  },
+  "not-owner" : {
+    "eng": "You are not the owner of this build",
+    "kor": "이 빌드의 소유자가 아닙니다."
+  },
+  "enter-title": {
+    "eng": "Enter title",
+    "kor": "제목 입력"
+  },
+  "optional": {
+    "eng": "(optional)",
+    "kor": "(선택 과목)"
+  },
+  "description": {
+    "eng": "Description",
+    "kor": "기술"
+  },  
+  "main": {
+    "eng": "Main",
+    "kor": "본관"
+  },
+  "switching": {
+    "eng": "Situational",
+    "kor": "전환"
+  },
+  "delete": {
+    "eng": "Delete",
+    "kor": "지우다"
+  },
+  "public": "공공의",
+  "private": "은밀한",
+  "pending": {
+    "eng": "Waiting approval",
+    "kor": "대기 승인"
+  },
+  "request-public": {
+    "eng": "Request go public",
+    "kor": "대중에게 요청하십시오"
+  },
+  "invalid-action": {
+    "eng": "Invalid action",
+    "kor": "부적절한 행동"
+  },
+  "favorites": {
+    "eng": "Favorites",
+    "kor": "즐겨 찾기"
+  },
+  "approve": "승인하다",
+  "reject": "받지 않다",
+  "status": "지위",
+  "by": "으로",  
   "items": "항목",
   "characters": "문자들",
   "already exists": "이미 존재 함",
@@ -203,41 +282,41 @@ var translations = {
 }
 
 
-function translate (str, lang) {
+exports.translate = function (str, lang) {
   if (str == null) return str;
-  
-  if (serverRender != true) {
+ 
+  if (exports.config && exports.config.lang) {
     lang = config.lang
   }
   
   if (Array.isArray(str) == false) {  
-    if (!translations[str]) {
+    if (!exports.translations[str]) {
       console.warn(str + ' does not have translation');
       return str;
     }
     
-    if ((lang == 'eng' || lang == null) && typeof translations[str] == 'string') return str;
-    if (typeof translations[str] == 'string') return translations[str]; 
+    if ((lang == 'eng' || lang == null) && typeof exports.translations[str] == 'string') return str;
+    if (typeof exports.translations[str] == 'string') return exports.translations[str]; 
 
-    return translations[str][lang] || str;
+    return exports.translations[str][lang] || str;
   } else {
-    return str.map(v => translate(v, lang))
+    return str.map(v => exports.translate(v, lang))
   }
-  
 }
 
-function checkLanguage (items, lang) {
+exports.checkLanguage = function (items, lang) {
   if (lang == 'kor') {
     for (var item in items) {
       items[item].label = items[item].k_label;
       items[item].effects = items[item].k_effects;
-      items[item].type = translate(items[item].type);
-      items[item].raid = translate(items[item].raid)
-      items[item].boss = translate(items[item].boss)
-      items[item].chest = translate(items[item].chest)
+      items[item].type = exports.translate(items[item].type);
+      items[item].raid = exports.translate(items[item].raid)
+      items[item].boss = exports.translate(items[item].boss)
+      items[item].chest = exports.translate(items[item].chest)
       
       if (items[item].k_label == null) console.warn(items[item])
     }
   }
 }
 
+})(typeof exports === 'undefined'? this: exports);

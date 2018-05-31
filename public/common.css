@@ -14,7 +14,6 @@ body {
 }
 
 .header {
-  background-color: #4a92d0 !important;
   width: 100%;
   position: absolute;
   left: 0px;
@@ -25,9 +24,34 @@ body {
   text-transform: uppercase;
 }
 
-
+.fa {
+  margin-right: 5px;
+}
 
 .header .dropdown-menu {
     right: 0 !important;
     left: auto !important;
+}
+
+.fa-star.far {
+  font-weight: 200;
+}
+
+.star:not(.disabled) {
+  cursor: pointer;
+}
+
+.fa-star {
+  color: orange;
+  margin-left: 10px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }

@@ -5,6 +5,14 @@ $(document).on("click", ".add-build", function(){
   addItem(item)
 })
 
+$(function(){
+  if (data) {
+    data.items.forEach(addItem);
+    $("#title").val(data.title);
+    $("#description").val(data.description);
+  }
+})
+
 function addItem(item) {
   build[item] = true
   refreshBuild()
@@ -33,7 +41,7 @@ $(".get-url").click(function(){
 })
 
 $(".save-build").click(function(){
-  var ids = Object.keys(build).map(v => items[v].id).join()
+  var ids = Object.keys(build).map(v => items[v].id)
   
   $(this).addClass("disabled").blur();
     
@@ -44,13 +52,18 @@ $(".save-build").click(function(){
       'Content-Type': 'application/json'
     },
     credentials: 'include',
-    body: JSON.stringify({items: ids, char: char})
+    body: JSON.stringify({items: ids, char: char, id: (data ? data._id : null), title: $("#title").val(), description: $("#description").val()})
   }).then(res=>res.json())
     .then(res => {
       if (res.error) {
-        alert(res.error);
+        showError(res.error);
         $(".save-build").removeClass("disabled");
+      } else {
+        window.location.href = "/custom-build/" + res.id;
       }
+    }).catch((err) => {
+      showError(err);
+      $(".save-build").removeClass("disabled")
     });
     
   return false;
