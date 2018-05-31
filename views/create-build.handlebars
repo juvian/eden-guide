@@ -1,6 +1,12 @@
 <link rel="stylesheet" href="/bootstrap-table.css">
 <link rel="stylesheet" href="/style.css">
   
+<script>
+  {{#if build}}
+    var data = {{{json build}}}
+  {{/if}}
+</script>
+
 	<body>    
     <table id="table"></table>
       
@@ -14,6 +20,17 @@
         </ul>
       </div>
     </div> 
+    {{#if loggedIn}}
+      <div class="form-group" style="margin-top: 25px">
+        <label for="title">{{text 'enter-title' @root.lang}} {{text 'optional' @root.lang}}</label>
+        <input type="text" class="form-control" id="title" placeholder="{{text 'enter-title' @root.lang}} {{text 'optional' @root.lang}}"></input>
+      </div>
+
+      <div class="form-group" style="margin-top: 10px">
+       <label for="description">{{text 'description' @root.lang}} {{text 'optional' @root.lang}}</label>
+       <textarea class="form-control" id="description" rows="3"></textarea>
+      </div>
+    {{/if}}
     
     <br/> 
     

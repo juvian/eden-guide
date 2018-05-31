@@ -1,4 +1,5 @@
-var items = {
+(function(exports){
+exports.items = {
 	"swordman_sword" : {
 		"type" : "weapon",
 		"color" : "purple",
@@ -5376,15 +5377,14 @@ var items = {
     "chances" : 0.15
   },
   "yata_mirror" : {
-    "type" : "weapon",
+    "type" : "artifact",
     "color" : "blue",
     "raid" : "Blue Dragon",
     "stats" : {
-      "atk" : 160000,
- 	    "str" : 4500,
-	    "agi" : 4500,
-	    "int" : 4500,
-      "bonus_damage": 15
+ 	    "str" : 2500,
+	    "agi" : 2500,
+	    "int" : 2500,
+      "damage_increase": 10
     },
     "label" : "Yata’s Mirror",
     "k_label": "야타의 거울",
@@ -5410,5 +5410,52 @@ var items = {
     "k_effects": ["사용시 20초간 생명력이 2배가됨", "(쿨타임 180초)(지속 시간동안 아이템을 벗을수 없음)", "블러드 로드 착용시 코코로 와타티 쿨타임 10초 감소"],
     "id" : "I0FG",
     "chances" : 0.15
-  }       
+  },
+  "bamboo_spear": {
+    "type": "weapon",
+    "color": "blue",
+    "raid": "Mother Tree",
+    "stats": {
+      "atk": 160000,
+ 	    "str" : 4500,
+	    "agi" : 4500,
+	    "int" : 4500,
+      "damage_increase": 20
+    },
+    "label": "Bamboo Spear",
+    "k_label": "죽창",
+    "effects": ["Each attack has 10% (13% with lancer) chance to deal 500% bonus damage", "When worn by Lancer, reduces the cooldown of Gae Bolg by 8 seconds"],
+    "k_effects": ["공격시 10%확률로 추가데미지 500%", "랜서가 사용시 뚫어죽이는창 쿨타임 8초 감소"],
+    "id": "I0FL",
+    "chances": 0.15
+  },
+  "lethal_gaze": {
+    "type": "helmet",
+    "color": "blue",
+    "raid" : "Belial of Pain",
+    "stats": {
+ 	    "str" : 1700,
+	    "agi" : 1700,
+	    "int" : 1700,
+      "armor": 900
+    },
+    "label": "Lethal Gaze",
+    "k_label": "죽음을 응시하는 눈",
+    "effects": ["Each skill used adds 1 stack", "When stacks reach 100, deals 200000 + (All Stats x 60)", "When worn by Explosion Wizard, enhances Fire Wave", "When worn by Overmind, enhances Void"],
+    "k_effects": ["스킬 적중시 죽음스택을 쌓음", "100스택일떄 스킬 적중시 죽음의 폭발발생 (올스텟 x 60)", "폭렬 마법사가 사용시 파이어웨이브 강화", "오버마인드가 사용시 보이드 강화"],
+    "id": "I0FM",
+    "chances": 0.15
+  }
 }
+
+  
+exports.idToName = {};
+
+for (var item in exports.items) {
+  exports.idToName[exports.items[item].id] = item;
+}
+  
+  
+
+})(typeof exports === 'undefined'? this: exports);
+ 

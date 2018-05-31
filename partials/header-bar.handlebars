@@ -1,19 +1,32 @@
 {{#if loggedIn}}
-<nav class="header navbar navbar-toggleable-md navbar-inverse bg-inverse">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<nav class="header navbar-expand-lg navbar navbar-dark bg-primary">
+    <h1 class="navbar-brand">Eden RPG</h1>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   
-      <h1 class="navbar-brand">Eden RPG</h1>
-
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">{{text 'items' lang}}</a>
+            <a class="nav-link" href="/">{{text 'items' @root.lang}}</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/chars">{{text 'characters' lang}}</a>
+            <a class="nav-link" href="/chars">{{text 'characters' @root.lang}}</a>
           </li>
+          {{#if loggedIn}}
+            <li class="nav-item active">
+              <a class="nav-link" href="/my-builds">{{text 'my-builds' @root.lang}}</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/favorites">{{text 'favorites' @root.lang}}</a>
+            </li>
+            {{#if isMod}}
+              <li class="nav-item active">
+                <a class="nav-link" href="/pending-approval">{{text 'pending' @root.lang}}</a>
+              </li>            
+            {{/if}}
+          {{/if}}
         </ul>
         <ul class="navbar-nav">
           {{#if loggedIn}}

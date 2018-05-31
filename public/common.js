@@ -1,6 +1,14 @@
 $(function(){
   notifyNewChanges();
   setupChangeLanguage();
+  
+  $('[data-toggle=confirmation]').confirmation({
+    rootSelector: '[data-toggle=confirmation]',
+    btnOkLabel: translate("yes"),
+    btnCancelLabel: translate("no")
+    // other options
+  });
+  
 })
 
 function notifyNewChanges () {
@@ -39,3 +47,11 @@ function setupChangeLanguage () {
   
 }
                               
+function showError (err) {
+  $("body").append(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      ${err}
+                    </div>`)
+}

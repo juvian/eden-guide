@@ -1,0 +1,45 @@
+<html>
+  
+  {{> header}}
+  <style>
+    .card {
+      margin-bottom:20px;
+    }  
+  </style>
+	<body>
+    {{#each builds}}
+      <div class="card">
+        <div class="row">
+          <div class="col-sm col-sm-auto pr-0">
+            <img class="card-img-top-left" src="{{getCharImage char}}" height="150px"/>
+          </div>
+           <div class="col-sm-4 d-flex flex-column card-body">
+            <div class="mb-auto">
+              <h4 class="card-title">
+                <span class="text-capitalize">{{this.title}}</span>
+                {{#unless (eq @root.page 'my-builds')}}
+                  {{text 'by' @root.lang}} {{this.username}}
+                {{else}}
+                  ({{text 'status' @root.lang}}: {{text this.status @root.lang}})
+                {{/unless}}
+                  <i class = "fa fa-star"></i> {{size this.favorites}}
+              </h4> 
+              <p class="card-text">{{this.description}}</p>
+            </div>
+            <div>
+              <a href = "/custom-build/{{this._id}}"class="btn btn-primary">{{text 'view' @root.lang}}</a>
+              {{#if (eq @root.page 'my-builds')}}
+                <a href = "/custom-build/{{this._id}}/edit"class="btn btn-primary">{{text 'edit' @root.lang}}</a>
+                {{#if (eq this.status 'private')}}
+                  <a href = "/custom-build/{{this._id}}/public"class="btn btn-primary">{{text 'request-public' @root.lang}}</a>
+                {{/if}}
+                <a data-toggle="confirmation" data-title="{{text 'confirm' @root.lang}}" data-btn-ok-class="btn-success" data-btn-ok-icon-class="fa fa-check" data-btn-cancel-class="btn-danger" data-btn-cancel-icon-class="fa fa-ban" href = "/custom-build/{{this._id}}/delete"class="btn btn-danger">{{text 'delete' @root.lang}}</a>
+              {{/if}}
+             </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </body>
+  
+</html>

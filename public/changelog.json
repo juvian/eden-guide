@@ -1,4 +1,19 @@
-[{
+[
+  {
+    "version": "1.7.1",
+    "changes": ["Guide updated to 3.2C",
+               "Yata's mirror stats fixed, and now its an artifact",
+                "Added bamboo spear and lethal gaze",
+                "Changed roselinde to darkness"
+               ],
+    "k_changes": ["가이드가 3.2C로 업데이트되었습니다",
+                "야타의 거울 상태가 고정되었고, 이제 유물",
+                "죽창 과 죽음을 응시하는 눈 추가 된",
+                  "추가 된 라라티나"
+                 ],
+    "released": "5/22/2018"
+  },
+  {
   "version": "1.7.0",
   "changes": ["Characters and changelog also available in korean"],
   "k_changes": ["한국에서 사용 가능한 문자와 변경 로그"],
