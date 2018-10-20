@@ -43,7 +43,8 @@ module.exports = function(app){
   app.post("/login", function (request, response, next) {
     var username = request.body.username;
     var password = request.body.password;
-
+    var ip = (request.headers['x-forwarded-for'] || request.connection.remoteAddress).split(",")[0];
+    
     db.users.findOne({username: username}, function(err, record){
       if (err) next(new Error(err));  
       if (record == null) {
@@ -53,7 +54,7 @@ module.exports = function(app){
         if (passwordHash.verify(password, record.password)) {
           var token = crypto.randomBytes(20).toString('hex');
           
-          db.users.update({_id: record._id}, {$set: {token: token}}, function(err) {
+          db.users.update({_id: record._id}, {$set: {token: token, ip: ip}}, function(err) {
             if (err) next(new Error(err));  
             request.session.token = token;
             request.session.username = username;

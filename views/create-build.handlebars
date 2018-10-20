@@ -10,9 +10,19 @@
 	<body>    
     <table id="table"></table>
       
-    <div class="card custom-build">
+    <div class="card custom-build main" data-char-id="{{char}}">
       <div class="card-header">
-        {{text 'custom_build' lang}}
+        {{text 'custom_build' lang}} ({{text 'main' @root.lang}})
+      </div>
+      <div class="card-block">
+        <ul class="list-group"> 
+
+        </ul>
+      </div>
+    </div> 
+    <div class="card custom-build switching" style="margin-top:20px">
+      <div class="card-header">
+        {{text 'custom_build' lang}} ({{text 'switching' @root.lang}})
       </div>
       <div class="card-block">
         <ul class="list-group"> 
@@ -39,12 +49,8 @@
       {{#if loggedIn}}
         <a class = "btn btn-primary save-build" href="#" target="_blank">{{text 'save-to-account' lang}}</a>
       {{/if}}
+      <a class = "btn btn-primary try-build" href="#" data-toggle="modal" data-target="#try-build">{{text 'try-build' lang}}</a>
     </div> 
-    
-
-    <div class = "footer text-center">
-        <a class = "btn btn-info" href = "/chars">{{text 'back_characters' lang}}</a>
-    </div>
     
 	</body>
 
@@ -52,3 +58,5 @@
 
 <script src="/bootstrap-table.js"></script>
 <script src="/bootstrap-table-kor.js"></script>
+
+{{>try-build}}

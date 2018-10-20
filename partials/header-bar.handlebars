@@ -1,51 +1,65 @@
-{{#if loggedIn}}
 <nav class="header navbar-expand-lg navbar navbar-dark bg-primary">
-    <h1 class="navbar-brand">Eden RPG</h1>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">{{text 'items' @root.lang}}</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/chars">{{text 'characters' @root.lang}}</a>
-          </li>
-          {{#if loggedIn}}
-            <li class="nav-item active">
-              <a class="nav-link" href="/my-builds">{{text 'my-builds' @root.lang}}</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/favorites">{{text 'favorites' @root.lang}}</a>
-            </li>
-            {{#if isMod}}
-              <li class="nav-item active">
-                <a class="nav-link" href="/pending-approval">{{text 'pending' @root.lang}}</a>
-              </li>            
-            {{/if}}
-          {{/if}}
-        </ul>
-        <ul class="navbar-nav">
-          {{#if loggedIn}}
-            <li class="nav-item dropdown active">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{session.username}}</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="/logout">{{text 'logout' lang}}</a>
-              </div>
-            </li>
-          {{else}}
-            <li class="nav-item active">
-              <a class="nav-link" href="/login">{{text 'login' lang}}</a>
-            </li>           
-            <li class="nav-item active">
-              <a class="nav-link" href="/register">{{text 'register' lang}}</a>
-            </li> 
-          {{/if}}
-        </ul>
-      </div>
-    </nav>
+<h1 class="navbar-brand">Eden RPG</h1>
 
-{{/if}}
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">{{text 'items' @root.lang}}</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/chars">{{text 'characters' @root.lang}}</a>
+      </li>
+      {{#if loggedIn}}
+        <li class="nav-item active">
+          <a class="nav-link" href="/my-builds">{{text 'my-builds' @root.lang}}</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/favorites">{{text 'favorites' @root.lang}}</a>
+        </li>
+        {{#if isMod}}
+          <li class="nav-item active">
+            <a class="nav-link" href="/pending-approval">{{text 'pending' @root.lang}}</a>
+          </li>            
+        {{/if}}
+      {{/if}}
+      <li class="nav-item active">
+        <a class="nav-link" href="/changelog">{{text 'view_changelog' @root.lang}}</a>
+      </li>
+      {{#if (eq lang 'kor')}}
+        <!--li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            사용방법
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://cafe.naver.com/scvrpg/621842">{{text 'items' @root.lang}}</a>
+            <a class="dropdown-item" href="http://cafe.naver.com/scvrpg/622709">{{text 'create_custom_build' @root.lang}}</a>
+          </div>
+        </li-->
+        <li class="nav-item active">
+          <a class="nav-link" href="http://cafe.naver.com/scvrpg/642133" target="_blank">사용방법</a>
+        </li>      
+      {{/if}}
+    </ul>
+    <ul class="navbar-nav">
+      {{#if loggedIn}}
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{session.username}}</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="/logout">{{text 'logout' lang}}</a>
+          </div>
+        </li>
+      {{else}}
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">{{text 'login' lang}}</a>
+        </li>           
+        <li class="nav-item active">
+          <a class="nav-link" href="/register">{{text 'register' lang}}</a>
+        </li> 
+      {{/if}}
+    </ul>
+  </div>
+</nav>

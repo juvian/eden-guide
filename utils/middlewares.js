@@ -52,11 +52,8 @@ module.exports.changeStatus = function (req, res, next, status) {
 
 module.exports.favorite = function (req, res, next, fav) {
   if (res.locals.build.username == res.locals.user.username) next(new Error(translation.translate('invalid-action', req.session.lang)));
-  var changes = {}
 
-  changes["favorites." + res.locals.user._id] = true
-
-  db.builds.update({_id: res.locals.build._id}, (fav ? {$set: changes} : {$unset: changes}), function (err) {
+  db.builds.update({_id: res.locals.build._id}, (fav ? {$addToSet: {favorites: res.locals.user._id}} : {$pull: {favorites: res.locals.user._id}}), function (err) {
     if (err) return next(new Error(err));
     res.send("");
   });
@@ -68,9 +65,14 @@ module.exports.validChar = function (req, res, next) {
   req.params.char = req.params.char.toLowerCase();
   
   if (builds.hasOwnProperty(req.params.char) == false) {
-    res.redirect("/chars");
+    return res.redirect("/chars");
   } 
   
   res.locals.char = builds[req.params.char].id;
+  next();
+}
+
+module.exports.isAdmin = function (req, res, next) {
+  if (!res.locals.user.mod) next(new Error(translation.translate('invalid-action', req.session.lang)));
   next();
 }

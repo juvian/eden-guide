@@ -92,7 +92,7 @@ function initializeTable () {
       })
     }
     if($(this).find("thead tr .name select").length == 0) {
-      var options = [{l : "All", v : "All"}, {l : "Mythic +3", v : "red-3"}, {l : "Mythic +2", v : "red-2"}, {l : "Mythic +1", v : "red-1"}, {l : "Mythic", v : "red-0"}, {l : "Epic", v : "blue"}, {l : "Legendary", v : "orange"}, {l : "Unique", v : "purple"}, {l : "Material", v : "black"}]
+      var options = [{l : "All", v : "All"}, {l: "God", v: "god"}, {l : "Mythic +3", v : "red-3"}, {l : "Mythic +2", v : "red-2"}, {l : "Mythic +1", v : "red-1"}, {l : "Mythic", v : "red-0"}, {l : "Epic", v : "blue"}, {l : "Legendary", v : "orange"}, {l : "Unique", v : "purple"}, {l : "Material", v : "black"}]
       options.forEach(v => v.l = translate(v.l));
       $(this).find("thead tr .name").append("<div class = 'text-left'><select>"+options.map(v => `<option class = '${v.v.split('-')[0]}' value='${v.v}'>${v.l}</option>`)+"</select></div>").find("select").on("change", function () {
         $("#table").bootstrapTable("load", getFilteredData())
@@ -133,7 +133,9 @@ function initializeRaids () {
               "Mother Tree",
               "Silverback Wolf",
               "Remnants of the Archdemon",
-              "Revenant of Meditation"]
+              "Revenant of Meditation",
+              "Sealed God of Destruction"
+              ]
   
   $(".raid").append(raids.map(v => $("<option>").text(translate(v))));
 }

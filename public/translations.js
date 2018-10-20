@@ -70,7 +70,7 @@
   },
   "register": {
     "eng": "Register",
-    "kor": "레지스터"
+    "kor": "계정생성"
   },
   "login": {
     "eng": "Login",
@@ -106,11 +106,11 @@
   },
   "view": {
     "eng": "View",
-    "kor": "전망"
+    "kor": "보기"
   },
   "edit": {
     "eng": "Edit",
-    "kor": "편집하다"
+    "kor": "수정하기"
   },
   "confirm": {
     "eng": "Are you sure?",
@@ -134,29 +134,29 @@
   },
   "optional": {
     "eng": "(optional)",
-    "kor": "(선택 과목)"
+    "kor": "(선택사항)"
   },
   "description": {
     "eng": "Description",
-    "kor": "기술"
+    "kor": "설명"
   },  
   "main": {
     "eng": "Main",
-    "kor": "본관"
+    "kor": "메인"
   },
   "switching": {
     "eng": "Situational",
-    "kor": "전환"
+    "kor": "스위칭"
   },
   "delete": {
     "eng": "Delete",
-    "kor": "지우다"
+    "kor": "삭제"
   },
   "public": "공공의",
   "private": "은밀한",
   "pending": {
     "eng": "Waiting approval",
-    "kor": "대기 승인"
+    "kor": "승인 대기중"
   },
   "request-public": {
     "eng": "Request go public",
@@ -170,12 +170,28 @@
     "eng": "Favorites",
     "kor": "즐겨 찾기"
   },
+  "try-build": {
+    "eng": "Try Build",
+    "kor": "빌드 해보기"
+  },
+  "get-code": {
+    "eng": "Get code",
+    "kor": "코드를 얻다"
+  },  
+  "configuration": {
+    "eng": "Configuration",
+    "kor": "구성"
+  },  
+  "missing-code": {
+    "eng": "Missing Code",
+    "kor": "누락 된 코드"
+  },  
   "approve": "승인하다",
   "reject": "받지 않다",
-  "status": "지위",
-  "by": "으로",  
-  "items": "항목",
-  "characters": "문자들",
+  "status": "상태",
+  "by": "by",  
+  "items": "아이템",
+  "characters": "캐릭터",
   "already exists": "이미 존재 함",
   'Name': '이름',
   'Type': '유형',
@@ -256,7 +272,7 @@
   'Remnants of the Archdemon': '대악마의 잔재',
   'Revenant of Meditation': '명상의 레버넌트',
   'Item guide': '아이템 안내',
-  "acerola": "철혈의 흡혈귀",
+  "acerola": "블러드 로드",
   "hurk": "허크",
   "zero": "Zero",
   "shinobu": "오시노 시노부",
@@ -278,7 +294,12 @@
   "pio": "피오",
   "mashiro": "시이나 마시로",
   "kaede": "카에데",
-  "hayate": "야가미 하야테"
+  "hayate": "야가미 하야테",
+  "satsuki": "키류인 사츠키",
+  "shuvi": "슈비",
+  "God of Destruction": "파멸의 신",
+  "Sealed God of Destruction": "봉인된 파멸의 신",
+  "God": "신"
 }
 
 
