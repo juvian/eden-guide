@@ -165,7 +165,8 @@ module.exports.builds = {
     "tatsumaki": {
         "images": [
             "http://wallpapersqq.net/wp-content/uploads/2015/12/Tatsumaki-8.jpg",
-            "https://orig00.deviantart.net/46a7/f/2015/360/8/6/tatsumaki_by_aditalfian-d9llwdq.png"
+            "https://konachan.com/sample/8d50b1613f4408bee51d13779b19d58e/Konachan.com%20-%20212275%20sample.jpg",
+            "https://konachan.com/jpeg/9760487efbbc090d74235c894551a063/Konachan.com%20-%20211565%20green_eyes%20green_hair%20nishizawa%20nopan%20onepunch_man%20short_hair%20tatsumaki_%28onepunch_man%29.jpg"
         ],
         "type": "int",
         "id": "H020"

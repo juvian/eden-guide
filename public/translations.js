@@ -186,6 +186,10 @@
     "eng": "Missing Code",
     "kor": "누락 된 코드"
   },  
+  "revoke": {
+    "eng": "Revoke approval",
+    "kor": "승인 취소"
+  },  
   "approve": "승인하다",
   "reject": "받지 않다",
   "status": "상태",
@@ -221,6 +225,8 @@
   'Mythic': '신화',
   'Epic': '에픽',
   'Legendary': '레전더리',
+  "Skill": "기술",
+  "skill": "기술",
   'Unique': '유니크',
   'Attack': '공격력',
   'Intelligence': '지능',
@@ -299,7 +305,10 @@
   "shuvi": "슈비",
   "God of Destruction": "파멸의 신",
   "Sealed God of Destruction": "봉인된 파멸의 신",
-  "God": "신"
+  "God's Treasure Chest": "신의 보물함",
+  "God": "신",
+  "Unleash": "해방",
+  "unleash": "해방"
 }
 
 

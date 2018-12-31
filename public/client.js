@@ -87,7 +87,7 @@ function initializeTable () {
     })
   }).on("post-header.bs.table", function () {
     if($(this).find("thead tr .type select").length == 0) {
-      $(this).find("thead tr .type").append("<div class = 'text-left'><select>"+["All", "Weapon", "Armor", "Accessory", "Helmet", "Artifact", "Auxiliary","Material", "Stats", "Chest"].map(v => "<option>"+translate(v)+"</option>")+"</select></div>").find("select").on("change", function () {
+      $(this).find("thead tr .type").append("<div class = 'text-left'><select>"+["All", "Weapon", "Armor", "Accessory", "Helmet", "Artifact", "Auxiliary","Material", "Stats", "Chest", "Skill", "Unleash"].map(v => "<option>"+translate(v)+"</option>")+"</select></div>").find("select").on("change", function () {
         $("#table").bootstrapTable("load", getFilteredData())
       })
     }
@@ -134,7 +134,8 @@ function initializeRaids () {
               "Silverback Wolf",
               "Remnants of the Archdemon",
               "Revenant of Meditation",
-              "Sealed God of Destruction"
+              "Sealed God of Destruction",
+              "God's Treasure Chest"
               ]
   
   $(".raid").append(raids.map(v => $("<option>").text(translate(v))));

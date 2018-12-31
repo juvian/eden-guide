@@ -169,8 +169,8 @@ exports.items = {
 		},
 		"label" : "Dagger of Divine Light",
     "k_label": "신성한 빛의 단검",
-		"effects" : ["Each attack has 10% chance to deal 10000 + AGI x12 bonus damag"],
-    "k_effects": ["공격시 확률적으로 빛의심판 발동 (10% 기회 10000 + AGI x12)"],
+		"effects" : ["Each attack has 12% chance to deal 300000 + AGI x8 bonus damag"],
+    "k_effects": ["공격시 확률적으로 빛의심판 발동 (12% 기회 300000 + AGI x8)"],
 		"id" : "I06D"
 	},
 	"divine_light_sword" : {
@@ -186,8 +186,8 @@ exports.items = {
 		},
 		"label" : "Sword of Divine Light",
     "k_label": "신성한 빛의 대검",
-		"effects" : ["Each attack has a 15% chance to deal 30000 + STR x13 bonus damage"],
-    "k_effects": ["공격시 확률적으로 빛의심판 발동 (15% 기회 30000 + STR x13)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + STR x10 bonus damage"],
+    "k_effects": ["공격시 확률적으로 빛의심판 발동 (12% 기회 300000 + STR x10)"],
 		"id" : "I06C"
 	},
 	"divine_light_staff" : {
@@ -202,8 +202,8 @@ exports.items = {
 		},
 		"label" : "Staff of Divine Light",
     "k_label": "신성한 빛의 지팡이",
-		"effects" : ["Each spell has a 4% chance to deal 30000 + INT x21 bonus damage"],
-    "k_effects": ["스킬의 모든히트에 확률적으로 빛의심판 발동(4% 기회 30000 + INT x21)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + INT x21 bonus damage"],
+    "k_effects": ["스킬의 모든히트에 확률적으로 빛의심판 발동(8% 기회 30000 + INT x21)"],
 		"id" : "I06E"
 	},
 	"chaotic_light_sword" : {
@@ -219,8 +219,8 @@ exports.items = {
 		},
 		"label" : "Sword of Chaotic Light",
     "k_label": "혼돈의 빛의 검",
-		"effects" : ["Each attack has a 12% chance to deal 30000 + (STR + AGI) x6 bonus damage"],
-    "k_effects": ["공격시 확률적으로 빛의심판 발동 (12% 기회 30000 + (STR + AGI) x6)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + (STR + AGI) x3 bonus damage"],
+    "k_effects": ["공격시 확률적으로 빛의심판 발동 (12% 기회 300000 + (STR + AGI) x3)"],
 		"id" : "I06M"
 	},
 	"resplendent_light_sword" : {
@@ -236,8 +236,8 @@ exports.items = {
 		},
 		"label" : "Sword of Resplendent Light",
     "k_label": "신성한 빛의 전투지팡이",
-		"effects" : ["Each spell has a 4% chance to deal 90000 + (STR + player slot) x13.5 bonus damage"],
-    "k_effects": ["스킬의 모든히트에 확률적으로 빛의심판 발동(4% 기회 90000 + (STR + player slot) x13.5)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + (STR + player slot) x10 bonus damage"],
+    "k_effects": ["스킬의 모든히트에 확률적으로 빛의심판 발동(8% 기회 30000 + (STR + player slot) x10)"],
 		"id" : "I06N"
 	},
 	"judge_staff" : {
@@ -334,8 +334,8 @@ exports.items = {
 		},
 		"label" : "Meteorite Dagger",
     "k_label": "운석 단검",
-		"effects" : ["Each attack has a 14% chance to deal 30000 + AGI x16 bonus damage"],
-    "k_effects": ["공격시 확률적으로 운석 소환 (14% 기회 30000 + AGI x16)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + AGI x12 bonus damage"],
+    "k_effects": ["공격시 확률적으로 운석 소환 (12% 기회 300000 + AGI x12)"],
 		"id" : "I074"
 	},
 	"black_earth_mace" : {
@@ -351,8 +351,8 @@ exports.items = {
 		},
 		"label" : "Black Earth Mace",
     "k_label": "운석 철퇴",
-		"effects" : ["Each attack has a 15% chance to deal 30000 + STR x27 bonus damage"],
-    "k_effects": ["공격시 확률적으로 운석 소환 (15% 기회 30000 + STR x27)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + STR x20 bonus damage"],
+    "k_effects": ["공격시 확률적으로 운석 소환 (12% 기회 300000 + STR x20)"],
 		"id" : "I0CD"
 	},
 	"judgement_staff" : {
@@ -367,8 +367,8 @@ exports.items = {
 		},
 		"label" : "Staff of Judgement",
     "k_label": "심판의 지팡이",
-		"effects" : ["Each spell has a 5% chance to deal 90000 + INT x27 bonus damage", "Intelligence increased by 1000 (duration 10s, 120s cd)"],
-    "k_effects": ["스킬공격시 확률적으로 대상에게 천벌시전 (5% 기회 90000 + INT x27)", "사용시 지능 1000증가(지속시간 10초)(쿨타임 120초)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + INT x26 bonus damage", "Intelligence increased by 1000 (duration 10s, 120s cd)"],
+    "k_effects": ["스킬공격시 확률적으로 대상에게 천벌시전 (8% 기회 30000 + INT x26)", "사용시 지능 1000증가(지속시간 10초)(쿨타임 120초)"],
 		"id" : "I075"
 	},
 	"black_earth_sword" : {
@@ -462,8 +462,8 @@ exports.items = {
 		},
 		"label" : "Chaotic Meteorite Sword",
     "k_label": "혼돈의 운석 검",
-		"effects" : ["Each attack has a 14% chance to deal 30000 + (STR + AGI) x7 bonus damage", "On Use: An outward explosion of Black Eart, dealing 300000 + (STR + AGI) x55 damage (120s cd)"],
-    "k_effects": ["공격시 확률적으로 운석 소환 (14% 기회 30000 + (STR + AGI) x7)", "사용시 검은대지의 폭발 생성 (300000 + (STR + AGI) x55)(쿨타임 120초)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + (STR + AGI) x6 bonus damage", "On Use: An outward explosion of Black Eart, dealing 300000 + (STR + AGI) x55 damage (120s cd)"],
+    "k_effects": ["공격시 확률적으로 운석 소환 (12% 기회 300000 + (STR + AGI) x6)", "사용시 검은대지의 폭발 생성 (300000 + (STR + AGI) x55)(쿨타임 120초)"],
 		"id" : "I07D"
 	},
 	"chaos_judge_staff" : {
@@ -479,8 +479,8 @@ exports.items = {
 		},
 		"label" : "Judge's Staff of Chaos",
     "k_label": "혼돈의 심판 지팡이",
-		"effects" : ["Each spell has a 5% chance to deal 90000 + (STR + player slot) x21 bonus damage"],
-    "k_effects": ["모든스킬 히트에 확률적으로 천벌이 내려침 (5% 기회 90000 + (STR + player slot) x21)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + (STR + INT) x11 bonus damage"],
+    "k_effects": ["모든스킬 히트에 확률적으로 천벌이 내려침 (8% 기회 30000 + (STR + INT) x11)"],
 		"id" : "I07E"
 	},
 	"infinite_life_staff" : {
@@ -660,8 +660,8 @@ exports.items = {
 		},
 		"label" : "Moonlight Dagger",
     "k_label": "달빛 단검",
-		"effects" : ["Each attack has a 15% chance to deal 45000 + AGI x21 bonus damage"],
-    "k_effects": ["기본공격시 확률적으로 달빛의 힘으로 적을 공격함 (15% 기회 45000 + AGI x21)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + AGI x17 bonus damage"],
+    "k_effects": ["기본공격시 확률적으로 달빛의 힘으로 적을 공격함 (12% 기회 300000 + AGI x17)"],
 		"id" : "I08V"
 	},
 	"mjollnir" : {
@@ -677,8 +677,8 @@ exports.items = {
 		},
 		"label" : "Mjollnir",
     "k_label": "묠니르",
-		"effects" : ["Each attack has a 17% chance to deal 30000 + STR x20 bonus damage"],
-    "k_effects": ["기본공격시 확률적으로 전격로 적을 공격함 (17% 기회 30000 + STR x20)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + STR x30 bonus damage"],
+    "k_effects": ["기본공격시 확률적으로 전격로 적을 공격함 (12% 기회 300000 + STR x30)"],
 		"id" : "I0CE"
 	},
 	"sage_staff" : {
@@ -694,8 +694,8 @@ exports.items = {
 		},
 		"label" : "Sage's Staff",
     "k_label": "현자의 지팡이",
-		"effects" : ["Generates Bonus Damage based on max mana (3.5% per 10,000)", "Deals an additional 65% of bonus damage if over 10% max HP","Consumes 4% of max mana per cast", "This passive will not work if below 10% maximum mana"],
-    "k_effects": ["사용자의 마나의 비례한 추가데미지 생성 (비율 - 1만당 3.5%)", "최대 HP가 10%이상인 경우 추가로 65%의 보너스 피해를 입힌다", "스킬사용시 최대마력의 4%감소 (마력이 10%이상 있을때 작동)"],
+		"effects" : ["Generates Bonus Damage based on max mana (3.5% per 10,000)", "Consumes 4% of max mana per cast", "This passive will not work if below 10% maximum mana"],
+    "k_effects": ["사용자의 마나의 비례한 추가데미지 생성 (비율 - 1만당 3.5%)", "스킬사용시 최대마력의 4%감소 (마력이 10%이상 있을때 작동)"],
 		"id" : "I08W"
 	},
 	"bloody_moonlight_dagger" : {
@@ -711,8 +711,8 @@ exports.items = {
 		},
 		"label" : "Bloody Moonlight Dagger",
     "k_label": "붉은달빛 단검",
-		"effects" : ["Each attack has a 10% chance to deal 45000 + (STR + AGI) x10.5 bonus damage", "On Use: Causes an explosion of moonlight, dealing 300000 + (STR + AGI) x70 (80s cd)"],
-    "k_effects": ["기본공격시 확률적으로 붉은 달빛의 힘으로 적을 공격함 (10% 기회 45000 + (STR + AGI) x10.5)","사용시 달빛 폭발 발생 (300000 + (STR + AGI) x70)(쿨타임 80초)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + (STR + AGI) x4 bonus damage", "On Use: Causes an explosion of moonlight, dealing 300000 + (STR + AGI) x70 (80s cd)"],
+    "k_effects": ["기본공격시 확률적으로 붉은 달빛의 힘으로 적을 공격함 (12% 기회 300000 + (STR + AGI) x4)","사용시 달빛 폭발 발생 (300000 + (STR + AGI) x70)(쿨타임 80초)"],
 		"id" : "I08Y"
 	},
 	"hades_chaos_staff" : {
@@ -728,8 +728,8 @@ exports.items = {
 		},
 		"label" : "Hades Chaos Staff",
     "k_label": "하데스의 혼돈지팡이",
-		"effects" : ["Each spell has a 5% chance to deal 90000 + (STR + player slot) x30 bonus damage"],
-    "k_effects": ["스킬공격에 확률적으로 죽음의 폭발발생 (5% 기회 90000 + (STR + player slot) x30)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + (STR + INT) x14 bonus damage"],
+    "k_effects": ["스킬공격에 확률적으로 죽음의 폭발발생 (8% 기회 30000 + (STR + INT) x14)"],
 		"id" : "I095"
 	},
 	"hades_staff" : {
@@ -744,8 +744,8 @@ exports.items = {
 		},
 		"label" : "Hades Staff",
     "k_label": "하데스의 지팡이",
-		"effects" : ["Each spell has a 7% chance to deal 90000 + INT x26 bonus damage"],
-    "k_effects": ["스킬공격에 확률적으로 죽음의 폭발발생 (7% 기회 90000 + INT x26)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + INT x35 bonus damage"],
+    "k_effects": ["스킬공격에 확률적으로 죽음의 폭발발생 (8% 기회 30000 + INT x35)"],
 		"id" : "I094"
 	},
 	"waterstone_sword" : {
@@ -817,7 +817,7 @@ exports.items = {
 		"type" : "armor",
 		"color" : "purple",
 		"page" : 1,
-		"materials" : ["leather_approval_armor", "elemental_spirit", "heaven_sigil"],
+		"materials" : ['elemental_spirit', 'heaven_sigil', 'leather_approval_armor', 'leather_approval_armor'],
 		"rate" : 100,
 		"stats" : {
 			"armor" : 600,
@@ -909,8 +909,8 @@ exports.items = {
 		},
 		"label" : "Magical Flame Armor",
     "k_label": "마계의 불꽃 갑옷",
-		"effects" : ["Deals 8000 + STR x5 damage to nearby enemies each second"],
-		"k_effects" : ["생명력과 강함을 교환한 로브 (8000 + STR x5)"],
+		"effects" : ["Deals 8000 + STR x15 damage to nearby enemies each second"],
+		"k_effects" : ["생명력과 강함을 교환한 로브 (8000 + STR x15)"],
 		"id" : "I06R"
 	},
 	"maestras_flame_robe" : {
@@ -991,8 +991,8 @@ exports.items = {
 		},
 		"label" : "Black Earth Flame Armor",
     "k_label": "검은 대지의 불꽃 갑옷",
-		"effects" : ["Deals 10000 + STR x8 damage per second to all enemies within range"],
-    "k_effects": ["초당 주변에 데미지 (10000 + STR x8)"],
+		"effects" : ["Deals 8000 + STR x23 damage per second to all enemies within range"],
+    "k_effects": ["초당 주변에 데미지 (8000 + STR x23)"],
 		"id" : "I03H"
 	},
 	"black_earth_flame_robe" : {
@@ -1024,8 +1024,8 @@ exports.items = {
 		},
 		"label" : "Refined Mana Robe",
     "k_label": "드레곤 마력 로브",
-		"effects" : ["On use: consumes 30% of max mana and creates a shield that blocks max mana x1.5 for 50 seconds (75s cd). Does not stack"],
-    "k_effects": ["사용시 최대마나 30%소모 최대마나 x 1.5만큼의 쉴드생성(50초지속) (쉴드계열은 중첩이 되지않습니다)(쿨타임 75초)"],
+		"effects" : ["Creates a shield that blocks max mana x0.3 every 10s. Does not stack"],
+    "k_effects": ["10초마다 최대마나 x 0.3의 쉴드생성 (아이템끼리는 쉴드가 중첩되지 않습니다)"],
 		"id" : "I07N"
 	},
 	"agile_leather_vest" : {
@@ -1155,8 +1155,8 @@ exports.items = {
 		},
 		"label" : "Hellfire Armor",
     "k_label": "지옥불 갑옷",
-		"effects" : ["Deals 10000 + STR x11 damage per second to all enemies within range"],
-		"k_effects" : ["초당 주변에 데미지 (10000 + STR x11)"],
+		"effects" : ["Deals 8000 + STR x33 damage per second to all enemies within range"],
+		"k_effects" : ["초당 주변에 데미지 (8000 + STR x33)"],
 		"id" : "I0BL"
 	},
 	"hellfire_robe" : {
@@ -1206,8 +1206,8 @@ exports.items = {
 		},
 		"label" : "Refined Mana Crystal Robe",
     "k_label": "정제된 드레곤 마력 로브",
-		"effects" : ["On use: consumes 30% of max mana and creates a shield that blocks max mana x1.8 for 50 seconds (75s cd). Does not stack"],
-		"k_effects" : ["사용시 최대마나 30%소모 최대마나 x 1.8만큼의 쉴드생성(50초지속)(쉴드계열은 중첩이 되지않습니다)(쿨타임 75초)"],
+		"effects" : ["Creates a shield that blocks max mana x0.4 every 10s. Does not stack"],
+		"k_effects" : ["10초마다 최대마나 x 0.4의 쉴드생성 (아이템끼리는 쉴드가 중첩되지 않습니다)"],
 		"id" : "I0BO"
 	},
 	"gaia_armor" : {
@@ -1368,8 +1368,9 @@ exports.items = {
 			"int" : 1200,
 			"str" : 1200,
 			"agi" : 1200,
+      "armor": 300,
 			"movement_speed" : 150,
-			"magic_resistance" : 22
+			"magic_resistance" : 13
 		},
 		"label" : "Branches of the Mother Tree",
     "k_label": "마더트리의 나뭇가지",
@@ -1532,7 +1533,7 @@ exports.items = {
 		"label" : "Refined Dragon Heart",
     "k_label": "정제된 드래곤 하트",
 		"effects" : ["Recover 40% of MAX HP every 28 seconds"],
-		"k_effects" : ["초마다 최대체력 40%회복"],
+		"k_effects" : ["28초마다 최대체력 40%회복"],
 		"id" : "I0CK"
 	},
 	"dazzling_light_helm" : {
@@ -1546,9 +1547,9 @@ exports.items = {
 			"int" : 600,
 			"str" : 600,
 			"agi" : 600,
-			"damage_taken" : -10
+			"damage_taken" : -7
 		},
-		"label" : "Dazzling Light Helmet",
+		"label" : "Helm of Dazzling Light",
     "k_label": "눈부신 빛의 투구",
 		"id" : "I03S"
 	},	
@@ -1633,7 +1634,7 @@ exports.items = {
 			"int" : 900,
 			"str" : 900,
 			"agi" : 900,
-			"damage_taken" : -15
+			"damage_taken" : -10
 		},
 		"label" : "Dragon Leather Helm",
     "k_label": "드레곤 가죽 투구",
@@ -1700,12 +1701,13 @@ exports.items = {
 			"str" : 900,
 			"agi" : 900,
 			"int" : 900,
+      "armor": 300,
 			"hp" : 8000
 		},
 		"label" : "Heavenly Spirit Barrier",
     "k_label": "천상의 수호벽",
-		"effects" : ["Generates a shield that blocks up to 8500 damage every 10 seconds"],
-		"k_effects" : ["초마다 8500의 쉴드 생성"],
+		"effects" : ["Generates a shield that blocks up to 10000 damage every 10 seconds"],
+		"k_effects" : ["초마다 10000의 쉴드 생성"],
 		"id" : "I06H"
 	},	
 	"dark_wings" : {
@@ -1753,12 +1755,13 @@ exports.items = {
 			"str" : 1100,
 			"agi" : 1100,
 			"int" : 1100,
+      "armor": 400,
 			"hp" : 13000
 		},
 		"label" : "Dazzling Heavenly Spirit Barrier",
     "k_label": "눈부신 천상의 수호벽",
-		"effects" : ["Generates a shield that blocks up to 12000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 12000의 쉴드 생성"],
+		"effects" : ["Generates a shield that blocks up to 16000 damage every 10 seconds"],
+		"k_effects" : ["10초마다 16000의 쉴드 생성"],
 		"id" : "I088"
 	},
 	"rho_aias" : {
@@ -1771,12 +1774,13 @@ exports.items = {
 			"str" : 2000,
 			"agi" : 2000,
 			"int" : 2000,
+      "armor": 500,
 			"hp" : 20000
 		},
 		"label" : "Rho Aias",
     "k_label": "로 아이아스",
-		"effects" : ["Generates a shield that blocks up to 20000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 20000의 쉴드 생성"],
+		"effects" : ["Generates a shield that blocks up to 25000 damage every 10 seconds"],
+		"k_effects" : ["10초마다 25000의 쉴드 생성"],
 		"id" : "I08G"
 	},
 	"nightmare_wings" : {
@@ -1863,8 +1867,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Judgement +1",
     "k_label": "대천사의 심판 +1",
-		"effects" : ["Each attack has a 20% chance to deal 30000 + STR x28 bonus damage"],
-    "k_effects": ["기본공격시 확률적으로 대천사의 심판 발동 (20% 기회 30000 + STR x28)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + STR x48 bonus damage"],
+    "k_effects": ["기본공격시 확률적으로 대천사의 심판 발동 (12% 기회 300000 + STR x48)"],
 		"id" : "I0CG"
 	},
 	"archangel_amber_staff_1" : {
@@ -1911,8 +1915,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Dagger +1",
     "k_label": "대천사의 단검 +1",
-		"effects" : ["Each attack has a 18% chance to deal 65000 + AGI x28 bonus damage"],
-		"k_effects" : ["대천사만이 사용한다는 단검 적을 순식간에 분쇄시켜버림 (18% 기회 65000 + AGI x28)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + AGI x23 bonus damage"],
+		"k_effects" : ["대천사만이 사용한다는 단검 적을 순식간에 분쇄시켜버림 (12% 기회 300000 + AGI x23)"],
 		"id" : "I096"
 	},
 	"excalibur_1" : {
@@ -2003,7 +2007,7 @@ exports.items = {
 		"type" : "weapon",
 		"color" : "red",
 		"page" : 2,
-		"materials" : ["archangel_life_bow", "waterstone_staff", "archangel_sourcewell", "archangel_sigil", "god_essence"],
+		"materials" : ['archangel_life_staff', 'archangel_sigil', 'archangel_sourcewell', 'god_essence', 'waterstone_staff'],
 		"rate" : 30,
     	"stats" : {
 			"atk" : 260000,
@@ -2029,8 +2033,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Sword +1",
     "k_label": "대천사의 소검 +1",
-		"effects" : ["Each attack has a 13% chance to deal 65000 + (STR + AGI) x14 bonus damage","On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x105 damage (80s cd)"],
-    "k_effects": ["기본공격시 일정확률로 대천사의 죽음의심판생성 (13% 기회 65000 + (STR + AGI) x14)", "사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x105)(쿨타임 80초)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + (STR + AGI) x9.2 bonus damage","On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x105 damage (80s cd)"],
+    "k_effects": ["기본공격시 일정확률로 대천사의 죽음의심판생성 (12% 기회 300000 + (STR + AGI) x9.2)", "사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x105)(쿨타임 80초)"],
     "id" : "I09A"
 	},
 	"archangel_battle_staff_1" : {
@@ -2046,8 +2050,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Battle Staff +1",
     "k_label": "대천사의 전투지팡이 +1",
-		"effects" : ["Each spell has a 7% chance to deal 90000 + (STR + player slot) x42 bonus damage"],
-    "k_effects": ["일부 직업의 모든스킬에 확률적으로 대천사의 푸른심판 발동 (7% 기회 90000 + (STR + player slot) x42)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + (INT + INT) x22.8 bonus damage"],
+    "k_effects": ["일부 직업의 모든스킬에 확률적으로 대천사의 푸른심판 발동 (8% 기회 30000 + (INT + INT) x22.8)"],
 		"id" : "I09Q"
 	},
 	"archangel_staff_1" : {
@@ -2062,8 +2066,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Staff +1",
     "k_label": "대천사의 지팡이 +1",
-		"effects" : ["Each spell has a 8% chance to deal 90000 + INT x57 bonus damage"],
-    "k_effects": ["일부 직업의 모든스킬에 확률적으로 대천사의 심판 발동 (8% 기회 90000 + INT x57)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + INT x57 bonus damage"],
+    "k_effects": ["일부 직업의 모든스킬에 확률적으로 대천사의 심판 발동 (8% 기회 30000 + INT x57)"],
 		"id" : "I09M"
 	},
 	"archangel_glaive_1" : {
@@ -2128,8 +2132,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Judgement +2",
     "k_label": "대천사의 심판 +2",
-		"effects" : ["Each attack has a 20% chance to deal 30000 + STR x32 bonus damage"],
-		"k_effects" : ["기본공격시 확률적으로 대천사의 심판 발동 (20% 기회 30000 + STR x32)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + STR x56 bonus damage"],
+		"k_effects" : ["기본공격시 확률적으로 대천사의 심판 발동 (12% 기회 300000 + STR x56)"],
 		"id" : "I0CH"
 	},
 	"archangel_gauntlets_2" : {
@@ -2196,8 +2200,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Dagger +2",
     "k_label": "대천사의 단검 +2",
-		"effects" : ["Each attack has a 18% chance to deal 70000 + AGI x32 bonus damage"],
-		"k_effects" : ["기본공격시 일정확률로 대천사의 심판생성 (18% 기회 70000 + AGI x32)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + AGI x26 bonus damage"],
+		"k_effects" : ["기본공격시 일정확률로 대천사의 심판생성 (12% 기회 300000 + AGI x26)"],
 		"id" : "I097"
 	},
 	"archangel_blade_2" : {
@@ -2311,8 +2315,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Sword +2",
     "k_label": "대천사의 소검 +2",
-		"effects" : ["Each attack has a 13% chance to deal 70000 + (STR + AGI) x16 bonus damage","On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x120 damage (80s cd)"],
-		"k_effects" : ["기본공격시 일정확률로 대천사의 죽음의심판생성 (13% 기회 70000 + (STR + AGI) x16)", "사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x120)(쿨타임 80초)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + (STR + AGI) x10.4 bonus damage","On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x120 damage (80s cd)"],
+		"k_effects" : ["기본공격시 일정확률로 대천사의 죽음의심판생성 (12% 기회 300000 + (STR + AGI) x10.4)", "사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x120)(쿨타임 80초)"],
 		"id" : "I09B"
 	},
 	"archangel_battle_staff_2" : {
@@ -2328,8 +2332,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Battle Staff +2",
     "k_label": "대천사의 전투지팡이 +2",
-		"effects" : ["Each spell has a 7% chance to deal 90000 + (STR + player slot) x48 bonus damage"],
-		"k_effects" : ["일부 직업의 모든스킬에 확률적으로 대천사의 푸른심판 발동 (7% 기회 90000 + (STR + player slot) x48)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + (INT + INT) x25.2 bonus damage"],
+		"k_effects" : ["일부 직업의 모든스킬에 확률적으로 대천사의 푸른심판 발동 (8% 기회 30000 + (INT + INT) x25.2)"],
 		"id" : "I09R"
 	},
 	"archangel_staff_2" : {
@@ -2344,8 +2348,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Staff +2",
     "k_label": "대천사의 지팡이 +2",
-		"effects" : ["Each spell has a 8% chance to deal 90000 + INT x63 bonus damage"],
-		"k_effects" : ["일부 직업의 모든스킬에 확률적으로 대천사의 심판 발동 (8% 기회 90000 + INT x63)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + INT x63 bonus damage"],
+		"k_effects" : ["일부 직업의 모든스킬에 확률적으로 대천사의 심판 발동 (8% 기회 30000 + INT x63)"],
 		"id" : "I09N"
 	},
 	"archangel_glaive_2" : {
@@ -2393,8 +2397,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Judgement +3",
     "k_label": "대천사의 심판 +3",
-		"effects" : ["Each attack has a 20% chance to deal 30000 + STR x35 bonus damage"],
-		"k_effects" : ["기본공격시 확률적으로 대천사의 심판 발동 (20% 기회 30000 + STR x35)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + STR x64 bonus damage"],
+		"k_effects" : ["기본공격시 확률적으로 대천사의 심판 발동 (12% 기회 300000 + STR x64)"],
 		"id" : "I0CI"
 	},
 	"archangel_gauntlets_3" : {
@@ -2461,8 +2465,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Dagger +3",
     "k_label": "대천사의 단검 +3",
-		"effects" : ["Each attack has a 18% chance to deal 75000 + AGI x37 bonus damage"],
-		"k_effects" : ["기본공격시 일정확률로 대천사의 심판생성 (18% 기회 75000 + AGI x37)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + AGI x29 bonus damage"],
+		"k_effects" : ["기본공격시 일정확률로 대천사의 심판생성 (12% 기회 300000 + AGI x29)"],
 		"id" : "I098"
 	},
 	"archangel_blade_3" : {
@@ -2544,8 +2548,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Sword +3",
     "k_label": "대천사의 소검 +3",
-		"effects" : ["Each attack has a 13% chance to deal 70000 + (STR + AGI) x19.5 bonus damage","On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x135 damage (80s cd)"],
-		"k_effects" : ["기본공격시 일정확률로 대천사의 죽음의심판생성 (13% 기회 70000 + (STR + AGI) x19.5)","사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x135)(쿨타임 80초)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + (STR + AGI) x11.6 bonus damage","On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x135 damage (80s cd)"],
+		"k_effects" : ["기본공격시 일정확률로 대천사의 죽음의심판생성 (12% 기회 300000 + (STR + AGI) x11.6)","사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x135)(쿨타임 80초)"],
 		"id" : "I09C"
 	},
 	"archangel_battle_staff_3" : {
@@ -2561,8 +2565,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Battle Staff +3",
     "k_label": "대천사의 전투지팡이 +3",
-		"effects" : ["Each spell has a 7% chance to deal 90000 + (STR + player slot) x54 bonus damage"],
-		"k_effects" : ["일부 직업의 모든스킬에 확률적으로 대천사의 푸른심판 발동 (7% 기회 90000 + (STR + player slot) x54)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + (INT + INT) x30 bonus damage"],
+		"k_effects" : ["일부 직업의 모든스킬에 확률적으로 대천사의 푸른심판 발동 (8% 기회 30000 + (INT + INT) x30)"],
 		"id" : "I09S"
 	},
 	"archangel_staff_3" : {
@@ -2577,8 +2581,8 @@ exports.items = {
 		},
 		"label" : "Archangel's Staff +3",
     "k_label": "대천사의 지팡이 +3",
-		"effects" : ["Each spell has a 8% chance to deal 90000 + INT x73.5 bonus damage"],
-		"k_effects" : ["일부 직업의 모든스킬에 확률적으로 대천사의 심판 발동 (8% 기회 90000 + INT x73.5)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + INT x73.5 bonus damage"],
+		"k_effects" : ["일부 직업의 모든스킬에 확률적으로 대천사의 심판 발동 (8% 기회 30000 + INT x73.5)"],
 		"id" : "I09O"
 	},
 	"archangel_glaive_3" : {
@@ -3132,7 +3136,7 @@ exports.items = {
 			"agi" : 800,
 			"int" : 800,
 			"movement_speed" : 150,
-			"magic_resistance" : 15
+			"magic_resistance" : 10
 		},
 		"label" : "Leaves of the mother tree",
     "k_label": "마더트리의 잎",
@@ -3160,8 +3164,8 @@ exports.items = {
 		},
 		"label" : "Sword of Light",
     "k_label": "빛의검",
-		"effects" : ["Adds an additional 5000 damage to attacks"],
-		"k_effects" : ["공격시 5000의 추가데미지"],
+		"effects" : ["12% chance to add 5000 damage to attacks"],
+		"k_effects" : ["12% 기회 공격시 5000의 추가데미지"],
 		"id" : "I067",
 		"chances" : 7
 	},
@@ -3173,12 +3177,13 @@ exports.items = {
 			"str" : 600,
 			"agi" : 600,
 			"int" : 600,
+      "armor": 200,
 			"hp" : 5000
 		},
 		"label" : "Barrier of Light",
     "k_label": "빛의 방벽",
-		"effects" : ["Generate a shield every 10 seconds that blocks up to 5000 damage"],
-    "k_effects": ["10초마다 5000의 쉴드 생성"],
+		"effects" : ["Generate a shield every 10 seconds that blocks up to 6000 damage"],
+    "k_effects": ["10초마다 6000의 쉴드 생성"],
 		"id" : "I068",
 		"chances" : 7
 	},
@@ -3191,7 +3196,7 @@ exports.items = {
 			"str" : 400,
 			"agi" : 400,
 			"int" : 400,
-			"damage_taken" : -5
+			"damage_taken" : -4
 		},
 		"label" : "Helm of Light",
     "k_label": "빛의 투구",
@@ -3470,13 +3475,13 @@ exports.items = {
 			"str" : 2000,
 			"agi" : 2000,
 			"int" : 2000,
-			"attack_speed" : 100,
-			"movement_speed" : 40 
+			"attack_speed" : 60,
+			"movement_speed" : 20 
 		},		
 		"label" : "Blue Dragon’s Wings",
     "k_label": "블루 드레곤 날개",
-		"effects" : ["Freeze nearby enemies on use, dealing 200000 + (STR + AGI + INT) x70 (180s cd)", "Allies have 40% movement speed and 100% attack speed increased", "Enemies have 25% movement speed and attack speed reduced"],
-		"k_effects" : ["주변 적군 공이속 25%감소", "주변 아군 공속 100% 이속 40%증가", "사용시 주변 적들을 얼려버림 (200000 + (STR + AGI + INT) x70)(쿨타임 180초)"],
+		"effects" : ["Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x70 (180s cd)", "Allies have 20% movement speed and 60% attack speed increased", "Enemies have 15% movement speed and attack speed reduced"],
+		"k_effects" : ["주변 적군 공이속 15%감소", "주변 아군 공속 60% 이속 20%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x70)(쿨타임 180초)"],
 		"id" : "I07F",
 		"chances" : [1.5, 2.33]
 	},
@@ -3543,12 +3548,12 @@ exports.items = {
 			"str" : 1700,
 			"agi" : 1700,
 			"int" : 1700,
-			"hp_regen" : 500
+			"hp_regen" : 700
 		},
 		"label" : "Essence of Life",
     "k_label": "생명의 가호",
-		"effects" : ["Allies within range gain HP recovery per second +500", "On Use: Recovers (STR + AGI + INT) x2 HP every second for 4 seconds (120s cd)"],
-    "k_effects": ["범위내 아군 초당 생명력 회복 500", "사용시 4초간 사용지점에 매초마다 마더트리의 가호 발동 (STR + AGI + INT) x2)(쿨타임 120초)"],
+		"effects" : ["Allies within range gain HP recovery per second +700", "On Use: Recovers (STR + AGI + INT) x2 HP every second for 5 seconds (120s cd)"],
+    "k_effects": ["범위내 아군 초당 생명력 회복 700", "사용시 5초간 사용지점에 매초마다 마더트리의 가호 발동 (STR + AGI + INT) x2)(쿨타임 120초)"],
 		"id" : "I081",
 		"chances" : [3, 7]
 	},
@@ -3649,7 +3654,7 @@ exports.items = {
     "label" : "Mana Rune",
     "k_label": "대천사의 마나룬",
     "id" : "I0A3",
-    "chances" : 9.09
+    "chances" : 8.33
   },
   "archangel_mana_potion" : {
     "type" : "auxiliary",
@@ -3666,7 +3671,7 @@ exports.items = {
     "effects" : ["On Use: Restore 35% of maximum mana (30s cd)"],
     "k_effects" : ["사용시 최대마나 35%회복 (쿨타임 30초)"],
     "id" : "I09Z",
-    "chances" : 9.09
+    "chances" : 8.33
   },
   "archangel_potion" : {
     "type" : "auxiliary",
@@ -3683,7 +3688,7 @@ exports.items = {
     "effects" : ["On Use: Restore 30% of health (30s cd)"],
     "k_effects" : ["사용시 최대생명력 30%회복 (쿨타임 30초)"],
     "id" : "I03C",
-    "chances" : 9.09
+    "chances" : 8.33
   },
   "life_rune" : {
     "type" : "auxiliary",
@@ -3699,7 +3704,7 @@ exports.items = {
     "label" : "Life Rune",
     "k_label": "대천사의 생명룬",
     "id" : "I0A2",
-    "chances" : 9.09
+    "chances" : 8.33
   },
   "archangel_ascent" : {
     "type" : "auxiliary",
@@ -3716,7 +3721,7 @@ exports.items = {
     "label" : "Archangel’s Ascent",
     "k_label": "대천사의 순풍룬",
     "id" : "I0A1",
-    "chances" : 9.09
+    "chances" : 8.33
   },
   "magic_rune" : {
     "type" : "auxiliary",
@@ -3732,7 +3737,7 @@ exports.items = {
     "label" : "Magic Rune",
     "k_label": "대천사의 일격룬",
     "id" : "I0A0",
-    "chances" : 9.09
+    "chances" : 8.33
   },
   "dazzling_light_wings" : {
     "type" : "artifact",
@@ -3750,7 +3755,7 @@ exports.items = {
     "effects" : ["Enemies within range take 22% Additional Damage"],
     "k_effects": ["범위내 적들 추가데미지 22% 오라"],
     "id" : "I0BP",
-    "chances" : 9.09
+    "chances" : 8.33
   },
 	"valor_wings" : {
 		"type" : "artifact",
@@ -3768,7 +3773,7 @@ exports.items = {
 		"effects" : ["When HP is below 40%, any damage taken will restore 30% of MAX HP", "On use restore 16% of MAX HP every second for 10 seconds (120s cd)"],
 		"k_effects" : ["생명력이 40%이하일때 즉사가 아닌 공격을받을면", "즉시 생명력 30%를 회복하며 10초간 초당 생명력 16% 회복 (쿨타임 120초)"],
 		"id" : "I0BR",
-    "chances" : 9.09
+    "chances" : 8.33
 	},
 	"archangel_boots" : {
 		"type" : "artifact",
@@ -3787,7 +3792,7 @@ exports.items = {
 		"effects" : ["On Use: Dash forward (6s cd)"],
 		"k_effects" : ["사용시 전방으로 대쉬(쿨타임6초)"],
 		"id" : "I0BQ",
-    "chances" : 9.09
+    "chances" : 8.33
 	},
 	"archangel_barrier" : {
 		"type" : "artifact",
@@ -3798,14 +3803,15 @@ exports.items = {
 			"str" : 2800,
 			"agi" : 2800,
 			"int" : 2800,
+      "armor": 700,
 			"hp" : 25000
 		},
 		"label" : "Archangel’s Barrier",
     "k_label": "대천사의 방벽",
-		"effects" : ["Generate a shield that can block up to 27000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 27000의 쉴드 생성"],
+		"effects" : ["Generate a shield that can block up to 33000 damage every 10 seconds"],
+		"k_effects" : ["10초마다 33000의 쉴드 생성"],
 		"id" : "I0BS",
-    "chances" : 9.09
+    "chances" : 8.33
 	},
 	"justice_wings" : {
 		"type" : "artifact",
@@ -3821,7 +3827,7 @@ exports.items = {
 		"label" : "Wings of Justice",
     "k_label": "정의의 날개",
 		"id" : "I0BT",
-   	"chances" : 9.09
+   	"chances" : 8.33
 	},
 	"excalibur" : {
 		"type" : "weapon",
@@ -3839,7 +3845,7 @@ exports.items = {
 		"effects" : ["On Use: Fires a laser in chosen direction (Deals 300000 + (STR + AGI + INT) x200)(120s cd)"],
     "k_effects": ["사용시 정의의 일격 시전 (300000 + (STR + AGI + INT) x200)(쿨타임 120초)"],
 		"id" : "I09D",
-    "chances" : 5.88
+    "chances" : 5.55
 	},  
 	"archangel_dagger" : {
 		"type" : "weapon",
@@ -3853,10 +3859,10 @@ exports.items = {
 		},
 		"label" : "The Archangel’s Dagger",
     "k_label": "대천사의 단검",
-    "effects" : ["Each attack has a 18% chance to deal 60000 + AGI x25 bonus damage"],
-    "k_effects" : ["기본공격시 일정확률로 대천사의 심판생성 (18% 기회 60000 + AGI x25)"],
+    "effects" : ["Each attack has a 12% chance to deal 300000 + AGI x20 bonus damage"],
+    "k_effects" : ["기본공격시 일정확률로 대천사의 심판생성 (12% 기회 300000 + AGI x20)"],
 		"id" : "I093",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"archangel_blade" : {
 		"type" : "weapon",
@@ -3871,7 +3877,7 @@ exports.items = {
 		"label" : "The Archangel’s Blade",
     "k_label": "대천사의 도검",
 		"id" : "I08Z",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"archangel_mana_staff" : {
 		"type" : "weapon",
@@ -3888,7 +3894,7 @@ exports.items = {
 		"effects" : ["Generates Bonus Damage based on maximum mana (4.2% per 10,000)", "Consumes 4% of maximum mana per cast", "This passive will not work if below 10% maximum mana"],
 		"k_effects" : ["사용자의 마나의 비례한 추가데미지 생성 (비율 - 1만당 4.2%)", "스킬사용시 최대마력의 4%감소", "마력이 10%이상 있을때 작동"],
 		"id" : "I0A4",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"angelic_life_sword" : {
 		"type" : "weapon",
@@ -3905,7 +3911,7 @@ exports.items = {
 		"effects" : ["Every 10 attacks will recover STR x5 HP (9s cd)", "Every 6 spells will recover STR x5 HP (10s cd)", "On Use: Restores STR x7 HP (120s cd)"],
 		"k_effects" : ["기본공격 10회시 생명력회복 (STR x5)(쿨타임 9초)", "스킬사용 6회시 생명력회복 (STR x5)(쿨타임 10초)", "사용시  생명력회복 (STR x7)(쿨타임 120초)"],
 		"id" : "I09W",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"archangel_life_bow" : {
 		"type" : "weapon",
@@ -3922,7 +3928,7 @@ exports.items = {
 		"effects" : ["Every 10 attacks will recover AGI x5 HP (9s cd)", "Every 6 spells will recover AGI x5 HP (10s cd)", "On Use: Restores AGI x7 HP (120s cd)"],
 		"k_effects" : ["기본공격 10회시 생명력회복 (AGI x5)(쿨타임 9초)", "스킬사용 6회시 생명력회복 (AGI x5)(쿨타임 10초)", "사용시  생명력회복 (AGI x7)(쿨타임 120초)"],
 		"id" : "I09Y",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"archangel_life_staff" : {
 		"type" : "weapon",
@@ -3939,7 +3945,7 @@ exports.items = {
 		"effects" : ["Every 4 spells will recover INT x6 HP (10s cd)", "On Use: Restore INT x7 HP of all allies within range(80s cd)"],
 		"k_effects" : ["스킬사용 4회시 생명력 회복 (INT x6)(쿨타임 10초)", "사용시 주변 아군을 능력치 비례 만큼의 생명력 회복 (INT x7)(쿨타임 80초)"],
 		"id" : "I09X",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"archangel_sword" : {
 		"type" : "weapon",
@@ -3953,10 +3959,10 @@ exports.items = {
 		},
 		"label" : "The Archangel’s Sword",
     "k_label": "대천사의 소검",
-		"effects" : ["Each attack has a 13% chance to deal 60000 + (STR + AGI) x12 bonus damage", "On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x90 damage (80s cd)"],
-		"k_effects" : ["기본공격시 일정확률로 대천사의 죽음의심판생성 (13% 기회 60000 + (STR + AGI) x12)(능력치 비례)", "사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x90)(쿨타임 80초)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + (STR + AGI) x8 bonus damage", "On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x90 damage (80s cd)"],
+		"k_effects" : ["기본공격시 일정확률로 대천사의 죽음의심판생성 (12% 기회 300000 + (STR + AGI) x8)(능력치 비례)", "사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x90)(쿨타임 80초)"],
 		"id" : "I099",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"archangel_battle_staff" : {
 		"type" : "weapon",
@@ -3970,10 +3976,10 @@ exports.items = {
 		},
 		"label" : "Archangel’s Battle Staff",
     "k_label": "대천사의 전투지팡이",
-		"effects" : ["Each spell has a 7% chance to deal 90000 + (STR + player slot) x26 bonus damage"],
-		"k_effects" : ["일부 직업의 모든스킬에 확률적으로 대천사의 푸른심판 발동 (7% 기회 90000 + (STR + player slot) x26)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + (INT + INT) x19.2 bonus damage"],
+		"k_effects" : ["일부 직업의 모든스킬에 확률적으로 대천사의 푸른심판 발동 (8% 기회 30000 + (INT + INT) x19.2"],
 		"id" : "I09P",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"archangel_staff" : {
 		"type" : "weapon",
@@ -3984,12 +3990,12 @@ exports.items = {
 			"atk" : 230000,
 			"int" : 6500
 		},
-		"label" : "The Archangel’s Staff",
+      "label" : "The Archangel’s Staff",
     "k_label": "대천사의 지팡이",
-		"effects" : ["Each spell has a 8% chance to deal 90000 + INT x48 bonus damage"],
-		"k_effects" : ["일부 직업의 모든스킬에 확률적으로 대천사의 심판 발동 (8% 기회 90000 + INT x48)"],
+		"effects" : ["Each spell has a 8% chance to deal 30000 + INT x48 bonus damage"],
+		"k_effects" : ["일부 직업의 모든스킬에 확률적으로 대천사의 심판 발동 (8% 기회 30000 + INT x48)"],
 		"id" : "I09L",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
   "archangel_glaive" : {
 		"type" : "weapon",
@@ -4005,7 +4011,7 @@ exports.items = {
 		"effects" : ["On Use: Causes an explosion, dealing 400000 + STR x200 damage (45s cd)"],
 		"k_effects" : ["사용시 용기의 폭발 시전 (400000 + STR x200)(쿨타임 45초)"],
 		"id" : "I09H",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"blessed_staff" : {
 		"type" : "weapon",
@@ -4021,7 +4027,7 @@ exports.items = {
 		"effects" : ["On Use: Summons an angel"],
     "k_effects": ["사용시 고위천사 소환"],
 		"id" : "I0A5",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"archangel_light_staff" : {
 		"type" : "weapon",
@@ -4038,7 +4044,7 @@ exports.items = {
 		"effects" : ["Increases nearby allies damage by 27%"],
 		"k_effects" : ["주변아군 추가데미지 27%증가 오라 생성"],
 		"id" : "I0AS",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"archangel_amber_staff" : {
 		"type" : "weapon",
@@ -4053,7 +4059,7 @@ exports.items = {
 		"label" : "Archangel’s Amber Staff",
     "k_label": "대천사의 증폭 지팡이",
 		"id" : "I0C5",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"archangel_gauntlets" : {
 		"type" : "weapon",
@@ -4069,7 +4075,7 @@ exports.items = {
 		"label" : "Archangel’s Gauntlets",
     "k_label": "대천사의 건들릿",
 		"id" : "I0C9",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"archangel_judgement" : {
 		"type" : "weapon",
@@ -4083,10 +4089,10 @@ exports.items = {
 		},
 		"label" : "Archangel’s Judgement",
     "k_label": "대천사의 심판",
-		"effects" : ["Each attack has a 20% chance to deal 30000 + STR x25 bonus damage"],
-		"k_effects" : ["기본공격시 확률적으로 대천사의 심판 발동 (20% 기회 30000 + STR x25)"],
+		"effects" : ["Each attack has a 12% chance to deal 300000 + STR x40 bonus damage"],
+		"k_effects" : ["기본공격시 확률적으로 대천사의 심판 발동 (12% 기회 300000 + STR x40)"],
 		"id" : "I0CF",
-    "chances" : 5.88
+    "chances" : 5.55
 	},
 	"warrior_vitality_potion" : {
 		"type" : "auxiliary",
@@ -4203,13 +4209,12 @@ exports.items = {
     "chest" : "Black Soul Stone",
 		"stats" : {
 			"atk" : 100000,
-			"int" : 3500,
-			"damage_increase" : 65
+			"int" : 3500
 		},
 		"label" : "Shadow Contract",
     "k_label": "어둠의 계약",
-		"effects" : ["Each spell consumes 3% of HP and MP (Only activates when above 10% of these thresholds)", "THIS ITEM DOES NOT WORK"],
-		"k_effects" : ["모든 능력사용시 체력과 마나 3% 소모 (10%이상일때 발동)", "이 항목은 작동하지 않습니다."],
+		"effects" : ["Each spell consumes 4% of HP and MP adding 40% bonus damage (Only activates when above 10% of these thresholds)"],
+		"k_effects" : ["모든 능력사용시 체력과 마나 4% 소모 (10%이상일때 발동) 추가데미지 40% 증가"],
 		"id" : "I0D7",
     "chances" : [3, 8.44]
 	},	
@@ -4347,6 +4352,7 @@ exports.items = {
 	    "type" : "accessory",
 	    "color" : "red",
 	    "chest" : "Devil of Agony’s Treasure Chest",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"str" : 3500,
 	    	"agi" : 3500,
@@ -4359,12 +4365,13 @@ exports.items = {
 	    "label" : "Devil’s Shadow Jewel",
       "k_label": "대악마의 검은보석",
 	    "id" : "I0DR",
-	    "chances" : 9.09
+	    "chances" : 7.69
 	},
 	"devil_soulstone" : {
 	    "type" : "accessory",
 	    "color" : "red",
 	    "chest" : "Devil of Agony’s Treasure Chest",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"int" : 4600,
 	    	"mp" : 50000
@@ -4374,12 +4381,13 @@ exports.items = {
 	    "effects" : ["Recover 50% of maximum MP every 28 seconds"],
 	    "k_effects" : ["28초마다 최대마나 50%회복"],
 	    "id" : "I0DP",
-	    "chances" : 9.09
+	    "chances" : 7.69
 	},
 	"devil_heart" : {
 	    "type" : "accessory",
 	    "color" : "red",
 	    "chest" : "Devil of Agony’s Treasure Chest",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"str" : 4600,
 	    	"hp" : 50000
@@ -4389,12 +4397,13 @@ exports.items = {
 	    "effects" : ["Recover 50% of maximum HP every 28 seconds"],
 	    "k_effects" : ["28초마다 최대체력 50%회복"],
 	    "id" : "I0DO",
-	    "chances" : 9.09
+	    "chances" : 7.69
 	},
 	"archdemon_soul_ring" : {
 	    "type" : "accessory",
 	    "color" : "red",
 	    "chest" : "Devil of Agony’s Treasure Chest",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"str" : 3500,
 	    	"agi" : 3500,
@@ -4406,12 +4415,13 @@ exports.items = {
 	    "effects" : ["On Use: Provides 80% bonus damage for 15 seconds (120s cd)"],
 	    "k_effects" : ["사용시 15초간 추가데미지 80%증가 (쿨타임 120초)"],
 	    "id" : "I0DN",
-	    "chances" : 9.09
+	    "chances" : 7.69
 	},
 	"ferocity_soul_ring" : {
 	    "type" : "accessory",
 	    "color" : "red",
 	    "chest" : "Devil of Agony’s Treasure Chest",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"str" : 3500,
 	    	"agi" : 3500,
@@ -4421,12 +4431,13 @@ exports.items = {
 	    "label" : "Ferocity’s Soul Ring",
       "k_label": "대악마의 일격의 반지",
 	    "id" : "I0DQ",
-	    "chances" : 9.09
+	    "chances" : 7.69
 	},
 	"corrupted_mana_robes" : {
 	    "type" : "armor",
 	    "color" : "red",
 	    "chest" : "Remnants of the Archdemon",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 900,
 	    	"int" : 4600,
@@ -4434,8 +4445,8 @@ exports.items = {
 	    },
 	    "label" : "Corrupted Mana Robes",
       "k_label": "대악마의 검은 마력로브",
-		  "effects" : ["On use: consumes 30% of max mana and creates a shield that blocks max mana x2.4 for 50 seconds (75s cd). Does not stack"],
-		  "k_effects" : ["사용시 최대마나 30%소모 최대마나 x 2.4만큼의 쉴드생성 (50초지속)(쉴드계열은 중첩이 되지않습니다)(쿨타임 75초)"],
+		  "effects" : ["Creates a shield that blocks max mana x0.58 every 10s. Does not stack"],
+		  "k_effects" : ["10초마다 최대마나 x 0.58의 쉴드생성 (아이템끼리는 쉴드가 중첩되지 않습니다)"],
 	    "id" : "I0DM",
 	    "chances" : 8.33
 	},
@@ -4443,6 +4454,7 @@ exports.items = {
 	    "type" : "armor",
 	    "color" : "red",
 	    "chest" : "Remnants of the Archdemon",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 1200,
 	    	"str" : 4600,
@@ -4451,8 +4463,8 @@ exports.items = {
 	    },
 	    "label" : "Malevolent Flame Armor",
       "k_label": "대악마의 검은불꽃 갑옷",
-		  "effects" : ["Deal 20000 + STR x14.5 damage to all enemies around user per second"],
-		  "k_effects" : ["초당생명력 1500감소 초당 주변에 데미지 (20000 + STR x14.5)"],
+		  "effects" : ["Deal 8000 + STR x45 damage to all enemies around user per second"],
+		  "k_effects" : ["초당생명력 1500감소 초당 주변에 데미지 (8000 + STR x45)"],
 	    "id" : "I0DK",
 	    "chances" : 8.33
 	},
@@ -4460,6 +4472,7 @@ exports.items = {
 	    "type" : "armor",
 	    "color" : "red",
 	    "chest" : "Remnants of the Archdemon",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 1000,
 	    	"str" : 3800,
@@ -4477,6 +4490,7 @@ exports.items = {
 	    "type" : "armor",
 	    "color" : "red",
 	    "chest" : "Remnants of the Archdemon",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 1200,
 	    	"str" : 4600,
@@ -4492,6 +4506,7 @@ exports.items = {
 	    "type" : "armor",
 	    "color" : "red",
 	    "chest" : "Remnants of the Archdemon",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 1100,
 	    	"agi" : 4600,
@@ -4507,6 +4522,7 @@ exports.items = {
 	    "type" : "armor",
 	    "color" : "red",
 	    "chest" : "Remnants of the Archdemon",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 900,
 	    	"int" : 4600,
@@ -4523,6 +4539,7 @@ exports.items = {
 	    "color" : "red",
 	    "label" : "Regenerative Malevolent Armor",
 	    "chest" : "Remnants of the Archdemon",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 1000,
 	    	"str" : 3800,
@@ -4539,6 +4556,7 @@ exports.items = {
 	    "type" : "armor",
 	    "color" : "red",
 	    "chest" : "Remnants of the Archdemon",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 900,
 	    	"int" : 4600,
@@ -4554,6 +4572,7 @@ exports.items = {
 	    "type" : "armor",
 	    "color" : "red",
 	    "chest" : "Remnants of the Archdemon",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 1200,
 	    	"str" : 4600,
@@ -4569,6 +4588,7 @@ exports.items = {
 	    "type" : "armor",
 	    "color" : "red",
 	    "chest" : "Remnants of the Archdemon",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 1100,
 	    	"agi" : 4600,
@@ -4584,6 +4604,7 @@ exports.items = {
 	    "type" : "armor",
 	    "color" : "red",
 	    "chest" : "Remnants of the Archdemon",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 1000,
 	    	"int" : 4600,
@@ -4604,7 +4625,7 @@ exports.items = {
 	    	"str" : 1300,
 	    	"agi" : 1300,
 	    	"int" : 1300,
-	    	"damage_taken" : -18
+	    	"damage_taken" : -13
     	},
     	"label" : "Helmet of the Red Magus",
       "k_label": "붉은 마기의 투구",
@@ -4691,6 +4712,7 @@ exports.items = {
       "type" : "helmet",
 	    "color" : "red",
 	    "chest" : "Devil of Agony’s Treasure Chest",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 600,
 	    	"mp" : 20000,
@@ -4701,7 +4723,7 @@ exports.items = {
 	    "effects" : ["Recover 100% of maximum MP on use (120s cd)"],
 	    "k_effects" : ["사용시 MP100% 회복 (쿨타임 120초)"],
 	    "id" : "I038",
-	    "chances" : 9.09
+	    "chances" : 7.69
 	},
 	 "darkfire_greatsword" : {
       "type" : "weapon",
@@ -4713,8 +4735,8 @@ exports.items = {
 	    },
 	    "label" : "Darkfire Greatsword",
       "k_label": "검은 지옥불대검",
-	    "effects" : ["Deal 20000 + STR x13 damage to nearby enemies every second", "On use: consume 2% of Maximum HP and deals 60000 + STR x25 damage to nearby enemies every second for 30 seconds (80s cd)"],
-	    "k_effects" : ["초마다 주변적들에게 데미지를 가합니다 (20000 + STR x13)", "사용시 30초동안 초당 체력을 2%소모하여 주변에 강력한 데미지를 가합니다 (60000 + STR x25)(쿨타임 80초)"],
+	    "effects" : ["Deal 20000 + STR x14 damage to nearby enemies every second", "On use: consume 2% of Maximum HP and deals 60000 + STR x25 damage to nearby enemies every second for 30 seconds (80s cd)"],
+	    "k_effects" : ["초마다 주변적들에게 데미지를 가합니다 (20000 + STR x14)", "사용시 30초동안 초당 체력을 2%소모하여 주변에 강력한 데미지를 가합니다 (60000 + STR x25)(쿨타임 80초)"],
 	    "id" : "I039"
 	},
 	"soul_contract" : {
@@ -4727,8 +4749,8 @@ exports.items = {
 		},
 		"label" : "Soul Contract",
     "k_label": "검은 어둠의 계약",
-		"effects" : ["Each spell consumes 3% of HP and MP adding 85% bonus damage (Only activates when above 10% of these thresholds)", "THIS ITEM CURRENTLY DOES NOT CONSUME HP/MP"],
-		"k_effects" : ["모든 능력사용시 체력과 마나 3% 소모 (10%이상일때 발동) 추가데미지 85% 증가", "현재는 HP / MP를 사용하지 않습니다."],
+		"effects" : ["Each spell consumes 4% of HP and MP adding 60% bonus damage (Only activates when above 10% of these thresholds)"],
+		"k_effects" : ["모든 능력사용시 체력과 마나 4% 소모 (10%이상일때 발동) 추가데미지 60% 증가"],
 		"id" : "I047"
 	},	
 	"malevolent_devil_dagger" : {
@@ -4749,6 +4771,7 @@ exports.items = {
       "type" : "helmet",
 	    "color" : "red",
 	    "chest" : "Devil of Agony’s Treasure Chest",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 800,
 	    	"str" :2000,
@@ -4759,28 +4782,30 @@ exports.items = {
 	    "label" : "Great Devil’s Shadow",
       "k_label": "대악마의 어둠",
 	    "id" : "I04T",
-	    "chances" : 9.09
+	    "chances" : 7.69
 	},
 	"great_devil_skull" : {
       "type" : "helmet",
 	    "color" : "red",
 	    "chest" : "Devil of Agony’s Treasure Chest",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 800,
 	    	"str" :2000,
 	    	"agi" :2000,
 	    	"int" :2000,
-	    	"damage_taken" :-21
+	    	"damage_taken" :-17
 	    },
 	    "label" : "Great Devil’s Skull",
       "k_label": "대악마의 두개골",
 	    "id" : "I04G",
-	    "chances" : 9.09
+	    "chances" : 7.69
 	},
 	"great_devil_helmet" : {
       "type" : "helmet",
 	    "color" : "red",
 	    "chest" : "Devil of Agony’s Treasure Chest",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 800,
 	    	"str" :2000,
@@ -4792,12 +4817,13 @@ exports.items = {
 	    "effects" :["Anti magic shield for 10 seconds(110s cd)"],
 	    "k_effects" :["사용시 10초간 마법면역(쿨타임 110초)"],
 	    "id" : "I0DW",
-	    "chances" : 9.09
+	    "chances" : 7.69
 	},
 	"great_devil_horn" : {
       "type" : "helmet",
 	    "color" : "red",
 	    "chest" : "Devil of Agony’s Treasure Chest",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "stats" : {
 	    	"armor" : 800,
 	    	"str" :2000,
@@ -4809,12 +4835,13 @@ exports.items = {
 	    "label" : "Great Devil’s Horn",
       "k_label": "대악마의 뿔",
 	    "id" : "I0DX",
-	    "chances" : 9.09
+	    "chances" : 7.69
 	},
 	"boundless_twilight" : {
 	    "type" : "material",
 	    "color" : "black",
 	    "chest" : "Black Soul Stone",
+      "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 	    "label" : "Boundless Twilight",
       "k_label": "끝없는 어둠",
 	    "id" : "I0DY",
@@ -4823,7 +4850,7 @@ exports.items = {
 	"chaotic_blight_robes" : {
 	    "type" : "armor",
 	    "color" : "red",
-	    "materials" : ["corrupted_mana_robes","refined_mana_robe","boundless_twilight","chaotic_rune", "archangel_sourcewell", "archangel_sigil"],
+	    "materials" : ['archangel_sigil', 'archangel_sourcewell', 'boundless_twilight', 'chaotic_rune', 'corrupted_mana_robes', 'refined_mana_crystal_robe'],
 	    "stats" : {
 	    	"armor" : 1000,
 	    	"int" : 5500,
@@ -4831,8 +4858,8 @@ exports.items = {
 	    },
 	    "label" : "Chaotic Blight Robes",
       "k_label": "대혼돈의 마력로브",
-		  "effects" : ["On use: consumes 30% of max mana and creates a shield that blocks max mana x2.5 for 50 seconds (75s cd). Does not stack"],
-		  "k_effects" : ["사용시 최대마나 30%소모 최대마나 x 2.5만큼의 쉴드생성(50초지속) (쉴드계열은 중첩이 되지않습니다)(쿨타임 75초)"],
+		  "effects" : ["Creates a shield that blocks max mana x0.68 every 10s. Does not stack"],
+		  "k_effects" : ["10초마다 최대마나 x 0.68의 쉴드생성 (아이템끼리는 쉴드가 중첩되지 않습니다)"],
 	    "id" : "I0DZ"
 	},
 	"chaotic_infernal_armor" : {
@@ -4847,8 +4874,8 @@ exports.items = {
 	    },
 	    "label" : "Chaotic Infernal Armor",
       "k_label": "대혼돈의 불꽃 갑옷",
-		  "effects" : ["Deal damage every second (20000 + STR x17)"],
-		  "k_effects" : ["초당 주변에 데미지 (20000 + STR x17)"],
+		  "effects" : ["Deal damage every second (8000 + STR x55)"],
+		  "k_effects" : ["초당 주변에 데미지 (8000 + STR x55)"],
 	    "id" : "I0E0"
 	},
 	"chaotic_vigor_armor" : {
@@ -5146,7 +5173,7 @@ exports.items = {
       "str" : 1000,
       "agi" : 1000,
       "int" : 1000,
-      "movement_speed" : 75,
+      "movement_speed" : 100,
       "attack_speed" : 80
     },
     "label" : "Chaotic Ascension Rune",
@@ -5170,6 +5197,7 @@ exports.items = {
 	"helm_of_chaos" : {
 	    "type" : "helmet",
 	    "color" : "red",
+      "materials" : ["great_devil_shadow", "surging_flame_helmet","boundless_twilight","chaotic_rune","archangel_sourcewell", "archangel_sigil"], 
 	    "stats" : {
 	    	"armor" : 800,
 	    	"str" :2500,
@@ -5483,30 +5511,12 @@ exports.items = {
     "color": "god",
     "chest": "Sealed God of Destruction",
     "stats": {
-      "atk" : 400000,
-      "str": 7000,
-      "agi": 7000,
-      "int": 7000
+      
     },
     "label": "Sealed God Sword",
     "k_label": "봉인된 신의 무구",
     "id": "I0G2",
     "chances": 1
-  },
-  "sealed_god_judgement": {
-    "type": "weapon",
-    "color": "god",
-    "chest": "Sealed God of Destruction",
-    "stats": {
-      "atk" : 230000,
-      "str": 5000
-    },
-    "label": "Sealed Judgement of God",
-    "k_label": "봉인된 신의 심판",
-    "effects": ["Basic attacks have a chance to activate God's Judgement"],
-    "k_effects": ["기본공격시 확률적으로 신의 심판 발동"],
-    "id": "I0G3",
-    "disabled": true
   },
   "archangel_great_sword": {
     "type": "weapon",
@@ -5521,7 +5531,7 @@ exports.items = {
     "label": "Archangel's Great Sword",
     "k_label": "대천사의 대검",
     "id": "I0G4",
-    "chances": 5.88
+    "chances": 5.55
   },
   "archangel_great_sword_1": {
     "type": "weapon",
@@ -5592,7 +5602,8 @@ exports.items = {
   "devil_king_robe": {
     "type": "armor",
 		"color" : "red",
-	  "chest" : "Remnants of the Archdemon",    
+	  "chest" : "Remnants of the Archdemon",  
+    "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
     "stats": {
       "int": 6900,
       "armor": 1000
@@ -5613,29 +5624,6 @@ exports.items = {
     "label": "Chaotic \"True\"Devil King's Robe",
     "k_label": "대혼돈의 \"진\"패왕 로브",
     "id": "I0GB"
-  },
-  "sealed_double_edge_god_sword": {
-    "type": "weapon",
-    "color": "god",
-    "chest": "Sealed God of Destruction",
-    "stats": {
-      "atk" : 230000,
-      "agi": 5000    
-    },
-    "label": "Sealed Double-Edged God Sword",
-    "k_label": "봉인된 신의 양날의검",
-    "effects": ["Basic attacks have a chance to activate God's Judgement"],
-    "k_effects": ["기본공격시 확률적으로 신의 심판 발동"],
-    "id": "I0GC",
-    "disabled": true
-  },
-  "sealed_god_strike": {
-    "type": "weapon",
-    "color": "red",
-    "label": "Sealed God's Strike",
-    "k_label": "봉인된 신의 일격",
-    "id": "I0GD",
-    "disabled": true
   },
   "chaotic_light_wings" : {
     "type" : "artifact",
@@ -5764,6 +5752,7 @@ exports.items = {
 		"type" : "accessory",
 		"color" : "red",
 	  "chest" : "Devil of Agony’s Treasure Chest",
+    "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
 		"stats" : {
 			"str" : 3500,
 			"agi" : 3500,
@@ -5774,7 +5763,7 @@ exports.items = {
     "effects": ["25% chance for x3.5 damage on basic attacks"],
     "k_effects": ["25%확률 3.5배 크리티컬"],
 		"id" : "I0GQ",
-    "chances": 9.09
+    "chances": 7.69
 	},
 	"great_chaos_gem" : {
 		"type" : "accessory",
@@ -5895,6 +5884,7 @@ exports.items = {
   "sealed_god_speed_dagger": {
     "type": "weapon",
     "color": "god",
+    "materials": ['archangel_dagger_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
     "stats": {
       "atk": 500000,
       "agi": 11000,
@@ -5902,14 +5892,14 @@ exports.items = {
     },
     "label": "Sealed God Speed Dagger",
     "k_label": "신의 단검",
-    "effects": ["Chance to proc damage based on stats"],
-    "k_effects": ["기본공격시 일정확률로 신의 일격을 가함 (능력치 비례)"],
-    "id": "I0HD",
-    disabled: true   
+    "effects": ["Each attack has a 12% chance to deal 300000 + STR x36 bonus damage"],
+    "k_effects": ["기본공격시 일정확률로 신의 일격을 가함 (12% 기회 300000 + STR x36)"],
+    "id": "I0HD"
   },
   "sealed_god_damage_dagger": {
     "type": "weapon",
     "color": "god",
+    "materials": ['archangel_gauntlets_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
     "stats": {
       "atk": 500000,
       "agi": 11000,
@@ -5918,12 +5908,12 @@ exports.items = {
     },
     "label": "Sealed God Damage Dagger",
     "k_label": "신의 건들릿",
-    "id": "I0HE",
-    disabled: true   
+    "id": "I0HE"
   },
   "sealed_god_dagger": {
     "type": "weapon",
     "color": "god",
+    "materials": ['archangel_blade_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
     "stats": {
       "atk": 500000,
       "agi": 11000,
@@ -5933,8 +5923,7 @@ exports.items = {
     "k_label": "신의 도검",
     "effects": ["Deals damage proportional to stats when used (120s cd)"],
     "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(능력치 비례)"],
-    "id": "I0HG",
-    disabled: true   
+    "id": "I0HG"
   },
   "luck_token": {
     "type": "material",
@@ -5944,7 +5933,1038 @@ exports.items = {
     "effects": ["Can be obtained by selling a char item"],
     "k_effects": ["캐릭터 상품을 판매하여 얻을 수 있습니다"],
     "id": "I0GS"
-  }
+  },
+    "sealed_god_longsword": {
+      "type": "weapon",
+      "color": "god",
+      "materials": ['black_god_energy', 'destruction_power', 'excalibur_3', 'sealed_god_treasure'],
+      "stats": {
+        "atk": 500000,
+        "str": 8500,
+        "agi": 8500,
+        "int": 8500
+      },
+      "label": "Sealed God Longsword",
+      "k_label": "신의 장검",
+      "effects": ["Deals damage proportional to stats when used (120s cd)"],
+      "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(능력치 비례)"],
+      "id": "I0HF"
+  },
+    "god_magic_staff": {
+      "type": "weapon",
+      "color": "god",
+      "materials": ['archangel_mana_staff_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
+      "stats": {
+        "atk": 500000,
+        "int": 11000,
+        "mp": 45000
+      },
+      "label": "God's Magic Staff",
+      "k_label": "신의 마력 지팡이",
+      "effects": ["Generates extra damage proportional to mana (4.9% every 10000)", "4% reduction of maximum hp when using skill", "(Works when above 10% max hp)"],
+      "k_effects": ["사용자의 마나의 비례한 추가데미지 생성 (비율 - 1만당 4.9%)", "스킬사용시 최대마력의 4%감소", "(마력이 10%이상 있을때 작동)"],
+      "id": "I0HH"
+  },
+    "destruction_staff": {
+      "type": "weapon",
+      "color": "god",
+      "materials": ['black_god_energy', 'destruction_power', 'sealed_god_treasure'],
+      "stats": {
+        "atk": 500000,
+        "int": 11000
+      },
+      "label": "Staff of Destruction",
+      "k_label": "파멸의 지팡이",
+      "effects": ["45% armor increase to nearby allies"],
+      "k_effects": ["주변아군 추가데미지 45%증가 오라 생성"],
+      "id": "I0HI"
+  },
+    "god_life_sword": {
+      "type": "weapon",
+      "color": "god",
+      "materials": ['angelic_life_sword_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
+      "stats": {
+        "atk": 500000,
+        "str": 11000,
+        "hp": 75000
+      },
+      "label": "God's Sword of Life",
+      "k_label": "신의 생명의검",
+      "effects" : ["Every 10 attacks will recover STR x6.7 HP (9s cd)", "Every 6 spells will recover STR x6.7 HP (10s cd)", "On Use: Restores STR x6.7 HP (120s cd)"],
+      "k_effects" : ["기본공격 10회시 생명력회복 (STR x6.7)(쿨타임 9초)", "스킬사용 6회시 생명력회복 (STR x6.7)(쿨타임 10초)", "사용시  생명력회복 (STR x6.7)(쿨타임 120초)"],
+      "id": "I0HJ"
+  },
+    "god_life_bow": {
+      "type": "weapon",
+      "color": "god",
+      "materials": ['archangel_life_bow_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
+      "stats": {
+        "atk": 500000,
+        "agi": 11000,
+        "hp": 75000
+      },
+      "label": "God's Bow of Life",
+      "k_label": "생명의 신궁",
+      "effects" : ["Every 10 attacks will recover AGI x6.7 HP (9s cd)", "Every 6 spells will recover AGI x6.7 HP (10s cd)", "On Use: Restores AGI x6.7 HP (120s cd)"],
+      "k_effects" : ["기본공격 10회시 생명력회복 (AGI x6.7)(쿨타임 9초)", "스킬사용 6회시 생명력회복 (AGI x6.7)(쿨타임 10초)", "사용시  생명력회복 (AGI x6.7)(쿨타임 120초)"],
+      "id": "I0HK"
+  },
+    "god_life_staff": {
+      "type": "weapon",
+      "color": "god",
+      "materials": ['archangel_life_staff_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
+      "stats": {
+        "atk": 500000,
+        "int": 11000,
+        "hp": 75000
+      },
+      "label": "God's Staff of Life",
+      "k_label": "신의 생명 지팡이",
+      "effects" : ["Every 4 spells will recover INT x7.5 HP (10s cd)", "On Use: Restore INT x10 HP of all allies within range (80s cd)"],
+      "k_effects": ["스킬사용 4회시 생명력 회복 (INT x7.5)(쿨타임 10초)", "사용시 주변 아군을 능력치 비례 만큼의 생명력 회복 (INT x10)(쿨타임 80초)"],
+      "id": "I0G3"
+  },
+    "god_sword": {
+      "type": "weapon",
+      "color": "god",
+      "materials": ['archangel_sword_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
+      "stats": {
+        "atk": 500000,
+        "str": 9500,
+        "agi": 9500
+      },
+      "label": "God's Sword",
+      "k_label": "신의 소검",
+      "effects" : ["Each attack has a 12% chance to deal 300000 + (STR + AGI) x14.4 bonus damage", "On use: 400000 + (STR + AGI) x180 damage"],
+		  "k_effects" : ["기본공격시 일정확률로 대천사의 죽음의심판생성 (12% 기회 300000 + (STR + AGI) x14.4)", "사용시 400000 + (STR + AGI) x180 (쿨타임 80초)"],
+      "id": "I0GC"
+  },
+    "god_judgement": {
+      "type": "weapon",
+      "color": "god",
+      "materials": ['archangel_judgement_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
+      "stats": {
+        "atk": 500000,
+        "str": 11000,
+        "attack_speed": 250
+      },
+      "label": "God's Judgement",
+      "k_label": "신의 심판",
+      "effects" : ["Each attack has a 12% chance to deal 300000 + STR x80 bonus damage"],
+		  "k_effects" : ["기본공격시 일정확률로 대천사의 죽음의심판생성 (12% 기회 300000 + STR x80)"],
+      "id": "I0GD"
+  },
+    "god_staff": {
+      "type": "weapon",
+      "color": "god",
+      "materials": ['archangel_staff_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
+      "stats": {
+        "atk": 500000,
+        "str": 9500,
+        "int": 9500
+      },
+      "label": "God's Staff",
+      "k_label": "신의 일격 지팡이",
+      "effects" : ["Each attack has a 8% chance to deal 30000 + (INT + INT) x36 bonus damage"],
+		  "k_effects" : ["기본공격시 일정확률로 대천사의 죽음의심판생성 (8% 기회 30000 + (INT + INT) x36)"],
+      "id": "I0HL"
+  },
+    "god_amber_staff": {
+      "type": "weapon",
+      "color": "god",
+      "materials": ['archangel_amber_staff_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
+      "stats": {
+        "atk": 500000,
+        "int": 11000,
+        "damage_increase" : 90
+      },
+      "label": "God's Amber Staff",
+      "k_label": "신의 증폭 지팡이",
+      "id": "I0HM"
+  },
+    "god_judgement_staff": {
+      "type": "weapon",
+      "color": "god",
+      "materials": ['archangel_judgement_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
+      "stats": {
+        "atk": 500000,
+        "int": 11000
+      },
+      "label": "God's Judgement Staff",
+      "k_label": "신의 심판 지팡이",
+      "effects" : ["Each attack has a 8% chance to deal 30000 + INT x90 bonus damage"],
+		  "k_effects" : ["기본공격시 일정확률로 대천사의 죽음의심판생성 (8% 기회 30000 + INT x90)"],      
+      "id": "I0HN"
+  },
+    "god_blessed_staff": {
+      "type": "weapon",
+      "color": "god",
+      "materials": ['black_god_energy', 'blessed_staff_3', 'destruction_power', 'sealed_god_treasure'],
+      "stats": {
+        "atk": 500000,
+        "int": 11000
+      },
+      "label": "God's Blessed Staff",
+      "k_label": "신의 권능",
+      "effects" : ["On Use: Summons an apostle"],
+      "k_effects": ["사용시 신궁의 사도 소환"],     
+      "id": "I0HP"
+  },
+  "burning_energy" : {
+		"type" : "stats",
+		"color" : "darkred",
+		"raid" : "Amon of Hellfire",
+		"stats_points" : 14,
+		"label" : "Burning Energy",
+    "k_label": "불타는 에너지",
+		"id" : "I0HQ",
+		"chances" : 15
+	},
+  "suffering_energy" : {
+		"type" : "stats",
+		"color" : "darkred",
+		"raid" : "Belial of Pain",
+		"stats_points" : 14,
+		"label" : "Suffering Energy",
+    "k_label": "고통의 에니저",
+		"id" : "I0HR",
+		"chances" : 15
+	},
+  "sealed_god_treasure": {
+    "type": "material",
+    "color" : "black",    
+    "chest": "Sealed God of Destruction",
+    "label": "Sealed God's Treasure",
+    "k_label": "봉인된 신의 보물",
+    "id": "I0HT",
+    "chances": [1]
+  },
+  "destruction_wings" : {
+		"type" : "artifact",
+		"color" : "god",
+    "materials": ['black_god_energy', 'chaotic_devil_wings', 'destruction_power', 'sealed_god_treasure'],
+		"stats" : {
+			"str" : 5000,
+			"agi" : 5000,
+			"int" : 5000,
+			"damage_increase" : 65
+		},
+		"label" : "Wings of Destruction",
+    "k_label": "파멸의 날개",
+		"id" : "I0HU"
+	},
+  "destruction_light_wings" : {
+    "type" : "artifact",
+    "color" : "god",
+    "materials": ['black_god_energy', 'chaotic_light_wings', 'destruction_power', 'sealed_god_treasure'],
+    "stats" : {
+      "str" : 5000,
+      "agi" : 5000,
+      "int" : 5000,
+      "damage_increase" : 34
+    },
+    "label" : "Light Wings of Destruction",
+    "k_label": "눈부신 신의 날개",
+    "effects" : ["Enemies within range take 34% Additional Damage"],
+    "k_effects": ["범위내 적들 추가데미지 34% 오라"],
+    "id" : "I0HV"
+  },
+	"destruction_life_wings" : {
+		"type" : "artifact",
+		"color" : "god",
+    "materials": ['black_god_energy', 'chaotic_life_wings', 'destruction_power', 'sealed_god_treasure'],
+	  "stats" : {
+			"str" : 5000,
+			"agi" : 5000,
+			"int" : 5000,
+			"hp" : 50000
+		},
+		"label" : "Life Wings of Destruction",
+    "k_label": "신의 생명의 날개",
+		"effects" : ["When HP is below 40%, any damage taken will restore 100% of MAX HP", "On use restore 20% of MAX HP every second for 10 seconds (120s cd)"],
+		"k_effects" : ["생명력이 40%이하일때 즉사가 아닌 공격을받을면", "즉시 생명력 100%를 회복하며 10초간 초당 생명력 20% 회복 (쿨타임 120초)"],
+		"id" : "I0HW"
+	},
+  "destruction_boots" : {
+		"type" : "artifact",
+		"color" : "god",
+    "materials": ['black_god_energy', 'chaotic_boots', 'destruction_power', 'sealed_god_treasure'],
+		"stats" : {
+			"str" : 5000,
+			"agi" : 5000,
+			"int" : 5000,
+			"attack_speed" : 300,
+			"movement_speed" : 200
+		},
+		"label" : "Boots of Destruction",
+    "k_label": "신의 각반",
+		"effects" : ["On Use: Dash forward (2.8s cd)"],
+		"k_effects" : ["사용시 전방으로 대쉬(쿨타임2.8초)"],
+		"id" : "I0HX"
+	},
+  "god_great_sword": {
+    "type": "weapon",
+    "color": "god",
+    "materials": ['archangel_great_sword_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
+    "stats": {
+      "atk" : 500000,
+      "str": 11000,
+      "damage_increase": 90
+    },
+    "label": "God's GreatSword",
+    "k_label": "신의 대검",
+    "id": "I0I2"
+  },
+  "god_mana_rune" : {
+    "type" : "auxiliary",
+    "color" : "god",
+    "materials": ['black_god_energy', 'chaotic_mana_rune', 'destruction_power', 'sealed_god_treasure'],
+    "stats" : {
+      "str" : 1500,
+      "agi" : 1500,
+      "int" : 1500,
+      "mp" : 18000
+    },
+    "label" : "God's Mana Rune",
+    "k_label": "신의 마나룬",
+    "id" : "I0I3"
+  },
+  "god_mana_potion" : {
+    "type" : "auxiliary",
+    "color" : "god",
+    "materials": ['black_god_energy', 'chaotic_mana_potion', 'destruction_power', 'sealed_god_treasure'],
+    "stats" : {
+      "str" : 1500,
+      "agi" : 1500,
+      "int" : 1500
+    },  
+    "label" : "God's Mana Potion",
+    "k_label": "신의 마나포션",
+    "effects" : ["On Use: Restore 40% of maximum mana (25s cd)"],
+    "k_effects" : ["사용시 최대마나 40%회복 (쿨타임 25초)"],
+    "id" : "I0I4"
+  },
+  "god_life_rune" : {
+    "type" : "auxiliary",
+    "color" : "god",
+    "materials": ['black_god_energy', 'chaotic_life_rune', 'destruction_power', 'sealed_god_treasure'],
+    "stats" : {
+      "str" : 1500,
+      "agi" : 1500,
+      "int" : 1500,
+      "hp" : 30000
+    },
+    "label" : "God's Life Rune",
+    "k_label": "대혼돈의 생명룬",
+    "id" : "I0I5"
+  },
+  "god_magic_rune" : {
+    "type" : "auxiliary",
+    "color" : "god",
+    "materials": ['black_god_energy', 'chaotic_magic_rune', 'destruction_power', 'sealed_god_treasure'],
+    "stats" : {
+      "str" : 1500,
+      "agi" : 1500,
+      "int" : 1500,
+      "damage_increase" : 25
+    },
+    "label" : "God's Magic Rune",
+    "k_label": "신의 일격룬",
+    "id" : "I0I6"
+	},
+  "god_ascension_rune" : {
+    "type" : "auxiliary",
+    "color" : "god",
+    "materials": ['black_god_energy', 'chaotic_ascension_rune', 'destruction_power', 'sealed_god_treasure'],
+    "stats" : {
+      "str" : 1500,
+      "agi" : 1500,
+      "int" : 1500,
+      "movement_speed" : 120,
+      "attack_speed" : 100
+    },
+    "label" : "God's Ascension Rune",
+    "k_label": "신의 순풍룬",
+    "id" : "I0I7"
+  },
+  "god_potion" : {
+    "type" : "auxiliary",
+    "color" : "god",
+    "materials": ['black_god_energy', 'chaotic_potion', 'destruction_power', 'sealed_god_treasure'],
+    "stats" : {
+      "str" : 1500,
+      "agi" : 1500,
+      "int" : 1500
+    },  
+    "label" : "God's Potion",
+    "k_label": "신의 포션",
+    "effects" : ["On Use: Restore 45% of health (25s cd)"],
+    "k_effects" : ["사용시 최대생명력 45%회복 (쿨타임 25초)"],
+    "id" : "I0I8"
+  },
+  "gaia_essence" : {
+		"type" : "accessory",
+		"color" : "blue",
+    "materials": ['black_clay_powder', 'dragon_slayer_mark', 'life_essence', 'mother_tree_bark'],
+		"stats" : {
+			"str" : 2500,
+			"agi" : 2500,
+			"int" : 2500,
+			"hp_regen" : 1000
+		},
+		"label" : "Gaia's Essence",
+    "k_label": "대지의 가호",
+		"effects" : ["Allies within range gain HP recovery per second +1000", "On Use: Recovers (STR + AGI + INT) x2.5 HP every second for 4 seconds (120s cd)"],
+    "k_effects": ["범위내 아군 초당 생명력 회복 1000", "사용시 4초간 사용지점에 매초마다 마더트리의 가호 발동 (STR + AGI + INT) x2.5)(쿨타임 120초)"],
+		"id" : "I0I9"
+	},
+  "chaotic_barrier" : {
+		"type" : "artifact",
+		"color" : "red",
+    "materials": ['archangel_barrier', 'archangel_sigil', 'archangel_sourcewell', 'boundless_twilight', 'chaotic_rune', 'rho_aias'],
+		"stats" : {
+			"str" : 3500,
+			"agi" : 3500,
+			"int" : 3500,
+      "armor": 800,
+			"hp" : 25000
+		},
+		"label" : "Chaotic Barrier",
+    "k_label": "대혼돈의 방벽",
+		"effects" : ["Generate a shield that can block up to 38000 damage every 10 seconds"],
+		"k_effects" : ["10초마다 38000의 쉴드 생성"],
+		"id" : "I0IA"
+	},
+  "god_barrier" : {
+		"type" : "artifact",
+		"color" : "god",
+    "materials": ['black_god_energy', 'chaotic_barrier', 'destruction_power', 'sealed_god_treasure'],
+		"stats" : {
+			"str" : 5000,
+			"agi" : 5000,
+			"int" : 5000,
+      "armor": 1000,
+			"hp" : 40000
+		},
+		"label" : "God's Barrier",
+    "k_label": "신의 방벽",
+		"effects" : ["Generate a shield that can block up to 50000 damage every 10 seconds"],
+		"k_effects" : ["10초마다 50000의 쉴드 생성"],
+		"id" : "I0IB"
+	},
+  "archangel_blue_wings" : {
+		"type" : "artifact",
+		"color" : "red",
+   	"chest" : "Archangel’s Trinket",
+    "materials": ['archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece'],
+		"stats" : {
+			"str" : 2800,
+			"agi" : 2800,
+			"int" : 2800,
+			"attack_speed" : 90,
+			"movement_speed" : 30 
+		},		
+		"label" : "Archangel Blue Wings",
+    "k_label": "대천사의 푸른날개",
+		"effects" : ["Allies have 30% movement speed and 90% attack speed increased", "Enemies have 20% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x95 (180s cd)"],
+		"k_effects" : ["주변 적군 공이속 20%감소", "주변 아군 공속 90% 이속 30%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x95)(쿨타임 180초)"],
+		"id" : "I0IC",
+    "chances": 8.33
+	},
+  "chaotic_blue_wings" : {
+		"type" : "artifact",
+		"color" : "red",
+    "materials": ['archangel_blue_wings', 'archangel_sigil', 'archangel_sourcewell', 'boundless_twilight', 'chaotic_rune', 'dragon_wings'],
+		"stats" : {
+			"str" : 3500,
+			"agi" : 3500,
+			"int" : 3500,
+			"attack_speed" : 120,
+			"movement_speed" : 35 
+		},		
+		"label" : "Chaotic Blue Wings",
+    "k_label": "대혼돈의 푸른날개",
+		"effects" : ["Allies have 35% movement speed and 120% attack speed increased", "Enemies have 25% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x110 (180s cd)"],
+		"k_effects" : ["주변 적군 공이속 25%감소", "주변 아군 공속 120% 이속 35%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x110)(쿨타임 180초)"],
+		"id" : "I0ID"
+	},
+  "god_blue_wings" : {
+		"type" : "artifact",
+		"color" : "god",
+    "materials": ['black_god_energy', 'chaotic_blue_wings', 'destruction_power', 'sealed_god_treasure'],
+		"stats" : {
+			"str" : 5000,
+			"agi" : 5000,
+			"int" : 5000,
+			"attack_speed" : 150,
+			"movement_speed" : 40 
+		},		
+		"label" : "God's Blue Wings",
+    "k_label": "신의 푸른 날개",
+		"effects" : ["Allies have 40% movement speed and 150% attack speed increased", "Enemies have 25% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x130 (180s cd)"],
+		"k_effects" : ["주변 적군 공이속 25%감소", "주변 아군 공속 150% 이속 40%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x130)(쿨타임 180초)"],
+		"id" : "I0IE"
+	},
+  "mother_tree_trunk" : {
+		"type" : "accessory",
+		"color" : "orange",
+    "materials": ['mother_tree_bark', 'mother_tree_branches', 'waterstone_fragment'],
+		"stats" : {
+			"int" : 1700,
+			"str" : 1700,
+			"agi" : 1700,
+      "armor": 400,
+			"movement_speed" : 150,
+			"magic_resistance" : 16
+		},
+		"label" : "Mother Tree Trunk",
+    "k_label": "마더트리 기둥",
+		"id" : "I0IF"
+	},
+  "mother_tree_roots" : {
+		"type" : "accessory",
+		"color" : "blue",
+    "materials": ['black_clay_powder', 'dragon_slayer_mark', 'mother_tree_bark', 'mother_tree_trunk'],
+		"stats" : {
+			"int" : 2500,
+			"str" : 2500,
+			"agi" : 2500,
+      "armor": 500,
+			"movement_speed" : 150,
+			"magic_resistance" : 20
+		},
+		"label" : "Mother Tree Roots",
+    "k_label": "세계수의 뿌리",
+		"id" : "I0IG"
+	},
+  "demonic_tree_roots" : {
+		"type" : "accessory",
+		"color" : "red",
+    "chest" : "Devil of Agony’s Treasure Chest",
+    "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
+    "stats" : {
+			"int" : 3500,
+			"str" : 3500,
+			"agi" : 3500,
+      "armor": 700,
+			"movement_speed" : 200,
+			"magic_resistance" : 25
+		},
+		"label" : "Demonic Tree Roots",
+    "k_label": "대악마의 수호",
+		"id" : "I0IH",
+    "chances": 7.69
+	},
+  "chaotic_tree_roots" : {
+		"type" : "accessory",
+		"color" : "red",
+    "materials": ['archangel_sigil', 'archangel_sourcewell', 'boundless_twilight', 'chaotic_rune', 'demonic_tree_roots', 'mother_tree_roots'],
+		"stats" : {
+			"int" : 4300,
+			"str" : 4300,
+			"agi" : 4300,
+      "armor": 800,
+			"movement_speed" : 200,
+			"magic_resistance" : 28
+		},
+		"label" : "Chaotic Tree Roots",
+    "k_label": "대혼돈의 수호",
+		"id" : "I0II"
+	},
+  "demonic_essence" : {
+		"type" : "accessory",
+		"color" : "red",
+    "chest" : "Devil of Agony’s Treasure Chest",
+    "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
+    "stats" : {
+			"str" : 3500,
+			"agi" : 3500,
+			"int" : 3500,
+			"hp_regen" : 1500
+		},
+		"label" : "Demonic Essence",
+    "k_label": "대악마의 가호",
+		"effects" : ["Allies within range gain HP recovery per second +1500", "On Use: Recovers (STR + AGI + INT) x3.5 HP every second for 4 seconds (120s cd)"],
+    "k_effects": ["범위내 아군 초당 생명력 회복 1500", "사용시 4초간 사용지점에 매초마다 마더트리의 가호 발동 (STR + AGI + INT) x3.5)(쿨타임 120초)"],
+		"id" : "I0IJ",
+    "chances": 7.69
+	},
+  "chaotic_essence" : {
+		"type" : "accessory",
+		"color" : "red",
+    "materials": ['archangel_sigil', 'archangel_sourcewell', 'boundless_twilight', 'chaotic_rune', 'demonic_essence', 'gaia_essence'],
+		"stats" : {
+			"str" : 4300,
+			"agi" : 4300,
+			"int" : 4300,
+			"hp_regen" : 1800
+		},
+		"label" : "Chaotic Essence",
+    "k_label": "대혼돈의 가호",
+		"effects" : ["Allies within range gain HP recovery per second +1800", "On Use: Recovers (STR + AGI + INT) x4 HP every second for 4 seconds (120s cd)"],
+    "k_effects": ["범위내 아군 초당 생명력 회복 1500", "사용시 4초간 사용지점에 매초마다 마더트리의 가호 발동 (STR + AGI + INT) x4)(쿨타임 120초)"],
+		"id" : "I0IK"
+	},
+  "hitchhiker_helmet" : {
+		"type" : "helmet",
+		"color" : "orange",
+		"raid" : "Celestial Waterstone",    
+		"stats" : {
+			"int" : 900,
+			"str" : 900,
+			"agi" : 900,
+			"armor" : 700,
+			"magic_resistance" : 10
+		},
+		"label" : "Hitchhiker's Helmet",
+    "k_label": "수호석 투구",
+		"id" : "I0IL",
+    "chances": 1.5
+	},
+  "resistance_helmet" : {
+		"type" : "helmet",
+		"color" : "blue",
+    "materials": ['dragon_slayer_mark', 'hitchhiker_helmet', 'waterstone_fragment'],
+		"stats" : {
+			"int" : 1300,
+			"str" : 1300,
+			"agi" : 1300,
+			"armor" : 900,
+			"magic_resistance" : 14
+		},
+		"label" : "Resistance Helmet",
+    "k_label": "힐데그림",
+		"id" : "I0IM"
+	},
+  "demonic_resistance_helmet" : {
+		"type" : "helmet",
+		"color" : "red",
+    "materials": ['devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture', 'devil_soul_scripture'],
+		"stats" : {
+			"int" : 2000,
+			"str" : 2000,
+			"agi" : 2000,
+			"armor" : 1200,
+			"magic_resistance" : 20
+		},
+		"label" : "Demonic Resistance Helmet",
+    "k_label": "대악마의 저항투구",
+		"id" : "I0IN"
+	},
+  "chaotic_resistance_helmet" : {
+		"type" : "helmet",
+		"color" : "red",
+    "materials": ['archangel_sigil', 'archangel_sourcewell', 'boundless_twilight', 'chaotic_rune', 'demonic_resistance_helmet', 'resistance_helmet'],
+		"stats" : {
+			"int" : 2500,
+			"str" : 2500,
+			"agi" : 2500,
+			"armor" : 1400,
+			"magic_resistance" : 23
+		},
+		"label" : "Chaotic Resistance Helmet",
+    "k_label": "대혼돈의 저항투구",
+		"id" : "I0IO"
+	},
+  "archangel_contract" : {
+		"type" : "weapon",
+		"color" : "red",
+    "chest": "Archangel’s Assistance",
+    "materials": ['archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece', 'archangel_treasure_piece'],
+		"stats" : {
+			"atk" : 230000,
+			"int" : 6500
+		},
+		"label" : "Archangel Contract",
+    "k_label": "대천의 계약",
+		"effects" : ["Each spell consumes 4% of HP and MP adding 80% bonus damage (Only activates when above 10% of these thresholds)"],
+		"k_effects" : ["모든 능력사용시 체력과 마나 4% 소모 (10%이상일때 발동) 추가데미지 80% 증가"],
+		"id" : "I0IP",
+    "chances": 5.55
+	},
+  "archangel_contract_1" : {
+		"type" : "weapon",
+		"color" : "red",
+    "materials": ['archangel_contract', 'archangel_sigil', 'archangel_sourcewell', 'god_essence', 'soul_contract'],
+		"stats" : {
+			"atk" : 260000,
+			"int" : 7000
+		},
+		"label" : "Archangel Contract +1",
+    "k_label": "대천의 계약 +1",
+		"effects" : ["Each spell consumes 4% of HP and MP adding 95% bonus damage (Only activates when above 10% of these thresholds)"],
+		"k_effects" : ["모든 능력사용시 체력과 마나 4% 소모 (10%이상일때 발동) 추가데미지 95% 증가"],
+		"id" : "I0IQ"
+	},
+  "archangel_contract_2" : {
+		"type" : "weapon",
+		"color" : "red",
+    "materials": ['archangel_contract', 'archangel_contract_1', 'archangel_sigil', 'archangel_sigil', 'archangel_sourcewell', 'archangel_sourcewell', 'god_essence'],
+		"stats" : {
+			"atk" : 300000,
+			"int" : 7500
+		},
+		"label" : "Archangel Contract +2",
+    "k_label": "대천의 계약 +2",
+		"effects" : ["Each spell consumes 4% of HP and MP adding 110% bonus damage (Only activates when above 10% of these thresholds)"],
+		"k_effects" : ["모든 능력사용시 체력과 마나 4% 소모 (10%이상일때 발동) 추가데미지 110% 증가"],
+		"id" : "I0IR"
+	},
+  "archangel_contract_3" : {
+		"type" : "weapon",
+		"color" : "red",
+    "materials": ['archangel_contract', 'archangel_contract_2', 'archangel_sigil', 'archangel_sigil', 'archangel_sourcewell', 'archangel_sourcewell', 'archangel_sourcewell', 'god_essence'],
+		"stats" : {
+			"atk" : 350000,
+			"int" : 8000
+		},
+		"label" : "Archangel Contract +3",
+    "k_label": "대천의 계약 +3",
+		"effects" : ["Each spell consumes 4% of HP and MP adding 135% bonus damage (Only activates when above 10% of these thresholds)"],
+		"k_effects" : ["모든 능력사용시 체력과 마나 4% 소모 (10%이상일때 발동) 추가데미지 135% 증가"],
+		"id" : "I0IS"
+	},
+  "god_treasure_chest" : {
+    "type" : "chest",
+    "color" : "god",
+    "chest": "Sealed God of Destruction",    
+    "label" : "God's Treasure Chest",
+    "k_label": "신의 보물함",
+    "id" : "I0IX",
+    "chances": 5
+  },
+  "unleash_arrow_revolver": {
+    "type": "unleash",
+    "color": "god",
+    "label": "Unleash Power [Range Master]", 
+    "k_label": "해방된 힘 [레인지 마스터]",
+    "effects": ["Enchances Arrow Revolver"],
+    "k_effects": ["에로우 리볼버를 강화합니다"],
+    "id": "I0J0",
+    "disabled": true
+  },
+  "unleash_combat_mastery": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power of God", 
+    "k_label": "신의 힘으로 능력이 해방됩니다",
+    "effects": ["Enchances Combat Mastery", "Not working"],
+    "k_effects": ["레인지 컴뱃 마스터리를 강화합니다", "작동 안함"],
+    "id": "I0J1",
+    "chances": 3.57
+  },
+  "unleash_tatsumaki": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Psychic]", 
+    "k_label": "해방된 힘 [염동술사]",
+    "effects": ["Enchances Shockwave"],
+    "k_effects": ["충격파를 강화합니다"],
+    "id": "I0J2",
+    "chances": 3.57
+  },
+  "unleash_sinon": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Sniper]", 
+    "k_label": "해방된 힘 [스나이퍼]",
+    "effects": ["Enchances Explosive Magazines"],
+    "k_effects": ["폭발성 탄창을 강화합니다"],
+    "id": "I0J3",
+    "chances": 3.57
+  },
+  "unleash_enju": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Fighter]", 
+    "k_label": "해방된 힘 [격투가]",
+    "effects": ["Increases max skill link to 65"],
+    "k_effects": ["스킬연계의 최대치가 65로 증가합니다"],
+    "id": "I0J4",
+    "chances": 3.57
+  },
+  "unleash_shinoa": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Death Scythe]", 
+    "k_label": "해방된 힘 [데스사이즈]",
+    "effects": ["Enchances Cursed Possession"],
+    "k_effects": ["오니화를 강화합니다"],
+    "id": "I0J5",
+    "chances": 3.57
+  },
+  "unleash_nanaya": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Assassin]", 
+    "k_label": "해방된 힘 [암살자]",
+    "effects": ["Enchances Hot Blooded"],
+    "k_effects": ["블러드 히트의 쿨타임 15초 감소 합니다"],
+    "id": "I0J6",
+    "chances": 3.57
+  },
+  "unleash_shuvi": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Shooter]", 
+    "k_label": "해방된 힘 [슈터]",
+    "effects": ["Reduces missiles cd by 3s"],
+    "k_effects": ["폭격의 쿨타임이 3초감소합니다"],
+    "id": "I0J7",
+    "chances": 3.57
+  },
+  "unleash_lancer": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Lancer]", 
+    "k_label": "해방된 힘 [랜서]",
+    "effects": ["Reduces Javelin cd by 1s"],
+    "k_effects": ["투창의 쿨타임이 1초 감소합니다"],
+    "id": "I0J8",
+    "chances": 3.57
+  },
+  "unleash_ayase": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Martial Artist]", 
+    "k_label": "해방된 힘 [무도가]",
+    "effects": ["Increases Hectopascal Kick proc chance by 6%"],
+    "k_effects": ["헥토파스칼 킥의 확률증가가 6% 추가로 증가합니다"],
+    "id": "I0J9",
+    "chances": 3.57
+  },
+  "unleash_kanna": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Electromaster]", 
+    "k_label": "해방된 힘 [일렉트로 마스터]",
+    "effects": ["Reduces Eye of the Storm cd by 15s"],
+    "k_effects": ["뇌단의 쿨타임 15초가 감소합니다"],
+    "id": "I0JA",
+    "chances": 3.57
+  },
+  "unleash_megumin": {
+    "type": "unleash",
+    "color": "god",
+    "label": "Unleash Power [Explosion Wizard]", 
+    "chest": "God's Treasure Chest",
+    "k_label": "해방된 힘 [폭렬마법사]",
+    "effects": ["Increases Ignite ticks by 6"],
+    "k_effects": ["발화의 공격횟수가 6회 증가합니다"],
+    "id": "I0JB",
+    "chances": 3.57
+  },
+  "unleash_overmind": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Overmind]", 
+    "k_label": "해방된 힘 [오버마인드]",
+    "effects": ["Increases Thunder Calling int multiplier by 1%"],
+    "k_effects": ["초월의 룬의 지능증가폭이 1% 증가합니다"],
+    "id": "I0JC",
+    "chances": 3.57
+  },
+  "unleash_kaede": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Bard]", 
+    "k_label": "해방된 힘 [바드]",
+    "effects": ["Strengthens Stage", "Not Working (bugged)"],
+    "k_effects": ["달아오르는 무대를 강화합니다", "작동 안함"],
+    "id": "I0JD",
+    "chances": 3.57
+  },
+  "unleash_hayate": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Enchanter]", 
+    "k_label": "해방된 힘 [야천의 마도사]",
+    "effects": ["Reduces Unison cd by 15s"],
+    "k_effects": ["유니즌 인의 쿨타임이 15초 감소합니다"],
+    "id": "I0JE",
+    "chances": 3.57
+  },
+  "unleash_pio": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Potion Maker]", 
+    "k_label": "해방된 힘 [포션메이커]",
+    "effects": ["Improved Gather Materials"],
+    "k_effects": ["재료넣기를 강화합니다"],
+    "id": "I0JF",
+    "chances": 3.57
+  },
+  "unleash_mashiro": {
+    "type": "unleash",
+    "color": "god",
+    "label": "Unleash Power [Priest]", 
+    "chest": "God's Treasure Chest",
+    "k_label": "해방된 힘 [프리스트]",
+    "effects": ["Increases Baumkuchen Feeding int multiplier by 1.2%"],
+    "k_effects": ["바움쿠헨 먹이기 회복지능 계수가 1.2 증가합니다"],
+    "id": "I0JG",
+    "chances": 3.57
+  },
+  "unleash_acerola": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Blood Lord]", 
+    "k_label": "해방된 힘 [블러드로드]",
+    "effects": ["Strengthens Heartspan"],
+    "k_effects": ["코코로와타리를 강화합니다"],
+    "id": "I0JH",
+    "chances": 3.57
+  },
+  "unleash_krul": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Berserker]", 
+    "k_label": "해방된 힘 [버서커]",
+    "effects": ["Increases Frenzy str multiplier by 1.5%"],
+    "k_effects": ["폭주의 공격시 스텟비례 데미지가 1.5 증가합니다"],
+    "id": "I0JI",
+    "chances": 3.57
+  },
+  "unleash_satsuki": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Kamui]", 
+    "k_label": "해방된 힘 [카무이]",
+    "effects": ["Reduces basic atacks needed to activate Empower by 2"],
+    "k_effects": ["참격의 패시브공격회수가 2감소합니다"],
+    "id": "I0JJ",
+    "chances": 3.57
+  },
+  "unleash_zero": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Regular Hunter]", 
+    "k_label": "해방된 힘 [이레귤러 헌터]",
+    "effects": ["Reduces energy required by Dash by 1"],
+    "k_effects": ["대쉬의 에너지 사용이 1줄어듭니다. 강화합니다"],
+    "id": "I0JK",
+    "chances": 3.57
+  },
+  "unleash_hurk": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Great Sword]", 
+    "k_label": "해방된 힘 [그레이트 소드]",
+    "effects": ["Increases Blockade duration by 0.15s"],
+    "k_effects": ["봉쇄의 지속시간이 0.15초 증가합니다"],
+    "id": "I0JL",
+    "chances": 3.57
+  },
+  "unleash_darkness": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Crusader]", 
+    "k_label": "해방된 힘 [크루세이더]",
+    "effects": ["Reduces the cooldown of Light Casts by 20s", "Not working"],
+    "k_effects": ["빛의 집속의 쿨타임이 20초 감소합니다", "작동 안함"],
+    "id": "I0JM",
+    "chances": 3.57
+  },
+  "slot_1": {
+    "type": "skill",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Platelet skill slot 1 swap",
+    "k_label": "혈소판 가방 1번 슬롯교체",
+    "effects": ["Slot replacement skill is added"],
+    "k_effects": ["1번슬롯 교체스킬이 추가됩니다"],
+    "id": "I0IT",
+    "chances": 3.57
+  },
+  "slot_2": {
+    "type": "skill",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Platelet skill slot 2 swap",
+    "k_label": "혈소판 가방 2번 슬롯교체",
+    "effects": ["Slot replacement skill is added"],
+    "k_effects": ["2번슬롯 교체스킬이 추가됩니다"],
+    "id": "I0IU",
+    "chances": 3.57
+  },
+  "slot_3": {
+    "type": "skill",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Platelet skill slot 3 swap",
+    "k_label": "혈소판 가방 3번 슬롯교체",
+    "effects": ["Slot replacement skill is added"],
+    "k_effects": ["3번슬롯 교체스킬이 추가됩니다"],
+    "id": "I0IV",
+    "chances": 3.57
+  },
+  "slot_4": {
+    "type": "skill",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Platelet skill slot 4 swap",
+    "k_label": "혈소판 가방 4번 슬롯교체",
+    "effects": ["Slot replacement skill is added"],
+    "k_effects": ["4번슬롯 교체스킬이 추가됩니다"],
+    "id": "I0IW",
+    "chances": 3.57
+  },  
+  "god_awekening": {
+    "type": "skill",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "God's Awakening",
+    "k_label": "신의 각성",
+    "effects": ["Creates a extra slot where additional equipment powers can be used"],
+    "k_effects": ["신의 힘으로 추가 장비를 장착할수있는 슬롯생성"],
+    "id": "I0IZ",
+    "chances": 3.57  
+  },
+  "unleash_shinobu": {
+    "type": "unleash",
+    "color": "god",
+    "chest": "God's Treasure Chest",
+    "label": "Unleash Power [Blood Test]", 
+    "k_label": "해방된 힘 [혈검사]",
+    "effects": ["Increases Shadowmeld duration by 3s"],
+    "k_effects": ["그림자 숨기의 지속시간이 3초 증가합니다"],
+    "id": "I0JN",
+    "chances": 3.57
+  },
+  "god_glaive" : {
+		"type" : "weapon",
+    "materials": ['archangel_glaive_3', 'black_god_energy', 'destruction_power', 'sealed_god_treasure'],
+		"color" : "god",
+    	"stats" : {
+			"atk" : 500000,
+			"str" : 11000
+		},
+		"label" : "God's Glaive",
+    "k_label": "신의 창",
+		"effects" : ["On Use: Causes an explosion, dealing 700000 + STR x450 damage (45s cd)"],
+    "k_effects": ["사용시 용기의 폭발 시전 (700000 + STR x450)(쿨타임 45초)"],
+		"id" : "I0HO"
+	}
 }
 
   

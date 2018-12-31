@@ -75,6 +75,9 @@
         <a class = "btn btn-success text-capitalize" href = "./{{data._id}}/approve">{{text 'approve' lang}}</a>     
         <a class = "btn btn-danger text-capitalize" href = "./{{data._id}}/reject">{{text 'reject' lang}}</a>     
       {{/if}}
+      {{#if (and (eq build.status 'public') isMod)}}
+        <a class = "btn btn-danger text-capitalize" href = "./{{data._id}}/reject">{{text 'revoke' lang}}</a>     
+      {{/if}}
       <a class = "btn btn-primary try-build" href="#" data-toggle="modal" data-target="#try-build">{{text 'try-build' lang}}</a>
   </div>
 </div>
