@@ -122,7 +122,7 @@ module.exports = function (app) {
   
   
   app.get("/custom-build/:id/public", middlewares.authenticate, middlewares.validBuild, function (req, res, next) {
-    if (res.locals.build.status != 'private') next(new Error(translation.translate("invalid-action", req.session.lang)));
+    if (res.locals.build.status != 'private') return next(new Error(translation.translate("invalid-action", req.session.lang)));
     middlewares.changeStatus(req, res, next, "pending")
   });
 

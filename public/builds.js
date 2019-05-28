@@ -3,7 +3,6 @@ module.exports.builds = {
         "images": [
             "https://static.zerochan.net/Kiss-shot.Acerola-orion.Heart-under-blade.full.1176040.jpg",
             "http://wallup.net/wp-content/uploads/2016/03/12/284442-anime-anime_girls-Oshino_Shinobu-long_hair-blonde-Monogatari_Series.jpg",
-            "http://fdzeta.com/data/MetaMirrorCache/_taringa_2_7_0_8_5_9_61_dani2015az_B15.jpg",
             "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-582572.png"
         ],
         "type": "str",
@@ -29,7 +28,6 @@ module.exports.builds = {
             "https://static.zerochan.net/Oshino.Shinobu.full.1006944.jpg",
             "http://i.imgur.com/xoSE3I3.jpg",
             "http://wallup.net/wp-content/uploads/2016/03/12/284442-anime-anime_girls-Oshino_Shinobu-long_hair-blonde-Monogatari_Series.jpg",
-            "http://s3.amazonaws.com/tmatest/wp-content/uploads/2016/03/24140753/8rqzywc.png",
             "http://www.tokkoro.com/picsup/1143670-monogatari-series.jpg",
             "https://i.pinimg.com/736x/a8/b7/3f/a8b73f1b444ca392fb8f414261e2ccc6---anime-anime-sexy.jpg",
             "http://att.bbs.duowan.com/forum/201606/27/102624ssvxyikixuv3yvxg.jpg"
@@ -79,7 +77,6 @@ module.exports.builds = {
     "sinon": {
         "images": [
             "https://images7.alphacoders.com/338/thumb-1920-338835.jpg",
-            "http://stuffpoint.com/anime-and-manga/image/135366-anime-and-manga-sinon-sao.jpg"
         ],
         "type": "agi",
         "id": "H002"
@@ -129,7 +126,7 @@ module.exports.builds = {
         "https://images2.alphacoders.com/863/thumb-1920-863181.png",
         "https://picstatio.com/download/1024x768/d8da8b/Shuvi-Dola-cute-long-hair-anime-girl.jpg",
         "https://images3.alphacoders.com/856/856841.png",
-        "https://konachan.com/jpeg/72fa6587eb2ab5edc2b7c5bf3d648746/Konachan.com%20-%20254443%20chiyonekoko%20loli%20long_hair%20no_game_no_life%20red_hair%20robot%20shuvi_dola%20techgirl%20yellow_eyes.jpg"
+        "https://konachan.com/sample/c0fde6999356ae06d7567a78b77f1966/Konachan.com%20-%20248045%20sample.jpg"
       ],
       "type": "agi",
       "id": "H05Q"
@@ -165,8 +162,8 @@ module.exports.builds = {
     "tatsumaki": {
         "images": [
             "http://wallpapersqq.net/wp-content/uploads/2015/12/Tatsumaki-8.jpg",
-            "https://konachan.com/sample/8d50b1613f4408bee51d13779b19d58e/Konachan.com%20-%20212275%20sample.jpg",
-            "https://konachan.com/jpeg/9760487efbbc090d74235c894551a063/Konachan.com%20-%20211565%20green_eyes%20green_hair%20nishizawa%20nopan%20onepunch_man%20short_hair%20tatsumaki_%28onepunch_man%29.jpg"
+            "https://konachan.com/jpeg/8d50b1613f4408bee51d13779b19d58e/Konachan.com%20-%20212275%20onepunch_man%20photoshop%20tatsumaki_%28onepunch_man%29.jpg",
+            "https://konachan.com/sample/f29bc584c3b707f25a0ea3bd3b9256e8/Konachan.com%20-%20216864%20sample.jpg"
         ],
         "type": "int",
         "id": "H020"

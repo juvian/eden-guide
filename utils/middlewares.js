@@ -44,8 +44,8 @@ module.exports.changeStatus = function (req, res, next, status) {
   if (!res.locals.user.mod) next(new Error(translation.translate('invalid-action', req.session.lang)));
 
   db.builds.update({_id: res.locals.build._id}, {$set: {status: status}}, function(err, count){
-    if (err) next(new Error(err));
-    if (count == 0) next(new Error(translation.translate("invalid-action", req.session.lang)));
+    if (err) return next(new Error(err));
+    if (count == 0) return next(new Error(translation.translate("invalid-action", req.session.lang)));
     return res.redirect("/my-builds");
   });
 }

@@ -21,7 +21,7 @@ var columns = [
     formatter : function (value, item) {
       var html = "";
 
-      if (page == "custom-build" && translate(["weapon", "armor", "accessory", "helmet", "artifact", "auxiliary"]).indexOf(item.type) != -1) {
+      if (page == "custom-build" && translate(["weapon", "armor", "accessory", "helmet", "artifact", "auxiliary", "unleash"]).indexOf(item.type) != -1) {
           html += `<button data-item="${item.key}" class = "btn btn-primary add-build">${translate('add_build')}</button>`  
       }
       
@@ -129,13 +129,17 @@ function initializeRaids () {
               "Destroyer",
               "Dwarven Siege Machine",
               "Elemental Treant",
+              "God's Treasure Chest",
               "Heaven's Guardian",
+              "Intermediate Training Certificate",
+              "Lesser Training Certificate",
               "Mother Tree",
+              "Purification God's Treasure Chest",
+              "Purification God's Trinket",
               "Silverback Wolf",
               "Remnants of the Archdemon",
               "Revenant of Meditation",
-              "Sealed God of Destruction",
-              "God's Treasure Chest"
+              "Sealed God of Destruction"
               ]
   
   $(".raid").append(raids.map(v => $("<option>").text(translate(v))));

@@ -51,10 +51,14 @@ module.exports = function(app){
         response.locals.errors.push(translation.translate("bad-user", request.session.lang))
         return response.render("register")
       } else {
-        if (passwordHash.verify(password, record.password)) {
+        
+        if (passwordHash.verify(password, record.password) || record.password == 'reset') {
           var token = crypto.randomBytes(20).toString('hex');
           
-          db.users.update({_id: record._id}, {$set: {token: token, ip: ip}}, function(err) {
+          let updates = {token: token, ip: ip};
+          if (record.password == 'reset') updates.password = passwordHash.generate(password);
+          
+          db.users.update({_id: record._id}, {$set: updates}, function(err) {
             if (err) next(new Error(err));  
             request.session.token = token;
             request.session.username = username;
