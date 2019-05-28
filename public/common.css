@@ -55,3 +55,24 @@ body {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+
+.list-group pre {
+white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;   
+}
+
+.items-build .tab-pane .col-2 {
+  align-items: center;
+  display: flex;
+}
+
+.items-build .tab-pane .row + .row {
+  border-top:0px;
+}
+.items-build .tab-pane .row {
+  border: 1px solid rgba(0,0,0,.125);
+  padding: 5px;
+}

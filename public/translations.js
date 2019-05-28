@@ -70,7 +70,7 @@
   },
   "register": {
     "eng": "Register",
-    "kor": "레지스터"
+    "kor": "계정생성"
   },
   "login": {
     "eng": "Login",
@@ -106,11 +106,11 @@
   },
   "view": {
     "eng": "View",
-    "kor": "전망"
+    "kor": "보기"
   },
   "edit": {
     "eng": "Edit",
-    "kor": "편집하다"
+    "kor": "수정하기"
   },
   "confirm": {
     "eng": "Are you sure?",
@@ -134,29 +134,29 @@
   },
   "optional": {
     "eng": "(optional)",
-    "kor": "(선택 과목)"
+    "kor": "(선택사항)"
   },
   "description": {
     "eng": "Description",
-    "kor": "기술"
+    "kor": "설명"
   },  
   "main": {
     "eng": "Main",
-    "kor": "본관"
+    "kor": "메인"
   },
   "switching": {
     "eng": "Situational",
-    "kor": "전환"
+    "kor": "스위칭"
   },
   "delete": {
     "eng": "Delete",
-    "kor": "지우다"
+    "kor": "삭제"
   },
   "public": "공공의",
   "private": "은밀한",
   "pending": {
     "eng": "Waiting approval",
-    "kor": "대기 승인"
+    "kor": "승인 대기중"
   },
   "request-public": {
     "eng": "Request go public",
@@ -170,12 +170,32 @@
     "eng": "Favorites",
     "kor": "즐겨 찾기"
   },
+  "try-build": {
+    "eng": "Try Build",
+    "kor": "빌드 해보기"
+  },
+  "get-code": {
+    "eng": "Get code",
+    "kor": "코드를 얻다"
+  },  
+  "configuration": {
+    "eng": "Configuration",
+    "kor": "구성"
+  },  
+  "missing-code": {
+    "eng": "Missing Code",
+    "kor": "누락 된 코드"
+  },  
+  "revoke": {
+    "eng": "Revoke approval",
+    "kor": "승인 취소"
+  },  
   "approve": "승인하다",
   "reject": "받지 않다",
-  "status": "지위",
-  "by": "으로",  
-  "items": "항목",
-  "characters": "문자들",
+  "status": "상태",
+  "by": "by",  
+  "items": "아이템",
+  "characters": "캐릭터",
   "already exists": "이미 존재 함",
   'Name': '이름',
   'Type': '유형',
@@ -205,6 +225,8 @@
   'Mythic': '신화',
   'Epic': '에픽',
   'Legendary': '레전더리',
+  "Skill": "기술",
+  "skill": "기술",
   'Unique': '유니크',
   'Attack': '공격력',
   'Intelligence': '지능',
@@ -234,17 +256,23 @@
   'View Build Tree': '빌드 트리보기',
   'Choose raid / Boss / Chest': '레이드 / 보스 / 보물함 선택',
   'Amon of Hellfire': '지옥불의 아몬',
+  'Amon of Hellfire (Small)': '지옥불의 아몬 (스몰)',
   'Archangel of Valor': '용기의 대천사장',
+  'Archangel of Valor (Small)': '용기의 대천사장 (스몰)',
   'Archangel Treasure Chest': '대천사의 보물함',
   'Archangel’s Assistance': '대천사의 보구함',
   'Archangel’s Trinket': '대천사의 악세서리함',
   'Avatar of Insanity': '광기의 학살자',
   'Beresa of the Black Earth': '검은 대지군주 베레스라',
+  'Beresa of the Black Earth (Small)': '검은 대지군주 베레스라 (스몰)',
   'Belial of Pain': '고통의 베리알',
   'Black Soul Stone': '검은 영혼석',
   'Blue Dragon': '블루 드래곤',
+  'Blue Dragon (Small)': '블루 드래곤 (스몰)',
   'Celestial Waterstone': '천계의 수호석',
+  'Celestial Waterstone (Small)': '천계의 수호석 (스몰)',
   'Devil Lord Hellgainer': '지옥불의 마족',
+  'Devil Lord Hellgainer (Small)': '지옥불의 마족 (스몰)',
   'Devil of Agony’s Treasure Chest': '대악마의 보물함',
   'Devil of Despair': '절망의 대악마',
   'Destroyer': '디스트로이어',
@@ -252,11 +280,12 @@
   'Elemental Treant': '정령의 트렌트',
   "Heaven's Guardian": '헤븐즈 가디언',
   'Mother Tree': '마더 트리',
+  'Mother Tree (Small)': '마더 트리 (스몰)',
   'Silverback Wolf': '무력의 은빛 늑대',
   'Remnants of the Archdemon': '대악마의 잔재',
   'Revenant of Meditation': '명상의 레버넌트',
   'Item guide': '아이템 안내',
-  "acerola": "철혈의 흡혈귀",
+  "acerola": "블러드 로드",
   "hurk": "허크",
   "zero": "Zero",
   "shinobu": "오시노 시노부",
@@ -278,7 +307,20 @@
   "pio": "피오",
   "mashiro": "시이나 마시로",
   "kaede": "카에데",
-  "hayate": "야가미 하야테"
+  "hayate": "야가미 하야테",
+  "satsuki": "키류인 사츠키",
+  "shuvi": "슈비",
+  "God of Destruction": "파멸의 신",
+  "Sealed God of Destruction": "봉인된 파멸의 신",
+  "God's Treasure Chest": "신의 보물함",
+  "God": "신",
+  "Unleash": "해방",
+  "unleash": "해방",
+  "Lesser Training Certificate": "하급 수료증",
+  "Intermediate Training Certificate": "중급 수료증",
+  "Purification God's Treasure Chest": "정화의신의 보물함",
+  "Purification God's Trinket": "정화의신의 악세서리함",
+  "Purification God": "정화의 신"
 }
 
 

@@ -10,7 +10,7 @@
         <div class="card-body">
           <h4 class="card-title text-capitalize">{{text this @root.lang}}</h4>
           <p class="card-text"></p>
-          <a href = "/chars/{{this}}"class="btn btn-primary">{{text 'view_item_build' @root.lang}}</a>
+          <a href = "/chars/{{this}}/builds"class="btn btn-primary">{{text 'view_item_build' @root.lang}}</a>
           <p class="card-text"></p>     
           <a href = "/chars/{{this}}/custom-build" class="btn btn-primary">{{text 'create_custom_build' @root.lang}}</a>
         </div>
@@ -19,10 +19,6 @@
     {{/each}}
   </div>
 {{/each}}
-
-<div class = "footer text-center">
-    <a class = "btn btn-info" href = "/">{{text 'back_main' lang}}</a>
-</div>
 
 <style>
 

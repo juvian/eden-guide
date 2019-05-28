@@ -16,7 +16,8 @@
     "express-handlebars": "*",
     "cookie-session": "*",
     "body-parser": "*",
-    "password-hash": "*"
+    "password-hash": "*",
+    "legacy-encoding": "*"
   },
   "engines": {
     "node": "6.10.x"

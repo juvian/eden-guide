@@ -65,8 +65,8 @@ module.exports = function (app) {
           json: function (obj) {
             return JSON.stringify(obj)
           },
-          size: function (obj) {
-            return Object.keys(obj).length;
+          size: function (arr) {
+            return arr.length;
           }
       },
     partialsDir  : ['./partials']

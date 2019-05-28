@@ -14,6 +14,6 @@ module.exports = function (req, res, next) {
   res.locals.url = req.url.replace("/", "")
   
   if (req.url.indexOf("roselinde") != -1) return res.redirect(req.url.replace("roselinde", "darkness"))
-  console.log(req.url, req.session.lang)
+  console.log(req.url, req.session.lang, req.session.username || "")
   next();
 }

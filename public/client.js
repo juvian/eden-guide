@@ -21,7 +21,7 @@ var columns = [
     formatter : function (value, item) {
       var html = "";
 
-      if (page == "custom-build" && translate(["weapon", "armor", "accessory", "helmet", "artifact", "auxiliary"]).indexOf(item.type) != -1) {
+      if (page == "custom-build" && translate(["weapon", "armor", "accessory", "helmet", "artifact", "auxiliary", "unleash"]).indexOf(item.type) != -1) {
           html += `<button data-item="${item.key}" class = "btn btn-primary add-build">${translate('add_build')}</button>`  
       }
       
@@ -87,12 +87,12 @@ function initializeTable () {
     })
   }).on("post-header.bs.table", function () {
     if($(this).find("thead tr .type select").length == 0) {
-      $(this).find("thead tr .type").append("<div class = 'text-left'><select>"+["All", "Weapon", "Armor", "Accessory", "Helmet", "Artifact", "Auxiliary","Material", "Stats", "Chest"].map(v => "<option>"+translate(v)+"</option>")+"</select></div>").find("select").on("change", function () {
+      $(this).find("thead tr .type").append("<div class = 'text-left'><select>"+["All", "Weapon", "Armor", "Accessory", "Helmet", "Artifact", "Auxiliary","Material", "Stats", "Chest", "Skill", "Unleash"].map(v => "<option>"+translate(v)+"</option>")+"</select></div>").find("select").on("change", function () {
         $("#table").bootstrapTable("load", getFilteredData())
       })
     }
     if($(this).find("thead tr .name select").length == 0) {
-      var options = [{l : "All", v : "All"}, {l : "Mythic +3", v : "red-3"}, {l : "Mythic +2", v : "red-2"}, {l : "Mythic +1", v : "red-1"}, {l : "Mythic", v : "red-0"}, {l : "Epic", v : "blue"}, {l : "Legendary", v : "orange"}, {l : "Unique", v : "purple"}, {l : "Material", v : "black"}]
+      var options = [{l : "All", v : "All"}, {l: "God", v: "god"}, {l : "Mythic +3", v : "red-3"}, {l : "Mythic +2", v : "red-2"}, {l : "Mythic +1", v : "red-1"}, {l : "Mythic", v : "red-0"}, {l : "Epic", v : "blue"}, {l : "Legendary", v : "orange"}, {l : "Unique", v : "purple"}, {l : "Material", v : "black"}]
       options.forEach(v => v.l = translate(v.l));
       $(this).find("thead tr .name").append("<div class = 'text-left'><select>"+options.map(v => `<option class = '${v.v.split('-')[0]}' value='${v.v}'>${v.l}</option>`)+"</select></div>").find("select").on("change", function () {
         $("#table").bootstrapTable("load", getFilteredData())
@@ -129,11 +129,18 @@ function initializeRaids () {
               "Destroyer",
               "Dwarven Siege Machine",
               "Elemental Treant",
+              "God's Treasure Chest",
               "Heaven's Guardian",
+              "Intermediate Training Certificate",
+              "Lesser Training Certificate",
               "Mother Tree",
+              "Purification God's Treasure Chest",
+              "Purification God's Trinket",
               "Silverback Wolf",
               "Remnants of the Archdemon",
-              "Revenant of Meditation"]
+              "Revenant of Meditation",
+              "Sealed God of Destruction"
+              ]
   
   $(".raid").append(raids.map(v => $("<option>").text(translate(v))));
 }

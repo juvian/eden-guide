@@ -1,4 +1,4 @@
-<div class = "content container-fluid d-flex h-100 flex-column" style="padding: 0px 20px 20px 20px">
+<div class = "items-build content container-fluid d-flex h-100 flex-column" style="padding: 0px 20px 20px 20px">
   {{#if data._id}}
     <div class = "row">
       <div class=" col-3 text-center" style="margin-bottom:10px;font-size:24px;">
@@ -29,54 +29,60 @@
       <div class="tab-content" id="v-pills-tabContent">
         {{#each types}}
           <div class="tab-pane fade {{#if @first}}show active{{/if}}" id="{{this}}" role="tabpanel" aria-labelledby="{{this}}-tab" aria-expanded="{{@first}}">
-            <ul style='display:inline-flex' class="list-group">
-              {{#with (lookup @root.byType this)}} 
-                <li class="list-group-item"><b>{{text 'main' @root.lang}} </b></li>
-                {{#if this.switching.length}}
-                  <li class="list-group-item">
-                    <b>{{text 'switching' @root.lang}} </b>
-                  </li> 
-                {{/if}}  
-              {{/with}}
-            </ul>
-            <ul style='display:inline-flex' class="list-group">
-              {{#with (lookup @root.byType this)}}              
-                <li class="list-group-item">
-                    {{{item (lookup @root.items this.main) @root.lang}}}
-                    {{#if materials}}
-                      <button style="margin-left: 20px" data-item="{{this.main}}" class = "btn btn-primary build-tree" data-toggle="modal" data-target="#item-tree-modal">{{text 'View Build Tree' @root.lang}}</button>
-                    {{/if}}
-                </li>
-                {{#each this.switching}}
-                  <li class="list-group-item">
-                      {{{item (lookup @root.items this) @root.lang}}}
-                      {{#if (lookup (lookup @root.items this) 'materials')}}
-                        <button style="margin-left: 20px" data-item="{{this}}" class = "btn btn-primary build-tree" data-toggle="modal" data-target="#item-tree-modal">{{text 'View Build Tree' @root.lang}}</button>
-                      {{/if}}
-                  </li>
-              {{/each}}
+            {{#with (lookup @root.byType this)}} 
+              <div class = "row">
+                <div class = "col-2">
+                  <span><b>{{text 'main' @root.lang}} </b></span>
+                </div>    
+                <div class = "col">
+                  <span data-item-id="{{lookup (lookup @root.items this.main) 'id'}}">{{{item (lookup @root.items this.main) @root.lang}}}</span>
+                  {{#if (lookup (lookup @root.items this.main) 'materials')}}
+                    <button style="margin-left: 20px" data-item="{{this.main}}" class = "btn btn-primary build-tree" data-toggle="modal" data-target="#item-tree-modal">{{text 'View Build Tree' @root.lang}}</button>
+                  {{/if}}
+                </div>  
+              </div>
+              {{#if this.switching.length}}
+                <div class = "row">
+                  <div class = "col-2">
+                    <span><b>{{text 'switching' @root.lang}} </b></span>
+                  </div>
+                  <div class = "col">
+                    {{#each this.switching}}
+                      <div>
+                          <span data-item-id="{{lookup (lookup @root.items this) 'id'}}">{{{item (lookup @root.items this) @root.lang}}}</span>
+                          {{#if (lookup (lookup @root.items this) 'materials')}}
+                            <button style="margin-left: 20px" data-item="{{this}}" class = "btn btn-primary build-tree" data-toggle="modal" data-target="#item-tree-modal">{{text 'View Build Tree' @root.lang}}</button>
+                          {{/if}}
+                      </div>
+                    {{/each}}
+                  </div>
+                </div>            
+              {{/if}}
             {{/with}}
-            </ul>
           </div>
         {{/each}}
       </div>
-      <div style = "margin:20px" class = "fill d-flex justify-content-start">
+      <div data-char-id="{{data.id}}" style = "margin:20px" class = "fill d-flex justify-content-start">
         <div class = "img"></div>
       </div>
     </div>
   </div>
-<div class = "footer text-center">
-    <a class = "btn btn-info" href = "/chars">{{text 'back_characters' lang}}</a>
-    {{#if canEdit}}
-      <a class = "btn btn-primary" href = "./{{data._id}}/edit">{{text 'edit' lang}}</a>                                    
-    {{/if}}
-    {{#if (and (eq build.status 'pending') isMod)}}
-      <a class = "btn btn-success text-capitalize" href = "./{{data._id}}/approve">{{text 'approve' lang}}</a>     
-      <a class = "btn btn-danger text-capitalize" href = "./{{data._id}}/reject">{{text 'reject' lang}}</a>     
-    {{/if}}
-</div>
+  <div class = "footer text-center">
+      {{#if canEdit}}
+        <a class = "btn btn-primary" href = "./{{data._id}}/edit">{{text 'edit' lang}}</a>                                    
+      {{/if}}
+      {{#if (and (eq build.status 'pending') isMod)}}
+        <a class = "btn btn-success text-capitalize" href = "./{{data._id}}/approve">{{text 'approve' lang}}</a>     
+        <a class = "btn btn-danger text-capitalize" href = "./{{data._id}}/reject">{{text 'reject' lang}}</a>     
+      {{/if}}
+      {{#if (and (eq build.status 'public') isMod)}}
+        <a class = "btn btn-danger text-capitalize" href = "./{{data._id}}/reject">{{text 'revoke' lang}}</a>     
+      {{/if}}
+      <a class = "btn btn-primary try-build" href="#" data-toggle="modal" data-target="#try-build">{{text 'try-build' lang}}</a>
+  </div>
 </div>
 
+{{>try-build}}
 
   <style>
 

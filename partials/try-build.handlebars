@@ -1,0 +1,88 @@
+<div class="modal fade" id="try-build" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{text 'configuration' lang}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class = "row" >
+          <div class = "col-3">
+            {{text 'Strength' lang}}
+          </div>
+          <div class = "col-3">
+            <input class="strength" type="number" name="quantity" min="1" max="5500" value="5500"/>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "col-3">
+            {{text 'Agility' lang}}
+          </div>
+          <div class = "col-3">
+            <input class="agility" type="number" name="quantity" min="1" max="5500" value="5500"/>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "col-3">
+            {{text 'Intelligence' lang}}
+          </div>
+          <div class = "col-3">
+            <input class="intelligence" type="number" name="quantity" min="1" max="5500" value="5500"/>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary get-code" data-dismiss="modal">{{text 'get-code' lang}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="code" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document" style="max-width: 80%">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">w3 ID: scvscvgo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="code code-1"></div>
+        <div class="code code-2"></div>
+        <div class="code code-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(".get-code").click(function(){    
+    var items = $("[data-item-id]").map(function(){return $(this).data("item-id")}).toArray()
+    
+    fetch("/getCode", {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({items: items, str: $(".strength").val(), agi: $(".agility").val(), int: $(".intelligence").val(), char: $("[data-char-id]").data("char-id")})
+    }).then((res) => res.json()).then((res) => {
+      $("#code").find(".code").empty();
+      
+      res.forEach((v, idx) => {
+        $("#code").find(".code-" + (idx  + 1)).html("<span></span>").find("span").text("Code "+(idx + 1)+": " + res[idx])
+      })
+      
+      $("#code").modal()
+    }).catch((err) => {
+        showError(err);
+        $(".star").removeClass("disabled")
+    });
+    
+    
+  })      
+</script>
