@@ -1,5 +1,6 @@
 var main = {}
 var switching = {}
+let items = require('../data/processed').items;
 
 $(document).on("click", ".add-build", function(){
   var item = $(this).data("item")
@@ -25,7 +26,7 @@ function addItem(item) {
 
 function getTemplate (v) {
   return `<li data-item-id="${items[v].id}" data-item="${v}" class="list-group-item">
-            ${getItemHtml(items[v])}
+            ${items[v].html()}
             <button type="button" style="margin-left:10px" class="close" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

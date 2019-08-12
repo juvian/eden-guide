@@ -1,4 +1,4 @@
-<div class = "items-build content container-fluid d-flex h-100 flex-column" style="padding: 0px 20px 20px 20px">
+<div class = "items-build content container-fluid d-flex h-100 flex-column" style="padding: 0px 20px 20px 20px" data-char-id="{{data.id}}">
   {{#if data._id}}
     <div class = "row">
       <div class=" col-3 text-center" style="margin-bottom:10px;font-size:24px;">
@@ -35,9 +35,9 @@
                   <span><b>{{text 'main' @root.lang}} </b></span>
                 </div>    
                 <div class = "col">
-                  <span data-item-id="{{lookup (lookup @root.items this.main) 'id'}}">{{{item (lookup @root.items this.main) @root.lang}}}</span>
-                  {{#if (lookup (lookup @root.items this.main) 'materials')}}
-                    <button style="margin-left: 20px" data-item="{{this.main}}" class = "btn btn-primary build-tree" data-toggle="modal" data-target="#item-tree-modal">{{text 'View Build Tree' @root.lang}}</button>
+                  <span data-item-id="{{lookup this 'id'}}">{{{item this.main @root.lang}}}</span>
+                  {{#if (lookup this.main 'crafts')}}
+                    <button style="margin-left: 20px" data-item="{{this.main.id}}" class = "btn btn-primary build-tree" data-toggle="modal" data-target="#item-tree-modal">{{text 'view build tree' @root.lang}}</button>
                   {{/if}}
                 </div>  
               </div>
@@ -49,9 +49,9 @@
                   <div class = "col">
                     {{#each this.switching}}
                       <div>
-                          <span data-item-id="{{lookup (lookup @root.items this) 'id'}}">{{{item (lookup @root.items this) @root.lang}}}</span>
-                          {{#if (lookup (lookup @root.items this) 'materials')}}
-                            <button style="margin-left: 20px" data-item="{{this}}" class = "btn btn-primary build-tree" data-toggle="modal" data-target="#item-tree-modal">{{text 'View Build Tree' @root.lang}}</button>
+                          <span data-item-id="{{lookup this 'id'}}">{{{item this @root.lang}}}</span>
+                          {{#if (lookup this 'materials')}}
+                            <button style="margin-left: 20px" data-item="{{this.id}}" class = "btn btn-primary build-tree" data-toggle="modal" data-target="#item-tree-modal">{{text 'view build tree' @root.lang}}</button>
                           {{/if}}
                       </div>
                     {{/each}}

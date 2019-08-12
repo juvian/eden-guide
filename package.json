@@ -17,7 +17,8 @@
     "cookie-session": "*",
     "body-parser": "*",
     "password-hash": "*",
-    "legacy-encoding": "*"
+    "legacy-encoding": "*",
+    "browserify": "*"
   },
   "engines": {
     "node": "6.10.x"

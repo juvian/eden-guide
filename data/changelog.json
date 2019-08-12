@@ -1,4 +1,41 @@
-[
+[ 
+  {
+    "version": "4.0.0",
+    "chances": [
+      "Rewrite of many things"
+    ],
+    "k_changes": [
+      
+    ],
+    "released": "8/12/2019"
+  },
+  {
+    "version": "3.0.1",
+    "changes": [
+      "Updated to version 4.2M",
+      "Many recipe changes"
+    ],
+    "k_changes": [
+      "버전 4.2M로 업데이트되었습니다.",
+       "많은 레시피 변경"    
+    ],
+    "released": "6/22/2019"
+  },
+  {
+    "version": "3.0.0",
+    "changes": [
+      "Updated to version 4.2I",
+      "Rip Amon/Belial",
+      "Many recipe changes",
+      "Purification God's Trinket chance 0.5% -> 1.5%"
+    ],
+    "k_changes": [
+      "버전 4.2I로 업데이트되었습니다.",
+       "많은 레시피 변경",
+       "정화의신의 악세서리함 0.5% -> 1.5%"     
+    ],
+    "released": "5/30/2019"
+  },
   {
     "version": "2.7.0",
     "changes": [

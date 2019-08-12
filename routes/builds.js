@@ -1,14 +1,11 @@
+module.exports = function() {}
 var db = require("../utils/db");
-var translation = require("../public/translations");
-var items = require("../public/items").items;
-var builds = require("../public/builds").builds;
-var charIdToName = require("../public/builds").idToName;
-var itemIdToName = require("../public/items").idToName;
+var translation = require("../data/translations");
+var items = require("../data/processed").items;
+var builds = require("../data/builds").builds;
+var charIdToName = require("../data/builds").idToName;
 var CodeLoader = require("../.data/private.js");
-
-var k_items =  JSON.parse(JSON.stringify(items));
-translation.checkLanguage(k_items, "kor");
-var types = ["weapon", "armor", "accessory", "helmet", "artifact", "auxiliary"];
+var types = require('../data/processed').types;
 var middlewares = require("../utils/middlewares");
 
 
@@ -29,12 +26,12 @@ module.exports = function (app) {
 
     if (request.params.code) {
       char.items = processCode(request.params.code).items;
-      char.items = char.items.map(v => itemIdToName[v])
+      char.items = char.items.map(v => items[v])
     } else {
       return next(new Error(translation.translate('missing-code', request.session.lang)));
     }
-
-    response.render('char', {layout: 'char-build', items: (request.session.lang == "kor" ? k_items : items), data: char,  types: types, byType: getItemsByType(char)});    
+    
+    response.render('char', {layout: 'char-build', items: items, data: char,  types: types, byType: getItemsByType(char)});    
   });
 
 
@@ -65,9 +62,9 @@ module.exports = function (app) {
       var char = builds[charIdToName[build.char]];
       var canEdit = res.locals.loggedIn && req.session.username == build.username;  
       var isFavorite = res.locals.user && res.locals.build.favorites && res.locals.build.favorites.indexOf(res.locals.user._id) != -1;
-      build.items = build.items.map(v => itemIdToName[v]);
-      
-      return res.render("char", {layout: "char-build", items: (req.session.lang == "kor" ? k_items : items), data: Object.assign({}, char, build), byType: getItemsByType(build), types: types, canEdit: canEdit, isFavorite: isFavorite})
+      build.items = build.items.map(v => items[v]);
+
+      return res.render("char", {layout: "char-build", items: items, data: Object.assign({}, char, build), byType: getItemsByType(build), types: types, canEdit: canEdit, isFavorite: isFavorite})
   });
   
 
@@ -85,7 +82,7 @@ module.exports = function (app) {
   app.get("/custom-build/:id/edit", middlewares.authenticate, middlewares.validBuild, function (req, res) {
     var build = res.locals.build;
     var char = builds[charIdToName[build.char]];
-    build.items = build.items.map(v => itemIdToName[v]);
+    build.items = build.items.map(v => items[v]);
     
     return res.render("create-build", {layout: 'custom-build', build: build});
   });  
@@ -171,7 +168,7 @@ module.exports = function (app) {
     var byType = {};
     
     for(var i = 0; i < build.items.length;i++) {
-      var item = items[build.items[i]];
+      var item = build.items[i];
       if (!byType[item.type]) {
         byType[item.type] = {
           main: null,
