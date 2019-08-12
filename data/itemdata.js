@@ -4260,7 +4260,8 @@ module.exports = {
       
      },
     "label": "Sealed God Sword",
-    "k_label": "봉인된 신의 무구"
+    "k_label": "봉인된 신의 무구",
+    "disabled": true
   },
   "I0G4": {
     "type": "weapon",

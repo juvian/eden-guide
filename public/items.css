@@ -1,16 +1,16 @@
-.purple {
+.purple,.unique {
   color : #9859D8;
 }
 
-.orange {
+.orange,.legendary {
   color : #F7950E;
 }
 
-.blue {
+.blue,.epic {
   color : #4FC3D6;
 }
 
-.red {
+.red,.mythic,.\+1,.\+2,.\+3,.\+0 {
   color : red;
 }
 
@@ -28,4 +28,9 @@
 
 .item-tooltip {
     white-space: nowrap;
+}
+
+.close {
+  font-size: 1rem;
+  margin-left: 5px;
 }

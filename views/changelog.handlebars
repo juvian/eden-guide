@@ -21,6 +21,9 @@
                 <li class="list-group-item">{{this}}</li>
               {{/each}}
             {{/if}}
+            {{#each commit_urls}}
+              <li class="list-group-item"><a href="{{this}}">{{this}}</a></li>
+            {{/each}}
           </ul>
         </div>
       </div>     
