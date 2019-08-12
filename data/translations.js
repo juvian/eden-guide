@@ -209,14 +209,43 @@ exports.translations = {
   'material' : '재료',
   'stats': '스텟',
   'chest': '보물함',
-  'mythic +3': '신화 +3',
-  'mythic +2': '신화 +2',
-  'mythic +1': '신화 +1',
-  'mythic': '신화',
-  'epic': '에픽',
-  'legendary': '레전더리',
+  '+3': {
+    "eng": "mythic +3",
+    "kor": '신화 +3'
+  },
+  '+2': {
+    "eng": "mythic +2",
+    "kor": '신화 +2'
+  },
+  '+1': {
+    "eng": "mythic +1",
+    "kor": '신화 +1'
+  },
+  'mythic': {
+    "eng": "mythic",
+    "kor": '신화'
+  },
+  "+0": {
+    "eng": "mythic +0",
+    "kor": '신화 +0'    
+  },
+  "epic": {
+    "eng": "epic",
+    "kor": "에픽"
+  },
+  "legendary": {
+    "eng": "legendary",
+    "kor": "레전더리"
+  },
   "skill": "기술",
-  'unique': '유니크',
+  "unique": {
+    "eng": "unique",
+    "kor": "유니크"
+  },
+  "black": {
+    "eng": "Other",
+    "kor": "다른"
+  },
   'attack': '공격력',
   'intelligence': '지능',
   'INT': '지능',
@@ -273,7 +302,7 @@ exports.translations = {
   "unleash": "해방",
   "HP": "HP",
   "MP": "MP",
-  "critical_hit": "크리티컬"
+  "critical hit": "크리티컬"
 }
 
 exports.lang = function () {

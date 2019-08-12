@@ -59,3 +59,7 @@ html{
   position: sticky;
   bottom: 0px;
 }
+
+.badge:not(:first-child) {
+    margin-left:10px;
+}

@@ -59,7 +59,13 @@ class Item {
   }
   
   dropsHtml() {
-    return this.dropsArray().map(drop => `${drop.chest.parent.translatedLabel()} (${drop.chance} % ${translate('chance')})`).join("<br/>");
+    let groups = this.dropsArray().reduce((all, cur) => {
+      let key = cur.chest.parent.translatedLabel() + cur.chance
+      all[key] = (all[key] || {count: 0, drop: cur});
+      all[key].count += 1
+      return all;
+    }, {});
+    return Object.keys(groups).map(key => `${groups[key].drop.chest.parent.translatedLabel()} ${groups[key].count == 1 ? '' : 'x' + groups[key].count} (${groups[key].drop.chance} % ${translate('chance')})`).join("<br/>");
   }
   
   formatStat(stat, val) {

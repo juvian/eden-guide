@@ -2,11 +2,13 @@ let translator = require('../data/translations.js');
 let items = require("../data/processed.js").items;
 let chests = require('../data/processed.js').chests;
 let types = require('../data/processed.js').types;
+let tags = require('../data/processed.js').tags;
 
 var columns = [];
+let tagFilters = new Set();
 
 $(document).on("language", function () {
-    if ($("#table").length) {
+    if ($("#table").length && window.itemArray === undefined) {
       itemArray = Object.values(items);
       initializeRaids();
       initializeTable();  
@@ -19,26 +21,14 @@ function getFilteredData () {
   if ($("#table thead tr .type select").val() != translator.translate("all")) {  
     filters.type = $("#table thead tr .type select").val().toLowerCase()
   } 
-
-  if ($("#table thead tr .name select").val() != translator.translate("all")) {
-    filters.color = $("#table thead tr .name select").val().toLowerCase()
-  }
   
   if ($(".raid").val()!= translator.translate("all")) {
     filters.raid = $(".raid").val().toLowerCase()
   }
   
   return itemArray.filter(function(item) {
-     if (filters.type && item.type.includes(filters.type) == false) return false;
-     if (filters.color && item.color != filters.color) {
-       if (filters.color.indexOf("red") != -1) {
-         if (item.color != "red") return false;
-         if (filters.color == "red-0" && item.label.indexOf("+") != -1) return false;
-         if (filters.color == "red-1" && item.label.indexOf("+1") == -1) return false;
-         if (filters.color == "red-2" && item.label.indexOf("+2") == -1) return false;
-         if (filters.color == "red-3" && item.label.indexOf("+3") == -1) return false;
-       } else return false
-     }
+     if (filters.type && item.type != filters.type) return false;
+     if (tagFilters.size && item.tags.every(tag => tagFilters.has(tag) == false)) return false;
      if (filters.raid && item.dropsArray().every(d => d.chest.parent.translatedLabel().toLowerCase() != filters.raid)) return false;
      return true;
   })
@@ -52,15 +42,15 @@ function initializeTable () {
     })
   }).on("post-header.bs.table", function () {
     if($(this).find("thead tr .type select").length == 0) {
-      $(this).find("thead tr .type").append("<div class = 'text-left'><select class = 'capitalize'>"+["all"].concat(types).map(v => "<option>"+translator.translate(v)+"</option>")+"</select></div>").find("select").on("change", function () {
+      $(this).find("thead tr .type").append("<div class = 'text-left'><select class = 'capitalize'>"+["all"].concat(types).map(v => "<option value='"+v+"'>"+translator.translate(v)+"</option>").join('')+"</select></div>").find("select").on("change", function () {
         $("#table").bootstrapTable("load", getFilteredData())
       })
     }
     if($(this).find("thead tr .name select").length == 0) {
-      var options = [{l : "all", v : "all"}, {l: "god", v: "god"}, {l : "mythic +3", v : "red-3"}, {l : "mythic +2", v : "red-2"}, {l : "mythic +1", v : "red-1"}, {l : "mythic", v : "red-0"}, {l : "epic", v : "blue"}, {l : "legendary", v : "orange"}, {l : "unique", v : "purple"}, {l : "material", v : "black"}]
-      options.forEach(v => v.l = translator.translate(v.l));
+      var options = tags.concat(["all"]).map(c => ({l: translator.translate(c), v: c})).sort((a, b) =>  a.l.localeCompare(b.l));
       $(this).find("thead tr .name").append("<div class = 'text-left'><select class='capitalize'>"+options.map(v => `<option class = '${v.v.split('-')[0]}' value='${v.v}'>${v.l}</option>`)+"</select></div>").find("select").on("change", function () {
-        $("#table").bootstrapTable("load", getFilteredData())
+        tagFilters.add($(this).val());
+        refreshFilters();
       })
     }
   });
@@ -71,6 +61,35 @@ function initializeTable () {
     $("#table").bootstrapTable("load", getFilteredData())
   })  
   
+  $(".fixed-table-toolbar").addClass("form-row").on("click", ".close", function(){
+    let tag = $(this).closest(".tag").data("tag");
+    tagFilters.delete(tag);
+    refreshFilters();
+    return false;
+  });
+  
+  $(".search").addClass("col-3");
+  refreshFilters();
+}
+
+function refreshFilters() {
+  tagFilters.delete('all');
+  
+  $(".fixed-table-toolbar").children(".tags").remove();
+  let tagsEl = $("<div class='tags col-9 my-auto'></div>");
+  
+  for (let tag of tagFilters) {
+    tagsEl.append(`<span data-tag="${tag}" class="tag badge badge-pill badge-primary">
+                    <span>${translator.translate(tag)}</span>
+                    <button type="button" class="close" aria-label="Close">
+                      <span class="close" aria-hidden="true">&times;</span>
+                    </button>
+                  </span>`);
+  }
+  
+  $(".fixed-table-toolbar").prepend(tagsEl);  
+  
+  $("#table").bootstrapTable("load", getFilteredData())
 }
 
 function initializeColumns() {
@@ -111,7 +130,12 @@ function initializeColumns() {
     },
     {
       field: "crafts",
-      visible: false
+      visible: false,
+      formatter: function(val) {
+        if (val) {
+          return [].concat(val.map(craft => craft.items.map(id => items[id].translatedLabel()))).toString()
+        }
+      }
     }
   ]
 }

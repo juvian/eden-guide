@@ -1,13 +1,14 @@
 [ 
   {
     "version": "4.0.0",
-    "chances": [
+    "changes": [
       "Rewrite of many things"
     ],
     "k_changes": [
-      
+      "많은 것들을 다시 쓰다"
     ],
-    "released": "8/12/2019"
+    "released": "8/12/2019",
+    "commit_urls": ["https://github.com/juvian/eden-guide/commit/9b59b31ae4b2edbc530fe8e634bf4d3365d0fa91"]
   },
   {
     "version": "3.0.1",
