@@ -1,5 +1,4 @@
-(function(exports) {
-  exports.translations = {
+exports.translations = {
   "350-tip" : {
     "eng": "Note that this guide is intended for levels 350+. Some items you might need to be up to level 400 before you can use them",
     "kor": "이 가이드는 레벨 350 이상을 대상으로합니다. 일부 아이템은 사용하기 전에 레벨을 400까지 올려야 할 수도 있습니다."
@@ -197,94 +196,53 @@
   "items": "아이템",
   "characters": "캐릭터",
   "already exists": "이미 존재 함",
-  'Name': '이름',
-  'Type': '유형',
-  'Actions': '행위',
-  'All': '모든',
-  'Weapon': '무기',
+  'name': '이름',
+  'type': '유형',
+  'actions': '행위',
+  'all': '모든',
   'weapon': '무기',
-  'Armor': '갑옷',
   'armor': '갑옷',
-  'Accessory': '악세서리',
   'accessory': '악세서리',
-  'Helmet': '투구',
   'helmet': '투구',
-  'Artifact': '아티팩트',
   'artifact': '아티팩트',
-  'Auxiliary': '보조장비',
   'auxiliary': '보조장비',
-  'Material' : '재료',
   'material' : '재료',
-  'Stats': '스텟',
   'stats': '스텟',
-  'Chest': '보물함',
   'chest': '보물함',
-  'Mythic +3': '신화 +3',
-  'Mythic +2': '신화 +2',
-  'Mythic +1': '신화 +1',
-  'Mythic': '신화',
-  'Epic': '에픽',
-  'Legendary': '레전더리',
-  "Skill": "기술",
+  'mythic +3': '신화 +3',
+  'mythic +2': '신화 +2',
+  'mythic +1': '신화 +1',
+  'mythic': '신화',
+  'epic': '에픽',
+  'legendary': '레전더리',
   "skill": "기술",
-  'Unique': '유니크',
-  'Attack': '공격력',
-  'Intelligence': '지능',
+  'unique': '유니크',
+  'attack': '공격력',
+  'intelligence': '지능',
   'INT': '지능',
-  'Agility': '민첩',
+  'agility': '민첩',
   'AGI': '민첩',
-  'Strength': '힘',
+  'strength': '힘',
   'STR': '힘',
-  'Damage Taken': '받는데미지',
-  'Attack Speed': '공격속도',
-  'Damage Increase': '추가데미지',
-  'Hit Points': 'HP',
-  'Mana Points': '마나',
-  'Movement Speed': '이동속도 증가',
-  'Hit Point Regeneration': 'HP 재건',
+  'damage taken': '받는데미지',
+  'attack speed': '공격속도',
+  'damage increase': '추가데미지',
+  'movement speed': '이동속도 증가',
+  'HP regeneration': 'HP 재건',
   'per second': '초당',
-  'MAX HP per second': '초당 최대 생명',
-  'Max Hit Points': '최대 체력',
-  'Enemy Armor': '적의 갑옷',
-  'Enemy Speed': '적의 속도',
-  'Magic Resistance': '마법 저항력',
-  'Intelligence increase': '사 지능 증가',
-  'Gives': '주는',
+  'max HP per second': '초당 최대 생명',
+  'max HP': '최대 체력',
+  'enemy armor': '적의 갑옷',
+  'enemy speed': '적의 속도',
+  'magic resistance': '마법 저항력',
+  'intelligence increase': '사 지능 증가',
+  'gives': '주는',
   'stats points': '통계 점수',
-  'Build Tree for': '에 대한 트리 만들기',
+  'build tree for': '에 대한 트리 만들기',
   'chance': '기회',
-  'View Build Tree': '빌드 트리보기',
-  'Choose raid / Boss / Chest': '레이드 / 보스 / 보물함 선택',
-  'Amon of Hellfire': '지옥불의 아몬',
-  'Amon of Hellfire (Small)': '지옥불의 아몬 (스몰)',
-  'Archangel of Valor': '용기의 대천사장',
-  'Archangel of Valor (Small)': '용기의 대천사장 (스몰)',
-  'Archangel Treasure Chest': '대천사의 보물함',
-  'Archangel’s Assistance': '대천사의 보구함',
-  'Archangel’s Trinket': '대천사의 악세서리함',
-  'Avatar of Insanity': '광기의 학살자',
-  'Beresa of the Black Earth': '검은 대지군주 베레스라',
-  'Beresa of the Black Earth (Small)': '검은 대지군주 베레스라 (스몰)',
-  'Belial of Pain': '고통의 베리알',
-  'Black Soul Stone': '검은 영혼석',
-  'Blue Dragon': '블루 드래곤',
-  'Blue Dragon (Small)': '블루 드래곤 (스몰)',
-  'Celestial Waterstone': '천계의 수호석',
-  'Celestial Waterstone (Small)': '천계의 수호석 (스몰)',
-  'Devil Lord Hellgainer': '지옥불의 마족',
-  'Devil Lord Hellgainer (Small)': '지옥불의 마족 (스몰)',
-  'Devil of Agony’s Treasure Chest': '대악마의 보물함',
-  'Devil of Despair': '절망의 대악마',
-  'Destroyer': '디스트로이어',
-  'Dwarven Siege Machine': '수호의 시즈골렘',
-  'Elemental Treant': '정령의 트렌트',
-  "Heaven's Guardian": '헤븐즈 가디언',
-  'Mother Tree': '마더 트리',
-  'Mother Tree (Small)': '마더 트리 (스몰)',
-  'Silverback Wolf': '무력의 은빛 늑대',
-  'Remnants of the Archdemon': '대악마의 잔재',
-  'Revenant of Meditation': '명상의 레버넌트',
-  'Item guide': '아이템 안내',
+  'view build tree': '빌드 트리보기',
+  'choose raid / boss / chest': '레이드 / 보스 / 보물함 선택',
+  'item guide': '아이템 안내',
   "acerola": "블러드 로드",
   "hurk": "허크",
   "zero": "Zero",
@@ -310,26 +268,22 @@
   "hayate": "야가미 하야테",
   "satsuki": "키류인 사츠키",
   "shuvi": "슈비",
-  "God of Destruction": "파멸의 신",
-  "Sealed God of Destruction": "봉인된 파멸의 신",
-  "God's Treasure Chest": "신의 보물함",
-  "God": "신",
+  "god": "신",
   "Unleash": "해방",
   "unleash": "해방",
-  "Lesser Training Certificate": "하급 수료증",
-  "Intermediate Training Certificate": "중급 수료증",
-  "Purification God's Treasure Chest": "정화의신의 보물함",
-  "Purification God's Trinket": "정화의신의 악세서리함",
-  "Purification God": "정화의 신"
+  "HP": "HP",
+  "MP": "MP",
+  "critical_hit": "크리티컬"
 }
 
+exports.lang = function () {
+  let config = exports.config
+  return config && config.lang ? config.lang : "eng";
+}
 
 exports.translate = function (str, lang) {
   if (str == null) return str;
- 
-  if (exports.config && exports.config.lang) {
-    lang = config.lang
-  }
+  lang = lang || exports.lang();
   
   if (Array.isArray(str) == false) {  
     if (!exports.translations[str]) {
@@ -342,23 +296,6 @@ exports.translate = function (str, lang) {
 
     return exports.translations[str][lang] || str;
   } else {
-    return str.map(v => exports.translate(v, lang))
+    return str.map(v => exports.translate(v))
   }
 }
-
-exports.checkLanguage = function (items, lang) {
-  if (lang == 'kor') {
-    for (var item in items) {
-      items[item].label = items[item].k_label;
-      items[item].effects = items[item].k_effects;
-      items[item].type = exports.translate(items[item].type);
-      items[item].raid = exports.translate(items[item].raid)
-      items[item].boss = exports.translate(items[item].boss)
-      items[item].chest = exports.translate(items[item].chest)
-      
-      if (items[item].k_label == null) console.warn(items[item])
-    }
-  }
-}
-
-})(typeof exports === 'undefined'? this: exports);

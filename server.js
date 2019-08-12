@@ -7,17 +7,19 @@ var cookieSession = require('cookie-session')
 var bodyParser = require('body-parser')
 var fs = require("fs"),
     json;
-var itemIdToName = require("./public/items").idToName
-var items = require("./public/items").items
-var translation = require("./public/translations");
-var itemUtils = require("./public/itemUtils").load(items, translation.translate);
 
-var builds = require('./public/builds').builds;
-var changeLog = require('./public/changelog.json');
+var builds = require('./data/builds').builds;
+var changeLog = require('./data/changelog.json');
 
 var db = require("./utils/db");
 
 var app = express();
+
+var browserify = require('browserify');
+
+var b = browserify();
+b.add('./public/common.js').add('./public/client.js').add('./public/item-tree.js').add('./public/imports.js').add('./public/custom-build.js');
+b.bundle().pipe(fs.createWriteStream('./public/browser-bundle.js'));
 
 app.locals.changeLog = changeLog
 app.locals.version = changeLog[0].version;
@@ -37,8 +39,42 @@ app.use(require("./utils/handleLocals"))
 
 require('./routes')(app);
 
+function stringifyOnce(obj, replacer, indent){
+    var printedObjects = [];
+    var printedObjectKeys = [];
+
+    function printOnceReplacer(key, value){
+        var printedObjIndex = false;
+        printedObjects.forEach(function(obj, index){
+            if(obj===value){
+                printedObjIndex = index;
+            }
+        });
+
+        if(printedObjIndex && typeof(value)=="object"){
+            return "(see " + value.constructor.name.toLowerCase() + " with key " + printedObjectKeys[printedObjIndex] + ")";
+        }else{
+            var qualifiedKey = key || "(empty key)";
+            printedObjects.push(value);
+            printedObjectKeys.push(qualifiedKey);
+            if(replacer){
+                return replacer(key, value);
+            }else{
+                return value;
+            }
+        }
+    }
+    return JSON.stringify(obj, printOnceReplacer, indent);
+}
+
 app.get("/items.json", function (request, response) {
-  return response.send(JSON.stringify(items));
+  delete require.cache[require.resolve('./data/drops.js')]
+  delete require.cache[require.resolve('./data/itemdata.js')]
+  
+  let items = require('./data/itemdata.js');
+  let drops = require('./data/drops.js').chests;
+  let craftings = require('./data/craftings.js').craftings;
+  return response.send(stringifyOnce({craftings:craftings, drops: drops, items: items}));
 })
 
 // http://expressjs.com/en/starter/basic-routing.html
@@ -62,3 +98,4 @@ var listener = app.listen(process.env.PORT, function () {
 
 
 require("./utils/errors")(app);
+

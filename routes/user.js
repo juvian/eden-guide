@@ -1,6 +1,6 @@
 var db = require("../utils/db");
 var passwordHash = require('password-hash');
-var translation = require("../public/translations");
+var translation = require("../data/translations");
 var crypto = require("crypto");
 
 module.exports = function(app){

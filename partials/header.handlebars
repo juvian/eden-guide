@@ -25,6 +25,11 @@
       changeLog: {{{toJSON changeLog}}},
       lang: "{{lang}}"
     }
+        
+    $(function(){
+      window.client.translator.config = config;
+      $(document).trigger("language");
+    })
     
     serverRender = false
   </script>
@@ -40,8 +45,6 @@
 </script>
   
   
-  <script src= "/common.js"></script> 
-  <script src= "/translations.js"></script> 
   <link rel="stylesheet" href="/common.css"></link>
 
   {{> common-scripts}}

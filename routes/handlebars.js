@@ -1,9 +1,8 @@
 
-var translation = require('../public/translations');
-var items = require('../public/items');
-var builds = require("../public/builds").builds;
-var charIdToName = require("../public/builds").idToName;
-var itemUtils = require('../public/itemUtils').load(items, translation.translate);
+var translation = require('../data/translations');
+var items = require('../data/processed').items;
+var builds = require("../data/builds").builds;
+var charIdToName = require("../data/builds").idToName;
 var exphbs  = require('express-handlebars');
 
 module.exports = function (app) {
@@ -39,16 +38,16 @@ module.exports = function (app) {
             return !v1
           },
           item: function(item, lang) {
-            return itemUtils.getItemHtml(item, 1, lang);
+            return item.html();
           },
           getImage : function(build) {
             if (build.images.length == 0) return "";
             return build.images[Math.floor(Math.random()*build.images.length)]
           },
           fullType: function(str, lang){
-            if (str == "int") return translation.translate("Intelligence", lang);
-            else if (str == "agi") return translation.translate("Agility", lang);
-            else if (str == "str") return translation.translate("Strength", lang);
+            if (str == "int") return translation.translate("intelligence");
+            else if (str == "agi") return translation.translate("agility");
+            else if (str == "str") return translation.translate("strength");
           },
           toJSON: function (obj) {
             return JSON.stringify(obj, null, 3);
@@ -69,7 +68,8 @@ module.exports = function (app) {
             return arr.length;
           }
       },
-    partialsDir  : ['./partials']
+    partialsDir  : ['./partials'],
+    defaultLayout: null
   });
 
   app.engine('handlebars', hbs.engine);

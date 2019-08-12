@@ -1,6 +1,6 @@
 var db = require("./db");
-var translation = require('../public/translations');
-var builds = require("../public/builds").builds;
+var translation = require('../data/translations');
+var builds = require("../data/builds").builds;
 
 module.exports.getUser = function (req, res, next) {
   db.users.findOne({username: req.session.username, token: req.session.token || "a"}, function (err, user) {

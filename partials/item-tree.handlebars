@@ -25,34 +25,3 @@
     color: #9B9B9B;
   }
 </style>
-
-<script>
-  var simple_chart_config = {
-        chart: {
-            container: "#item-tree",
-            rootOrientation: "EAST",
-            nodeAlign: "BOTTOM",
-            connectors: {
-              type: "step",
-              style: {
-                "stroke-width": 2
-              }
-            },
-            levelSeparation:    45,
-        },
-        nodeStructure: null
-    };
-
-    $('#item-tree-modal').on('shown.bs.modal', function (event) {
-      var button = $(event.relatedTarget) // Button that triggered the modal
-      var item = button.data('item') // Extract info from data-* attributes
-      simple_chart_config.nodeStructure = getItemTree(item);
-      item = items[item];
-      var modal = $(this);
-      modal.find(".modal-title").html(`${translate("Build Tree for")} <span class = '${item.color}'>${item.label}</span>`)
-      new Treant(simple_chart_config);
-      $('#item-tree-modal').find(".item-tooltip").tooltip({container: $('#item-tree-modal'), placement: "bottom"});
-    })
-
-    $(".item-tooltip").tooltip({placement: "bottom"});
-</script>

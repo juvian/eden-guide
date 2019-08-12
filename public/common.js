@@ -1,3 +1,5 @@
+let translate = require('../data/translations.js').translate;
+
 $(function(){
   notifyNewChanges();
   setupChangeLanguage();
