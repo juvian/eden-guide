@@ -1,4 +1,14 @@
-[
+[ 
+  {
+    "version": "4.0.0",
+    "chances": [
+      "Rewrite of many things"
+    ],
+    "k_changes": [
+      
+    ],
+    "released": "8/12/2019"
+  },
   {
     "version": "3.0.1",
     "changes": [
