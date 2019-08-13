@@ -7130,5 +7130,89 @@ module.exports = {
   "I0IY": {
     "disabled": true,
     "label": "500 Points"
+  },
+  "I0LK": {
+    "type" : "material",
+    "color" : "black",
+    "label" : "Mythic Weapon Essence",
+    "k_label": "신화 무기 정수"
+  },
+  "I0LL": {
+    "type" : "material",
+    "color" : "black",
+    "label" : "Mythic Equipement Essence",
+    "k_label": "신화 장비 정수"
+  },
+  "I0LM": {
+    "type" : "material",
+    "color" : "black",
+    "label" : "Mythic Auxiliary Essence",
+    "k_label": "신화 룬 정수"
+  },
+  "I0LO": {
+    "type": "material",
+    "color": "black",
+    "label": "Archangel Mark",
+    "k_label": "(신)대천사의 증표"
+  },
+  "I0LQ": {
+    "type": "material",
+    "color": "black",
+    "label": "Blue Dragon Essence",
+    "k_label": "블루드래곤의 정수"
+  },
+  "I0LR": {
+    "type": "material",
+    "color": "black",
+    "label": "Beresa Essence",
+    "k_label": "블루드래곤의 정수"
+  },
+  "I0LS": {
+    "type": "material",
+    "color": "black",
+    "label": "Mother Tree Essence",
+    "k_label": "마더트리의 정수"
+  },
+  "I0LT": {
+    "type": "material",
+    "color": "black",
+    "label": "Intense Energy",
+    "k_label": "강렬한 기운",
+    "effect": ["Allows you to enter a special boss zone and summons a special boss"],
+    "k_effects": ["사용시 특수 보스존에 입장가능해지며 특수 보스를 소환합니다"]
+  },
+  "I0LU": {
+    "type": "material",
+    "color": "black",
+    "label": "Chaos Essence",
+    "k_label": "혼돈의 영혼"
+  },
+  "I0LV": {
+    "disabled": true,
+    "label": "Marissa's lost bag (Lower)",
+    "k_label": "마리사가 잃어버린 주머니(하급)",
+    "type": "chest",
+    "color": "black"
+  },
+  "I0LW": {
+    "disabled": true,
+    "label": "Marissa's lost bag (Intermediate)",
+    "k_label": "마리사가 잃어버린 주머니(중급)",
+    "type": "chest",
+    "color": "black"
+  },
+  "I0LX": {
+    "disabled": true,
+    "label": "Marissa's lost bag (Advanced)",
+    "k_label": "마리사가 잃어버린 주머니(상급)",
+    "type": "chest",
+    "color": "black"
+  },
+  "I0LY": {
+    "disabled": true,
+    "label": "Marissa's lost bag (Supreme)",
+    "k_label": "마리사가 잃어버린 주머니(최상급)",
+    "type": "chest",
+    "color": "black"
   }
 }
