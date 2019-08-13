@@ -104,7 +104,6 @@ def assertCorrectCraftings():
 						print("guide", guideRecipes)	
 
 		else:
-			#print(itemID, " not in eden guide craftings")
 			for recipe in recipes[itemID]:
 				print("\nnew Craft('{}', {}).add({});\n".format(itemID, recipe["chance"], json.dumps(recipe["items"])))	
 
@@ -932,7 +931,7 @@ def assertCorrectScalings():
 
 	assertItemScaling("I0KO", "GetManipulatedItem()) == 'I0KO'", "set udg_Mana_Shild_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=0.70")
 
-	assertItemScaling("I0L0", "if", "set udg_Gaho_Item_Real[IT]=2500.00")
+	assertItemScaling("I0L0", "if", "set udg_Gaho_Item_Real[IT]=2500")
 
 	assertItemScaling("I0L1", "GetItemTypeId(GetManipulatedItem()) == 'I0L1'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] + 1.20")
 	assertItemScaling("I0L1", "GetItemTypeId(GetManipulatedItem()) == 'I0L1'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] - 1.20")
