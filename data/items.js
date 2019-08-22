@@ -59,6 +59,10 @@ class Item {
   }
   
   dropsHtml() {
+    if (this.chest) {
+      let drops = this.chest.drops.map(obj => ({item: items[obj.id], chance: obj.chance}));
+      return "Drops<br/>" + drops.map(drop => `${drop.item.translatedLabel()} (${drop.chance} % ${translate('chance')})`).join("<br/>")
+    }
     let groups = this.dropsArray().reduce((all, cur) => {
       let key = cur.chest.parent.translatedLabel() + cur.chance
       all[key] = (all[key] || {count: 0, drop: cur});

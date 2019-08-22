@@ -4137,7 +4137,7 @@ module.exports = {
     },
     "label" : "Grasp of Vengeance",
     "k_label": "불타는 복수의 손아귀",
-    "effects": ["Damages enemies that attack the user (Allstats x 8)", "When worn by Protector of Light “Holy Light” becomes red and adds (Strength x 10) additional damage"],
+    "effects": ["Damages enemies that attack the user (Allstats x 8)", "When worn by Protector of Light “Judgment of Light” becomes red and adds (Strength x 10) additional damage"],
     "k_effects": ["적에게 공격을 받을시 적에게 데미지를 가합니다 (올스텟 x 8)", "빛의 수호자가 착용시 빛의복수 스킬이 붉은 색으로 변하며 힘 x 10의 데미지가 추가로 들어갑니다"]
   },
   "I0F9" : {
@@ -7182,34 +7182,30 @@ module.exports = {
     "k_effects": ["사용시 특수 보스존에 입장가능해지며 특수 보스를 소환합니다"]
   },
   "I0LU": {
-    "type": "material",
+    "type": "chest",
     "color": "black",
     "label": "Chaos Essence",
     "k_label": "혼돈의 영혼"
   },
   "I0LV": {
-    "disabled": true,
     "label": "Marissa's lost bag (Lower)",
     "k_label": "마리사가 잃어버린 주머니(하급)",
     "type": "chest",
     "color": "black"
   },
   "I0LW": {
-    "disabled": true,
     "label": "Marissa's lost bag (Intermediate)",
     "k_label": "마리사가 잃어버린 주머니(중급)",
     "type": "chest",
     "color": "black"
   },
   "I0LX": {
-    "disabled": true,
     "label": "Marissa's lost bag (Advanced)",
     "k_label": "마리사가 잃어버린 주머니(상급)",
     "type": "chest",
     "color": "black"
   },
   "I0LY": {
-    "disabled": true,
     "label": "Marissa's lost bag (Supreme)",
     "k_label": "마리사가 잃어버린 주머니(최상급)",
     "type": "chest",
