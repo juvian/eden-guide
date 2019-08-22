@@ -126,7 +126,7 @@ let udg_Acangel_Item_ALL = ["I07O", "I0BD", "I077", "I081", "I07G", "I045", "I04
 
 new Chest("I0AB")
   .add("I0FB", 6)
-  .add("I0AC", 6)
+  .add("I0LO", 6)
   .add("I0AQ", 15)
   .add("I0A6", 8)
   .add("I0BU", 8)
@@ -136,7 +136,7 @@ new Chest("I0AB")
 
 new Chest("I0KL")
   .add("I0FB", 4)
-  .add("I0AC", 4)
+  .add("I0LO", 4)
   .add("I0AQ", 11)
   .add("I0A6", 6)
   .add("I0BU", 6)
@@ -180,7 +180,7 @@ new Chest("I035")
 
 let udg_GOD_Item_Int = ["I0IT", "I0IU", "I0IV", "I0IW", "I0J4", "I0JL", "I0J5", "I0J8", "I0J1", "I0JD", "I0J9", "I0JI", "I0JH", "I0J7", "I0J3", "I0J6", "I0JE", "I0J2", "I0JC", "I0JK", "I0JA", "I0JJ", "I0JM", "I0JF", "I0JB", "I0JG", "I0JN", "I0IZ", "I0KB"]
 let udg_GOD02_Item_Int = ["I0KM", "I0KN", "I0KO", "I0KP", "I0KQ", "I0KR", "I0KS", "I0KT", "I0KU", "I0KV", "I0KW"];
-let udg_GOD02_Item_Int2 = ["I0L1", "I0L2", "I0L3", "I0L4", "I0L5", "I0L6", "I0L7", "I0L8", "I0L9", "I0LA", "I0LB", "I0LC", "I0LD"]
+let udg_GOD02_Item_Int2 = ["I0L1", "I0L2", "I0L3", "I0L4", "I0L5", "I0L6", "I0L7", "I0L8", "I0L9", "I0LA", "I0LB", "I0LC", "I0LD", "I0L0"]
 let udg_Event_Item_Int = ["I034", "I06I", "I06Z", "I065", "I05Y", "I06A", "I07K", "I033", "I0CR", "I04H", "I07X"];
 
 new Chest("I0IX").addItems(udg_GOD_Item_Int);

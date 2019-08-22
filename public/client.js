@@ -18,7 +18,7 @@ $(document).on("language", function () {
 function getFilteredData () {
   var filters = {};
   
-  if ($("#table thead tr .type select").val() != translator.translate("all")) {  
+  if ($("#table thead tr .type select").val() != "all") {  
     filters.type = $("#table thead tr .type select").val().toLowerCase()
   } 
   
@@ -47,7 +47,7 @@ function initializeTable () {
       })
     }
     if($(this).find("thead tr .name select").length == 0) {
-      var options = tags.concat(["all"]).map(c => ({l: translator.translate(c), v: c})).sort((a, b) =>  a.l.localeCompare(b.l));
+      var options = [{l: translator.translate("all"), v: "all"}].concat(tags.map(c => ({l: translator.translate(c), v: c})).sort((a, b) =>  a.l.localeCompare(b.l)));
       $(this).find("thead tr .name").append("<div class = 'text-left'><select class='capitalize'>"+options.map(v => `<option class = '${v.v.split('-')[0]}' value='${v.v}'>${v.l}</option>`)+"</select></div>").find("select").on("change", function () {
         tagFilters.add($(this).val());
         refreshFilters();
@@ -142,15 +142,13 @@ function initializeColumns() {
 
 
 function initializeRaids () {
-  let raids = new Set()
-  raids.add(translator.translate('all'));
-  
+  let raids = new Set()  
   chests.forEach(chest => {
     if (chest.parent.translatedLabel()) {
       raids.add(chest.parent.translatedLabel().toLowerCase());
     }
   });
   
-  $(".raid").append(Array.from(raids).sort().map(v => $("<option>").text(v)));
+  $(".raid").append([translator.translate('all')].concat(Array.from(raids).sort()).map(v => $(`<option>`).text(v)));
 }
 
