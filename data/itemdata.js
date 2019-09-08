@@ -5780,9 +5780,9 @@ module.exports = {
     "type": "helmet",
     "color": "god",
     "stats" : {
-	    "armor" : 1500,
+	    "armor" : 1000,
       "str": 3500,
-      "agi": 7000,
+      "agi": 3500,
 	    "int" : 3500,
 	    "hp" : 50000,
 	    "damage_increase" : 60
@@ -5794,9 +5794,9 @@ module.exports = {
     "type": "helmet",
     "color": "god",
     "stats" : {
-	    "armor" : 1500,
+	    "armor" : 900,
       "str": 3500,
-      "agi": 7000,
+      "agi": 3500,
 	    "int" : 3500,
       "hp": 50000,
 	    "damage_increase" : 90,
@@ -5823,9 +5823,9 @@ module.exports = {
     "color": "god",
     "stats" : {
 	    "armor" : 1000,
-      "str": 5500,
-      "agi": 5500,
-	    "int" : 5500
+      "str": 3500,
+      "agi": 3500,
+	    "int" : 3500
 	  },
     "label": "Anti-Magic Helmet",
     "k_label": "정화의 신의 결계",
