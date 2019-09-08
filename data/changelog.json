@@ -1,5 +1,16 @@
 [
   {
+    "version": "4.0.2",
+    "changes": [
+      "Updated to version 4.3F"
+    ],
+    "k_changes": [
+      "버전 4.3F로 업데이트되었습니다"
+    ],
+    "released": "8/22/2019",
+    "commit_urls": ["https://github.com/juvian/eden-guide/commit/9645ad61c7ccf275e9f9c13071942f97287a1f61"]
+  },
+  {
     "version": "4.0.1",
     "changes": [
       "Updated to version 4.3E"

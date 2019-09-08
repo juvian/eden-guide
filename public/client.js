@@ -131,9 +131,9 @@ function initializeColumns() {
     {
       field: "crafts",
       visible: false,
-      formatter: function(val) {
+      formatter: function(val, item) {
         if (val) {
-          return [].concat(val.map(craft => craft.items.map(id => items[id].translatedLabel()))).toString()
+          return JSON.stringify(item.tree())
         }
       }
     }
