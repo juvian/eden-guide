@@ -399,6 +399,8 @@ new Chest("I0LU")
   .add('I0F2' , ( 0.20 * 0.40 ))
   .add('I0FE' , ( 0.20 * 0.40 ));
 
+new Chest("I0M7").add("I0DY", 3).add("I035", 6).add("I0DS", 6).add("I0FB", 4).add("I0LO", 4).add("I0AQ", 11).add("I0A6", 6).add("I0BU", 6);
+
 new Unit("n00G")
   .add("I021", 100)
   .add("I022", 100);
@@ -637,9 +639,9 @@ new Unit("n01Y").add("I07L").add("I0LQ").add("I0LX");
 
 new Unit("e05T").add("I086").add("I0LS").add("I0LX");
 
-new Unit("n027").add("I0AB").add("I0AD").add("I0LY");
+new Unit("n027").add("I0AB").add("I0AD").add("I0LY").add("I0M5");
 
-new Unit("n02Y").add("I037").add("I036").add("I0LY");
+new Unit("n02Y").add("I037").add("I036").add("I0LY").add("I0M6");
 
 new Unit("n03Z").add("I0HA").add("I0IY");
 
@@ -651,7 +653,8 @@ new Unit("e0DF").add("I0K6").add("I0LS").add("I0LX");
 
 new Unit("n04K").add("I0K8").add("I0LQ").add("I0LX");
 
-new Unit("n051").add("I0KJ").add("I036").add("I0LY");
+new Unit("n051").add("I0KJ").add("I036").add("I0LY").add("I0M6");
 
-new Unit("n059").add("I0KL").add("I0AD").add("I0LY");
+new Unit("n059").add("I0KL").add("I0AD").add("I0LY").add("I0M5");
 
+new Unit("e0D8").add("I0M7")

@@ -5219,8 +5219,8 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Psychic]", 
     "k_label": "해방된 힘 [염동술사]",
-    "effects": ["Enchances Shockwave"],
-    "k_effects": ["충격파를 강화합니다"],
+    "effects": ["Increases energy sphere duration by 8s"],
+    "k_effects": ["에너지 구체의 지속시간을 8초 증가시킵니다"],
     "stats":  {'str': 1500, 'int': 1500, 'agi': 1500}   
   },
   "I0J3": {
@@ -5695,7 +5695,7 @@ module.exports = {
       "damage_increase": 45
 		},
 		"label" : "Purified Fury Ring",
-    "k_label": "신의 분노 반지",
+    "k_label": "신의 분노",
 		"effects" : ["Increases the damage by 120% for 15s (120s cd)"],
     "k_effects": ["사용시 15초간 추가데미지 120%증가(쿨타임 120초)"]
 	},    
@@ -5749,7 +5749,7 @@ module.exports = {
 			"movement_speed" : 300
 		},
 		"label" : "Purified Guardian Ring",
-    "k_label": "정화신의 수호"
+    "k_label": "정화의신의 수호"
 	}, 
  "I0L6" : {
 		"type" : "accessory",
@@ -7210,5 +7210,29 @@ module.exports = {
     "k_label": "마리사가 잃어버린 주머니(최상급)",
     "type": "chest",
     "color": "black"
+  },
+  "I0M3": {
+    "label": "Very intense energy",
+    "k_label": "매우 강렬한 기운",
+    "type": "material",
+    "color": "black"
+  },
+  "I0M5": {
+    "label": "Archangel’s essence",
+    "k_label": "대천사의 정수",
+    "type": "material",
+    "color": "black"
+  },
+  "I0M6": {
+    "label": "Essence of the Great Demon",
+    "k_label": "대악마의 정수",
+    "type": "material",
+    "color": "black"
+  },
+  "I0M7": {
+    "label": "Chaos Soul",
+    "k_label": "대혼돈의 영혼",
+    "type": "chest",
+    "color": "red"
   }
 }

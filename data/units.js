@@ -150,16 +150,20 @@ let units = {
     "k_label": ""
   },
   "n04B": {
-    
+    "label": "[Event] Chirno Low",
+    "k_label": "[Event] 치르노 하급"
   },
   "n04C": {
-    
+    "label": "[Event] Chirno Middle",
+    "k_label": "[Event] 치르노 중급"    
   },
   "n04D": {
-    
+    "label": "[Event] Chirno Advanced",
+    "k_label": "[Event] 치르노 고급"      
   },
   "n04E": {
-    
+    "label": "[Event] Chirno Finest",
+    "k_label": "[Event] 치르노 최고급"    
   },
   "n00X": {
     
@@ -232,6 +236,10 @@ let units = {
   },
   "n059": {
     
+  },
+  "e0D8": {
+    label: "Scheme",
+    "k_label": "춈스케"
   }
 }
 
