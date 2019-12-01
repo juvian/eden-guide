@@ -204,7 +204,13 @@ def assertCorrectDropRates():
 	for m in re.finditer("call ITD[^']*'(....)'\s*,\s*([^\)]*)", code):
 		id, chance = m.group(1), eval(m.group(2).strip("( "))
 		func = funcBefore(m.start())
-		chest = re.search("GetManipulatedItem[^']*'(....)'", funcs[func]).group(1)
+
+		if "GetItemTypeId(GetManipulatedItem" in func:
+			funcCode = code[code.rfind('if GetItemTypeId(GetManipulatedItem', 0, m.start()):m.start()].split("\n")[0]
+		else:
+			funcCode = 	funcs[func]
+
+		chest = re.search("GetManipulatedItem[^']*'(....)'", funcCode).group(1)
 
 		drops[chest].append({"id": id, "chance": chance})
 	
@@ -216,14 +222,17 @@ def assertCorrectDropRates():
 		if "udg_Chiruno_P_Unit" in funcs[func] or m.group(1) in ["I0JV", "I012"]:
 			continue
 
-		if "GetRandomInt" in funcs[func]:
+		chance = 100	
+
+		if func == "Trig_SSS_Boss_D_Func008Func002C":
+			chest = "e0D8"
+		elif "GetRandomInt" in funcs[func]:
 			chest, chance = resolveRandom(m, funcs[func], "GetUnitTypeId[^']*'(....)'")
 		elif "GetHeroLevel" in funcs[func]:
 			func = funcBefore(m.start(), 2)	
 			chest, chance = re.search("GetUnitTypeId[^']*'(....)'", funcs[func]).group(1), 100
 		else:	
 			chest = funcs[func].split("GetUnitTypeId")[1].split("'")[1]
-			chance = 100
 
 		drops[chest].append({"id": m.group(1), "chance": float(chance)})	
 
@@ -248,6 +257,10 @@ def assertCorrectDropRates():
 			elif "GetItemCharges" in funcs[func]: #exchange coupons
 				continue
 			elif "Chiruno_Event_Bay" in func:
+				continue	
+			elif "udg_GOD02_Amor_BTN01" in funcs[func] or "udg_GOD02_Amor_BTN02" in funcs[func] or "udg_GOD01_Bag_Skill_BTN" in funcs[func]:
+				continue	
+			elif "udg_GOD_Moster02_Clear_Count" in funcs[func]: #buy item
 				continue	
 			elif "<=" in funcs[func]:
 				if "GetRandomInt" in funcs[func]:
@@ -301,7 +314,7 @@ def assertCorrectDropRates():
 				print("jass", drops[chest])
 				print("guide", itemsGuide["drops"][chest])			
 		else:
-			print(chest, " not in item guide")	
+			print(chest, " not in item guide", drops[chest])	
 
 	for chest in itemsGuide["drops"]:
 		if chest not in drops:
@@ -316,13 +329,13 @@ def processLine(line, txt, id, pendingDamage, pendingHpRegen):
 			elif "-" in txt:
 				damage = round(float(line.split("-")[1].split(")")[0].strip()) * 100)	
 			else:
-				damage = round(float(line.split("=")[-1]))	
+				damage = float(line.split("=")[-1])
 		except Exception as ex:
 			print(txt, ex)		
 			raise ex
 
 		if damage == 0:
-			return	
+			return			
 
 	if "udg_Plus_Demige" in line:
 		if id in itemsGuide["items"] and "stats" in itemsGuide["items"][id]:
@@ -341,7 +354,7 @@ def processLine(line, txt, id, pendingDamage, pendingHpRegen):
 		if id in itemsGuide["items"]:
 			pendingDamage.discard(id)
 			if "damage_taken" not in  itemsGuide["items"][id]["stats"]:
-				print(id, "does not have damage_taken")
+				print(id, "does not have damage_taken", line, txt)
 			else:
 				if itemsGuide["items"][id]["stats"]["damage_taken"] != damage:
 					print(id, "different damage taken", itemsGuide["items"][id]["stats"]["damage_taken"], damage)
@@ -360,26 +373,36 @@ def processLine(line, txt, id, pendingDamage, pendingHpRegen):
 		else:
 			print(id, "not in guide regen percent")		
 			
-
-def processDamage(func, pendingDamage, pendingHpRegen):
-
-	for func in re.findall(func, code):
-		idx = code.index("GetManipulatedItem()) == '", code.find(func)) + len("GetManipulatedItem()) == '")
-		id = code[idx:idx + 4]
-		funcName = func.split(" ")[1]
-
-		idx = code.find(funcName, code.find(func) + 100)
-
-		txt = code[idx:code.find("else", idx)]
-
-		for line in txt.split("\n")[1:-1]:
-			processLine(line, txt, id, pendingDamage, pendingHpRegen)
 	
 def processDamage2(pendingDamage, pendingHpRegen):
 	for m in re.finditer("Item\s?==\s?'(\w\w\w\w)'", code):
 		id = m.group(1)
 		for line in code[m.start():code.find("endif", m.start())].split("\n"):
 			processLine(line, line, id, pendingDamage, pendingHpRegen)	
+
+def processDamage(pendingDamage, pendingHpRegen):
+	for m in re.finditer("set udg_Plus_Demige|set udg_Minus_Demige|set udg_Shied_Int|set udg_HP_Amor", code):
+		line = code[m.start():code.find("\n", m.start())]
+		idx = code.rfind("if", 0, m.start())
+
+		if "Player" in line:
+			idx = code.rfind("if", 0, m.start())
+			funcName = code[idx:m.start()].split("()")[0].split(" ")[-1]
+			if "Item" in funcName or "Plus_demige" in funcName:
+				idx = code.find("function " + funcName)
+				func = code[idx:code.find("endfunction", idx)]
+
+				if code.find("GetManipulatedItem", idx) > code.find("endfunction", idx):
+					funcName = func.split("()")[0].split(" ")[-1]
+					idx = code.find("function " + funcName)
+					func = code[idx:code.find("endfunction", idx)]
+
+				for l in func.split("\n"):
+					if "GetManipulatedItem()) == '" in l:
+						id = l.split("GetManipulatedItem()) == '")[1][0:4]
+						processLine(line, line, id, pendingDamage, pendingHpRegen)
+
+
 
 def assertCorrectBonusDamage():
 	loadCode()
@@ -395,8 +418,7 @@ def assertCorrectBonusDamage():
 				pendingHpRegen.add(id)	
 
 
-	processDamage("function Trig_Plus_demige_.*Func.*", pendingDamage, pendingHpRegen)
-	processDamage("function Trig_Item_GG_Func.*", pendingDamage, pendingHpRegen)
+	processDamage(pendingDamage, pendingHpRegen)
 	processDamage2(pendingDamage, pendingHpRegen)
 
 	if len(pendingDamage):
