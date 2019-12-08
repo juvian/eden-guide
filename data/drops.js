@@ -348,7 +348,10 @@ new Chest("I0KA")
 new Chest("I0KY")
   .add("I0KZ", 0.6)
   .add("I0KX", 1.5)
-  .add("I0LE", 1.5);
+  .add("I0LE", 1.5)
+  .add("I0KZ", 1)
+  .add("I0KX", 3.5)
+  .add("I0LE", 3.5);
 
 new Chest("I0LV").add("I0EX", 0.3).add("I0FY");
 
