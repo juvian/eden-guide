@@ -9,7 +9,7 @@ let tagFilters = new Set();
 
 $(document).on("language", function () {
     if ($("#table").length && window.itemArray === undefined) {
-      itemArray = Object.values(items);
+      itemArray = Object.values(items).filter(i => i.label);
       initializeRaids();
       initializeTable();  
     }

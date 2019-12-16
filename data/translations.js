@@ -151,6 +151,38 @@ exports.translations = {
     "eng": "Delete",
     "kor": "삭제"
   },
+  "attack-str": {
+    "eng" : "Each attack has a 12% chance to deal 300000 + STR x{0} bonus damage",
+    "kor" : "기본공격시 일정확률로 대천사의 죽음의심판생성 (12% 기회 300000 + STR x{0})"
+  },
+  "attack-str-agi": {
+    "eng": "Each attack has a 16% chance to deal 300000 + (STR + AGI) x{0} bonus damage",
+    "kor": "공격시 확률적으로 빛의심판 발동 (16% 기회 300000 + (STR + AGI) x{0})"
+  },
+  "attack-agi": {
+    "eng": "Each attack has 20% chance to deal 300000 + AGI x{0} bonus damage",
+    "kor": "공격시 확률적으로 빛의심판 발동 (20% 기회 300000 + AGI x{0})"
+  },
+  "attack-str-int": {
+    "eng": "Each spell has a 8% chance to deal 30000 + (STR + INT) x{0} bonus damage",
+    "kor": "스킬공격에 확률적으로 죽음의 폭발발생 (8% 기회 30000 + (STR + INT) x{0})"
+  },
+  "attack-contract": {
+    "eng": "Each spell consumes 4% of HP and MP adding {0}% bonus damage (Only activates when above 10% of these thresholds)",
+    "kor": "모든 능력사용시 체력과 마나 4% 소모 (10%이상일때 발동) 추가데미지 {0}% 증가"
+  },
+  "attack-int": {
+    "eng": "Each spell has a 8% chance to deal 30000 + INT x42 bonus damage",
+    "kor": "스킬의 모든히트에 확률적으로 빛의심판 발동(8% 기회 30000 + INT x42)"
+  },
+  "attack-mana": {
+    "eng": "Generates Bonus Damage based on MAX MANA ({0}% per 10,000)<br/>Consumes 4% of MAX MANA per cast<br/>Will not work if below 15% MAX MANA",
+    "kor": "사용자의 마나에 비례하여 추가데미지 생성 (비뮬 - 1만당 {0}%)<br/>스킬사용시 최대마력 5%감소<br/>마력이 15%이상 있을때 작동"
+  },
+  "bugs": {
+    "eng": "this item has bugs",
+    "kor": "이 아이템에는 버그가 있습니다"
+  },
   "public": "공공의",
   "private": "은밀한",
   "pending": {
@@ -168,6 +200,10 @@ exports.translations = {
   "favorites": {
     "eng": "Favorites",
     "kor": "즐겨 찾기"
+  },
+  "mps-text": {
+    "eng": "Creates a shield that blocks max mana {0} every 10s. Does not stack",
+    "kor": "10초마다 최대마나 {0}의 쉴드생성 (아이템끼리는 쉴드가 중첩되지 않습니다)"
   },
   "try-build": {
     "eng": "Try Build",
