@@ -19,6 +19,7 @@ class Item {
     let template = this.statsHtml();
     template += this.effectsHtml();
     template += this.statsPointsHtml();
+    template += (this.bugged ? translate('bugs') : '');
     
     return template.endsWith("<br/>") ? template.substring(0, template.lastIndexOf("<br/>")) : template;
   }
@@ -92,6 +93,16 @@ class Item {
       else if (stat == "magic_resistance") return translate("magic resistance") + " : +" + val + "%";
       else if (stat == "max_int") return translate("intelligence increase") + " : +" + val + "%";    
       else if (stat == "critical_hit") return this.stats["critical_hit_chance"] + '%' + translate('chance') + ' x' + val + " " + translate("critical hit")
+      else if (stat == 'mps') return translate('mps-text').replace("{0}", 'x0.' + this.stats['mps'])
+      else if (stat == 'attack_str') return translate('attack-str').replace("{0}", this.stats['attack_real'])
+      else if (stat == 'attack_str_agi') return translate('attack-str-agi').replace("{0}", this.stats['attack_real'])
+      else if (stat == 'attack_agi') return translate('attack-agi').replace("{0}", this.stats['attack_real'])
+      else if (stat == 'attack_str_int_real') return translate('attack-str-int').replace("{0}", this.stats['attack_str_int_real'])
+      else if (stat == 'contract') {
+        return this.stats['contract'] < 0.001 ? translate('attack-mana').replace("{0}", this.stats['contract'] * 1000000) : translate('attack-contract').replace("{0}", this.stats['contract'] * 100)
+      }
+      else if (stat == 'attack_int_real') return translate('attack-int').replace("{0}", this.stats['attack_int_real'])
+      else return ''  
   }
   
   materials() {

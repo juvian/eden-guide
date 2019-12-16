@@ -152,11 +152,66 @@ module.exports = function (app) {
       int: req.body.int
     }
     
+    code.data.godClearTimes = 9999;
+    code.data.god2ClearTimes = 9999;
+    code.data.skills = {
+      one: 1,
+      two: 1,
+      three: 1,
+      four: 1
+    }
+    code.data.bag5 = 1;
+    code.data.bag6 = 1;
+    code.data.points = 100000;
     code.data.character = req.body.char;
-    code.data.items = req.body.items.slice(0, 30).map((v) => ({"id": v}));
+    code.data.items = req.body.items.slice(0, 37).map((v) => ({"id": v}));
     var result = code.save("scvscvgo")
     return res.send(result)
     
+  })
+  
+  app.get("/testcode", function(req, res){
+    //empty: AAAAc~Ld=ndoS=iAAA~EAAY'r~(x7AzGoWA{7A{7A{7AAzAAAA~AAA@]A~
+    // with points + gods: AAAAc~Ld=}doS=iA0~0uAAA1fAAAACAA*qe~(x7AzGoWA{7A{7A{7AAzAAAACAAA@]AAYc7GGGG
+    delete require.cache[require.resolve("../.data/private.js")]
+    var CodeLoader = require("../.data/private.js");
+var code = new CodeLoader();
+    //code.load("AAAAc~Ld=ndoS=iAAA~EAAY'r~(x7AzGoWA{7A{7A{7AAzAAAA~AAA@]A~");
+    code.load("AAAAc~Ld=}doS=iA0~0uAAA1fAAAACAA*qe~(x7AzGoWA{7A{7A{7AAzAAAACAAA@]AAYc7GGGG")
+    console.log(code.data)
+    /*
+    code.data.level = 430;
+    code.data.bag = 1;
+    code.data.xp = 5096510;
+    code.data.gold = 1000000;
+    code.data.saveTick = 2;
+    code.data.points = 100000;
+    
+    code.data.stats = {
+      str: req.body.str,
+      agi: req.body.agi,
+      int: req.body.int
+    }
+    
+    code.data.godClearTimes = 9999;
+    code.data.god2ClearTimes = 9999;
+    code.data.skills = {
+      
+    }
+    
+    code.data.character = 'E041';
+    */
+    code.data.godClearTimes = undefined;
+    code.data.god2ClearTimes = 0;    
+    console.log("save")
+    var result = code.save("scvscvgo")
+    console.log(result)
+    let c = new CodeLoader()
+    c.load(result[0]);
+    console.log(c.data);
+  
+    return res.send(result)
+    res.send("ok")
   })
   
   function processCode (code) {

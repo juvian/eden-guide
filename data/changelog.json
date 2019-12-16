@@ -1,4 +1,17 @@
-[ 
+[
+  {
+    "version": "4.0.5",
+    "changes": [
+      "Updated to version 4.5B",
+      "Added god points to code generator"
+    ],
+    "k_changes": [
+      "버전 4.5B로 업데이트되었습니다",
+      "코드 생성기에 신 포인트 추가"
+    ],
+    "released": "12/8/2019",
+    "commit_urls": ["https://github.com/juvian/eden-guide/commit/002ab9906cdd5092d617cb4732a0f28cf16746b5"]
+  },
   {
     "version": "4.0.4",
     "changes": [
