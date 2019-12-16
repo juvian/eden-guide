@@ -10,6 +10,7 @@ itemsGuide = None
 lastRun = None
 funcs = None
 arrays = None
+bugs = set()
 
 def getItemData():
 	data = requests.get("http://eden-item-guide.glitch.me/items.json").json()
@@ -32,32 +33,10 @@ def loadItems():
 			temp[crafting["id"]].append(crafting)
 		
 		itemsGuide['craftings'] = temp
-def assertCorrectInfo():
-	guide = itemsGuide["items"]
 
-	for itemID in guide:
-		if itemID not in items:
-			print(itemID, "not in jass")
-			continue
-		itemGuide = guide[itemID]
-		item = items[itemID]
-
-		if "stats" in itemGuide:
-			for stat in props:
-				if stat in item and item[stat] != 0:
-					if stat in itemGuide["stats"]:
-						if itemGuide["stats"][stat] != item[stat]:
-							if (stat == "movement_speed" or stat == "attack_speed") and itemID in ['I07F', 'I0ID', 'I0IE', 'I0IC']:
-								continue
-							if (stat == "hp_regen") and itemID in ["I081", "I0DK", "I06R", "I03H", "I0E0", "I0BL", "I07J"]:
-								continue	
-							print(itemID, "different " + stat, itemGuide["stats"][stat], item[stat])
-					else:
-						print(itemID, "has no " + stat, item[stat])
-		elif len({x: item[x] for x in props if item[x]}) > 0:
-			print(itemID, "missing stats", {x: item[x] for x in props if item[x]})				
-
-
+		for id in itemsGuide:
+			if "bugged" in itemsGuide[id]:
+				bugs.add(id)
 
 def assertCorrectCraftings():
 	loadCode()
@@ -108,6 +87,11 @@ def assertCorrectCraftings():
 				print("\nnew Craft('{}', {}).add({});\n".format(itemID, recipe["chance"], json.dumps(recipe["items"])))	
 
 						
+def reportBug(id, *args):
+	if id in itemsGuide["items"] and "bugged" in itemsGuide["items"][id]:
+		bugs.discard(id)
+	else:
+		print(id, *args)	
 
 
 def loadCode():
@@ -196,6 +180,7 @@ def resolveRandom(m, func, key):
 	chance = (100 / (int(d.group(2)) - int(d.group(1)) + 1)) * int(d.group(3))
 
 	return chest, chance
+
 def assertCorrectDropRates():
 	loadCode()
 	
@@ -321,8 +306,20 @@ def assertCorrectDropRates():
 			print(chest, " not calculated in jass")		
 
 
-def processLine(line, txt, id, pendingDamage, pendingHpRegen):
-	if "udg_Plus_Demige" in line or "udg_Minus_Demige" in line or "udg_Shied_Int" in line or "udg_HP_Amor" in line:
+def processStat(stat, line, val, id, missing):
+	missing[stat].discard(id)
+
+	if id in itemsGuide["items"]:
+		if stat not in  itemsGuide["items"][id]["stats"]:
+			reportBug(id, "does not have " + stat, line)
+		else:
+			if itemsGuide["items"][id]["stats"][stat] != val:
+				reportBug(id, "different " + stat, itemsGuide["items"][id]["stats"][stat], val, line)
+	else:
+		print(id, "not in guide " + id)			
+
+def processLine(line, txt, id, missing):
+	if len(list(filter(lambda x: x in line, ["udg_Plus_Demige", "udg_Minus_Demige", "udg_Shied_Int", "udg_HP_Amor", "udg_Fire_Amor", "udg_Fire_Amor_Minus", "udg_Gaho_Item_Real"]))):
 		try:
 			if "+" in txt:
 				damage = round(float(line.split("+")[1].split(")")[0].strip()) * 100)
@@ -337,51 +334,69 @@ def processLine(line, txt, id, pendingDamage, pendingHpRegen):
 		if damage == 0:
 			return			
 
-	if "udg_Plus_Demige" in line:
-		if id in itemsGuide["items"] and "stats" in itemsGuide["items"][id]:
-			if "damage_increase" not in itemsGuide["items"][id]["stats"]:
-				print(id, "does not have damage_increase", damage)
-			else:
-				if itemsGuide["items"][id]["stats"]["damage_increase"] != damage:
-					print(id, "different bonus damage", itemsGuide["items"][id]["stats"]["damage_increase"], damage)
-		else:
-			if id not in ["I00Z", "I010", "I02X", "I03N"]:
-				print(id, "not in guide bonus dmg")				
-
-	elif "udg_Minus_Demige" in line or "udg_Shied_Int" in line:
+	if "udg_Plus_Demige" in line and id not in ["I00Z", "I010", "I02X", "I03N"]:
+		processStat("damage_increase", line, damage, id, missing)	
+	elif "udg_HP_Amor" in line:
+		processStat("hp_regen_percent", line, damage, id, missing)
+	elif "udg_Fire_Amor_Minus" in line:
+		processStat("hp_regen", line, damage * -1, id, missing)		
+	elif "udg_Gaho_Item_Real" in line:
+		processStat("hp_regen", line, damage , id, missing)										
+	elif "udg_Minus_Demige" in line or "udg_Shied_Int" in line or "udg_Fire_Amor" in line:
 		if "udg_Shied_Int" in line:
 			damage *= -1
-		if id in itemsGuide["items"]:
-			pendingDamage.discard(id)
-			if "damage_taken" not in  itemsGuide["items"][id]["stats"]:
-				print(id, "does not have damage_taken", line, txt)
-			else:
-				if itemsGuide["items"][id]["stats"]["damage_taken"] != damage:
-					print(id, "different damage taken", itemsGuide["items"][id]["stats"]["damage_taken"], damage)
-
-		else:
-			if id not in ["I00Z", "I010", "I02X", "I03N"]:
-				print(id, "not in guide bonus dmg")
-	elif "udg_HP_Amor" in line:
-		if id in itemsGuide["items"]:
-			pendingHpRegen.discard(id)
-			if "hp_regen_percent" not in  itemsGuide["items"][id]["stats"]:
-				print(id, "does not have hp_regen_percent")
-			else:
-				if itemsGuide["items"][id]["stats"]["hp_regen_percent"] != damage:
-					print(id, "different hp regen percent", itemsGuide["items"][id]["stats"]["hp_regen_percent"], damage)
-		else:
-			print(id, "not in guide regen percent")		
+			processStat("damage_taken", line, damage, id, missing)
+	
 			
 	
-def processDamage2(pendingDamage, pendingHpRegen):
+def processDamage2(missing):
 	for m in re.finditer("Item\s?==\s?'(\w\w\w\w)'", code):
 		id = m.group(1)
 		for line in code[m.start():code.find("endif", m.start())].split("\n"):
-			processLine(line, line, id, pendingDamage, pendingHpRegen)	
+			processLine(line, line, id, missing)
 
-def processDamage(pendingDamage, pendingHpRegen):
-	for m in re.finditer("set udg_Plus_Demige|set udg_Minus_Demige|set udg_Shied_Int|set udg_HP_Amor", code):
+	for m in re.finditer("call SaveReal\(Itemtable, '(\w\w\w\w)', Stri", code):
+		id = m.group(1)
+		line = code[m.start():code.find('\n', m.start())]
+
+		stats = {
+			'df': 'damage_taken',
+			'md': 'damage_taken',
+			'pd': 'damage_increase',
+			'at': 'atk',
+			'str': 'str',
+			'agi': 'agi',
+			'int': 'int',
+			'amor': 'armor',
+			'hp': 'hp',
+			'mp': 'mp',
+			'hpup': 'max_health',
+			"mps": "mps"
+		}
+
+		multipliers = {
+			'df': -100,
+			'md': 100,
+			'pd': 100,
+			'mps': 100,
+			'hpup': 100
+		}
+
+		s = line.split("StringHash(")[1].split('"')[1].lower()
+
+		if s in ["fd"]:
+			reportBug(id, s)
+			continue
+
+		stat = stats[s]
+		multiplier = 1 if s not in multipliers else multipliers[s]
+
+		damage = round(float(line.split(",")[-1].split(")")[0]) * multiplier)
+		processStat(stat, line , damage, id, missing)
+
+
+def processDamage(missing):
+	for m in re.finditer("set udg_Plus_Demige|set udg_Minus_Demige|set udg_Shied_Int|set udg_HP_Amor|set udg_Fire_Amor|set udg_Fire_Amor_Minus|set udg_Gaho_Item_Real", code):
 		line = code[m.start():code.find("\n", m.start())]
 		idx = code.rfind("if", 0, m.start())
 
@@ -400,34 +415,159 @@ def processDamage(pendingDamage, pendingHpRegen):
 				for l in func.split("\n"):
 					if "GetManipulatedItem()) == '" in l:
 						id = l.split("GetManipulatedItem()) == '")[1][0:4]
-						processLine(line, line, id, pendingDamage, pendingHpRegen)
+						processLine(line, line, id, missing)
 
+
+def assertCorrectInfo(missing):
+	guide = itemsGuide["items"]
+
+	for itemID in guide:
+		if itemID not in items:
+			print(itemID, "not in jass")
+			continue
+		itemGuide = guide[itemID]
+		item = items[itemID]
+
+		if "stats" in itemGuide:
+			for stat in props:
+				if stat in item and item[stat] != 0:
+					if stat in itemGuide["stats"]:
+						if itemGuide["stats"][stat] != item[stat]:
+							if (stat == "movement_speed" or stat == "attack_speed") and itemID in ['I07F', 'I0ID', 'I0IE', 'I0IC']:
+								continue
+							if (stat == "hp_regen") and itemID in ["I081", "I0DK", "I06R", "I03H", "I0E0", "I0BL", "I07J"]:
+								continue	
+							print(itemID, "different " + stat, itemGuide["stats"][stat], item[stat])
+						else:
+							if stat in missing:
+								missing[stat].discard(itemID)			
+					else:
+						print(itemID, "has no " + stat, item[stat])
+		elif len({x: item[x] for x in props if item[x]}) > 0:
+			print(itemID, "missing stats", {x: item[x] for x in props if item[x]})		
+
+
+def removeStatSystemAbilities():
+	ids = set()
+	for match in re.finditer('set udg_Stat_System', code):
+		idx = code.find("='", match.start())
+		id = code[idx+2:idx+6]
+		ids.add(id)
+
+	for id in items:
+		item = items[id]
+		if "abilList" in item and item["abilList"] != '_':
+			addAbilities(item, set(item["abilList"].strip().split(",")) & ids, -1)
+
+
+def processProcs(missing):	
+	stats = {
+		'udg_Attack_Item': 'attack_agi',
+		'udg_Attack_Item_Real': 'attack_real',
+		'udg_Attack_Item_Str': 'attack_str',
+		'udg_Attack_Item_Str_Aig': 'attack_str_agi',
+		'udg_Contract': 'contract',
+		'udg_Int_Tick_Item': 'int_tick',
+		'udg_Int_Tick_Item_Real': 'attack_int_real',
+		'udg_Str_Int_Tick_Item_Real': 'attack_str_int_real'
+	}
+
+	safeIdx = code.find('function InitSounds')
+
+	seen = defaultdict(dict)
+	unseen = defaultdict(dict)
+
+	for m in re.finditer("set udg_Attack_Item|set udg_Contract|set udg_Int_Tick_Item|set udg_Str_Int_Tick_Item_Real", code):
+		if m.start() < safeIdx:
+			continue
+		line = code[m.start():code.find("\n", m.start())]
+
+		if "udg_Attack_Item_Unit" in line:
+			continue
+
+		idx = code.rfind("if", 0, m.start())
+
+		for m2 in re.finditer("'(\w\w\w\w)'", code[idx:code.find('\n', idx)]):
+			id = m2.group(1)
+			stat = stats[line.split('set')[1].split("=")[0].split("[")[0].strip()]
+			val = line.split("=")[1]
+			val = True if val == 'true' else False if val == 'false' else float(val)
+
+			funcIdx = code.rfind("takes nothing returns nothing", 0, m.start())
+			funcName = code[code.rfind("function", 0, funcIdx):funcIdx].split("function")[1].strip()
+
+			if funcName == "Trig_Item_Tick_GG_Actions":
+				unseen[id][stat] = False
+
+			elif funcName == "Trig_Item_Tick_New_Actions":
+				seen[id][stat] = True	
+				processStat(stat, line, val, id, missing)
+		
+
+	checkSeenUnseen(seen, unseen, "unseen")			
+	checkSeenUnseen(unseen, seen, "seen")			
+
+	toCheck = {
+		"30000.00 + ( GetHeroInt(udg_hero[ID], true) * udg_Int_Tick_Item_Real[ID] )": 8,
+		"30000.00 + ( GetHeroAgi(udg_hero[ID], true) * udg_Attack_Item_Real[ID]": 20,
+		"30000.00 + ( GetHeroAgi(udg_hero[ID], true) + GetHeroStr(udg_hero[ID], true) ) * udg_Attack_Item_Real[ID]": 16,
+		"30000.00 + ( GetHeroStr(udg_hero[ID], true) * udg_Attack_Item_Real[ID] )": 12,
+		"30000.00 + ( ( GetHeroInt(udg_hero[ID], true) + GetHeroStr(udg_hero[ID], true) ) * udg_Str_Int_Tick_Item_Real[ID]": 8
+	}
+
+	for text in toCheck:
+		idx = code.find(text)
+		idx = code.rfind("GetRandomInt(1, 100) <=", 0, idx)
+		chance = code[idx:idx + 30].split("<=")[1].split(")")[0].strip()
+
+		if chance != str(toCheck[text]):
+			print("wrong chance", chance, toCheck[text])
+
+
+def checkSeenUnseen(s1, s2, msg):
+	for id in s1.keys():
+		if id not in s2:
+			reportBug(id, "missing " + msg)
+		else:
+			for stat in s1[id]:
+				if stat not in s2[id]:
+					reportBug(id, stat, "missing " + msg)	
 
 
 def assertCorrectBonusDamage():
 	loadCode()
+	removeStatSystemAbilities()
 
-	pendingDamage = set()
-	pendingHpRegen = set()
+	missing = dict()
+	stats = ["damage_taken", "hp_regen_percent", "damage_increase", "hp_regen", "atk", "int", "str", "agi", 'armor', 'hp', 'mp', 'max_health', "mps", "attack_agi", "attack_real", "attack_str", "attack_str_agi", "contract", "attack_int_real", "attack_str_int_real", "int_tick"]
+
+	for stat in stats:
+		missing[stat] = set()
 
 	for id in itemsGuide["items"]:
 		if "stats" in itemsGuide["items"][id]:
-			if "damage_taken" in itemsGuide["items"][id]["stats"]:
-				pendingDamage.add(id)
-			if "hp_regen_percent" in itemsGuide["items"][id]["stats"]:
-				pendingHpRegen.add(id)	
+			for stat in stats:
+				if stat in itemsGuide["items"][id]["stats"]:
+					missing[stat].add(id)
+
+	for id in ["I0AS", "I08T", "I0AT", "I0C1", "I0C2", "I0HI", "I0GI", "I07C", "I04E", "I0NF", "I08U", "I0HV", "I0BP"]:
+		missing["damage_increase"].discard(id)
+
+	for id in ["I00Z", "I010", "I02X", "I03N"]:
+		missing["damage_taken"].discard(id)		
 
 
-	processDamage(pendingDamage, pendingHpRegen)
-	processDamage2(pendingDamage, pendingHpRegen)
+	assertCorrectInfo(missing)	
+	processDamage(missing)
+	processDamage2(missing)
+	processProcs(missing)
 
-	if len(pendingDamage):
-		print("missing damage taken", pendingDamage)					
-
-
-def process(itemId, type, func):
-	for fun in re.findall("if.*" + func.split(" ")[1] + "\(\).*then", code):
-		funcCode = code[code.find(fun):code.find("endif", code.find(fun))]
+	for stat in stats:
+		for id in missing[stat]:
+			reportBug(id, "missing", stat)
+			
+	for id in bugs:
+		print("didnt find any bug for ", id)		
 
 
 def assertItemScaling(itemId, text, scaling, qty = 1, percentChance = 0, untilFunctionEnd = False, depth = 1):
@@ -526,13 +666,9 @@ def assertCorrectScalings():
 	if abilities["A09L"]["int"] != 2000:
 		print("A09L",  "does not provide 2000 int")
 
-	assertItemScaling("I074", "if", "set udg_Attack_Item_Real[IT]=20")
-
-	assertItemScaling("I0CD", "if", "set udg_Attack_Item_Real[IT]=20")
 	
 	assertItemScaling("I075", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I075')", "call UnitAddAbilityBJ('A09Z', s__TrigVariables_unit0[GlobalTV])")
 	assertItemScaling("I075", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I075')", "call s__TrigVariables_SleepForStageNext(GlobalTV,10.00)")
-	assertItemScaling("I075", "if", "set udg_Int_Tick_Item_Real[IT]=52")
 
 	if abilities["A09Z"]["int"] != 1000:
 		print("A09Z",  "does not provide 1000 int")
@@ -544,10 +680,7 @@ def assertCorrectScalings():
 	assertItemScaling("I07B", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I07B')", "call s__TrigVariables_SleepForStageNext(GlobalTV,7.70)")
 	assertItemScaling("I07B", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I07B')", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) * 80.00")
 
-	assertItemScaling("I07D", "if", "set udg_Attack_Item_Real[IT]=9")
 	assertItemScaling("I07D", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I07D')", "300000.00 + ( I2R(( GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true) + GetHeroStatBJ(bj_HEROSTAT_AGI, GetTriggerUnit(), true) )) * 55.00")
-
-	assertItemScaling("I07E", "if", "set udg_Str_Int_Tick_Item_Real[IT]=22")
 
 	assertItemScaling("I085", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I085'", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, GetTriggerUnit(), true)) * 5.00")
 	assertItemScaling("I085", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I085')", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) * 4.00")
@@ -566,19 +699,11 @@ def assertCorrectScalings():
 
 	assertItemScaling("I08S", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I08S')", "call UnitApplyTimedLifeBJ(20.00, 'BHwe', GetLastCreatedUnit())")
 
-	assertItemScaling("I08V", "if", "set udg_Attack_Item_Real[IT]=28")
-
-	assertItemScaling("I0CE", "if", "set udg_Attack_Item_Real[IT]=30")
-
 	assertItemScaling("I08W", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.35 * 0.10 ) ) )")
 	assertItemScaling("I08W", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I08W'", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.04", depth = 2)
 
 	assertItemScaling("I08Y", "if", "udg_Attack_Item_Real[IT]=7") 
 	assertItemScaling("I08Y", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I08Y'", "300000.00 + ( I2R(( GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true) + GetHeroStatBJ(bj_HEROSTAT_AGI, GetTriggerUnit(), true) )) * 70.00")
-
-	assertItemScaling("I095", "if", "set udg_Str_Int_Tick_Item_Real[IT]=28")
-
-	assertItemScaling("I094", "if", "set udg_Int_Tick_Item_Real[IT]=70")
 
 	assertItemScaling("I09T", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I09T')", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 6.00")
 	assertItemScaling("I09T", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09T')", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) * 4.00", 2)
@@ -640,10 +765,6 @@ def assertCorrectScalings():
 	assertItemScaling("I0BE", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BE')", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.12")
 	assertItemScaling("I0BE", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BE')", "call s__TrigVariables_SleepForStageNext(GlobalTV,120.00)")
 
-	assertItemScaling("I0CG", "if", "set udg_Attack_Item_Real[IT]=48")
-
-	assertItemScaling("I096", "if", "set udg_Attack_Item_Real[IT]=42")
-
 	assertItemScaling("I09E", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09E'", "340000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 225.00")
 
 	assertItemScaling("I0AE", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.44 * 0.10 ) ) )")
@@ -658,23 +779,15 @@ def assertCorrectScalings():
 	assertItemScaling("I0AN", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AN'", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, GetTriggerUnit(), true)) * 7.50")
 	assertItemScaling("I0AN", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0AN')", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) * 6.50")
 
-	assertItemScaling("I09A", "if", "set udg_Attack_Item_Real[IT]=15")
 	assertItemScaling("I09A", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I09A')", "400000.00 + ( I2R(( GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true) + GetHeroStatBJ(bj_HEROSTAT_AGI, GetTriggerUnit(), true) )) * 105.00")
-
-	assertItemScaling("I09Q", "if", "set udg_Str_Int_Tick_Item_Real[IT]=45.6")
-
-	assertItemScaling("I09M", "if", "set udg_Int_Tick_Item_Real[IT]=114")
 
 	assertItemScaling("I09I", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I09I'", "500000.00 + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 230.00")
 
-	assertItemScaling("I0CH", "if", "set udg_Attack_Item_Real[IT]=56")
 
 	assertItemScaling("I0AI", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AI'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 8.00")
 	assertItemScaling("I0AI", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0AI'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) * 6.00", 2)
 	
 	assertItemScaling("I09F", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09F'", "380000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 250.00")	
-
-	assertItemScaling("I097", "if", "set udg_Attack_Item_Real[IT]=48")
 
 	assertItemScaling("I0AF", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.46 * 0.10 ) ) )")
 	assertItemScaling("I0AF", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AF'", "GetUnitStateSwap(UNIT_STATE_MANA, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) - ( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.04", depth = 2)
@@ -688,20 +801,13 @@ def assertCorrectScalings():
 	assertItemScaling("I09B", "if", "set udg_Attack_Item_Real[IT]=17")
 	assertItemScaling("I09B", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I09B'", "400000.00 + ( I2R(( GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true) + GetHeroStatBJ(bj_HEROSTAT_AGI, GetTriggerUnit(), true) )) * 120.00")	
 
-	assertItemScaling("I09R", "if", "set udg_Str_Int_Tick_Item_Real[IT]=50.4")
-
-	assertItemScaling("I09N", "if", "set udg_Int_Tick_Item_Real[IT]=126")
 
 	assertItemScaling("I09J", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I09J'", "600000.00 + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 260.00")	
-
-	assertItemScaling("I0CI", "if", "set udg_Attack_Item_Real[IT]=64")
 
 	assertItemScaling("I0AJ", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AJ'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 8.70")
 	assertItemScaling("I0AJ", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0AJ'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) * 6.70", depth = 2)
 
 	assertItemScaling("I09G", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09G'", "420000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 280.00")
-
-	assertItemScaling("I098", "if", "set udg_Attack_Item_Real[IT]=53")
 
 	assertItemScaling("I0AG", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.49 * 0.10 ) ) )")	
 	assertItemScaling("I0AG", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AG'", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.04", depth = 2)
@@ -711,12 +817,6 @@ def assertCorrectScalings():
 	
 	assertItemScaling("I0AP", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AP'", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, GetTriggerUnit(), true)) * 8.70")
 	assertItemScaling("I0AP", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0AP'", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) * 7.50", depth = 2)
-
-	assertItemScaling("I09C", "if", "set udg_Attack_Item_Real[IT]=19")
-
-	assertItemScaling("I09S", "if", "set udg_Str_Int_Tick_Item_Real[IT]=60")
-
-	assertItemScaling("I09O", "if", "set udg_Int_Tick_Item_Real[IT]=147")
 
 	assertItemScaling("I09K", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I09K'", "700000.00 + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 300.00")
 
@@ -742,8 +842,6 @@ def assertCorrectScalings():
 
 	assertItemScaling("I063", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I063'", "I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, GetTriggerUnit(), true)) * 3.00")
 
-	assertItemScaling("I067", "if", "set udg_Attack_Item_Real[IT]=5")
-
 	assertItemScaling("I068", "GetItemTypeId(GetManipulatedItem()) == 'I068'", "set udg_Shield_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=6000.00")
 
 	assertItemScaling("I066", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I066'", "100000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, GetTriggerUnit(), true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, GetTriggerUnit(), true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) ) ) * 15.00")
@@ -759,6 +857,7 @@ def assertCorrectScalings():
 	assertItemScaling("I0IC", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IC'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 95.00", depth = 2)
 	assertItemScaling("I0ID", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0ID'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 110.00", depth = 2)
 	assertItemScaling("I0IE", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IE'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 130.00", depth = 2)
+	assertItemScaling("I0NJ", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0NJ'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 150.00", depth = 2)
 
 	assertItemScaling("I0BD", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BD'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.30")
 	assertItemScaling("I0BD", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BD'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.08")
@@ -787,8 +886,6 @@ def assertCorrectScalings():
 
 	assertItemScaling("I09D", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09D'", "300000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 200.00")
 
-	assertItemScaling("I093", "if", "set udg_Attack_Item_Real[IT]=37")
-
 	assertItemScaling("I0A4", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0A4'", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.04", depth = 2)
 	assertItemScaling("I0A4", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.42 * 0.10 ) ) )")
 
@@ -804,13 +901,7 @@ def assertCorrectScalings():
 	assertItemScaling("I099", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I099')", "400000.00 + ( I2R(( GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true) + GetHeroStatBJ(bj_HEROSTAT_AGI, GetTriggerUnit(), true) )) * 90.00")
 	assertItemScaling("I099", "if", "set udg_Attack_Item_Real[IT]=11")
 
-	assertItemScaling("I09P", "if", "set udg_Str_Int_Tick_Item_Real[IT]=38.4")
-
-	assertItemScaling("I09L", "if", "set udg_Int_Tick_Item_Real[IT]=96")
-
 	assertItemScaling("I09H", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I09H'", "400000.00 + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 200.00")
-
-	assertItemScaling("I0CF", "if", "set udg_Attack_Item_Real[IT]=40")
 
 	assertItemScaling("I0D3", "GetItemTypeId(GetManipulatedItem()) == 'I0D3'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.30")
 
@@ -903,13 +994,7 @@ def assertCorrectScalings():
 	assertItemScaling("I0G7", "GetItemTypeId(GetManipulatedItem()) == 'I0G7'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))] + 0.70")
 
 	assertItemScaling("I0FA", "UnitHasItemOfTypeBJ(GetEventDamageSource(), 'I0FA'", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, GetEventDamageSource(), true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetEventDamageSource(), true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, GetEventDamageSource(), true)) ) ) * 80.00 ) + 300000.00")
-
-	assertItemScaling("I0GC", "if", "set udg_Attack_Item_Real[IT]=23")
-	
-	assertItemScaling("I0HD", "if", "set udg_Attack_Item_Real[IT]=60")
-	
-	assertItemScaling("I0GD", "if", "set udg_Attack_Item_Real[IT]=80")
-
+		
 	assertItemScaling("I0IP", "if", "set udg_Contract[IT]=0.8")
 	assertItemScaling("I0IP", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IP'", "call SetUnitLifeBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
 	assertItemScaling("I0IP", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IP'", "call SetUnitManaBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
@@ -927,10 +1012,6 @@ def assertCorrectScalings():
 	assertItemScaling("I0IS", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IS'", "call SetUnitManaBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
 
 	assertItemScaling("I0HH", "if", "udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.56 * 0.10 ) ) )")
-
-	assertItemScaling("I0HN", "if", "set udg_Int_Tick_Item_Real[IT]=180")
-
-	assertItemScaling("I0HL", "if", "set udg_Str_Int_Tick_Item_Real[IT]=72")
 
 	assertItemScaling("SEVERAL", "if udg_Int_Tick_Item_Real[ID] >= 1.00 then", "if ( GetRandomInt(1, 100) <= 8 ) then")
 	assertItemScaling("SEVERAL", "if udg_Int_Tick_Item_Real[ID] >= 1.00 then", "( 30000.00 + ( GetHeroInt(udg_hero[ID], true) * udg_Int_Tick_Item_Real[ID]")
@@ -962,6 +1043,8 @@ def assertCorrectScalings():
 
 	assertItemScaling("I0L4", "'I0L4') == true", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.65")
 
+	assertItemScaling("I0MD", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.6 * 0.10 ) ) )")
+
 	#I0JD active
 	
 
@@ -970,11 +1053,10 @@ getItemData()
 
 loadItems()
 
-assertCorrectInfo()
-assertCorrectDropRates()
+#assertCorrectDropRates()
 assertCorrectBonusDamage()
 
-assertCorrectCraftings()
+#assertCorrectCraftings()
 
-assertCorrectScalings()
+#assertCorrectScalings()
 

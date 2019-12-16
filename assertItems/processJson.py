@@ -8,14 +8,16 @@ with open("abilities.json", "r+", encoding="latin-1") as f:
 
 props = ["str", "int", "atk", "agi", "hp", "attack_speed", "movement_speed", "armor", "mp", "hp_regen", "critical_hit", "critical_hit_chance", "magic_reduction"]
 
-def addAbilities(obj, abilityIds):
-	for abilityId in abilityIds.strip().split(","):
-		if not abilityId:
+def addAbilities(obj, abilityIds, multiplier = 1):
+	if not isinstance(abilityIds, set):
+		abilityIds = abilityIds.strip().split(",")
+	for abilityId in abilityIds:
+		if not abilityId or abilityId not in abilities:
 			continue
 		ab = abilities[abilityId]
 		
 		for prop in props:
-			obj[prop] += ab[prop]
+			obj[prop] += ab[prop] * multiplier
 
 		if "cd" in ab:
 			obj["cd"] = ab["cd"]	
