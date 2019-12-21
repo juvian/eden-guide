@@ -2207,7 +2207,7 @@ module.exports = {
 		"stats" : {
 			"armor" : 300,
 			"agi" : 500,
-			"damage_increase" : 6
+			"damage_increase" : 8
 		},
 		"label" : "Leather Armor of Approval",
     "k_label": "증명의 가죽갑옷"

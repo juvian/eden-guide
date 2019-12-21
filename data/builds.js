@@ -202,6 +202,14 @@ module.exports.builds = {
         ],
         "type": "int",
         "id": "H00I"
+    },
+    "nezuko": {
+      "images": [
+        "https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2Fnezuko-kamado-cute-kimetsu-no-yaiba-girl-uhdpaper.com-4K-5.151-wp.thumbnail.jpg?v=1576901686007",
+        "https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2Fmaxresdefault.jpg?v=1576902000188"
+      ],
+      "type": "str",
+      "id": "E0E6"
     }
 }
 

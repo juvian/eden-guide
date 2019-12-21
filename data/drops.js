@@ -397,7 +397,7 @@ new Chest("I0LU")
 
 new Chest("I0M7").add("I0DY", 3).add("I035", 6).add("I0DS", 6).add("I0FB", 4).add("I0LO", 4).add("I0AQ", 11).add("I0A6", 6).add("I0BU", 6);
 
-new Chest("I04B").add("I0KZ", 1).add("I0KX", 2.5).add("I0LE", 2.5);
+new Chest("I0KY").add("I0KZ", 1).add("I0KX", 2.5).add("I0LE", 2.5);
 
 new Unit("n00G")
   .add("I021", 100)
