@@ -699,9 +699,6 @@ def assertCorrectScalings():
 
 	assertItemScaling("I08S", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I08S')", "call UnitApplyTimedLifeBJ(20.00, 'BHwe', GetLastCreatedUnit())")
 
-	assertItemScaling("I08W", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.35 * 0.10 ) ) )")
-	assertItemScaling("I08W", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I08W'", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.04", depth = 2)
-
 	assertItemScaling("I08Y", "if", "udg_Attack_Item_Real[IT]=7") 
 	assertItemScaling("I08Y", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I08Y'", "300000.00 + ( I2R(( GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true) + GetHeroStatBJ(bj_HEROSTAT_AGI, GetTriggerUnit(), true) )) * 70.00")
 
@@ -714,8 +711,6 @@ def assertCorrectScalings():
 	assertItemScaling("I09V", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I09V')", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, GetTriggerUnit(), true)) * 6.00")
 	assertItemScaling("I09V", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09V')", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) * 5.00")
 
-	assertItemScaling("I06B", "GetItemTypeId(GetManipulatedItem()) == 'I06B'", "set udg_HP_UP_Item02[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.10")
-
 	assertItemScaling("SEVERAL", "if ( not ( udg_Fire_Amor[GetForLoopIndexA()] >= 1 ) ) then", "8000.00 + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, udg_hero[GetForLoopIndexA()], true)) * I2R(udg_Fire_Amor[GetForLoopIndexA()]")
 
 	assertItemScaling("I06R", " GetItemTypeId(GetManipulatedItem()) == 'I06R'", "set udg_Fire_Amor[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=15")
@@ -724,26 +719,14 @@ def assertCorrectScalings():
 	assertItemScaling("I03H", "GetItemTypeId(GetManipulatedItem()) == 'I03H'", "set udg_Fire_Amor[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=23")
 	assertItemScaling("I03H", "GetItemTypeId(GetManipulatedItem()) == 'I03H'", "set udg_Fire_Amor_Minus[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=800")
 
-	assertItemScaling("I07N", "GetItemTypeId(GetManipulatedItem()) == 'I07N'", "set udg_Mana_Shild_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=0.25")
-
-	assertItemScaling("I0BJ", "GetItemTypeId(GetManipulatedItem()) == 'I0BJ'", "set udg_HP_UP_Item03[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.16")
-
 	assertItemScaling("I0BL", "GetItemTypeId(GetManipulatedItem()) == 'I0BL'", "set udg_Fire_Amor[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=33")
 	assertItemScaling("I0BL", "GetItemTypeId(GetManipulatedItem()) == 'I0BL'", "set udg_Fire_Amor_Minus[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=1100")
 
 	assertItemScaling("I0BN", "GetItemTypeId(GetManipulatedItem()) == 'I0BN'", "set udg_HP_Amor[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=2.00")
 
-	assertItemScaling("I0BO", "GetItemTypeId(GetManipulatedItem()) == 'I0BO'", "set udg_Mana_Shild_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=0.32")
-
-	assertItemScaling("I0BK", "GetItemTypeId(GetManipulatedItem()) == 'I0BK'", "set udg_HP_UP_Item04[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.21")
-
-	assertItemScaling("I07J", "GetItemTypeId(GetManipulatedItem()) == 'I07J'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] + 0.40")
 	assertItemScaling("I07J", "GetItemTypeId(GetManipulatedItem()) == 'I07J'", "call s__TrigVariables_SleepForStageNext(GlobalTV,15.00)")
-	assertItemScaling("I07J", "GetItemTypeId(GetManipulatedItem()) == 'I07J'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] - 0.40")
 
-	assertItemScaling("I08F", "GetItemTypeId(GetManipulatedItem()) == 'I08F'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] + 0.60")
 	assertItemScaling("I08F", "GetItemTypeId(GetManipulatedItem()) == 'I08F'", "call s__TrigVariables_SleepForStageNext(GlobalTV,15.00)")
-	assertItemScaling("I08F", "GetItemTypeId(GetManipulatedItem()) == 'I08F'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] - 0.60")
 
 	assertItemScaling("I0CK", "'I0CK') == true", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.40")
 
@@ -767,9 +750,6 @@ def assertCorrectScalings():
 
 	assertItemScaling("I09E", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09E'", "340000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 225.00")
 
-	assertItemScaling("I0AE", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.44 * 0.10 ) ) )")
-	assertItemScaling("I0AE", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AE'", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.04", depth = 2)
-
 	assertItemScaling("I0AH", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AH'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 7.50")
 	assertItemScaling("I0AH", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0AH'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) * 5.50", 2)
 
@@ -789,9 +769,6 @@ def assertCorrectScalings():
 	
 	assertItemScaling("I09F", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09F'", "380000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 250.00")	
 
-	assertItemScaling("I0AF", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.46 * 0.10 ) ) )")
-	assertItemScaling("I0AF", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AF'", "GetUnitStateSwap(UNIT_STATE_MANA, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) - ( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.04", depth = 2)
-
 	assertItemScaling("I0AL", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AL'", "I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, GetTriggerUnit(), true)) * 8.00")
 	assertItemScaling("I0AL", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0AL'", "I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) * 6.00", 2)
 
@@ -808,9 +785,6 @@ def assertCorrectScalings():
 	assertItemScaling("I0AJ", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0AJ'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) * 6.70", depth = 2)
 
 	assertItemScaling("I09G", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09G'", "420000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 280.00")
-
-	assertItemScaling("I0AG", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.49 * 0.10 ) ) )")	
-	assertItemScaling("I0AG", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AG'", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.04", depth = 2)
 
 	assertItemScaling("I0AM", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AM'", "I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, GetTriggerUnit(), true)) * 8.70")
 	assertItemScaling("I0AM", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0AM'", "I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) * 6.70", depth = 2)
@@ -834,7 +808,6 @@ def assertCorrectScalings():
 	if abilities["A09P"]["int"] != 700:
 		print("A09Z",  "does not provide 700 int")
 
-	assertItemScaling("I062", "GetItemTypeId(GetManipulatedItem()) == 'I062'", "set udg_HP_UP_Item01[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.06")
 
 	assertItemScaling("I064", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I064'", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, GetTriggerUnit(), true)) * 3.00")
 
@@ -845,9 +818,6 @@ def assertCorrectScalings():
 	assertItemScaling("I068", "GetItemTypeId(GetManipulatedItem()) == 'I068'", "set udg_Shield_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=6000.00")
 
 	assertItemScaling("I066", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I066'", "100000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, GetTriggerUnit(), true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, GetTriggerUnit(), true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) ) ) * 15.00")
-
-	assertItemScaling("I07O", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.28 * 0.10 ) ) )")
-	assertItemScaling("I07O", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I07O'", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.04")
 
 	assertItemScaling("I07G", "'I07G') == true", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.30")
 
@@ -886,9 +856,6 @@ def assertCorrectScalings():
 
 	assertItemScaling("I09D", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09D'", "300000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 200.00")
 
-	assertItemScaling("I0A4", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0A4'", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.04", depth = 2)
-	assertItemScaling("I0A4", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.42 * 0.10 ) ) )")
-
 	assertItemScaling("I09W", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I09W'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 7.00")
 	assertItemScaling("I09W", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09W'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) * 5.00", 2)
 
@@ -913,8 +880,6 @@ def assertCorrectScalings():
 	assertItemScaling("I0D6", "GetItemTypeId(GetManipulatedItem()) == 'I0D6'", "50000.00 + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) * 20.00")
 	assertItemScaling("I0D6", "GetItemTypeId(GetManipulatedItem()) == 'I0D6'", "set udg_Fire_Wepon[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=10")
 
-	assertItemScaling("I0D9", "GetItemTypeId(GetManipulatedItem()) == 'I0D9'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] + 0.40")
-	assertItemScaling("I0D9", "GetItemTypeId(GetManipulatedItem()) == 'I0D9'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] - 0.40")
 	assertItemScaling("I0D9", "GetItemTypeId(GetManipulatedItem()) == 'I0D9'", "call s__TrigVariables_SleepForStageNext(GlobalTV,20.00)")
 
 	assertItemScaling("I0D7", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0D7'", "call SetUnitLifeBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.04", depth = 2)
@@ -923,15 +888,9 @@ def assertCorrectScalings():
 
 	assertItemScaling("I0CZ", "GetItemTypeId(GetManipulatedItem()) == 'I0CZ'", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.35")
 
-	assertItemScaling("I0DB", "GetItemTypeId(GetManipulatedItem()) == 'I0DB'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))]=( udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] + 1.50")
-
 	assertItemScaling("I0DP", "'I0DP') == true", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.50")
 
 	assertItemScaling("I0DO", "'I0DO') == true", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.50")
-
-	assertItemScaling("I0DN", "GetManipulatedItem()) == 'I0DN'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] + 0.80")
-
-	assertItemScaling("I0DM", "GetItemTypeId(GetManipulatedItem()) == 'I0DM'", "set udg_Mana_Shild_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=0.48")
 
 	assertItemScaling("I0DK", "GetItemTypeId(GetManipulatedItem()) == 'I0DK'", "set udg_Fire_Amor[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=45")
 	assertItemScaling("I0DK", "GetItemTypeId(GetManipulatedItem()) == 'I0DK'", "set udg_Fire_Amor_Minus[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=1500")
@@ -953,12 +912,8 @@ def assertCorrectScalings():
 	assertItemScaling("I04F", "GetEventDamageSource(), 'I04F'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetEventDamageSource()) * ( 0.10 * 0.08")
 	assertItemScaling("I04F", "GetEventDamageSource(), 'I04F'", "30000.00 + ( I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetEventDamageSource()))], true)) * 20.00")
 
-	assertItemScaling("I0DZ", "GetItemTypeId(GetManipulatedItem()) == 'I0DZ'", "set udg_Mana_Shild_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=0.58")
-
 	assertItemScaling("I0E0", "GetItemTypeId(GetManipulatedItem()) == 'I0E0'", "set udg_Fire_Amor[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=55")
 	assertItemScaling("I0E0", "GetItemTypeId(GetManipulatedItem()) == 'I0E0'", "set udg_Fire_Amor_Minus[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=2000")
-
-	assertItemScaling("I0E1", "GetItemTypeId(GetManipulatedItem()) == 'I0E1'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]) * 0.30")
 
 	assertItemScaling("I0E5", "GetItemTypeId(GetManipulatedItem()) == 'I0E5' )", "set udg_HP_Amor[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=3.00")
 
@@ -966,9 +921,7 @@ def assertCorrectScalings():
 
 	assertItemScaling("I0ED", "'I0ED') == true", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.55")
 
-	assertItemScaling("I0EE" , "GetManipulatedItem()) == 'I0EE'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] + 0.90")
 	assertItemScaling("I0EE" , "GetManipulatedItem()) == 'I0EE'", "call s__TrigVariables_SleepForStageNext(GlobalTV,15.00)")
-	assertItemScaling("I0EE" , "GetManipulatedItem()) == 'I0EE'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] - 0.90")
 
 	assertItemScaling("I0CL", "'I0CL') == true", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.40")
 
@@ -980,18 +933,6 @@ def assertCorrectScalings():
 	assertItemScaling("I0FL", "if ( not ( GetRandomInt(1, 100) <= 10 ) ) then", "UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetEventDamage() * 5.00")
 
 	assertItemScaling("I0FM", "if UnitHasItemOfTypeBJ(udg_hero[ID], 'I0FM') then", "200000.00 + ( 60.00 * ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, udg_hero[ID], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, udg_hero[ID], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_INT, udg_hero[ID], true))", untilFunctionEnd=True)
-
-	assertItemScaling("I0G4", "GetItemTypeId(GetManipulatedItem()) == 'I0G4'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))] - 0.55")
-	assertItemScaling("I0G4", "GetItemTypeId(GetManipulatedItem()) == 'I0G4'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))] + 0.55")
-
-	assertItemScaling("I0G5", "GetItemTypeId(GetManipulatedItem()) == 'I0G5'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))] - 0.60")
-	assertItemScaling("I0G5", "GetItemTypeId(GetManipulatedItem()) == 'I0G5'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))] + 0.60")
-
-	assertItemScaling("I0G6", "GetItemTypeId(GetManipulatedItem()) == 'I0G6'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))] - 0.65")
-	assertItemScaling("I0G6", "GetItemTypeId(GetManipulatedItem()) == 'I0G6'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))] + 0.65")
-
-	assertItemScaling("I0G7", "GetItemTypeId(GetManipulatedItem()) == 'I0G7'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))] - 0.70")
-	assertItemScaling("I0G7", "GetItemTypeId(GetManipulatedItem()) == 'I0G7'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))] + 0.70")
 
 	assertItemScaling("I0FA", "UnitHasItemOfTypeBJ(GetEventDamageSource(), 'I0FA'", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, GetEventDamageSource(), true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetEventDamageSource(), true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, GetEventDamageSource(), true)) ) ) * 80.00 ) + 300000.00")
 		
@@ -1010,8 +951,6 @@ def assertCorrectScalings():
 	assertItemScaling("I0IS", "if", "set udg_Contract[IT]=1.35")
 	assertItemScaling("I0IS", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IS'", "call SetUnitLifeBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
 	assertItemScaling("I0IS", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IS'", "call SetUnitManaBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
-
-	assertItemScaling("I0HH", "if", "udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.56 * 0.10 ) ) )")
 
 	assertItemScaling("SEVERAL", "if udg_Int_Tick_Item_Real[ID] >= 1.00 then", "if ( GetRandomInt(1, 100) <= 8 ) then")
 	assertItemScaling("SEVERAL", "if udg_Int_Tick_Item_Real[ID] >= 1.00 then", "( 30000.00 + ( GetHeroInt(udg_hero[ID], true) * udg_Int_Tick_Item_Real[ID]")
@@ -1032,18 +971,12 @@ def assertCorrectScalings():
 	assertItemScaling("I0KN", "GetManipulatedItem()) == 'I0KN'", "set udg_Fire_Amor[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=70")
 	assertItemScaling("I0KN", "GetManipulatedItem()) == 'I0KN'", "set udg_Fire_Amor_Minus[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=3000")
 
-	assertItemScaling("I0KO", "GetManipulatedItem()) == 'I0KO'", "set udg_Mana_Shild_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=0.70")
-
 	assertItemScaling("I0L0", "if", "set udg_Gaho_Item_Real[IT]=2500")
 
-	assertItemScaling("I0L1", "GetItemTypeId(GetManipulatedItem()) == 'I0L1'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] + 1.20")
-	assertItemScaling("I0L1", "GetItemTypeId(GetManipulatedItem()) == 'I0L1'", "udg_Plus_Demige[GetConvertedPlayerId(GetOwningPlayer(s__TrigVariables_unit0[GlobalTV]))] - 1.20")
 
 	assertItemScaling("I0L2", "'I0L2') == true", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.65")
 
 	assertItemScaling("I0L4", "'I0L4') == true", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.65")
-
-	assertItemScaling("I0MD", "if", "set udg_Contract[IT]=( GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[IT]) * ( ( 0.01 * 0.01 ) * ( 0.6 * 0.10 ) ) )")
 
 	#I0JD active
 	
@@ -1053,10 +986,10 @@ getItemData()
 
 loadItems()
 
-#assertCorrectDropRates()
+assertCorrectDropRates()
 assertCorrectBonusDamage()
 
-#assertCorrectCraftings()
+assertCorrectCraftings()
 
-#assertCorrectScalings()
+assertCorrectScalings()
 
