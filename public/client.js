@@ -11,7 +11,8 @@ $(document).on("language", function () {
     if ($("#table").length && window.itemArray === undefined) {
       itemArray = Object.values(items).filter(i => i.label);
       initializeRaids();
-      initializeTable();  
+      initializeTable();
+      $(".bugged").text(translator.translate('bugged').replace("{0}", itemArray.filter(i => i.bugged).length))
     }
 });
 

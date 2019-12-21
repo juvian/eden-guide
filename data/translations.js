@@ -47,6 +47,10 @@ exports.translations = {
     "eng": "Changes on version",
     "kor": "버전 변경"
   },
+  "bugged": {
+    "eng": "Amount of known bugged items: {0}",
+    "kor": "알려진 버그가있는 항목 수 : {0}"
+  },
   "released_on": {
     "eng": "released on",
     "kor": "발매일"
@@ -333,6 +337,7 @@ exports.translations = {
   "hayate": "야가미 하야테",
   "satsuki": "키류인 사츠키",
   "shuvi": "슈비",
+  "nezuko": "카마도 네즈코",
   "god": "신",
   "Unleash": "해방",
   "unleash": "해방",
