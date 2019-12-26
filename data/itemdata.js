@@ -3628,11 +3628,12 @@ module.exports = {
 		"stats" : {
 			"atk" : 160000,
 			"int" : 5000,
-      "contract": 0.6,
+      "contract": 0.65,
       "int_tick": true      
 		},
 		"label" : "Soul Contract",
-    "k_label": "검은 어둠의 계약"
+    "k_label": "검은 어둠의 계약",
+    "bugged": true
 	},	
 	"I04F" : {
 		"type" : "weapon",
@@ -7879,5 +7880,47 @@ module.exports = {
   },
   "I0BV": {
     
+  },
+  "I04N": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 500000,
+      "int": 11000,
+      "contract": 1.8,
+      "int_tick": true      
+    },
+    "k_label": "파멸의 신의 계약",
+    "label": "Death God's Contract",
+    "disabled": true
+  },
+  "I04O": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 600000,
+      "int": 13000,
+      "contract": 2.0,
+      "int_tick": true      
+    },
+    "k_label": "최상급 파멸의 신의 계약",
+    "label": "Supreme God's Contract",
+    "disabled": true
+  },
+  "I04P": {
+    "type": "accessory",
+    "color": "god",
+	  "stats" : {
+			"str" : 6000,
+			"agi" : 6000,
+			"int" : 6000,
+      "mp": 45000,
+      "hp": 6000,
+	    "movement_speed" : 300,
+			"hp_regen" : 4000
+		},
+    "k_label": "최상급 정화의 신의 보석",
+    "label": "Supreme Purified Magic Jewel",
+    "disabled": true
   }
 }
