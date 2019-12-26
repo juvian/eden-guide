@@ -88,7 +88,7 @@ def assertCorrectCraftings():
 
 						
 def reportBug(id, *args):
-	if id in itemsGuide["items"] and "bugged" in itemsGuide["items"][id]:
+	if id in itemsGuide["items"] and ("bugged" in itemsGuide["items"][id] or "disabled" in itemsGuide["items"][id]):
 		bugs.discard(id)
 	else:
 		print(id, *args)	
