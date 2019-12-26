@@ -172,8 +172,8 @@ exports.translations = {
     "kor": "스킬공격에 확률적으로 죽음의 폭발발생 (8% 기회 30000 + (STR + INT) x{0})"
   },
   "attack-contract": {
-    "eng": "Each spell consumes 4% of HP and MP adding {0}% bonus damage (Only activates when above 10% of these thresholds)",
-    "kor": "모든 능력사용시 체력과 마나 4% 소모 (10%이상일때 발동) 추가데미지 {0}% 증가"
+    "eng": "Each spell consumes 4% of HP and MP adding {0}% bonus damage",
+    "kor": "모든 능력사용시 체력과 마나 4% 소모 추가데미지 {0}% 증가"
   },
   "attack-int": {
     "eng": "Each spell has a 8% chance to deal 30000 + INT x42 bonus damage",
