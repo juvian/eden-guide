@@ -533,13 +533,17 @@ def checkSeenUnseen(s1, s2, msg):
 				if stat not in s2[id]:
 					reportBug(id, stat, "missing " + msg)	
 
+def processHPConsume(missing):
+	for m in re.finditer("'(\w\w\w\w)'",funcs["Trig_item_skill_Func006Func001C"]):
+		id = m.group(1)
+		processStat("hp_consume", "", True, id, missing)
 
 def assertCorrectBonusDamage():
 	loadCode()
 	removeStatSystemAbilities()
 
 	missing = dict()
-	stats = ["damage_taken", "hp_regen_percent", "damage_increase", "hp_regen", "atk", "int", "str", "agi", 'armor', 'hp', 'mp', 'max_health', "mps", "attack_agi", "attack_real", "attack_str", "attack_str_agi", "contract", "attack_int_real", "attack_str_int_real", "int_tick"]
+	stats = ["damage_taken", "hp_regen_percent", "damage_increase", "hp_regen", "atk", "int", "str", "agi", 'armor', 'hp', 'mp', 'max_health', "mps", "attack_agi", "attack_real", "attack_str", "attack_str_agi", "contract", "attack_int_real", "attack_str_int_real", "int_tick", "hp_consume"]
 
 	for stat in stats:
 		missing[stat] = set()
@@ -561,6 +565,7 @@ def assertCorrectBonusDamage():
 	processDamage(missing)
 	processDamage2(missing)
 	processProcs(missing)
+	processHPConsume(missing)
 
 	for stat in stats:
 		for id in missing[stat]:
@@ -953,6 +958,8 @@ def assertCorrectScalings():
 	assertItemScaling("I0L2", "'I0L2') == true", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.65")
 
 	assertItemScaling("I0L4", "'I0L4') == true", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.65")
+
+	assert "call SetUnitLifeBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.06 ) ))" in code
 
 	#I0JD active
 	
