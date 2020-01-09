@@ -882,10 +882,6 @@ def assertCorrectScalings():
 
 	assertItemScaling("I0D9", "GetItemTypeId(GetManipulatedItem()) == 'I0D9'", "call s__TrigVariables_SleepForStageNext(GlobalTV,20.00)")
 
-	assertItemScaling("I0D7", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0D7'", "call SetUnitLifeBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.04", depth = 2)
-	assertItemScaling("I0D7", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0D7'", "call SetUnitManaBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.04", depth = 2)
-	assertItemScaling("I0D7", "if", "set udg_Contract[IT]=0.4")
-
 	assertItemScaling("I0CZ", "GetItemTypeId(GetManipulatedItem()) == 'I0CZ'", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.35")
 
 	assertItemScaling("I0DP", "'I0DP') == true", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.50")
@@ -904,10 +900,6 @@ def assertCorrectScalings():
 	assertItemScaling("I039", "GetItemTypeId(GetManipulatedItem()) == 'I039'", "60000.00 + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) * 25.00")
 	assertItemScaling("I039", "GetItemTypeId(GetManipulatedItem()) == 'I039'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.02")
 	assertItemScaling("I039", "GetItemTypeId(GetManipulatedItem()) == 'I039'", "set udg_Fire_Wepon[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=14")
-
-	assertItemScaling("I047", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I047'", "call SetUnitLifeBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
-	assertItemScaling("I047", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I047'", "call SetUnitManaBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
-	assertItemScaling("I047", "if", "set udg_Contract[IT]=0.6")
 
 	assertItemScaling("I04F", "GetEventDamageSource(), 'I04F'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetEventDamageSource()) * ( 0.10 * 0.08")
 	assertItemScaling("I04F", "GetEventDamageSource(), 'I04F'", "30000.00 + ( I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetEventDamageSource()))], true)) * 20.00")
@@ -936,22 +928,6 @@ def assertCorrectScalings():
 
 	assertItemScaling("I0FA", "UnitHasItemOfTypeBJ(GetEventDamageSource(), 'I0FA'", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, GetEventDamageSource(), true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetEventDamageSource(), true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, GetEventDamageSource(), true)) ) ) * 80.00 ) + 300000.00")
 		
-	assertItemScaling("I0IP", "if", "set udg_Contract[IT]=0.8")
-	assertItemScaling("I0IP", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IP'", "call SetUnitLifeBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
-	assertItemScaling("I0IP", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IP'", "call SetUnitManaBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
-
-	assertItemScaling("I0IQ", "if", "set udg_Contract[IT]=0.95")
-	assertItemScaling("I0IQ", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IQ'", "call SetUnitLifeBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
-	assertItemScaling("I0IQ", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IQ'", "call SetUnitManaBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
-
-	assertItemScaling("I0IR", "if", "set udg_Contract[IT]=1.1")
-	assertItemScaling("I0IR", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IR'", "call SetUnitLifeBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
-	assertItemScaling("I0IR", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IQ'", "call SetUnitManaBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
-
-	assertItemScaling("I0IS", "if", "set udg_Contract[IT]=1.35")
-	assertItemScaling("I0IS", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IS'", "call SetUnitLifeBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
-	assertItemScaling("I0IS", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IS'", "call SetUnitManaBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.04 ) ))", depth = 2)
-
 	assertItemScaling("SEVERAL", "if udg_Int_Tick_Item_Real[ID] >= 1.00 then", "if ( GetRandomInt(1, 100) <= 8 ) then")
 	assertItemScaling("SEVERAL", "if udg_Int_Tick_Item_Real[ID] >= 1.00 then", "( 30000.00 + ( GetHeroInt(udg_hero[ID], true) * udg_Int_Tick_Item_Real[ID]")
 	assertItemScaling("SEVERAL", "if udg_Str_Int_Tick_Item_Real[ID] >= 1.00 then", "if ( GetRandomInt(1, 100) <= 8 ) then")
