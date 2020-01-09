@@ -102,6 +102,7 @@ class Item {
         return this.stats['contract'] < 0.001 ? translate('attack-mana').replace("{0}", this.stats['contract'] * 1000000) : translate('attack-contract').replace("{0}", this.stats['contract'] * 100)
       }
       else if (stat == 'attack_int_real') return translate('attack-int').replace("{0}", this.stats['attack_int_real'])
+      else if (stat == 'hp_consume') return translate('hp-consume')
       else return ''  
   }
   
