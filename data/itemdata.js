@@ -3228,7 +3228,8 @@ module.exports = {
       "int_tick": true
 		},
 		"label" : "Shadow Contract",
-    "k_label": "어둠의 계약"
+    "k_label": "어둠의 계약",
+    bugged: true
 	},	
 	"I0CZ" : {
 		"type" : "auxiliary",
@@ -3628,12 +3629,11 @@ module.exports = {
 		"stats" : {
 			"atk" : 160000,
 			"int" : 5000,
-      "contract": 0.65,
-      "int_tick": true      
+      "damage_increase": 85,
+      "hp_consume": true      
 		},
 		"label" : "Soul Contract",
-    "k_label": "검은 어둠의 계약",
-    "bugged": true
+    "k_label": "검은 어둠의 계약"
 	},	
 	"I04F" : {
 		"type" : "weapon",
@@ -5080,13 +5080,12 @@ module.exports = {
 		"color" : "red",
 		"stats" : {
 			"atk" : 230000,
-			"int" : 6500
+			"int" : 6500,
+      "damage_increase": 80,
+      "hp_consume": true
 		},
 		"label" : "Archangel Contract",
-    "k_label": "대천의 계약",
-		"effects" : ["Each spell consumes 4% of HP and MP adding 80% bonus damage (Only activates when above 10% of these thresholds)"],
-		"k_effects" : ["모든 능력사용시 체력과 마나 4% 소모 (10%이상일때 발동) 추가데미지 80% 증가"],
-    "bugged": true
+    "k_label": "대천의 계약"
 	},
   "I0IQ" : {
 		"type" : "weapon",
@@ -5094,7 +5093,8 @@ module.exports = {
 		"stats" : {
 			"atk" : 260000,
 			"int" : 7000,
-      "damage_increase": 95
+      "damage_increase": 95,
+      "hp_consume": true
 		},
 		"label" : "Archangel Contract +1",
     "k_label": "대천의 계약 +1"
@@ -5105,7 +5105,8 @@ module.exports = {
 		"stats" : {
 			"atk" : 300000,
 			"int" : 7500,
-      "damage_increase": 110
+      "damage_increase": 110,
+      "hp_consume": true
     },
 		"label" : "Archangel Contract +2",
     "k_label": "대천의 계약 +2"
@@ -5116,7 +5117,8 @@ module.exports = {
 		"stats" : {
 			"atk" : 350000,
 			"int" : 8000,
-      "damage_increase": 135
+      "damage_increase": 135,
+      "hp_consume": true
 		},
 		"label" : "Archangel Contract +3",
     "k_label": "대천의 계약 +3",    
@@ -7883,12 +7885,11 @@ module.exports = {
     "stats": {
       "atk": 500000,
       "int": 11000,
-      "contract": 1.8,
-      "int_tick": true      
+      "damage_increase": 180,
+      "hp_consume": true      
     },
     "k_label": "파멸의 신의 계약",
-    "label": "Death God's Contract",
-    "disabled": true
+    "label": "Death God's Contract"
   },
   "I04O": {
     "type": "weapon",
@@ -7896,12 +7897,11 @@ module.exports = {
     "stats": {
       "atk": 600000,
       "int": 13000,
-      "contract": 2.0,
-      "int_tick": true      
+      "damage_increase": 200,
+      "hp_consume": true      
     },
     "k_label": "최상급 파멸의 신의 계약",
-    "label": "Supreme God's Contract",
-    "disabled": true
+    "label": "Supreme God's Contract"
   },
   "I04P": {
     "type": "accessory",
@@ -7911,12 +7911,11 @@ module.exports = {
 			"agi" : 6000,
 			"int" : 6000,
       "mp": 45000,
-      "hp": 6000,
+      "hp": 60000,
 	    "movement_speed" : 300,
 			"hp_regen" : 4000
 		},
     "k_label": "최상급 정화의 신의 보석",
-    "label": "Supreme Purified Magic Jewel",
-    "disabled": true
+    "label": "Supreme Purified Magic Jewel"
   }
 }

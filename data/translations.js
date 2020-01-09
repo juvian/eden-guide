@@ -183,6 +183,10 @@ exports.translations = {
     "eng": "Generates Bonus Damage based on MAX MANA ({0}% per 10,000)<br/>Consumes 6% of MAX MANA per cast<br/>Will not work if below 15% MAX MANA",
     "kor": "사용자의 마나에 비례하여 추가데미지 생성 (비뮬 - 1만당 {0}%)<br/>스킬사용시 최대마력 6%감소<br/>마력이 15%이상 있을때 작동"
   },
+  "hp-consume": {
+    "eng": "Each spell consumes 6% of HP",
+    "kor": "모든 능력사용시 체력 6% 소모"
+  },
   "bugs": {
     "eng": "this item has bugs",
     "kor": "이 아이템에는 버그가 있습니다"
