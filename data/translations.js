@@ -180,8 +180,8 @@ exports.translations = {
     "kor": "스킬의 모든히트에 확률적으로 빛의심판 발동(8% 기회 30000 + INT x42)"
   },
   "attack-mana": {
-    "eng": "Generates Bonus Damage based on MAX MANA ({0}% per 10,000)<br/>Consumes 4% of MAX MANA per cast<br/>Will not work if below 15% MAX MANA",
-    "kor": "사용자의 마나에 비례하여 추가데미지 생성 (비뮬 - 1만당 {0}%)<br/>스킬사용시 최대마력 5%감소<br/>마력이 15%이상 있을때 작동"
+    "eng": "Generates Bonus Damage based on MAX MANA ({0}% per 10,000)<br/>Consumes 6% of MAX MANA per cast<br/>Will not work if below 15% MAX MANA",
+    "kor": "사용자의 마나에 비례하여 추가데미지 생성 (비뮬 - 1만당 {0}%)<br/>스킬사용시 최대마력 6%감소<br/>마력이 15%이상 있을때 작동"
   },
   "bugs": {
     "eng": "this item has bugs",

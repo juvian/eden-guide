@@ -5094,8 +5094,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 260000,
 			"int" : 7000,
-      "contract": 0.95,
-      "int_tick": true            
+      "damage_increase": 95
 		},
 		"label" : "Archangel Contract +1",
     "k_label": "대천의 계약 +1"
@@ -5106,8 +5105,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 300000,
 			"int" : 7500,
-      "contract": 1.1,
-      "int_tick": true  
+      "damage_increase": 110
     },
 		"label" : "Archangel Contract +2",
     "k_label": "대천의 계약 +2"
@@ -5116,14 +5114,12 @@ module.exports = {
 		"type" : "weapon",
 		"color" : "red",
 		"stats" : {
-			"atk" : 230000,
+			"atk" : 350000,
 			"int" : 8000,
-      "contract": 1.35,
-      "int_tick": true        
+      "damage_increase": 135
 		},
 		"label" : "Archangel Contract +3",
-    "k_label": "대천의 계약 +3",
-    "bugged": true
+    "k_label": "대천의 계약 +3",    
 	},
   "I0IX" : {
     "type" : "chest",

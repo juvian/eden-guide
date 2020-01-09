@@ -1163,3 +1163,11 @@ new Craft("I0DY", 100.0).add(['I0DT', 'I0DT', 'I0DT', 'I0DT', 'I0DT', 'I0DT', 'I
 new Craft('I0MV', 100.0).add(["I0KW", "I04B", "I04I", "I0LL"]);
 
 new Craft('I0MW', 100.0).add(["I0KN", "I04B", "I04I", "I0LL"]);
+
+new Craft('I04N', 100.0).add(["I0HT", "I0HB", "I0HC", "I0LK"]);
+
+
+new Craft('I04O', 100.0).add(["I04N", "I04B", "I04I"]);
+
+
+new Craft('I04P', 100.0).add(["I0L1", "I04B", "I04I", "I0LL"]);
