@@ -179,7 +179,7 @@ new Chest("I035")
   .add("I0DT")
   .addItems(udg_AcDevill_Item02);
 
-let udg_GOD_Item_Int = ["I0IT", "I0IU", "I0IV", "I0IW", "I0J4", "I0JL", "I0J5", "I0J8", "I0J1", "I0JD", "I0J9", "I0JI", "I0JH", "I0J7", "I0J3", "I0J6", "I0JE", "I0J2", "I0JC", "I0JK", "I0JA", "I0JJ", "I0JM", "I0JF", "I0JB", "I0JG", "I0JN", "I0IZ", "I0KB"]
+let udg_GOD_Item_Int = ["I0IT", "I0IU", "I0IV", "I0IW", "I0J4", "I0JL", "I0J5", "I0J8", "I0J1", "I0JD", "I0J9", "I0JI", "I0JH", "I0J7", "I0J3", "I0J6", "I0JE", "I0J2", "I0JC", "I0JK", "I0JA", "I0JJ", "I0JM", "I0JF", "I0JB", "I0JG", "I0JN", "I0IZ", "I0KB"/*, "I0D5"*/]
 let udg_GOD02_Item_Int = ["I0KM", "I0KN", "I0KO", "I0KP", "I0KQ", "I0KR", "I0KS", "I0KT", "I0KU", "I0KV", "I0KW", "I03F"];
 let udg_GOD02_Item_Int2 = ["I0L1", "I0L2", "I0L3", "I0L4", "I0L5", "I0L6", "I0L7", "I0L8", "I0L9", "I0LA", "I0LB", "I0LC", "I0LD", "I0L0"]
 let udg_Event_Item_Int = ["I034", "I06I", "I06Z", "I065", "I05Y", "I06A", "I07K", "I033", "I0CR", "I04H", "I07X"];
@@ -416,6 +416,8 @@ new Chest("I0LU")
 new Chest("I0M7").add("I0DY", 3).add("I035", 6).add("I0DS", 6).add("I0FB", 4).add("I0LO", 4).add("I0AQ", 11).add("I0A6", 6).add("I0BU", 6);
 
 new Chest("I0KY").add("I0KZ", 1).add("I0KX", 2.5).add("I0LE", 2.5);
+
+new Chest("I0BV").add("I0K4", 2).add("I0K6", 2).add("I0K8", 2)
 
 new Unit("n00G")
   .add("I021", 100)
@@ -675,4 +677,8 @@ new Unit("n059").add("I0KL").add("I0AD").add("I0M5");
 
 new Unit("e0D8").add("I0M7");
 
-new Unit("n04B").add("I0JR")
+new Unit("n04B").add("I0JR");
+
+new Unit("n05B").add("I0BV");
+
+new Unit("n05C").addMany("I0BV", 6);

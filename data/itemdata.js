@@ -4566,7 +4566,7 @@ module.exports = {
       },
       "label": "Staff of Destruction",
       "k_label": "파멸의 지팡이",
-      "effects": ["45% armor increase to nearby allies"],
+      "effects": ["45% damage increase to nearby allies"],
       "k_effects": ["주변아군 추가데미지 45%증가 오라 생성"]
   },
     "I0HJ": {
@@ -5315,6 +5315,14 @@ module.exports = {
     "effects": ["Increases Blockade duration by 0.15s"],
     "k_effects": ["봉쇄의 지속시간이 0.15초 증가합니다"]
   },
+  "I0D5": {
+    "type": "unleash",
+    "color": "god",
+    "label": "Unleash Force [Demon]", 
+    "k_label": "해방된 힘 [혈귀]",
+    "effects": ["Increases the change to activate Oni's Blood by 10%"],
+    "k_effects": ["오니의피 발동확률 10% 증가"]
+  },
   "I0JM": {
     "type": "unleash",
     "color": "god",
@@ -6010,6 +6018,12 @@ module.exports = {
   "I0KA": {
     "label": "Intermediate Training Certificate",
     "k_label": "중급 수료증",
+    "type": "chest",
+    "color": "black"
+  },
+  "I0BV": {
+    "label": "Advanced Training Certificate",
+    "k_label": "상급 수료증",
     "type": "chest",
     "color": "black"
   },
