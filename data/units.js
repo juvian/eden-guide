@@ -240,6 +240,14 @@ let units = {
   "e0D8": {
     label: "Scheme",
     "k_label": "춈스케"
+  },
+  "n05B": {
+    "label": "Easter Bunny",
+    "k_label": "만렙 토끼"
+  }, 
+  "n05C": {
+    "label": "Black Easter Bunny",
+    "k_label": "흑화한 만렙 토끼"
   }
 }
 
