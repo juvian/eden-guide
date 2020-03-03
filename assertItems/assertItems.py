@@ -227,8 +227,10 @@ def assertCorrectDropRates():
 			id = line.split("'")[1]
 			func = funcBefore(m.start())
 			
-			
-			if "Random" in func:
+			if "Item ==" in func:
+				chest, chance = func.split("'")[1], 100
+				drops[chest].append({"id": id, "chance": chance})
+			elif "Random" in func:
 				chest, chance = getChest(m, func, 1)
 				drops[chest].append({"id": id, "chance": chance})
 			elif "== true" in func: #exhange items
@@ -961,7 +963,6 @@ def assertCorrectScalings():
 
 	assert "call SetUnitLifeBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.06 ) ))" in code
 
-	#I0JD active
 	
 
 
