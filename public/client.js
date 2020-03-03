@@ -137,6 +137,10 @@ function initializeColumns() {
           return JSON.stringify(item.tree())
         }
       }
+    },
+    {
+      field: "id",
+      visible: false
     }
   ]
 }

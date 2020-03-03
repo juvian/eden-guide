@@ -3866,7 +3866,8 @@ module.exports = {
 	    	"hp_regen" : 2000
 	    },
 	    "label" : "Chaos Orb",
-      "k_label": "대혼돈의 보석"
+      "k_label": "대혼돈의 보석",
+      "bugged": true
 	},
 	"I0EC" : {
 	    "type" : "accessory",
@@ -4095,14 +4096,13 @@ module.exports = {
     "color" : "blue",
     "stats" : {
       "atk" : 160000,
- 	    "str" : 4500,
-	    "agi" : 4500,
-	    "int" : 4500      
+ 	    "str" : 3800,
+	    "agi" : 3800,
+	    "int" : 3800,
+      "angra_dmg": 30
     },
     "label" : "Angra Mainyu",
-    "k_label": "앙그라마이뉴",
-    "effects" : ["Each basic attack or spell hit has a 1% chance to unleash the evils", "Debuffs enemies for 2.5 seconds", "Adds an additional 40% Bonus Damage", "Deathscythe has a 4% chance to debuff on attack"],
-    "k_effects" : ["기본공격 또는 스킬공격시 1% 확률로 이세상 모든악을 겁니다", "2.5초간 디버프에 걸린 적을공격", "추가데미지 40%의 추가데미지 발생", "데스사이즈가 공격시 확률 4%로 디버프를 겁니다"]
+    "k_label": "앙그라마이뉴"
   },
   "I0F3" : {
     "type" : "artifact",
@@ -4124,14 +4124,13 @@ module.exports = {
     "color" : "blue",
     "stats" : {
       "atk" : 160000,
- 	    "str" : 4500,
-	    "agi" : 4500,
-	    "int" : 4500      
+ 	    "str" : 3800,
+	    "agi" : 3800,
+	    "int" : 3800,
+      "grasp": 5
     },
     "label" : "Grasp of Vengeance",
-    "k_label": "불타는 복수의 손아귀",
-    "effects": ["Damages enemies that attack the user (Allstats x 8)", "When worn by Protector of Light “Judgment of Light” becomes red and adds (Strength x 10) additional damage"],
-    "k_effects": ["적에게 공격을 받을시 적에게 데미지를 가합니다 (올스텟 x 8)", "빛의 수호자가 착용시 빛의복수 스킬이 붉은 색으로 변하며 힘 x 10의 데미지가 추가로 들어갑니다"]
+    "k_label": "불타는 복수의 손아귀"
   },
   "I0F9" : {
     "type" : "weapon",
@@ -4207,16 +4206,15 @@ module.exports = {
     "type" : "armor",
     "color" : "blue",
     "stats" : {
- 	    "str" : 3000,
-	    "agi" : 3000,
-	    "int" : 3000,
+ 	    "str" : 2700,
+	    "agi" : 2700,
+	    "int" : 2700,
       "armor": 1000,
-      "hp": 40000
+      "hp": 20000,
+      "vampiric": 1.4
     },
     "label" : "Vampiric Armor",
-    "k_label": "불멸의 갑옷",
-    "effects": ["On Use: Doubles health for 20 second (180s cd, cant be dropped while active)", "Lowers the cooldown of Heartspan and bloodfield by 10 seconds when worn by Bloodlord"],
-    "k_effects": ["사용시 20초간 생명력이 2배가됨", "(쿨타임 180초)(지속 시간동안 아이템을 벗을수 없음)", "블러드 로드 착용시 코코로 와타티 쿨타임 10초 감소"]
+    "k_label": "불멸의 갑옷"
   },
   "I0FL": {
     "type": "weapon",
@@ -7931,5 +7929,295 @@ module.exports = {
 		},
     "k_label": "최상급 정화의 신의 보석",
     "label": "Supreme Purified Magic Jewel"
+  },
+  "I0H8": {
+    "type": "accessory",
+    "color": "god",
+	  "stats" : {
+			"str" : 6000,
+			"agi" : 6000,
+			"int" : 6000,
+	    "armor" : 1100,
+	    "movement_speed" : 300,
+      "magic_resistance": 35
+		},
+    "k_label": "최상위 정화의신의 수호",
+    "label": "Supreme Guardian Ring"
+  },
+  "I0NO": {
+    "type" : "armor",
+    "color" : "red",
+    "stats" : {
+      "armor" : 1000,
+      "str" : 3800,
+      "agi" : 3800,
+      "int" : 3800,
+      "vampiric": 1.6,
+      "hp": 30000
+    },
+    "label" : "Great Demon's Immortal Armor",
+    "k_label": "대악마의 불멸 갑옷"
+  },
+  "I0NP": {
+    "type" : "armor",
+    "color" : "red",
+    "stats" : {
+      "armor" : 1000,
+      "str" : 4400,
+      "agi" : 4400,
+      "int" : 4400,
+      "hp" : 40000,
+      "vampiric": 1.7
+    },
+    "label" : "Immortal Chaos Armor",
+    "k_label": "대혼돈의 불멸 갑옷",
+  },
+  "I0NQ": {
+    "type" : "armor",
+    "color" : "god",
+    "stats" : {
+      "armor" : 1200,
+      "str" : 5500,
+      "agi" : 5500,
+      "int" : 5500,
+      "hp" : 50000,
+      "vampiric": 2
+    },
+    "label" : "Purified Immortal Armor",
+    "k_label": "정화된 불멸의 갑옷",
+  },
+  "I0NR": {
+    "type" : "armor",
+    "color" : "god",
+    "stats" : {
+      "armor" : 1300,
+      "str" : 6000,
+      "agi" : 6000,
+      "int" : 6000,
+      "hp" : 55000,
+      "vampiric": 2.2
+    },
+    "label" : "Supreme Purified Immortal Armor",
+    "k_label": "최상급 정화된 불멸의 갑옷"
+  },
+  "I0NS": {
+    "type" : "helmet",
+    "color" : "red",
+    "stats" : {
+      "armor" : 1300,
+      "str" : 2000,
+      "agi" : 2000,
+      "int" : 2000,
+      "extra_armor": 1000,
+      "extra_armor_cd": 20,
+      "extra_armor_range": 1000
+    },
+    "label" : "Great Devil's Ambition",
+    "k_label": "대악마의 패기",
+  },
+  "I0NT": {
+    "type" : "helmet",
+    "color" : "red",
+    "stats" : {
+      "armor" : 1700,
+      "str" : 2500,
+      "agi" : 2500,
+      "int" : 2500,
+      "extra_armor": 1500,
+      "extra_armor_cd": 18,
+      "extra_armor_range": 1000
+    },
+    "label" : "Chaos Ambition",
+    "k_label": "대혼돈의 패기",
+  },
+  "I0NU": {
+    "type" : "helmet",
+    "color" : "god",
+    "stats" : {
+      "armor" : 2200,
+      "str" : 3500,
+      "agi" : 3500,
+      "int" : 3500,
+      "extra_armor": 2000,
+      "extra_armor_cd": 15,
+      "extra_armor_range": 1500
+    },
+    "label" : "God's Ambition",
+    "k_label": "신의 패기",
+  },
+  "I0NV": {
+    "type" : "helmet",
+    "color" : "god",
+    "stats" : {
+      "armor" : 2600,
+      "str" : 4000,
+      "agi" : 4000,
+      "int" : 4000,
+      "extra_armor": 2500,
+      "extra_armor_cd": 13,
+      "extra_armor_range": 1500
+    },
+    "label" : "Supreme God's Ambition",
+    "k_label": "최상급 신의 패기",
+  },
+  "I0NW": {
+    "type" : "weapon",
+    "color" : "red",
+    "stats" : {
+      "atk" : 230000,
+      "str" : 5000,
+      "agi" : 5000,
+      "int" : 5000,
+      "angra_dmg": 40
+    },
+    "label" : "Angel's Revenge",
+    "k_label": "대천사의 복수",
+  },
+  "I0NX": {
+    "type" : "weapon",
+    "color" : "red",
+    "stats" : {
+      "atk" : 260000,
+      "str" : 5300,
+      "agi" : 5300,
+      "int" : 5300,
+      "angra_dmg": 45
+    },
+    "label" : "Angel's Revenge +1",
+    "k_label": "대천사의 복수 +1",
+  },
+  "I0NY": {
+    "type" : "weapon",
+    "color" : "red",
+    "stats" : {
+      "atk" : 300000,
+      "str" : 5600,
+      "agi" : 5600,
+      "int" : 5600,
+      "angra_dmg": 50
+    },
+    "label" : "Angel's Revenge +2",
+    "k_label": "대천사의 복수 +2",
+  },
+  "I0NZ": {
+    "type" : "weapon",
+    "color" : "red",
+    "stats" : {
+      "atk" : 350000,
+      "str" : 6000,
+      "agi" : 6000,
+      "int" : 6000,
+      "angra_dmg": 55
+    },
+    "label" : "Angel's Revenge +3",
+    "k_label": "대천사의 복수 +3",
+  },
+  "I0O0": {
+    "type" : "weapon",
+    "color" : "god",
+    "stats" : {
+      "atk" : 500000,
+      "str" : 8500,
+      "agi" : 8500,
+      "int" : 8500,
+      "angra_dmg": 65
+    },
+    "label" : "God's Revenge",
+    "k_label": "신의 복수심",
+  },
+  "I0O1": {
+    "type" : "weapon",
+    "color" : "god",
+    "stats" : {
+      "atk" : 600000,
+      "str" : 9500,
+      "agi" : 9500,
+      "int" : 9500,
+      "angra_dmg": 75
+    },
+    "label" : "Supreme God's Revenge",
+    "k_label": "최상급 신의 복수심",
+  },
+  "I0O2": {
+    "type" : "weapon",
+    "color" : "red",
+    "stats" : {
+      "atk" : 230000,
+      "str" : 5000,
+      "agi" : 5000,
+      "int" : 5000,
+      "grasp": 6
+    },
+    "label" : "Angel's Wrath",
+    "k_label": "대천사의 천벌",
+    "bugged": true
+  },
+  "I0O3": {
+    "type" : "weapon",
+    "color" : "red",
+    "stats" : {
+      "atk" : 260000,
+      "str" : 5300,
+      "agi" : 5300,
+      "int" : 5300,
+      "grasp": 7
+    },
+    "label" : "Angel's Wrath +1",
+    "k_label": "대천사의 천벌 +1",
+    "bugged": true
+  },
+  "I0O4": {
+    "type" : "weapon",
+    "color" : "red",
+    "stats" : {
+      "atk" : 300000,
+      "str" : 5600,
+      "agi" : 5600,
+      "int" : 5600,
+      "grasp": 8
+    },
+    "label" : "Angel's Wrath +2",
+    "k_label": "대천사의 천벌 +2",
+    "bugged": true
+  },
+  "I0O5": {
+    "type" : "weapon",
+    "color" : "red",
+    "stats" : {
+      "atk" : 350000,
+      "str" : 6000,
+      "agi" : 6000,
+      "int" : 6000,
+      "grasp": 9
+    },
+    "label" : "Angel's Wrath +3",
+    "k_label": "대천사의 천벌 +3",
+    "bugged": true
+  },
+  "I0O6": {
+    "type" : "weapon",
+    "color" : "god",
+    "stats" : {
+      "atk" : 600000,
+      "str" : 9500,
+      "agi" : 9500,
+      "int" : 9500,
+      "grasp": 12
+    },
+    "label" : "Supreme God's Wrath",
+    "k_label": "최상급 신의 신벌",
+  },
+  "I0O7": {
+    "type" : "weapon",
+    "color" : "god",
+    "stats" : {
+      "atk" : 500000,
+      "str" : 8500,
+      "agi" : 8500,
+      "int" : 8500,
+      "grasp": 11
+    },
+    "label" : "God's Wrath",
+    "k_label": "신의 신벌",
   }
 }
