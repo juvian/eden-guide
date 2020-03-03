@@ -1,18 +1,19 @@
 var main = {}
 var switching = {}
-let items = require('../data/processed').items;
 
 $(document).on("click", ".add-build", function(){
   var item = $(this).data("item")
   addItem(item)
 })
 
-$(function(){
+$(document).on("language", function () {
+  window.items = window.client.items;
   if (window.data) {
-    data.items.forEach(addItem);
+    data.items.forEach(i => addItem(i.id));
     $("#title").val(data.title);
     $("#description").val(data.description);
   }
+  init();
 })
 
 function addItem(item) {
@@ -48,38 +49,40 @@ function refreshBuild() {
   })
 }
 
-$(".get-url").click(function(){
-  var ids = Object.keys(main).concat(Object.keys(switching)).map(v => items[v].id).join()
-  var hash = btoa(ids)
-  
-  $(this).attr("href", hash)
-})
+function init() {
+  $(".get-url").click(function(){
+    var ids = Object.keys(main).concat(Object.keys(switching)).map(v => items[v].id).join()
+    var hash = btoa(ids)
 
-$(".save-build").click(function(){
-  var ids = Object.keys(main).concat(Object.keys(switching)).map(v => items[v].id)
-  
-  $(this).addClass("disabled").blur();
-    
-  fetch("/save-build", {
-    method: 'post',
-    headers: {
-      'Accept': 'application/json, text/plain, */*',
-      'Content-Type': 'application/json'
-    },
-    credentials: 'include',
-    body: JSON.stringify({items: ids, char: char, id: (window.data ? data._id : null), title: $("#title").val(), description: $("#description").val()})
-  }).then(res=>res.json())
-    .then(res => {
-      if (res.error) {
-        showError(res.error);
-        $(".save-build").removeClass("disabled");
-      } else {
-        window.location.href = "/custom-build/" + res.id;
-      }
-    }).catch((err) => {
-      showError(err);
-      $(".save-build").removeClass("disabled")
-    });
-    
-  return false;
-})
+    $(this).attr("href", hash)
+  })
+
+  $(".save-build").click(function(){
+    var ids = Object.keys(main).concat(Object.keys(switching)).map(v => items[v].id)
+
+    $(this).addClass("disabled").blur();
+
+    fetch("/save-build", {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify({items: ids, char: char, id: (window.data ? data._id : null), title: $("#title").val(), description: $("#description").val()})
+    }).then(res=>res.json())
+      .then(res => {
+        if (res.error) {
+          showError(res.error);
+          $(".save-build").removeClass("disabled");
+        } else {
+          window.location.href = "/custom-build/" + res.id;
+        }
+      }).catch((err) => {
+        showError(err);
+        $(".save-build").removeClass("disabled")
+      });
+
+    return false;
+  })
+}

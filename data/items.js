@@ -7,17 +7,17 @@ class Item {
     Object.assign(this, item);
   }
   
-  html(qty) {
+  html(qty, lang) {
     qty = qty || 1;
-    let info = this.info();
+    let info = this.info(lang);
     let drops = this.dropsHtml();
     let txt = info + (info.trim() && drops.trim() ? "<br/>" : "") + drops;
-    return `<span class="${this.color} item-tooltip" data-placement="bottom" data-toggle="tooltip" data-html="true" title="${txt}">${this.translatedLabel() + (qty > 1 ? ' x' + qty : '')}</span>`;
+    return `<span class="${this.color} item-tooltip" data-placement="bottom" data-toggle="tooltip" data-html="true" title="${txt}">${this.translatedLabel(lang) + (qty > 1 ? ' x' + qty : '')}</span>`;
   }
   
-  info() {
+  info(lang) {
     let template = this.statsHtml();
-    template += this.effectsHtml();
+    template += this.effectsHtml(lang);
     template += this.statsPointsHtml();
     template += (this.bugged ? translate('bugs') : '');
     
@@ -38,17 +38,17 @@ class Item {
     return txt;
   }
   
-  effectsHtml() {
-    let effects = this.translatedEffects();
+  effectsHtml(lang) {
+    let effects = this.translatedEffects(lang);
     return effects == null ? "" : effects.join("<br/>")
   }
   
-  translatedEffects() {
-    return translator.lang() == "eng" ? this.effects : this.k_effects;
+  translatedEffects(lang) {
+    return (lang || translator.lang()) == "eng" ? this.effects : this.k_effects;
   }
   
-  translatedLabel() {
-    return translator.lang() == "eng" ? this.label : this.k_label;
+  translatedLabel(lang) {
+    return (lang || translator.lang()) == "eng" ? this.label : this.k_label;
   }
   
   statsPointsHtml() {
@@ -103,6 +103,10 @@ class Item {
       }
       else if (stat == 'attack_int_real') return translate('attack-int').replace("{0}", this.stats['attack_int_real'])
       else if (stat == 'hp_consume') return translate('hp-consume')
+      else if (stat == 'vampiric') return translate('vampiric-effect').replace("{0}", val)
+      else if (stat == 'extra_armor') return translate('extra-armor').replace("{0}", val).replace("{1}", this.stats['extra_armor_cd']).replace("{2}", this.stats['extra_armor_range'])
+      else if (stat == 'angra_dmg') return translate('angra-effect').replace("{0}", val)
+      else if (stat == 'grasp') return translate('grasp-effect').replace("{0}", val)
       else return ''  
   }
   

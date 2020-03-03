@@ -183,6 +183,22 @@ exports.translations = {
     "eng": "Generates Bonus Damage based on MAX MANA ({0}% per 10,000)<br/>Consumes 6% of MAX MANA per cast<br/>Will not work if below 15% MAX MANA",
     "kor": "사용자의 마나에 비례하여 추가데미지 생성 (비뮬 - 1만당 {0}%)<br/>스킬사용시 최대마력 6%감소<br/>마력이 15%이상 있을때 작동"
   },
+  "vampiric-effect": {
+    "eng": "Activate to get x{0} increased health during 20s<br/>(180s cd) (can't remove item during effect)",
+    "kor": "사용시 20초간 생명력이 {0}배가됨<br/>(쿨타임 180초)(지속 시간동안 아이템을 벗을수 없음)"
+  },
+  "extra-armor": {
+    "eng": "When used, will get aggro of enemies in {2} range<br/>Grants an additional {0} armor for 10s ({1}s cd)",
+    "kor": "사용시 범위 {2}내의 적군의 공격 대상이됩니다<br/>10초간 방어력 100이 증가합니다 (쿨타임 {1}초)"
+  },
+  "angra-effect": {
+    "eng": "Each basic attack or spell hit has a 6% chance to damage enemies in 1500 range<br/>Adds an additional {0}% Bonus Damage for 3s<br/>Does not Stack",
+    "kor": "기본 공격시 6% 확률로 범위 1500내의 아군의 추가데미지 증가<br/>추가데미지 {0}% 증가 지속시간 3초<br/>버프가 중복되지 않습니다"
+  },
+  "grasp-effect": {
+    "eng": "Damages enemies that attack the user (Allstats x {0})",
+    "kor": "적에게 공격을 받을시 적에게 데미지를 가합니다 (올스텟 x 5)"
+  },
   "hp-consume": {
     "eng": "Each spell consumes 6% of HP",
     "kor": "모든 능력사용시 체력 6% 소모"

@@ -38,7 +38,7 @@ module.exports = function (app) {
             return !v1
           },
           item: function(item, lang) {
-            return item.html();
+            return item.html(1, lang);
           },
           getImage : function(build) {
             if (build.images.length == 0) return "";
