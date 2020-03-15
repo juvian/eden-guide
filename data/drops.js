@@ -408,7 +408,6 @@ new Chest("I0M7")
   .add("I0BU", 6);
 
 new Chest("I0KY")
-  .add("I0JV")
   .add("I04B", 2)
   .add("I0KX", 4.5)
   .add("I0LE", 4.5);
