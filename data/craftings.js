@@ -782,10 +782,10 @@ new Craft('I09L', 100.0).add(["I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I
 new Craft('I09H', 100.0).add(["I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z"]);
 
 
-new Craft('I09H', 100.0).add(['I0O2', 'I0O2', 'I0O2', 'I0O2', 'I0O2', 'I0O2', 'I0O2', 'I0O2', 'I0O2', 'I0O2']);
-
-
 new Craft('I0A5', 100.0).add(["I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z"]);
+
+
+new Craft('I0O2', 100.0).add(["I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z"]);
 
 
 new Craft('I0CF', 100.0).add(["I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z"]);
