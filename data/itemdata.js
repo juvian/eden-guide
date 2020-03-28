@@ -8,8 +8,7 @@ module.exports = {
 			"damage_increase" : 15
 		},
 		"label" : "Sword of the Swordman",
-    "k_label": "검객의 검",
-    "bugged": true
+    "k_label": "검객의 검"
 	},
 	"I03Q" : {
 		"type" : "weapon",
@@ -651,8 +650,7 @@ module.exports = {
 			"damage_taken" : -9
 		},
 		"label" : "Dwarven High Robe",
-    "k_label": "드워프의 고급 로브",
-    "bugged": true
+    "k_label": "드워프의 고급 로브"
 	},
 	"I06B" : {
 		"type" : "armor",
@@ -738,8 +736,7 @@ module.exports = {
 			"damage_taken" : -12
 		},
 		"label" : "Dwarven Exquisite Robe",
-    "k_label": "드워프의 최고급 로브",
-    "bugged": true
+    "k_label": "드워프의 최고급 로브"
 	},
 	"I03H" : {
 		"type" : "armor",
@@ -1001,8 +998,7 @@ module.exports = {
 			"damage_taken" : -18
 		},
 		"label" : "Exquisite Mithril Robe",
-    "k_label": "최고급 미스릴 로브",
-    "bugged": true
+    "k_label": "최고급 미스릴 로브"
 	},	
 	"I03L" : {
 		"type" : "accessory",
@@ -1260,8 +1256,7 @@ module.exports = {
 		"label" : "Foresight of the wise",
     "k_label": "현자의 지혜",
 		"effects" : ["Recover 60% of maximum Mana on use (120s cd)"],
-		"k_effects" : ["사용시 MP60% 회복 (쿨타임 120초)"],
-    "bugged": true
+		"k_effects" : ["사용시 MP60% 회복 (쿨타임 120초)"]
 	},
   "I08X" : {
 		"type" : "helmet",
@@ -1359,8 +1354,7 @@ module.exports = {
 		"label" : "Rho Aias",
     "k_label": "로 아이아스",
 		"effects" : ["Generates a shield that blocks up to 25000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 25000의 쉴드 생성"],
-    "bugged": true
+		"k_effects" : ["10초마다 25000의 쉴드 생성"]
 	},
 	"I08H" : {
 		"type" : "artifact",
@@ -1479,8 +1473,7 @@ module.exports = {
 		"label" : "Excalibur +1",
     "k_label": "대천사의 검 +1",
 		"effects" : ["On Use: Fires a laser in chosen direction (Deals 340000 + (STR + AGI + INT) x225 (120s cd)"],
-		"k_effects" : ["사용시 정의의 일격 시전 (340000 + (STR + AGI + INT) x225)(쿨타임 120초)"],
-    "bugged": true
+		"k_effects" : ["사용시 정의의 일격 시전 (340000 + (STR + AGI + INT) x225)(쿨타임 120초)"]
 	},
 	"I090" : {
 		"type" : "weapon",
@@ -1737,8 +1730,7 @@ module.exports = {
 		"label" : "Angelic Bow of Life +2",
     "k_label": "대천사의 생명의활 +2",
 		"effects" : ["Every 10 attacks will recover AGI x6 HP (9s cd)", "Every 6 spells will recover AGI x6 HP (10s cd)", "On Use: Restores AGI x8 HP (120s cd)"],
-		"k_effects" : ["기본공격 10회시 생명력회복 (AGI x6)(쿨타임 10초)", "스킬사용 6회시 생명력회복 (AGI x6)(쿨타임 10초)", "사용시  생명력회복 (AGI x8)(쿨타임 120초)"],
-    "bugged": true
+		"k_effects" : ["기본공격 10회시 생명력회복 (AGI x6)(쿨타임 10초)", "스킬사용 6회시 생명력회복 (AGI x6)(쿨타임 10초)", "사용시  생명력회복 (AGI x8)(쿨타임 120초)"]
 	},
 	"I0AO" : {
 		"type" : "weapon",
@@ -2021,8 +2013,7 @@ module.exports = {
 		"label" : "Blessed Staff +3",
     "k_label": "대천사장의 지팡이 +3",
 		"effects" : ["On Use: Summons an angel"],
-		"k_effects" : ["사용시 고위천사 소환"],
-    "bugged": true
+		"k_effects" : ["사용시 고위천사 소환"]
 	},
 	"I0C8" : {
 		"type" : "weapon",
@@ -2457,8 +2448,7 @@ module.exports = {
 			"damage_taken" : -4
 		},
 		"label" : "Helm of Light",
-    "k_label": "빛의 투구",
-    "bugged": true
+    "k_label": "빛의 투구"
 	},
 	"I066" : {
 		"type" : "weapon",
@@ -2555,8 +2545,7 @@ module.exports = {
 			"movement_speed" : 150
 		},
 		"label" : "Agile Armor",
-    "k_label": "신속의 갑옷",
-    "bugged": true
+    "k_label": "신속의 갑옷"
 	},
 	"I0B6" : {
 		"type" : "armor",
@@ -2915,8 +2904,7 @@ module.exports = {
 		"label" : "Archangel’s Barrier",
     "k_label": "대천사의 방벽",
 		"effects" : ["Generate a shield that can block up to 33000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 33000의 쉴드 생성"],
-    "bugged": true
+		"k_effects" : ["10초마다 33000의 쉴드 생성"]  
 	},
 	"I0BT" : {
 		"type" : "artifact",
@@ -3107,8 +3095,7 @@ module.exports = {
     	"damage_increase" : 55
 		},
 		"label" : "Archangel’s Amber Staff",
-    "k_label": "대천사의 증폭 지팡이",
-    "bugged": true
+    "k_label": "대천사의 증폭 지팡이"
 	},
 	"I0C9" : {
 		"type" : "weapon",
@@ -3183,8 +3170,7 @@ module.exports = {
 		"label" : "Dagger of the Shadow Spirit",
     "k_label": "검은 영혼의 단검",
 		"effects" : ["Consumes 0.8% of maximum HP for each attack and deals an additional 30000 + AGI x16 damage (Only activates when HP is above 1%)"],
-		"k_effects" : ["기본공격시 최대체력 0.8%소모(체력 1%이상일때 작동) 매공격시 어둠의 일격을 가합니다 (30000 + AGI x16)"],
-    "bugged": true
+		"k_effects" : ["기본공격시 최대체력 0.8%소모(체력 1%이상일때 작동) 매공격시 어둠의 일격을 가합니다 (30000 + AGI x16)"]
 	},
 	"I0D6" : {
 		"type" : "weapon",
@@ -3286,8 +3272,7 @@ module.exports = {
 		"label" : "Jewel of Chaos",
     "k_label": "혼돈의 보석",
 		"effects" : ["On Use: one of three effects will be used :", "150% Bonus Damage for 15 seconds", "Increase magical defense by 100% and armor by 10000 for 15 seconds", "Cannot use magic for 10 seconds (120s cd)"],
-		"k_effects" : ["사용시 3가지중 랜덤효과 발동", "15초동안 추가데미지 150%증가", "15초동안 마법방어력 100%/방어력 10000증가", "10초간 마법사용 불가능 (쿨타임 120초)"],
-    "bugged": true
+		"k_effects" : ["사용시 3가지중 랜덤효과 발동", "15초동안 추가데미지 150%증가", "15초동안 마법방어력 100%/방어력 10000증가", "10초간 마법사용 불가능 (쿨타임 120초)"]
 	},
 	"I036" : {
 	  	"type" : "stats",
@@ -3795,8 +3780,7 @@ module.exports = {
 	    	"hp_regen_percent" : 3
 	    },
 	    "label" : "Chaotic Armor of Rejuvenation",
-      "k_label": "대혼돈의 치유의 갑옷",
-      "bugged": true
+      "k_label": "대혼돈의 치유의 갑옷"
 	},
 	"I0E6" : {
 	    "type" : "armor",
@@ -3844,8 +3828,7 @@ module.exports = {
 	    	"damage_taken" : -27
 	    },
 	    "label" : "Chaotic Amber Robes",
-      "k_label": "대혼돈의 수호 로브",
-      "bugged": true
+      "k_label": "대혼돈의 수호 로브"
 	},
 	"I0EA" : {
 	    "type" : "material",
@@ -3866,8 +3849,7 @@ module.exports = {
 	    	"hp_regen" : 2000
 	    },
 	    "label" : "Chaos Orb",
-      "k_label": "대혼돈의 보석",
-      "bugged": true
+      "k_label": "대혼돈의 보석"
 	},
 	"I0EC" : {
 	    "type" : "accessory",
@@ -4286,8 +4268,7 @@ module.exports = {
       "damage_increase": 70
     },
     "label": "Archangel's Great Sword +3",
-    "k_label": "대천사의 대검 +3",
-    "bugged": true
+    "k_label": "대천사의 대검 +3"
   },
   "I0G8": {
     "type": "armor",
@@ -5149,16 +5130,16 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Psychic]", 
     "k_label": "해방된 힘 [염동술사]",
-    "effects": ["Increases energy sphere duration by 8s"],
-    "k_effects": ["에너지 구체의 지속시간을 8초 증가시킵니다"]
+    "effects": ["Increases energy sphere duration by 15s"],
+    "k_effects": ["에너지 구체의 지속시간을 15초 증가시킵니다"]
   },
   "I0J3": {
     "type": "unleash",
     "color": "god",
     "label": "Unleash Power [Sniper]", 
     "k_label": "해방된 힘 [스나이퍼]",
-    "effects": ["Enchances Explosive Magazines"],
-    "k_effects": ["폭발성 탄창을 강화합니다"]
+    "effects": ["Explosive Magazines cd reduced by 8s"],
+    "k_effects": ["폭발성 탄창 쿨타임 8초 감소"]
   },
   "I0J4": {
     "type": "unleash",
@@ -5173,9 +5154,8 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Death Scythe]", 
     "k_label": "해방된 힘 [데스사이즈]",
-    "effects": ["Enchances Cursed Possession"],
-    "k_effects": ["오니화를 강화합니다"],
-    "bugged": true
+    "effects": ["Cursed Possession cd reduced by 10s"],
+    "k_effects": ["오니화 쿨타임 10초감소"]
   },
   "I0J6": {
     "type": "unleash",
@@ -5206,16 +5186,16 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Martial Artist]", 
     "k_label": "해방된 힘 [무도가]",
-    "effects": ["Increases Hectopascal Kick proc chance by 10%"],
-    "k_effects": ["헥토파스칼 킥의 확률증가가 10% 추가로 증가합니다"]
+    "effects": ["Awakening(G) duration increased by 4s"],
+    "k_effects": ["각성(G)의 지속시간이 4초증가"]
   },
   "I0JA": {
     "type": "unleash",
     "color": "god",
     "label": "Unleash Power [Electromaster]", 
     "k_label": "해방된 힘 [일렉트로 마스터]",
-    "effects": ["Reduces Eye of the Storm cd by 15s"],
-    "k_effects": ["뇌단의 쿨타임 15초가 감소합니다"]
+    "effects": ["Reduces Eye of the Storm cd by 20s"],
+    "k_effects": ["뇌단의 쿨타임 20초가 감소합니다"]
   },
   "I0JB": {
     "type": "unleash",
@@ -5230,8 +5210,8 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Overmind]", 
     "k_label": "해방된 힘 [오버마인드]",
-    "effects": ["Increases Thunder Calling int multiplier by 2%"],
-    "k_effects": ["초월의 룬의 지능증가폭이 2% 증가합니다"]
+    "effects": ["Increases Thunder Calling int multiplier by 3%"],
+    "k_effects": ["초월의 룬의 지능증가폭이 3% 증가합니다"]
   },
   "I0JD": {
     "type": "unleash",
@@ -5270,8 +5250,8 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Specialist]", 
     "k_label": "가이아 갑옷",
-    "effects": ["?"],
-    "k_effects": ["?"]
+    "effects": ["Increase the number of magazines for heavy machine gun (W) by 100", "Rocket Launcher (E) Increases the number of shots by 20"],
+    "k_effects": ["해비 머신건(W)탄창 갯수 100개증가", "로켓런처(E) 탄찬 갯수 20개증가"]
   },
   "I0JH": {
     "type": "unleash",
@@ -5318,8 +5298,8 @@ module.exports = {
     "color": "god",
     "label": "Unleash Force [Demon]", 
     "k_label": "해방된 힘 [혈귀]",
-    "effects": ["Increases the change to activate Oni's Blood by 10%"],
-    "k_effects": ["오니의피 발동확률 10% 증가"]
+    "effects": ["Critical hit damage increased by 25%"],
+    "k_effects": ["폭혈 데미지 25% 증가"]
   },
   "I0JM": {
     "type": "unleash",
@@ -5483,8 +5463,7 @@ module.exports = {
 	    "damage_increase" : 60
 	  },
     "label": "Purified Bright Greaves",
-    "k_label": "신의 빛의 경갑",
-    "bugged": true
+    "k_label": "신의 빛의 경갑"
   },  
   "I0KR": {
     "type": "armor",
@@ -5496,8 +5475,7 @@ module.exports = {
 	    "damage_increase" : 60
 	  },
     "label": "Purified Bright Robes",
-    "k_label": "신의 빛의 로브",
-    "bugged": true
+    "k_label": "신의 빛의 로브"
   },
   "I0KS": {
     "type": "armor",
@@ -5511,8 +5489,7 @@ module.exports = {
 	    "max_health" : 36
 	  },
     "label": "Purified Life Armor",
-    "k_label": "정화된 생명의 갑옷",
-    "bugged": true
+    "k_label": "정화된 생명의 갑옷"
   },
   "I0KT": {
     "type": "armor",
@@ -5562,8 +5539,7 @@ module.exports = {
 	    "hp_regen_percent" : 4
 	  },
     "label": "Purified Healing Armor",
-    "k_label": "정화된 치유의 갑옷",
-    "bugged": true
+    "k_label": "정화된 치유의 갑옷"
   },  
   "I0KX" : {
     "type" : "chest",
@@ -6514,8 +6490,7 @@ module.exports = {
       "int": 250,
       "agi": 250,
       "damage_increase": 5
-    },
-    "bugged": true
+    }
   },
   "I011": {
     "label": "Cecilia Ring",
@@ -6538,8 +6513,7 @@ module.exports = {
       "int": 150,
       "agi": 150,
       "damage_increase": 3
-    },
-    "bugged": true
+    }
   },
   "I00C": {
     "label": "Beach Leather",
@@ -7236,8 +7210,7 @@ module.exports = {
     "k_label": "최상급 신의 대검",
     "label": "Supreme God's GreatSword",
     "effects": ["Deals damage proportional to stats when used (120s cd)"],
-    "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(능력치 비례)"],
-    "bugged": true
+    "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(능력치 비례)"]
   },
   "I0MC": {
    "type": "weapon",
@@ -7345,8 +7318,7 @@ module.exports = {
         "attack_str_int_real": 77                
       },
       "label": "Supreme God's Staff",
-      "k_label": "최상급 신의 일격 지팡이",
-      "bugged": true
+      "k_label": "최상급 신의 일격 지팡이"
   },
   "I0MK": {
       "type": "weapon",
@@ -7481,8 +7453,7 @@ module.exports = {
 	    "max_health" : 38
 	  },
     "label": "Supreme Purified Life Armor",
-    "k_label": "최상급 정화된 생명의 갑옷",
-    "bugged": true
+    "k_label": "최상급 정화된 생명의 갑옷"
   },
   "I0MV": {
     "type": "armor",
@@ -7537,8 +7508,7 @@ module.exports = {
 		"label" : "Supreme Purified Fury Ring",
     "k_label": "최상급 신의 분노",
 		"effects" : ["Increases the damage by 135% for 15s (120s cd)"],
-    "k_effects": ["사용시 15초간 추가데미지 135%증가(쿨타임 120초)"],
-    "bugged": true
+    "k_effects": ["사용시 15초간 추가데미지 135%증가(쿨타임 120초)"]
   },
   "I0MZ": {
 		"type" : "accessory",
@@ -7857,8 +7827,7 @@ module.exports = {
 	    	"damage_increase" : 115
 	    },
 	    "label" : "Supreme God's Amplifying Robes",
-      "k_label": "최고급 신의 증폭 로브",
-      "bugged": true
+      "k_label": "최고급 신의 증폭 로브"
   },
   "I03G": {
     "type": "armor",
@@ -8219,5 +8188,457 @@ module.exports = {
     },
     "label" : "God's Wrath",
     "k_label": "신의 신벌",
+  },
+  "I0OB": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 2300,
+			"agi" : 2300,
+			"int" : 2300,
+      "damage_increase": 40
+		},
+		"label" : "Demon King Strike Rune",
+    "k_label": "마신왕의 일격룬"    
+  },
+  "I0OC": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 2300,
+			"agi" : 2300,
+			"int" : 2300,
+      "hp": 45000
+		},
+		"label" : "Demon King Life Rune",
+    "k_label": "마신왕의 생명룬"    
+  },
+  "I0OD": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 2300,
+			"agi" : 2300,
+			"int" : 2300,
+      "mp": 30000
+		},
+		"label" : "Demon King Mana Rune",
+    "k_label": "마신왕의 마나룬"    
+  },
+  "I0OE": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 2300,
+			"agi" : 2300,
+			"int" : 2300,
+      "movement_speed": 150,
+      "attack_speed": 200
+		},
+		"label" : "Demon King Speed Rune",
+    "k_label": "마신왕의 신속룬"    
+  },
+  "I0OF": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 2300,
+			"agi" : 2300,
+			"int" : 2300
+		},
+		"label" : "Demon King Vitality Potion",
+    "k_label": "마신왕의 포션",
+    "effects" : ["On Use: Restore 60% of health (25s cd)"],
+    "k_effects" : ["사용시 최대생명력 60%회복 (쿨타임 25초)"]
+  },
+  "I0OG": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 2300,
+			"agi" : 2300,
+			"int" : 2300
+		},
+		"label" : "Demon King Mana Potion",
+    "k_label": "마신왕의 마나포션",
+    "effects" : ["On Use: Restore 60% of maximum mana (30s cd)"],
+    "k_effects" : ["사용시 최대마나 60%회복 (쿨타임 30초)"]    
+  },
+  "I0OH": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 2300,
+			"agi" : 2300,
+			"int" : 2300,
+      "stats_increase": 6
+		},
+		"label" : "Demon King Stat Rune",
+    "k_label": "마신왕의 증폭룬"  
+  },
+  "I0OI": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 2300,
+			"agi" : 2300,
+			"int" : 2300,
+      "skill_damage": 9
+		},
+		"label" : "Demon King Magic Rune",
+    "k_label": "마신왕의 증강룬"
+  },
+  "I0OJ": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "int_increase": 10
+		},
+		"label" : "Demon King Token [Int]",
+    "k_label": "마신왕의 증표[지능]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["지능 10%증가"]
+  },
+  "I0OK": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "str_increase": 10
+		},
+      "label" : "Demon King Token [Str]",
+    "k_label": "마신왕의 증표[힘]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["지능 10%증가"]
+  },
+  "I0OL": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "agi_increase": 10
+		},
+		"label" : "Demon King Token [Agi]",
+    "k_label": "마신왕의 증표[민첩]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["해방의 힘 전용템"]
+  },
+  "I0OM": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "damage_increase": 30
+		},
+		"label" : "Demon King Token [Damage]",
+    "k_label": "마신왕의 증표[일격]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["해방의 힘 전용템"]
+  },
+  "I0ON": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "skill_damage": 15
+		},
+		"label" : "Demon King Token [Skill Damage]",
+    "k_label": "마신왕의 증표[증강]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["해방의 힘 전용템"]
+  },
+  "I0OO": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "max_health": 12
+		},
+		"label" : "Demon King Token [HP]",
+    "k_label": "마신왕의 증표[생명]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["해방의 힘 전용템"]
+  },
+  "I0OP": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "max_mana": 12
+		},
+		"label" : "Demon King Token [Mana]",
+    "k_label": "마신왕의 증표[마나]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["해방의 힘 전용템"]
+  },
+  "I0OQ": {
+    "label": "Demon King's Treasure Chest",
+    "k_label": "마신왕의 보물함",
+    "type": "chest",
+    "color": "black"
+  },  
+  "I0OS" : {
+    "type" : "material",
+    "color" : "black",
+    "label" : "Demon King Treasure Piece",
+    "k_label": "마신왕의 보물조각"
+  },  
+  "I0OT" : {
+    "type" : "material",
+    "color" : "black",
+    "label" : "Demon King Power",
+    "k_label": "마신왕의 권능"
+  },
+	"I0OU" : {
+		"type" : "weapon",
+		"color" : "purple",
+		"stats" : {
+			"int" : 1800,
+			"atk" : 30000,
+			"damage_increase" : 15
+		},
+		"label" : "Wizard Staff",
+    "k_label": "위저드 지팡이"
+	},
+	"I0OV" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"agi" : 16000,
+			"hp" : 100000
+		},
+		"label" : "Demon King Bow of Life",
+    "k_label": "마신왕의 생명력이 담긴 활",
+    "effects" : ["Every 10 attacks will recover AGI x6.7 HP (9s cd)", "Every 6 spells will recover AGI x6.7 HP (10s cd)", "On Use: Restores AGI x10 HP (120s cd)"],
+		"k_effects" : ["기본공격 10회시 생명력회복 (AGI x6.7)(쿨타임 9초)", "스킬사용 6회시 생명력회복 (AGI x6.7)(쿨타임 10초)", "사용시  생명력회복 (AGI x10)(쿨타임 120초)"],
+	},
+	"I0OW" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"agi" : 16000,
+			"damage_taken" : 60,
+      "damage_increase": 250
+		},
+		"label" : "Demon King Gauntlets",
+    "k_label": "마신왕의 건들릿"
+	},
+	"I0OX" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"int" : 16000
+		},
+		"label" : "Demon Staff",
+    "k_label": "마신왕의 권좌",
+    "effects": ["Summons the highest demons on use"],
+    "k_effects": ["사용시 최상위 마족 소환"]
+	},
+	"I0OY" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"agi" : 16000,
+      "attack_speed": 300,
+      "attack_str": true,
+      "attack_real": 70
+		},
+		"label" : "Demon King Dagger",
+    "k_label": "마신왕의 단검",
+    "bugged": true
+	},
+	"I0OZ" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"str" : 16000,
+      "damage_increase": 120
+		},
+		"label" : "Demon King Great Sword",
+    "k_label": "마신왕의 대검"
+	},
+	"I0P0" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"agi" : 16000,
+      "damage_increase": 120
+		},
+		"label" : "Demon King Sword",
+    "k_label": "마신왕의 도검"
+	},
+	"I0P1" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"int" : 16000,
+      "mp": 60000,
+      "contract": 0.0000065,
+      "int_tick": true    
+		},
+		"label" : "Demon King Magic Staff",
+    "k_label": "마신왕의 마력 지팡이"
+	},
+	"I0P2" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"str" : 11000,
+			"agi" : 11000,
+			"int" : 11000,
+      "angra_dmg": 90      
+		},
+		"label" : "Demon King Revenge",
+    "k_label": "마신왕의 복수"
+	},
+	"I0P3" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"str" : 16000,
+      "hp": 100000      
+		},
+		"label" : "Demon King Sword of Life",
+    "k_label": "마신왕의 생명의검",
+    "effects" : ["Every 10 attacks will recover STR x6.7 HP (9s cd)", "Every 6 spells will recover STR x6.7 HP (10s cd)", "On Use: Restores STR x10 HP (120s cd)"],
+    "k_effects" : ["기본공격 10회시 생명력회복 (STR x6.7)(쿨타임 9초)", "스킬사용 6회시 생명력회복 (STR x6.7)(쿨타임 10초)", "사용시  생명력회복 (STR x10)(쿨타임 120초)"]
+	},
+	"I0P4" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"str" : 11000,
+			"agi" : 11000,
+			"int" : 11000,
+      "grasp": 15
+		},
+		"label" : "Demon King Punishment",
+    "k_label": "마신왕의 신벌"
+	},
+	"I0P5" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"int" : 11000,
+      "int_tick": true,
+      "attack_int_real": 205  
+		},
+		"label" : "Demon King Staff",
+    "k_label": "마신왕의 심판 지팡이",
+    "bugged": true
+	},
+	"I0P6" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"str" : 16000,
+      "attack_speed": 300,
+      "attack_str": true,
+      "attack_real": 100
+		},
+		"label" : "Demon King Judgment",
+    "k_label": "마신왕의 심판"
+	},
+	"I0P7" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"str" : 12000,
+			"int" : 12000,
+      "int_tick": true,
+      "attack_str_int_real": 85  
+		},
+		"label" : "Demon King Judgment Staff",
+    "k_label": "마신왕의 일격 지팡이"
+	},
+	"I0P8" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"str" : 11000,
+			"agi" : 11000,
+			"int" : 11000,  
+		},
+		"label" : "Demon King Longsword",
+    "k_label": "마신왕의 검",
+    "effects": ["Deals damage proportional to stats when used (120s cd)"],
+    "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(능력치 비례)"]        
+	},
+	"I0P9" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"int" : 16000,
+      "damage_increase": 120  
+		},
+		"label" : "Demon King Wizard Staff",
+    "k_label": "마신왕의 증폭 지팡이"
+	},
+	"I0PA" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"int" : 16000,
+      "damage_increase": 250,
+      "hp_consume": true     
+    },
+		"label" : "Demon King Contract",
+    "k_label": "마신왕의 계약",
+    "bugged": true
+	},
+	"I0PB" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"str" : 16000,
+      "str_increase": 40
+    },
+		"label" : "Demon King Amplifying Sword",
+    "k_label": "마신왕의 증폭검"
+	},
+	"I0PC" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"agi" : 16000,
+      "agi_increase": 40
+    },
+		"label" : "Demon King Amplifying Dagger",
+    "k_label": "마신왕의 증폭단검"
+	},
+	"I0PD" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 800000,
+			"int" : 16000,
+      "int_increase": 40
+    },
+		"label" : "Demon King Amplifying Staff",
+    "k_label": "마신왕의 증폭지팡이"
+	},
+  "I0PE": {
+    "label": "Demon King's Weapons",
+    "k_label": "마신왕의 무기함",
+    "type": "chest",
+    "color": "black"    
+  },
+  "I0OR": {
+    "label": "Sealed Demon King",
+    "k_label": "봉인된 마신왕",
+    "type": "chest",
+    "color": "black"    
   }
 }
