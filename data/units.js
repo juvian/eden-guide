@@ -248,6 +248,10 @@ let units = {
   "n05C": {
     "label": "Black Easter Bunny",
     "k_label": "흑화한 만렙 토끼"
+  },
+  "n05P": {
+    "label": "Spirit King",
+    "k_label": "마신왕"
   }
 }
 

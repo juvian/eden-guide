@@ -98,7 +98,7 @@ new Craft('I078', 100.0).add(["I064", "I0A7", "I05U"]);
 new Craft('I07S', 100.0).add(["I07P", "I0A7", "I0A8"]);
 
 
-new Craft('I0BW', 100.0).add(["I0BV", "I0A7", "I0A7"]);
+new Craft('I0BW', 100.0).add(["I0OU", "I0A7", "I0A7"]);
 
 
 new Craft('I07U', 100.0).add(["I061", "I0A7", "I0A8"]);
@@ -1228,3 +1228,6 @@ new Craft('I0H8', 100.0).add(["I0L5", "I04B", "I04I", "I0LL"]);
 
 
 new Craft('I0NV', 100.0).add(["I0NU", "I04B", "I04I", "I0LL"]);
+
+
+new Craft('I0OU', 100.0).add(["I05U", "I0A7"]);

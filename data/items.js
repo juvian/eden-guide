@@ -107,6 +107,12 @@ class Item {
       else if (stat == 'extra_armor') return translate('extra-armor').replace("{0}", val).replace("{1}", this.stats['extra_armor_cd']).replace("{2}", this.stats['extra_armor_range'])
       else if (stat == 'angra_dmg') return translate('angra-effect').replace("{0}", val)
       else if (stat == 'grasp') return translate('grasp-effect').replace("{0}", val)
+      else if (stat == 'skill_damage') return translate('skill-damage').replace("{0}", val)
+      else if (stat == 'stats_increase') return translate('stats-increase').replace("{0}", val)
+      else if (stat == 'str_increase') return translate('str-increase').replace("{0}", val)
+      else if (stat == 'agi_increase') return translate('agi-increase').replace("{0}", val)
+      else if (stat == 'int_increase') return translate('int-increase').replace("{0}", val)
+      else if (stat == "max_mana") return translate("max-mana").replace("{0}", val)
       else return ''  
   }
   

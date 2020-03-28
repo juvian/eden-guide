@@ -195,9 +195,33 @@ exports.translations = {
     "eng": "Each basic attack or spell hit has a 6% chance to damage enemies in 1500 range<br/>Adds an additional {0}% Bonus Damage for 3s<br/>Does not Stack",
     "kor": "기본 공격시 6% 확률로 범위 1500내의 아군의 추가데미지 증가<br/>추가데미지 {0}% 증가 지속시간 3초<br/>버프가 중복되지 않습니다"
   },
+  "max-mana": {
+    "eng": "Max mana increased by {0}%",
+    "kor": "최대 마나 {0}%증가"
+  },
   "grasp-effect": {
     "eng": "Damages enemies that attack the user (Allstats x {0})",
     "kor": "적에게 공격을 받을시 적에게 데미지를 가합니다 (올스텟 x 5)"
+  },
+  "skill-damage": {
+    "eng": "Skill damage increased by {0}%",
+    "kor": "마법데미지 {0}%증가"
+  },
+  "stats-increase": {
+    "eng": "All stats increased by {0}%",
+    "kor": "모든스텟 6%증가"
+  },
+  "str_increase": {
+    "eng": "Str increased by {0}%",
+    "kor": "힘 {0}%증"
+  },
+  "agi_increase": {
+    "eng": "Agi increased by {0}%",
+    "kor": "민첩 {0}%증가"
+  },
+  "int_increase": {
+    "eng": "Int increased by {0}%",
+    "kor": "지능 {0}%증"
   },
   "hp-consume": {
     "eng": "Each spell consumes 6% of HP",
@@ -363,7 +387,8 @@ exports.translations = {
   "unleash": "해방",
   "HP": "HP",
   "MP": "MP",
-  "critical hit": "크리티컬"
+  "critical hit": "크리티컬",
+  "token": "증표"
 }
 
 exports.lang = function () {
