@@ -34,9 +34,13 @@ def loadItems():
 		
 		itemsGuide['craftings'] = temp
 
-		for id in itemsGuide:
-			if "bugged" in itemsGuide[id]:
+		for id in itemsGuide["items"]:
+			if "bugged" in itemsGuide["items"][id]:
 				bugs.add(id)
+			if "stats" in itemsGuide["items"][id] and "stats_increase" in itemsGuide["items"][id]["stats"]:
+				itemsGuide["items"][id]["stats"]["str_increase"] = itemsGuide["items"][id]["stats"]["stats_increase"]
+				itemsGuide["items"][id]["stats"]["agi_increase"] = itemsGuide["items"][id]["stats"]["stats_increase"]
+				itemsGuide["items"][id]["stats"]["int_increase"] = itemsGuide["items"][id]["stats"]["stats_increase"]
 
 def assertCorrectCraftings():
 	loadCode()
@@ -321,7 +325,7 @@ def processStat(stat, line, val, id, missing):
 		print(id, "not in guide " + id)			
 
 def processLine(line, txt, id, missing):
-	if len(list(filter(lambda x: x in line, ["udg_Plus_Demige", "udg_Minus_Demige", "udg_Shied_Int", "udg_HP_Amor", "udg_Fire_Amor", "udg_Fire_Amor_Minus", "udg_Gaho_Item_Real"]))):
+	if len(list(filter(lambda x: x in line, ["udg_Plus_Demige", "udg_Minus_Demige", "udg_Shied_Int", "udg_HP_Amor", "udg_Fire_Amor", "udg_Fire_Amor_Minus", "udg_Gaho_Item_Real", "udg_Save_Stat", "udg_Skill_Damage_UP", "udg_Plus_damage"]))):
 		try:
 			if "+" in txt:
 				damage = round(float(line.split("+")[1].split(")")[0].strip()) * 100)
@@ -336,7 +340,7 @@ def processLine(line, txt, id, missing):
 		if damage == 0:
 			return			
 
-	if "udg_Plus_Demige" in line and id not in ["I00Z", "I010", "I02X", "I03N"]:
+	if ("udg_Plus_Demige" in line or "udg_Plus_damage" in line) and id not in ["I00Z", "I010", "I02X", "I03N"]:
 		processStat("damage_increase", line, damage, id, missing)	
 	elif "udg_HP_Amor" in line:
 		processStat("hp_regen_percent", line, damage, id, missing)
@@ -348,8 +352,18 @@ def processLine(line, txt, id, missing):
 		if "udg_Shied_Int" in line:
 			damage *= -1
 			processStat("damage_taken", line, damage, id, missing)
-	
-			
+	elif "udg_Save_Stat_Str_UP" in line:
+		processStat("str_increase", line, damage, id, missing)
+	elif "udg_Save_Stat_Agi_UP" in line:
+		processStat("agi_increase", line, damage, id, missing)
+	elif "udg_Save_Stat_Int_UP" in line:
+		processStat("int_increase", line, damage, id, missing)
+	elif "udg_Save_Stat_HPUP" in line:
+		processStat("max_health", line, damage, id, missing)					
+	elif "udg_Save_Stat_MPUP" in line:
+		processStat("max_mana", line, damage, id, missing)	
+	elif "udg_Skill_Damage_UP" in line:
+		processStat("skill_damage", line, damage, id, missing)				
 	
 def processDamage2(missing):
 	for m in re.finditer("Item\s?==\s?'(\w\w\w\w)'", code):
@@ -373,7 +387,11 @@ def processDamage2(missing):
 			'hp': 'hp',
 			'mp': 'mp',
 			'hpup': 'max_health',
-			"mps": "mps"
+			"mps": "mps",
+			'ps': 'skill_damage',
+			'strup' : 'str_increase',
+			'agiup' : 'agi_increase',
+			'intup' : 'int_increase',
 		}
 
 		multipliers = {
@@ -381,7 +399,11 @@ def processDamage2(missing):
 			'md': 100,
 			'pd': 100,
 			'mps': 100,
-			'hpup': 100
+			'hpup': 100,
+			'ps': 100,
+			'strup' : 100,
+			'agiup' : 100,
+			'intup' : 100
 		}
 
 		s = line.split("StringHash(")[1].split('"')[1].lower()
@@ -398,7 +420,7 @@ def processDamage2(missing):
 
 
 def processDamage(missing):
-	for m in re.finditer("set udg_Plus_Demige|set udg_Minus_Demige|set udg_Shied_Int|set udg_HP_Amor|set udg_Fire_Amor|set udg_Fire_Amor_Minus|set udg_Gaho_Item_Real", code):
+	for m in re.finditer("set udg_Plus_Demige|set udg_Minus_Demige|set udg_Shied_Int|set udg_HP_Amor|set udg_Fire_Amor|set udg_Fire_Amor_Minus|set udg_Gaho_Item_Real|set udg_Save_Stat|set udg_Skill_Damage_UP|set", code):
 		line = code[m.start():code.find("\n", m.start())]
 		idx = code.rfind("if", 0, m.start())
 
@@ -545,7 +567,7 @@ def assertCorrectBonusDamage():
 	removeStatSystemAbilities()
 
 	missing = dict()
-	stats = ["damage_taken", "hp_regen_percent", "damage_increase", "hp_regen", "atk", "int", "str", "agi", 'armor', 'hp', 'mp', 'max_health', "mps", "attack_agi", "attack_real", "attack_str", "attack_str_agi", "contract", "attack_int_real", "attack_str_int_real", "int_tick", "hp_consume"]
+	stats = ["damage_taken", "hp_regen_percent", "damage_increase", "hp_regen", "atk", "int", "str", "agi", 'armor', 'hp', 'mp', 'max_health', "mps", "attack_agi", "attack_real", "attack_str", "attack_str_agi", "contract", "attack_int_real", "attack_str_int_real", "int_tick", "hp_consume", "max_mana", "skill_damage", "str_increase", "int_increase", "agi_increase"]
 
 	for stat in stats:
 		missing[stat] = set()
@@ -963,8 +985,11 @@ def assertCorrectScalings():
 
 	assert "call SetUnitLifeBJ(GetTriggerUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetTriggerUnit()) - ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.06 ) ))" in code
 
+	assertItemScaling("I0OV", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0OV'", "I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, GetTriggerUnit(), true)) * 10.00", depth = 2)
+	assertItemScaling("I0OV", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0OV'", "I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) * 6.70", depth = 2)
 	
-
+	assertItemScaling("I0P3", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0P3'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 10.00", depth = 2)
+	assertItemScaling("I0P3", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0P3'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) * 6.70", depth = 2)
 
 getItemData()	
 
