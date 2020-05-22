@@ -116,7 +116,7 @@ new Chest("I0FX")
   .add("I037")
   .add("I0AB");
 
-let udg_Acangel_Item = ["I09D", "I093", "I08Z", "I0A4", "I09W", "I09Y", "I09X", "I099", "I09P", "I09L", "I09H", "I0A5", "I0AS", "I0C5", "I0C9", "I0CF", "I0G4", "I0IP", "I0NW" /*,"I0O2"*/]
+let udg_Acangel_Item = ["I09D", "I093", "I08Z", "I0A4", "I09W", "I09Y", "I09X", "I099", "I09P", "I09L", "I09H", "I0A5", "I0AS", "I0C5", "I0C9", "I0CF", "I0G4", "I0IP", "I0NW" ,"I0O2", "I0PF", "I0PM"]
 let udg_Acangel_Item2 = ["I0A3", "I09Z", "I0A2", "I0A1", "I0A0", "I03C", "I0BP", "I0BR", "I0BQ", "I0BS", "I0BT", "I0IC"]
 let udg_Acangel_Item_S = ["I080", "I04C", "I07F"];
 let udg_Acangel_Item_ALL = ["I07O", "I0BD", "I077", "I081", "I07G", "I045", "I04D", "I04E", "I082", "I087", "I07M"];
@@ -180,7 +180,7 @@ let udg_GOD02_Item_Int = ["I0KM", "I0KN", "I0KO", "I0KP", "I0KQ", "I0KR", "I0KS"
 let udg_GOD02_Item_Int2 = ["I0L1", "I0L2", "I0L3", "I0L4", "I0L5", "I0L6", "I0L7", "I0L8", "I0L9", "I0LA", "I0LB", "I0LC", "I0LD", "I0L0", "I0NU"]
 let udg_Event_Item_Int = ["I034", "I06I", "I06Z", "I065", "I05Y", "I06A", "I07K", "I033", "I0CR", "I04H", "I07X"];
 let udg_Masin_Item = ["I0OL", "I0OP", "I0OO", "I0OM", "I0ON", "I0OJ", "I0OK", "I0OD", "I0OG", "I0OC", "I0OE", "I0OB", "I0OI", "I0OH", "I0OF"]
-let udg_Masin_Item02 = ["I0OW", "I0P8", "I0PA", "I0OX", "I0OY", "I0OZ", "I0P0", "I0P1", "I0P2", "I0OV", "I0P3", "I0P4", "I0P5", "I0P6", "I0P7", "I0P9", "I0PB", "I0PC", "I0PD"];
+let udg_Masin_Item02 = ["I0OW", "I0P8", "I0PA", "I0OX", "I0OY", "I0OZ", "I0P0", "I0P1", "I0P2", "I0OV", "I0P3", "I0P4", "I0P5", "I0P6", "I0P7", "I0P9", "I0PB", "I0PC", "I0PD", "I0PL", "I0PS", "I0PT"];
 
 new Chest("I0IX").addItems(udg_GOD_Item_Int);
 
@@ -241,9 +241,7 @@ new Chest("I072")
   .add('I064' , 12.5)
   .add('I063' , 12.5)
   .add('I0A7' , 12.5)
-  .add('I062' , 12.5)
-  .add("I0EV", 15);
-
+  .add('I062' , 12.5);
 
 new Chest("I076")
   .add('I0F3' , 0.4)
@@ -312,8 +310,8 @@ new Chest("I086")
   .add('I081' , 16)
   .add('I087' , 30)
   .add('I0F9' , 0.4)
-  .add('I0FD' , 0.4)
-  .add('I0FL' , 0.4)
+  .add('I0FD' , 3)
+  .add('I0FL' , 3)
   .add('I0D7' , 6)
   .add('I0DB' , 3)
   .add('I0F1' , 3)
@@ -423,8 +421,8 @@ new Chest("I0BV")
   .add("I0K8", 1.3);
 
 new Chest("I0OR")
-  .add("I0OQ", 6)
-  .add("I0PE", 6)
+  .add("I0OQ", 4.5)
+  .add("I0PE", 4.5)
   .add("I0OT", 1);
 
 
@@ -680,9 +678,9 @@ new Unit("e0DF").add("I0LS");
 
 new Unit("n04K").add("I0LQ");
 
-new Unit("n051").add("I0KJ").add("I036").add("I0M6");
+new Unit("n051").add("I0M6");
 
-new Unit("n059").add("I0KL").add("I0AD").add("I0M5");
+new Unit("n059").add("I0M5");
 
 new Unit("e0D8").add("I0M7");
 

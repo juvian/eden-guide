@@ -191,9 +191,17 @@ exports.translations = {
     "eng": "When used, will get aggro of enemies in {2} range<br/>Grants an additional {0} armor for 10s ({1}s cd)",
     "kor": "사용시 범위 {2}내의 적군의 공격 대상이됩니다<br/>10초간 방어력 100이 증가합니다 (쿨타임 {1}초)"
   },
+  "bamboo-spear-effect": {
+    "eng": "Each attack has 10% chance to deal {0}% bonus damage",
+    "kor": "공격시 10%확률로 추가데미지 {0}%"
+  },
   "angra-effect": {
-    "eng": "Each basic attack or spell hit has a 6% chance to damage enemies in 1500 range<br/>Adds an additional {0}% Bonus Damage for 3s<br/>Does not Stack",
-    "kor": "기본 공격시 6% 확률로 범위 1500내의 아군의 추가데미지 증가<br/>추가데미지 {0}% 증가 지속시간 3초<br/>버프가 중복되지 않습니다"
+    "eng": "Each basic attack or spell hit has a 2% chance to damage enemies in 1500 range<br/>Adds an additional {0}% Bonus Damage for 8s<br/>Does not Stack",
+    "kor": "기본 공격시 2% 확률로 범위 1500내의 아군의 추가데미지 증가<br/>추가데미지 {0}% 증가 지속시간 8초<br/>버프가 중복되지 않습니다"
+  },
+  "purgatory-effect": {
+    "eng": "When health falls below 50%, {0}% bonus damage<br/>{1}% damage hp recovery when above 50%",
+    "kor": "생명력이 50% 이하일때<br/>추가데미지 {0}%증가<br/>생명력이 50%이상일때 받은데미지 {1}% 회복"
   },
   "max-mana": {
     "eng": "Max mana increased by {0}%",
@@ -209,7 +217,7 @@ exports.translations = {
   },
   "stats-increase": {
     "eng": "All stats increased by {0}%",
-    "kor": "모든스텟 6%증가"
+    "kor": "모든스텟 {0}%증가"
   },
   "str_increase": {
     "eng": "Str increased by {0}%",

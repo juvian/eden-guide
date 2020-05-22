@@ -113,6 +113,8 @@ class Item {
       else if (stat == 'agi_increase') return translate('agi-increase').replace("{0}", val)
       else if (stat == 'int_increase') return translate('int-increase').replace("{0}", val)
       else if (stat == "max_mana") return translate("max-mana").replace("{0}", val)
+      else if (stat == 'purgatory_damage') return translate("purgatory-effect").replace("{0}", val).replace("{1}", this.stats["purgatory-recovery"]);
+      else if (stat == 'bamboo_damage') return translate("bamboo-spear-effect").replace("{0}", val);
       else return ''  
   }
   

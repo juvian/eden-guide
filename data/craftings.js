@@ -1231,3 +1231,39 @@ new Craft('I0NV', 100.0).add(["I0NU", "I04B", "I04I", "I0LL"]);
 
 
 new Craft('I0OU', 100.0).add(["I05U", "I0A7"]);
+
+
+new Craft('I0PG', 100.0).add(["I0PF", "I0LG", "I0FB", "I0AQ", "I0LO"]);
+
+
+new Craft('I0PN', 100.0).add(["I0PM", "I0LG", "I0FB", "I0AQ", "I0LO"]);
+
+
+new Craft('I0PH', 100.0).add(["I0PG", "I0PF", "I0FB", "I0FB", "I0AQ", "I0AQ", "I0LO", "I0LO"]);
+
+
+new Craft('I0PO', 100.0).add(["I0PN", "I0PM", "I0FB", "I0FB", "I0AQ", "I0AQ", "I0LO", "I0LO"]);
+
+
+new Craft('I0PI', 100.0).add(["I0PH", "I0PF", "I0FB", "I0FB", "I0FB", "I0AQ", "I0AQ", "I0AQ", "I0LO", "I0LO"]);
+
+
+new Craft('I0PP', 100.0).add(["I0PO", "I0PM", "I0FB", "I0FB", "I0FB", "I0AQ", "I0AQ", "I0AQ", "I0LO", "I0LO"]);
+
+
+new Craft('I0PF', 100.0).add(["I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z"]);
+
+
+new Craft('I0PM', 100.0).add(["I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z", "I04Z"]);
+
+
+new Craft('I0PQ', 100.0).add(["I0HT", "I0HB", "I0HC", "I0LK"]);
+
+
+new Craft('I0PJ', 100.0).add(["I0HT", "I0HB", "I0HC", "I0LK"]);
+
+
+new Craft('I0PR', 100.0).add(["I0PQ", "I04B", "I04I"]);
+
+
+new Craft('I0PK', 100.0).add(["I0PJ", "I04B", "I04I"]);
