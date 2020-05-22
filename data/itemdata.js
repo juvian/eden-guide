@@ -909,7 +909,7 @@ module.exports = {
 			"armor" : 700,
 			"int" : 3500,
 			"mp" : 25000,
-      "mps": 32
+      "mps": 30
 		},
 		"label" : "Refined Mana Crystal Robe",
     "k_label": "정제된 드레곤 마력 로브"
@@ -3385,7 +3385,7 @@ module.exports = {
 	    	"armor" : 900,
 	    	"int" : 4600,
 	    	"mp" : 35000,
-        "mps": 48
+        "mps": 45
 	    },
 	    "label" : "Corrupted Mana Robes",
       "k_label": "대악마의 검은 마력로브"
@@ -3618,7 +3618,8 @@ module.exports = {
       "hp_consume": true      
 		},
 		"label" : "Soul Contract",
-    "k_label": "검은 어둠의 계약"
+    "k_label": "검은 어둠의 계약",
+    "bugged": true
 	},	
 	"I04F" : {
 		"type" : "weapon",
@@ -3629,7 +3630,7 @@ module.exports = {
 		},
 		"label" : "Dagger of the Malevolent Devil",
     "k_label": "칠흑의 영혼의 단검",
-		"effects" : ["Consumes 0.8% of maximum HP for each attack and deals an additional 30000 + AGI x20 damage (Only activates when HP is above 1%)"],
+		"effects" : ["Consumes 0.8% of maximum HP for each attack and deals an additional 15000 + AGI x20 damage (Only activates when HP is above 1%)"],
 		"k_effects" : ["기본공격시 최대체력 0.8%소모 (체력 1%이상일때 작동) 매공격시 어둠의 일격을 가합니다"]
 	},
 	"I04T" : {
@@ -3699,7 +3700,7 @@ module.exports = {
 	    	"armor" : 1000,
 	    	"int" : 5500,
 	    	"mp" : 40000,
-        "mps": 58
+        "mps": 52
 	    },
 	    "label" : "Chaotic Blight Robes",
       "k_label": "대혼돈의 마력로브"
@@ -4147,14 +4148,12 @@ module.exports = {
     "color" : "blue",
     "stats" : {
       "atk" : 160000,
- 	    "str" : 4500,
-	    "agi" : 4500,
-	    "int" : 4500
+ 	    "str" : 5000,
+      "purgatory_damage": 60,
+      "purgatory_recovery": 10
     },
     "label" : "Purgatory",
-    "k_label": "생명과 죽음의 경계",
-    "effects": ["When health falls below 50%, 80% bonus damage and consumes 2% hp every second (won't kill)", "When health above 50%, 20% damage reduce and 2% hp regen every second", "When worn by Berserker or Blood Test", "grants an additional 10% bonus damage and 5% damage reduce"],
-    "k_effects": ["생명력이 50% 이하일때", "공격할때마다 확률이 0.01%씩 증가합니다", "추가데미지 80%증가 초당 생명력 2% 감소(죽지않음)", "생명력이 50%이상일때 받은데미지 20% 회복 초당 생명력 2%회복", "버서커/혈검사 사용", "추가데미지 증가분 10%추가 증가", "받은데미지 회복 5% 추가 증가"]
+    "k_label": "생명과 죽음의 경계"
   },
   "I0FE" : {
     "type" : "weapon",
@@ -4203,14 +4202,13 @@ module.exports = {
     "color": "blue",
     "stats": {
       "atk": 160000,
- 	    "str" : 4500,
-	    "agi" : 4500,
-	    "int" : 4500
+ 	    "str" : 3800,
+	    "agi" : 3800,
+	    "int" : 3800,
+      "bamboo_damage": 450
     },
     "label": "Bamboo Spear",
-    "k_label": "죽창",
-    "effects": ["Each attack has 10% (13% with lancer) chance to deal 500% bonus damage", "When worn by Lancer, reduces the cooldown of Gae Bolg by 8 seconds"],
-    "k_effects": ["공격시 10%확률로 추가데미지 500%", "랜서가 사용시 뚫어죽이는창 쿨타임 8초 감소"]
+    "k_label": "죽창"
   },
   "I0FM": {
     "type": "helmet",
@@ -4520,8 +4518,8 @@ module.exports = {
       },
       "label": "Sealed God Longsword",
       "k_label": "신의 장검",
-      "effects": ["Deals damage proportional to stats when used (120s cd)"],
-      "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(능력치 비례)"]
+      "effects": ["Deals 420000 + All Stats * 350 when used (120s cd)"],
+      "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(420000 + 모든 통계 * 350)"] 
   },
     "I0HH": {
       "type": "weapon",
@@ -5064,7 +5062,8 @@ module.exports = {
       "hp_consume": true
 		},
 		"label" : "Archangel Contract",
-    "k_label": "대천의 계약"
+    "k_label": "대천의 계약",
+    "bugged": true
 	},
   "I0IQ" : {
 		"type" : "weapon",
@@ -5076,7 +5075,8 @@ module.exports = {
       "hp_consume": true
 		},
 		"label" : "Archangel Contract +1",
-    "k_label": "대천의 계약 +1"
+    "k_label": "대천의 계약 +1",
+    "bugged": true
 	},
   "I0IR" : {
 		"type" : "weapon",
@@ -5088,7 +5088,8 @@ module.exports = {
       "hp_consume": true
     },
 		"label" : "Archangel Contract +2",
-    "k_label": "대천의 계약 +2"
+    "k_label": "대천의 계약 +2",
+    "bugged": true
 	},
   "I0IS" : {
 		"type" : "weapon",
@@ -5101,6 +5102,7 @@ module.exports = {
 		},
 		"label" : "Archangel Contract +3",
     "k_label": "대천의 계약 +3",    
+    "bugged": true
 	},
   "I0IX" : {
     "type" : "chest",
@@ -5436,7 +5438,7 @@ module.exports = {
       "armor": 1200,
       "int": 7000,
       "mp": 55000,
-      "mps": 70
+      "mps": 63
     },
     "label": "Divine Mana Robes",
     "k_label": "신의 마력 로브"
@@ -7290,8 +7292,7 @@ module.exports = {
         "attack_int_real": 205           
       },
       "label": "Supreme God's Judgement Staff",
-      "k_label": "최상급 신의 심판 지팡이",
-      "bugged": true
+      "k_label": "최상급 신의 심판 지팡이"
   },
   "I0MI": {
       "type": "weapon",
@@ -7331,8 +7332,8 @@ module.exports = {
       },
       "label": "Supreme God's Longsword",
       "k_label": "최상급 신의 장검",
-      "effects": ["Deals damage proportional to stats when used (120s cd)"],
-      "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(능력치 비례)"]    
+      "effects": ["Deals 420000 + All Stats * 380 when used (120s cd)"],
+      "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(420000 + 모든 통계 * 380)"]    
   },
   "I0ML": {
       "type": "weapon",
@@ -7364,7 +7365,7 @@ module.exports = {
       "armor": 1300,
       "int": 8000,
       "mp": 60000,
-      "mps": 80
+      "mps": 70
     },
     "label": "Supreme Divine Mana Robes",
     "k_label": "최상급 신의 마력 로브",    
@@ -8283,7 +8284,7 @@ module.exports = {
 			"str" : 2300,
 			"agi" : 2300,
 			"int" : 2300,
-      "skill_damage": 9
+      "skill_damage": 7
 		},
 		"label" : "Demon King Magic Rune",
     "k_label": "마신왕의 증강룬"
@@ -8292,34 +8293,37 @@ module.exports = {
 		"type" : "token",
 		"color" : "god",
 		"stats" : {
-      "int_increase": 10
+      "int_increase": 6
 		},
 		"label" : "Demon King Token [Int]",
     "k_label": "마신왕의 증표[지능]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["지능 10%증가"]
+    "k_effects": ["지능 10%증가"],
+    "bugged": true
   },
   "I0OK": {
 		"type" : "token",
 		"color" : "god",
 		"stats" : {
-      "str_increase": 10
+      "str_increase": 6
 		},
       "label" : "Demon King Token [Str]",
     "k_label": "마신왕의 증표[힘]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["지능 10%증가"]
+    "k_effects": ["지능 10%증가"],
+    "bugged": true
   },
   "I0OL": {
 		"type" : "token",
 		"color" : "god",
 		"stats" : {
-      "agi_increase": 10
+      "agi_increase": 6
 		},
 		"label" : "Demon King Token [Agi]",
     "k_label": "마신왕의 증표[민첩]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["해방의 힘 전용템"]
+    "k_effects": ["해방의 힘 전용템"],
+    "bugged": true
   },
   "I0OM": {
 		"type" : "token",
@@ -8336,34 +8340,37 @@ module.exports = {
 		"type" : "token",
 		"color" : "god",
 		"stats" : {
-      "skill_damage": 15
+      "skill_damage": 8
 		},
 		"label" : "Demon King Token [Skill Damage]",
     "k_label": "마신왕의 증표[증강]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["해방의 힘 전용템"]
+    "k_effects": ["해방의 힘 전용템"],
+    "bugged": true
   },
   "I0OO": {
 		"type" : "token",
 		"color" : "god",
 		"stats" : {
-      "max_health": 12
+      "max_health": 6
 		},
 		"label" : "Demon King Token [HP]",
     "k_label": "마신왕의 증표[생명]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["해방의 힘 전용템"]
+    "k_effects": ["해방의 힘 전용템"],
+    "bugged": true
   },
   "I0OP": {
 		"type" : "token",
 		"color" : "god",
 		"stats" : {
-      "max_mana": 12
+      "max_mana": 6
 		},
 		"label" : "Demon King Token [Mana]",
     "k_label": "마신왕의 증표[마나]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["해방의 힘 전용템"]
+    "k_effects": ["해방의 힘 전용템"],
+    "bugged": true
   },
   "I0OQ": {
     "label": "Demon King's Treasure Chest",
@@ -8569,8 +8576,8 @@ module.exports = {
 		},
 		"label" : "Demon King Longsword",
     "k_label": "마신왕의 검",
-    "effects": ["Deals damage proportional to stats when used (120s cd)"],
-    "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(능력치 비례)"]        
+    "effects": ["Deals 420000 + All Stats * 420 when used (120s cd)"],
+    "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(420000 + 모든 통계 * 420)"]        
 	},
 	"I0P9" : {
 		"type" : "weapon",
@@ -8593,8 +8600,7 @@ module.exports = {
       "hp_consume": true     
     },
 		"label" : "Demon King Contract",
-    "k_label": "마신왕의 계약",
-    "bugged": true
+    "k_label": "마신왕의 계약"
 	},
 	"I0PB" : {
 		"type" : "weapon",
@@ -8602,7 +8608,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 800000,
 			"str" : 16000,
-      "str_increase": 40
+      "str_increase": 30
     },
 		"label" : "Demon King Amplifying Sword",
     "k_label": "마신왕의 증폭검"
@@ -8613,7 +8619,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 800000,
 			"agi" : 16000,
-      "agi_increase": 40
+      "agi_increase": 30
     },
 		"label" : "Demon King Amplifying Dagger",
     "k_label": "마신왕의 증폭단검"
@@ -8624,10 +8630,10 @@ module.exports = {
 		"stats" : {
 			"atk" : 800000,
 			"int" : 16000,
-      "int_increase": 40
+      "int_increase": 25
     },
 		"label" : "Demon King Amplifying Staff",
-    "k_label": "마신왕의 증폭지팡이"
+    "k_label": "마신왕의 지능 지팡이"
 	},
   "I0PE": {
     "label": "Demon King's Weapons",
@@ -8640,5 +8646,198 @@ module.exports = {
     "k_label": "봉인된 마신왕",
     "type": "chest",
     "color": "black"    
+  },
+  "I0PF": {
+    "type": "weapon",
+    "color": "red",
+    "stats": {
+      "atk": 230000,
+      "str": 6500,
+      "purgatory_damage": 80,
+      "purgatory_recovery": 15
+    },
+    "label": "Archangel's Boundary",
+    "k_label": "대천사의 경계",
+  },
+  "I0PG": {
+    "type": "weapon",
+    "color": "red",
+    "stats": {
+      "atk": 260000,
+      "str": 7000,
+      "purgatory_damage": 90,
+      "purgatory_recovery": 17
+    },
+    "label": "Archangel's Boundary +1",
+    "k_label": "대천사의 경계 +1",
+  },
+  "I0PH": {
+    "type": "weapon",
+    "color": "red",
+    "stats": {
+      "atk": 300000,
+      "str": 7500,
+      "purgatory_damage": 100,
+      "purgatory_recovery": 19
+    },
+    "label": "Archangel's Boundary +2",
+    "k_label": "대천사의 경계 +2",
+  },
+  "I0PI": {
+    "type": "weapon",
+    "color": "red",
+    "stats": {
+      "atk": 350000,
+      "str": 8000,
+      "purgatory_damage": 110,
+      "purgatory_recovery": 21
+    },
+    "label": "Archangel's Boundary +3",
+    "k_label": "대천사의 경계 +3",
+  },
+  "I0PJ": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 500000,
+      "str": 11000,
+      "purgatory_damage": 140,
+      "purgatory_recovery": 25
+    },
+    "label": "God's Boundary",
+    "k_label": "신의 경계",
+  },
+  "I0PK": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 600000,
+      "str": 13000,
+      "purgatory_damage": 150,
+      "purgatory_recovery": 28
+    },
+    "label": "Supreme God's Boundary",
+    "k_label": "최상급 신의 경계",
+  },
+  "I0PL": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 600000,
+      "str": 16000,
+      "purgatory_damage": 180,
+      "purgatory_recovery": 34
+    },
+    "label": "Demon King's Boundary",
+    "k_label": "마신왕의 경계",
+    "bugged": true
+  },
+  "I0PM": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 230000,
+      "str": 5000,
+      "agi": 5000,
+      "int": 5000,
+      "bamboo_damage": 600
+    },
+    "label": "Archangel's Bamboo Spear",
+    "k_label": "대천사의 죽창"
+  },
+  "I0PN": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 260000,
+      "str": 5300,
+      "agi": 5300,
+      "int": 5300,
+      "bamboo_damage": 660
+    },
+    "label": "Archangel's Bamboo Spear +1",
+    "k_label": "대천사의 죽창 +1"
+  },
+  "I0PO": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 300000,
+      "str": 5600,
+      "agi": 5600,
+      "int": 5600,
+      "bamboo_damage": 720
+    },
+    "label": "Archangel's Bamboo Spear +2",
+    "k_label": "대천사의 죽창 +2"
+  },
+  "I0PP": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 350000,
+      "str": 6000,
+      "agi": 6000,
+      "int": 6000,
+      "bamboo_damage": 780
+    },
+    "label": "Archangel's Bamboo Spear +3",
+    "k_label": "대천사의 죽창 +3",
+    "bugged": true
+  },
+  "I0PQ": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 500000,
+      "str": 8500,
+      "agi": 8500,
+      "int": 8500,
+      "bamboo_damage": 1000
+    },
+    "label": "God's Bamboo Spear",
+    "k_label": "신의 죽창"
+  },
+  "I0PR": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 500000,
+      "str": 9500,
+      "agi": 9500,
+      "int": 9500,
+      "bamboo_damage": 1100
+    },
+    "label": "Supreme God's Bamboo Spear",
+    "k_label": "최상급 신의 죽창",
+    "bugged": true
+  },
+  "I0PS": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 600000,
+      "str": 11000,
+      "agi": 11000,
+      "int": 11000,
+      "bamboo_damage": 1300
+    },
+    "label": "Demon King's Bamboo Spear",
+    "k_label": "마신왕의 죽창",
+    "bugged": true
+  },
+  "I0PT": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 600000,
+      "int": 16000,
+      "hp": 100000
+    },
+    "label": "Demon King's Life Staff",
+    "k_label": "마신왕의 생명 지팡이",
+		"effects" : ["Every 4 spells will recover INT x7.5 HP (10s cd)", "On Use: Restore INT x12 HP of all allies within range(80s cd)"],
+		"k_effects" : ["스킬사용 4회시 생명력 회복 (INT x7.5)(쿨타임 10초)", "사용시 주변 아군을 능력치 비례 만큼의 생명력 회복 (INT x12)(쿨타임 80초)"],
+    "bugged": true
   }
 }
