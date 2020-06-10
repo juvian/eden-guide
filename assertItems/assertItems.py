@@ -215,10 +215,14 @@ def assertCorrectDropRates():
 
 		if func == "Trig_SSS_Boss_D_Func008Func002C":
 			chest = "e0D8"
-		elif func == "Trig_Itrm_Drop_AcAngel_Func004Func007Func001C":
+		elif func.startswith("Trig_Itrm_Drop_AcAngel_"):
 			chest = "n027"
-		elif func == "Trig_Itrm_Drop_AcDvil_Func004Func010Func001C":
+		elif func.startswith("Trig_Itrm_Drop_AcDvil_"):
 			chest = "n02Y"
+		elif func.startswith("Trig_Itrm_Drop_Destroy_GOD_"):
+			chest = 'n03Z'
+		elif func.startswith("Trig_Itrm_Drop_Clean_GOD"):
+			chest = 'n04Q'
 		elif "GetRandomInt" in funcs[func]:
 			chest, chance = resolveRandom(m, funcs[func], "GetUnitTypeId[^']*'(....)'")
 		elif "GetHeroLevel" in funcs[func]:
@@ -477,7 +481,7 @@ def assertCorrectInfo(missing):
 								continue
 							if (stat == "hp_regen") and itemID in ["I081", "I0DK", "I06R", "I03H", "I0E0", "I0BL", "I07J"]:
 								continue	
-							print(itemID, "different " + stat, itemGuide["stats"][stat], item[stat])
+							reportBug(itemID, "different " + stat, itemGuide["stats"][stat], item[stat])
 						else:
 							if stat in missing:
 								missing[stat].discard(itemID)			
@@ -584,7 +588,7 @@ def assertCorrectBonusDamage():
 	removeStatSystemAbilities()
 
 	missing = dict()
-	stats = ["damage_taken", "hp_regen_percent", "damage_increase", "hp_regen", "atk", "int", "str", "agi", 'armor', 'hp', 'mp', 'max_health', "mps", "attack_agi", "attack_real", "attack_str", "attack_str_agi", "contract", "attack_int_real", "attack_str_int_real", "int_tick", "hp_consume", "max_mana", "skill_damage", "str_increase", "int_increase", "agi_increase", "purgatory_recovery", "purgatory_damage", "bamboo_damage"]
+	stats = ["damage_taken", "hp_regen_percent", "damage_increase", "hp_regen", "atk", "int", "str", "agi", 'armor', 'hp', 'mp', 'max_health', "mps", "attack_agi", "attack_real", "attack_str", "attack_str_agi", "contract", "attack_int_real", "attack_str_int_real", "int_tick", "hp_consume", "max_mana", "skill_damage", "str_increase", "int_increase", "agi_increase", "purgatory_recovery", "purgatory_damage", "bamboo_damage", "magic_resistance"]
 
 	for stat in stats:
 		missing[stat] = set()

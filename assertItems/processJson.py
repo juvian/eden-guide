@@ -6,7 +6,7 @@ with open("items.json", "r+", encoding="latin-1") as f:
 with open("abilities.json", "r+", encoding="latin-1") as f:
 	abilities = json.load(f)
 
-props = ["str", "int", "atk", "agi", "hp", "attack_speed", "movement_speed", "armor", "mp", "hp_regen", "critical_hit", "critical_hit_chance", "magic_reduction"]
+props = ["str", "int", "atk", "agi", "hp", "attack_speed", "movement_speed", "armor", "mp", "hp_regen", "critical_hit", "critical_hit_chance", "magic_resistance"]
 
 def addAbilities(obj, abilityIds, multiplier = 1):
 	if not isinstance(abilityIds, set):
@@ -57,8 +57,8 @@ for abilityId in abilities:
 	elif ability["code"] == 'AOcr':
 		ability["critical_hit"] = float(ability["DataB1"])	
 		ability["critical_hit_chance"] = float(ability["DataA1"])	
-	elif ability["code"] == '':
-		ability["magic_reduction"] = 1 - float(ability["DataE1"])	
+	elif ability["code"] == '' or ability['code'] == 'AIdd':
+		ability["magic_resistance"] = round(100 - float(ability["DataE1"]) * 100)
 
 for abilityId in abilities:
 	ability = abilities[abilityId]
