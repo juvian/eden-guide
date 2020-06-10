@@ -5648,7 +5648,8 @@ module.exports = {
 			"agi" : 5500,
 			"int" : 5500,
       "armor": 1000,
-			"movement_speed" : 300
+			"movement_speed" : 300,
+      "magic_resistance": 32
 		},
 		"label" : "Purified Guardian Ring",
     "k_label": "정화의신의 수호"
@@ -5747,7 +5748,8 @@ module.exports = {
       "magic_resistance" : 27
 	  },
     "label": "Magic Resistance Helmet",
-    "k_label": "신의 저항 투구"
+    "k_label": "신의 저항 투구",
+    "bugged": true
   },  
   "I0LD": {
     "type": "helmet",
@@ -7858,9 +7860,6 @@ module.exports = {
       "effects": ["49% armor increase to nearby allies"],
       "k_effects": ["주변아군 추가데미지 49%증가 오라 생성"]    
   },
-  "I0BV": {
-    
-  },
   "I04N": {
     "type": "weapon",
     "color": "god",
@@ -7912,7 +7911,8 @@ module.exports = {
       "magic_resistance": 35
 		},
     "k_label": "최상위 정화의신의 수호",
-    "label": "Supreme Guardian Ring"
+    "label": "Supreme Guardian Ring",
+    "bugged": true
   },
   "I0NO": {
     "type" : "armor",
