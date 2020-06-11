@@ -142,14 +142,14 @@ def funcBefore(idx, depth = 1):
 
 		if "endif" in line:
 			depth += 1
-		elif " if" in line or "\nif" in line or "elseif" in line:
+		elif " if" in line or "\nif" in line or "elseif" in line or "function" in line:
 			depth -=1
 		idx = newIdx	
 
 		if depth > 2:
-			raise Exception("unlimited loop", code[original:original+100].encode("utf-8"))
+			raise Exception("unlimited loop " + str(code[original:original+100].encode("utf-8")))
 
-	return line.split("if")[1].split("()")[0].split("then")[0].strip("( ")
+	return line.split("function")[1].split("takes")[0].strip() if "function" in line else line.split("if")[1].split("()")[0].split("then")[0].strip("( ")
 
 
 def getGlobalProb(idx):
@@ -194,6 +194,8 @@ def assertCorrectDropRates():
 		id, chance = m.group(1), eval(m.group(2).strip("( "))
 		func = funcBefore(m.start())
 
+		if "Trig________________________007_Actions" in func:
+			continue
 		if "GetItemTypeId(GetManipulatedItem" in func:
 			funcCode = code[code.rfind('if GetItemTypeId(GetManipulatedItem', 0, m.start()):m.start()].split("\n")[0]
 		else:
