@@ -5957,18 +5957,6 @@ module.exports = {
     "type": "material",
     "color": "black"
   },
-  "I0KL": {
-    "label": "Archangel’s Treasure(Small)",
-    "k_label": "대천사의 보물함(스몰)",
-    "type": "chest",
-    "color": "black"
-  },
-  "I0KJ": {
-    "label": "Black Soul(Small)",
-    "k_label": "검은 영혼석(스몰)",
-    "type": "chest",
-    "color": "black"
-  },
   "I0K4": {
     "label": "Beresa’s Soul (Small)",
     "k_label": "베레스라의 영혼(스몰)",
@@ -8839,5 +8827,21 @@ module.exports = {
 		"effects" : ["Every 4 spells will recover INT x7.5 HP (10s cd)", "On Use: Restore INT x12 HP of all allies within range(80s cd)"],
 		"k_effects" : ["스킬사용 4회시 생명력 회복 (INT x7.5)(쿨타임 10초)", "사용시 주변 아군을 능력치 비례 만큼의 생명력 회복 (INT x12)(쿨타임 80초)"],
     "bugged": true
+  },
+  "I0KJ": {
+    "type": "chest",
+    "color": "red",
+    "label": "Devil's Soulstone (Small)",
+    "k_label": "작은 검은 영혼석",
+    "effects" : ["Requires at least 3500 base stats for drop"],
+    "k_effects": ["드랍하려면 최소한 3500의 스탯이 필요하다."]
+  },
+  "I0KL": {
+    "type": "chest",
+    "color": "red",
+    "label": "",
+    "k_label": "Archangel Treasure Chest (Small)",
+    "effects" : ["Requires at least 3500 base stats for drop"],
+    "k_effects": ["드랍하려면 최소한 3500의 스탯이 필요하다."]
   }
 }

@@ -252,6 +252,22 @@ let units = {
   "n05P": {
     "label": "Spirit King",
     "k_label": "마신왕"
+  },
+  "n025": {
+    "label": "Archangel of Justice",
+    "k_label": "정의의 대천사"
+  },
+  "n026": {
+    "label": "Archangel of Death",
+    "k_label": "죽음의 대천사"
+  },
+  "n02X": {
+    "label": "Demon of Destruction",
+    "k_label": "파괴의 대악마"
+  },
+  "n030": {
+    "label": "Great Devil of Chaos(Open)",
+    "k_label": "혼돈의 대악마(개방)"
   }
 }
 

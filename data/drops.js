@@ -132,13 +132,11 @@ new Chest("I0AB")
 
 
 new Chest("I0KL")
-  .add("I0FB", 4)
-  .add("I0LO", 4)
-  .add("I0AQ", 11)
-  .add("I0A6", 6.5)
-  .add("I0BU", 6)
-  .addItems(udg_Acangel_Item_S, 9)
-  .addItems(udg_Acangel_Item_ALL, 90);
+  .add("I0FB", 2)
+  .add("I0LO", 2)
+  .add("I0AQ", 5)
+  .add("I0A6", 3.5)
+  .add("I0BU", 3);
 
 new Chest("I0A6")
   .add("I04Z")
@@ -161,11 +159,9 @@ new Chest("I037")
   .addItems(udg_AcDevill_Nomal, 91);
 
 new Chest("I0KJ")
-  .add("I0DY", 3)
-  .add("I035", 6)
-  .add("I0DS", 6)
-  .addItems(udg_AcDevill_Epic, 10)
-  .addItems(udg_AcDevill_Nomal, 91);
+  .add("I0DY", 1.5)
+  .add("I035", 3)
+  .add("I0DS", 3);
 
 new Chest("I0DS")
   .add("I0DT")
@@ -691,3 +687,11 @@ new Unit("n05B").add("I0BV");
 new Unit("n05C").addMany("I0BV", 6);
 
 new Unit("n05P").add("I0OR").add("I0IY");
+
+new Unit("n025").add("I0KL");
+
+new Unit("n026").add("I0KL");
+
+new Unit("n02X").add("I0KJ");
+
+new Unit("n030").add("I0KJ");
