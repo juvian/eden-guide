@@ -1,5 +1,18 @@
 [
   {
+    "version": "4.4.0",
+    "changes": [
+      "Updated to version 5.3F",
+      "New Character"
+    ],
+    "k_changes": [
+      "버전 5.3F 로 업데이트되었습니다",
+      "새로운 캐릭터"      
+    ],    
+    "released": "15/7/2020",
+    "commit_urls": []
+  },
+  {
     "version": "4.3.3",
     "changes": [
       "Updated to version 5.2G"      
@@ -8,7 +21,7 @@
       "버전 5.2G 로 업데이트되었습니다"
     ],    
     "released": "11/6/2020",
-    "commit_urls": []
+    "commit_urls": ["https://github.com/juvian/eden-guide/commit/20b69c5f1b30debce9b8bc70794bdf70b1e19605", "https://github.com/juvian/eden-guide/commit/ed8b092ad6231d27d8f87a401d33797a0616a52c"]
   },
   {
     "version": "4.3.2",

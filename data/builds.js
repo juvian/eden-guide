@@ -210,6 +210,15 @@ module.exports.builds = {
       ],
       "type": "str",
       "id": "E0E6"
+    },
+    "taiga": {
+      "images": [
+        "https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2Ftaiga1.jpeg?v=1594672438673",
+        "https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2Ftaiga3.jpg?v=1594672439699",
+        "https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2Ftaiga2.jpg?v=1594672440031"
+      ],
+      "type": "int",
+      "id": "H08C"
     }
 }
 
