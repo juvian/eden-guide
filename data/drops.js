@@ -171,7 +171,7 @@ new Chest("I035")
   .add("I0DT")
   .addItems(udg_AcDevill_Item02);
 
-let udg_GOD_Item_Int = ["I0IT", "I0IU", "I0IV", "I0IW", "I0J4", "I0JL", "I0J5", "I0J8", "I0J1", "I0JD", "I0J9", "I0JI", "I0JH", "I0J7", "I0J3", "I0J6", "I0JE", "I0J2", "I0JC", "I0JK", "I0JA", "I0JJ", "I0JM", "I0JF", "I0JB", "I0JG", "I0JN", "I0IZ", "I0KB", "I0D5"]
+let udg_GOD_Item_Int = ["I0IT", "I0IU", "I0IV", "I0IW", "I0J4", "I0JL", "I0J5", "I0J8", "I0J1", "I0JD", "I0J9", "I0JI", "I0JH", "I0J7", "I0J3", "I0J6", "I0JE", "I0J2", "I0JC", "I0JK", "I0JA", "I0JJ", "I0JM", "I0JF", "I0JB", "I0JG", "I0JN", "I0IZ", "I0KB", "I0D5", "I0PY"]
 let udg_GOD02_Item_Int = ["I0KM", "I0KN", "I0KO", "I0KP", "I0KQ", "I0KR", "I0KS", "I0KT", "I0KU", "I0KV", "I0KW", "I03F", "I0NQ"];
 let udg_GOD02_Item_Int2 = ["I0L1", "I0L2", "I0L3", "I0L4", "I0L5", "I0L6", "I0L7", "I0L8", "I0L9", "I0LA", "I0LB", "I0LC", "I0LD", "I0L0", "I0NU"]
 let udg_Event_Item_Int = ["I034", "I06I", "I06Z", "I065", "I05Y", "I06A", "I07K", "I033", "I0CR", "I04H", "I07X"];
@@ -664,9 +664,9 @@ new Unit("n027").add("I0AB").add("I0AD").add("I0M5");
 
 new Unit("n02Y").add("I037").add("I036").add("I0M6");
 
-new Unit("n03Z").add("I0HA").add("I0IY");
+new Unit("n03Z").add("I0HA").add("I0IY").add("I0PU");
 
-new Unit("n04Q").add("I0KY").add("I0IY");
+new Unit("n04Q").add("I0KY").add("I0IY").add("I0PV");
 
 new Unit("n04I").add("I0LR");
 

@@ -3169,8 +3169,8 @@ module.exports = {
 		},
 		"label" : "Dagger of the Shadow Spirit",
     "k_label": "검은 영혼의 단검",
-		"effects" : ["Consumes 0.8% of maximum HP for each attack and deals an additional 30000 + AGI x16 damage (Only activates when HP is above 1%)"],
-		"k_effects" : ["기본공격시 최대체력 0.8%소모(체력 1%이상일때 작동) 매공격시 어둠의 일격을 가합니다 (30000 + AGI x16)"]
+		"effects" : ["Consumes 0.8% of maximum HP for each attack and deals an additional 16000 + AGI x16 damage (Only activates when HP is above 1%)"],
+		"k_effects" : ["기본공격시 최대체력 0.8%소모(체력 1%이상일때 작동) 매공격시 어둠의 일격을 가합니다 (16000 + AGI x16)"]
 	},
 	"I0D6" : {
 		"type" : "weapon",
@@ -3630,8 +3630,8 @@ module.exports = {
 		},
 		"label" : "Dagger of the Malevolent Devil",
     "k_label": "칠흑의 영혼의 단검",
-		"effects" : ["Consumes 0.8% of maximum HP for each attack and deals an additional 15000 + AGI x20 damage (Only activates when HP is above 1%)"],
-		"k_effects" : ["기본공격시 최대체력 0.8%소모 (체력 1%이상일때 작동) 매공격시 어둠의 일격을 가합니다"]
+		"effects" : ["Consumes 0.8% of maximum HP for each attack and deals an additional 16000 + AGI x20 damage (Only activates when HP is above 1%)"],
+		"k_effects" : ["기본공격시 최대체력 0.8%소모 (체력 1%이상일때 작동) 매공격시 어둠의 일격을 가합니다 (16000 + AGI x20)"]
 	},
 	"I04T" : {
       "type" : "helmet",
@@ -5228,8 +5228,8 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Enchanter]", 
     "k_label": "해방된 힘 [야천의 마도사]",
-    "effects": ["Reduces Unison cd by 11s"],
-    "k_effects": ["유니즌 인의 쿨타임이 11초 감소합니다"]
+    "effects": ["Reduces Unison cd by 10s"],
+    "k_effects": ["유니즌 인의 쿨타임이 10초 감소합니다"]
   },
   "I0JF": {
     "type": "unleash",
@@ -5308,8 +5308,8 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Crusader]", 
     "k_label": "해방된 힘 [크루세이더]",
-    "effects": ["Reduces the cooldown of Light Casts by 20s", "Not working"],
-    "k_effects": ["빛의 집속의 쿨타임이 20초 감소합니다", "작동 안함", "Not working"]
+    "effects": ["Reduces the cooldown of Light Casts by 15s"],
+    "k_effects": ["빛의 집속의 쿨타임이 15초 감소합니다", "작동 안함"]
   },
   "I0IT": {
     "type": "skill",
@@ -6037,7 +6037,8 @@ module.exports = {
     "stats": {
       "armor": 100,
       "hp": 500,
-      "str": 40
+      "str": 40,
+      "attack_speed": 200
     }
   },
   "I027": {
@@ -8107,8 +8108,7 @@ module.exports = {
       "grasp": 6
     },
     "label" : "Angel's Wrath",
-    "k_label": "대천사의 천벌",
-    "bugged": true
+    "k_label": "대천사의 천벌"
   },
   "I0O3": {
     "type" : "weapon",
@@ -8121,8 +8121,7 @@ module.exports = {
       "grasp": 7
     },
     "label" : "Angel's Wrath +1",
-    "k_label": "대천사의 천벌 +1",
-    "bugged": true
+    "k_label": "대천사의 천벌 +1"
   },
   "I0O4": {
     "type" : "weapon",
@@ -8135,8 +8134,7 @@ module.exports = {
       "grasp": 8
     },
     "label" : "Angel's Wrath +2",
-    "k_label": "대천사의 천벌 +2",
-    "bugged": true
+    "k_label": "대천사의 천벌 +2"
   },
   "I0O5": {
     "type" : "weapon",
@@ -8149,8 +8147,7 @@ module.exports = {
       "grasp": 9
     },
     "label" : "Angel's Wrath +3",
-    "k_label": "대천사의 천벌 +3",
-    "bugged": true
+    "k_label": "대천사의 천벌 +3"
   },
   "I0O6": {
     "type" : "weapon",
@@ -8179,7 +8176,7 @@ module.exports = {
     "k_label": "신의 신벌",
   },
   "I0OB": {
-		"type" : "accessory",
+		"type" : "auxiliary",
 		"color" : "god",
 		"stats" : {
 			"str" : 2300,
@@ -8191,7 +8188,7 @@ module.exports = {
     "k_label": "마신왕의 일격룬"    
   },
   "I0OC": {
-		"type" : "accessory",
+		"type" : "auxiliary",
 		"color" : "god",
 		"stats" : {
 			"str" : 2300,
@@ -8203,7 +8200,7 @@ module.exports = {
     "k_label": "마신왕의 생명룬"    
   },
   "I0OD": {
-		"type" : "accessory",
+		"type" : "auxiliary",
 		"color" : "god",
 		"stats" : {
 			"str" : 2300,
@@ -8215,7 +8212,7 @@ module.exports = {
     "k_label": "마신왕의 마나룬"    
   },
   "I0OE": {
-		"type" : "accessory",
+		"type" : "auxiliary",
 		"color" : "god",
 		"stats" : {
 			"str" : 2300,
@@ -8228,7 +8225,7 @@ module.exports = {
     "k_label": "마신왕의 신속룬"    
   },
   "I0OF": {
-		"type" : "accessory",
+		"type" : "auxiliary",
 		"color" : "god",
 		"stats" : {
 			"str" : 2300,
@@ -8241,7 +8238,7 @@ module.exports = {
     "k_effects" : ["사용시 최대생명력 60%회복 (쿨타임 25초)"]
   },
   "I0OG": {
-		"type" : "accessory",
+		"type" : "auxiliary",
 		"color" : "god",
 		"stats" : {
 			"str" : 2300,
@@ -8254,7 +8251,7 @@ module.exports = {
     "k_effects" : ["사용시 최대마나 60%회복 (쿨타임 30초)"]    
   },
   "I0OH": {
-		"type" : "accessory",
+		"type" : "auxiliary",
 		"color" : "god",
 		"stats" : {
 			"str" : 2300,
@@ -8266,7 +8263,7 @@ module.exports = {
     "k_label": "마신왕의 증폭룬"  
   },
   "I0OI": {
-		"type" : "accessory",
+		"type" : "auxiliary",
 		"color" : "god",
 		"stats" : {
 			"str" : 2300,
@@ -8286,8 +8283,7 @@ module.exports = {
 		"label" : "Demon King Token [Int]",
     "k_label": "마신왕의 증표[지능]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["지능 10%증가"],
-    "bugged": true
+    "k_effects": ["지능 10%증가"]
   },
   "I0OK": {
 		"type" : "token",
@@ -8298,8 +8294,7 @@ module.exports = {
       "label" : "Demon King Token [Str]",
     "k_label": "마신왕의 증표[힘]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["지능 10%증가"],
-    "bugged": true
+    "k_effects": ["지능 10%증가"]
   },
   "I0OL": {
 		"type" : "token",
@@ -8310,8 +8305,7 @@ module.exports = {
 		"label" : "Demon King Token [Agi]",
     "k_label": "마신왕의 증표[민첩]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["해방의 힘 전용템"],
-    "bugged": true
+    "k_effects": ["해방의 힘 전용템"]
   },
   "I0OM": {
 		"type" : "token",
@@ -8333,8 +8327,7 @@ module.exports = {
 		"label" : "Demon King Token [Skill Damage]",
     "k_label": "마신왕의 증표[증강]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["해방의 힘 전용템"],
-    "bugged": true
+    "k_effects": ["해방의 힘 전용템"]
   },
   "I0OO": {
 		"type" : "token",
@@ -8345,8 +8338,7 @@ module.exports = {
 		"label" : "Demon King Token [HP]",
     "k_label": "마신왕의 증표[생명]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["해방의 힘 전용템"],
-    "bugged": true
+    "k_effects": ["해방의 힘 전용템"]
   },
   "I0OP": {
 		"type" : "token",
@@ -8357,8 +8349,7 @@ module.exports = {
 		"label" : "Demon King Token [Mana]",
     "k_label": "마신왕의 증표[마나]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["해방의 힘 전용템"],
-    "bugged": true
+    "k_effects": ["해방의 힘 전용템"]
   },
   "I0OQ": {
     "label": "Demon King's Treasure Chest",
@@ -8551,7 +8542,8 @@ module.exports = {
       "attack_str_int_real": 85  
 		},
 		"label" : "Demon King Judgment Staff",
-    "k_label": "마신왕의 일격 지팡이"
+    "k_label": "마신왕의 일격 지팡이",
+    "bugged": true
 	},
 	"I0P8" : {
 		"type" : "weapon",
@@ -8843,5 +8835,27 @@ module.exports = {
     "k_label": "Archangel Treasure Chest (Small)",
     "effects" : ["Requires at least 3500 base stats for drop"],
     "k_effects": ["드랍하려면 최소한 3500의 스탯이 필요하다."]
+  },
+  "I0PU" : {
+		"type" : "stats",
+		"color" : "darkred",
+		"stats_points" : 24,
+		"label" : "Spirit of destruction",
+    "k_label": "파멸의 신의 정기"	
+	},
+  "I0PV" : {
+		"type" : "stats",
+		"color" : "darkred",
+		"stats_points" : 26,
+		"label" : "Spirit of purification",
+    "k_label": "정화의 신의 정기"	
+	},
+  "I0PY": {
+    "type": "unleash",
+    "color": "god",
+    "label": "Unleash Power [Magic Knight]", 
+    "k_label": "해방된 힘 [마검사]",
+    "effects": ["The number of blows of uncontrollable anger increases by 12."],
+    "k_effects": ["주체할수 없는 분노의 타격수가 12회 증가합니다.(경직은 기존)"]
   }
 }

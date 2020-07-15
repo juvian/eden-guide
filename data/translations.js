@@ -184,8 +184,8 @@ exports.translations = {
     "kor": "사용자의 마나에 비례하여 추가데미지 생성 (비뮬 - 1만당 {0}%)<br/>스킬사용시 최대마력 6%감소<br/>마력이 15%이상 있을때 작동"
   },
   "vampiric-effect": {
-    "eng": "Activate to get x{0} increased health during 20s<br/>(180s cd) (can't remove item during effect)",
-    "kor": "사용시 20초간 생명력이 {0}배가됨<br/>(쿨타임 180초)(지속 시간동안 아이템을 벗을수 없음)"
+    "eng": "Activate to get x{0} increased health during 20s<br/>(120s cd) (can't remove item during effect)",
+    "kor": "사용시 20초간 생명력이 {0}배가됨<br/>(쿨타임 120초)(지속 시간동안 아이템을 벗을수 없음)"
   },
   "extra-armor": {
     "eng": "When used, will get aggro of enemies in {2} range<br/>Grants an additional {0} armor for 10s ({1}s cd)",
