@@ -195,6 +195,10 @@ exports.translations = {
     "eng": "Each attack has 10% chance to deal {0}% bonus damage",
     "kor": "공격시 10%확률로 추가데미지 {0}%"
   },
+  "flame-effect": {
+    "eng": "Deals 8000 + STR * {0} per second to nearby enemies",
+    "kor": "초당 주변에 데미지 (8000 + STR * {0})"
+  },
   "angra-effect": {
     "eng": "Each basic attack or spell hit has a 2% chance to damage enemies in 1500 range<br/>Adds an additional {0}% Bonus Damage for 8s<br/>Does not Stack",
     "kor": "기본 공격시 2% 확률로 범위 1500내의 아군의 추가데미지 증가<br/>추가데미지 {0}% 증가 지속시간 8초<br/>버프가 중복되지 않습니다"
