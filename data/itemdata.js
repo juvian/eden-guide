@@ -683,12 +683,11 @@ module.exports = {
 			"armor" : 800,
 			"str" : 1700,
 			"hp" : 10000,
-			"hp_regen" : -500
+			"hp_regen" : -500,
+      "flame": 15
 		},
 		"label" : "Magical Flame Armor",
-    "k_label": "마계의 불꽃 갑옷",
-		"effects" : ["Deals 8000 + STR x15 damage to nearby enemies each second"],
-		"k_effects" : ["생명력과 강함을 교환한 로브 (8000 + STR x15)"]
+    "k_label": "마계의 불꽃 갑옷"
 	},
 	"I06S" : {
 		"type" : "armor",
@@ -745,12 +744,11 @@ module.exports = {
 			"armor" : 1000,
 			"str" : 2500,
 			"hp" : 15000,
-			"hp_regen" : -800
+			"hp_regen" : -800,
+       "flame": 23
 		},
 		"label" : "Black Earth Flame Armor",
-    "k_label": "검은 대지의 불꽃 갑옷",
-		"effects" : ["Deals 8000 + STR x23 damage per second to all enemies within range"],
-    "k_effects": ["초당 주변에 데미지 (8000 + STR x23)"]
+    "k_label": "검은 대지의 불꽃 갑옷"
 	},
 	"I042" : {
 		"type" : "armor",
@@ -869,12 +867,11 @@ module.exports = {
 			"armor" : 1200,
 			"str" : 3500,
 			"hp_regen" : -1100,
-      "hp": 20000
+      "hp": 20000,
+      "flame": 33
 		},
 		"label" : "Hellfire Armor",
-    "k_label": "지옥불 갑옷",
-		"effects" : ["Deals 8000 + STR x33 damage per second to all enemies within range"],
-		"k_effects" : ["초당 주변에 데미지 (8000 + STR x33)"]
+    "k_label": "지옥불 갑옷"
 	},
 	"I0BM" : {
 		"type" : "armor",
@@ -3397,12 +3394,11 @@ module.exports = {
 	    	"armor" : 1200,
 	    	"str" : 4600,
 	    	"hp" : 30000,
-	    	"hp_regen" : -1500
+	    	"hp_regen" : -1500,
+        "flame": 45
 	    },
 	    "label" : "Malevolent Flame Armor",
-      "k_label": "대악마의 검은불꽃 갑옷",
-		  "effects" : ["Deal 8000 + STR x45 damage to all enemies around user per second"],
-		  "k_effects" : ["초당생명력 1500감소 초당 주변에 데미지 (8000 + STR x45)"]
+      "k_label": "대악마의 검은불꽃 갑옷"
 	},
 	"I0DJ" : {
 	    "type" : "armor",
@@ -3712,12 +3708,11 @@ module.exports = {
 	    	"armor" : 1300,
 	    	"str" : 5500,
 	    	"hp" : 35000,
-	    	"hp_regen" : -2000
+	    	"hp_regen" : -2000,
+        "flame": 55
 	    },
 	    "label" : "Chaotic Infernal Armor",
-      "k_label": "대혼돈의 불꽃 갑옷",
-		  "effects" : ["Deal damage every second (8000 + STR x55)"],
-		  "k_effects" : ["초당 주변에 데미지 (8000 + STR x55)"]
+      "k_label": "대혼돈의 불꽃 갑옷"
 	},
 	"I0E1" : {
 	    "type" : "armor",
@@ -5292,8 +5287,9 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Great Sword]", 
     "k_label": "해방된 힘 [그레이트 소드]",
-    "effects": ["Increases Blockade duration by 0.15s"],
-    "k_effects": ["봉쇄의 지속시간이 0.15초 증가합니다"]
+    "stats": {
+      "max_health": 8
+    }
   },
   "I0D5": {
     "type": "unleash",
@@ -5424,12 +5420,11 @@ module.exports = {
       "str": 7000,
       "armor": 1600,
       "hp": 50000,
-      "hp_regen": -3000
+      "hp_regen": -3000,
+      "flame": 70
     },
     "label": "Purified Flame Armor",
-    "k_label": "정화의 불꽃 갑옷",
-    "effects": ["Deals 8000 + STR * 70 per second to nearby enemies"],
-    "k_effects": ["초당 주변에 데미지 (8000 + STR * 70)"]
+    "k_label": "정화의 불꽃 갑옷"
   },
   "I0KO": {
     "type": "armor",
@@ -7469,12 +7464,11 @@ module.exports = {
       "str": 8000,
       "armor": 1700,
       "hp": 55000,
-      "hp_regen": -3500
+      "hp_regen": -3500,
+      "flame": 80
     },
     "label": "Supreme Purified Flame Armor",
-    "k_label": "최상급 정화의 불꽃 갑옷",
-    "effects": ["Deals 8000 + STR * 80 per second to nearby enemies"],
-    "k_effects": ["초당 주변에 데미지 (8000 + STR * 80)"]    
+    "k_label": "최상급 정화의 불꽃 갑옷"
   },
   "I0MX": {
 		"type" : "accessory",
@@ -8857,5 +8851,212 @@ module.exports = {
     "k_label": "해방된 힘 [마검사]",
     "effects": ["The number of blows of uncontrollable anger increases by 12."],
     "k_effects": ["주체할수 없는 분노의 타격수가 12회 증가합니다.(경직은 기존)"]
-  }
+  },
+  "I0Q1": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+      "armor" : 1500,
+      "int" : 11000,
+      "damage_taken" : 30,
+      "damage_increase" : 150
+    },
+    "label": "Heavenly King Amplifying Robes",
+    "k_label": "천신왕의 증폭 로브"
+  },
+  "I0Q2": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+      "armor": 1500,
+      "int": 11000,
+      "mp": 80000,
+      "mps": 80
+    },
+    "label": "Heavenly King Mana Robes",
+    "k_label": "천신왕의 마력 로브"
+  },
+  "I0Q3": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+      "armor" : 1900,
+      "str" : 11000,
+      "movement_speed" : 200,
+      "damage_increase" : 90
+    },
+    "label": "Heavenly King Bright Armor",
+    "k_label": "천신왕의 빛의 갑옷"
+  },
+  "I0Q4": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+      "armor" : 1800,
+      "agi" : 11000,
+      "movement_speed" : 200,
+      "damage_increase" : 90
+    },
+    "label": "Heavenly King Greaves",
+    "k_label": "천신왕의 빛의 경갑"
+  },
+  "I0Q5": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+      "armor" : 1500,
+      "int" : 11000,
+      "movement_speed" : 200,
+      "damage_increase" : 90
+    },
+    "label": "Heavenly King Bright Robes",
+    "k_label": "천신왕의 빛의 로브"
+  },
+  "I0Q6": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+	    "armor" : 1900,
+	    "str" : 11000,
+	    "hp" : 70000,
+	    "damage_taken" : -40
+    },
+    "label": "Heavenly King Guardian Armor",
+    "k_label": "천신왕의 수호 갑옷"
+  },
+  "I0Q7": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+	    "armor" : 1800,
+	    "agi" : 11000,
+	    "hp" : 70000,
+	    "damage_taken" : -40
+    },
+    "label": "Heavenly King Guardian Greaves",
+    "k_label": "천신왕의 수호 경갑"
+  },
+  "I0Q8": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+	    "armor" : 1500,
+	    "int" : 11000,
+	    "hp" : 70000,
+	    "damage_taken" : -40
+    },
+    "label": "Heavenly King Guardian Robes",
+    "k_label": "천신왕의 수호 로브"
+  },
+  "I0Q9": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+      "armor" : 1500,
+      "str" : 8000,
+      "agi" : 8000,
+      "int" : 8000,
+      "hp" : 70000,
+      "vampiric": 2.7
+    },
+    "label": "Heavenly King Immortal Armor",
+    "k_label": "천신왕의 불멸의 갑옷"
+  },
+  "I0QA": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+	    "armor" : 1500,
+	    "str" : 8000,
+      "agi": 8000,
+      "int": 8000,
+	    "hp" : 70000,
+	    "max_health" : 45
+    },
+    "label": "Heavenly King Life Armor",
+    "k_label": "천신왕의 생명의 갑옷"
+  },
+  "I0QB": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+	    "armor" : 1500,
+      "str": 8000,
+      "agi": 8000,
+	    "int" : 8000,
+	    "hp" : 70000,
+	    "hp_regen_percent" : 6.5
+    },
+    "label": "Heavenly King Healing Armor",
+    "k_label": "천신왕 치유의 갑옷"
+  },
+  "I0QC": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+      "str": 11000,
+      "armor": 1900,
+      "hp": 70000,
+      "hp_regen": -5000,
+      "flame": 100
+    },
+    "label": "Heavenly King Flame Armor",
+    "k_label": "천신왕의 불꽃 갑옷",
+    "bugged": true
+  },
+  "I0QD": {
+    "type": "armor",
+    "color": "god",
+    "stats": {
+      "armor": 1700,
+      "int": 17500
+    },
+    "label": "Heavenly King Robes",
+    "k_label": "천신왕의 투기의 로브",
+    "bugged": true
+  },
+  "I0QF" : {
+	    "type" : "chest",
+	    "color" : "black",
+      "label" : "Heavenly King's Treasure Chest",
+      "k_label": "천신왕의 보물함",
+	},
+  "I0QG" : {
+    "type" : "material",
+    "color" : "black",
+    "label" : "Heavenly King's Treasure Piece",
+    "k_label": "천신왕의 보물조각"
+  },
+  "I0O9" : {
+    "type" : "material",
+    "color" : "black",
+    "label" : "Go to the dimentional zone",
+    "k_label": "차원의 틈새로 이동",
+    "effects": ["Requires at least 11000 stats"],
+    "k_effects": ["기본 스텟의 합계가 11000이상"]
+  },
+  "I0OA" : {
+    "type" : "material",
+    "color" : "black",
+    "label" : "God Item Disassemble",
+    "k_label": "신 아이템 분해"
+  },
+  "I0O8" : {
+    "type" : "material",
+    "color" : "black",
+    "label" : "Demon King Summon",
+    "k_label": "마신왕 소환"
+  },
+  "I0Q0" : {
+    "type" : "material",
+    "color" : "black",
+    "label" : "Hope",
+    "k_label": "한줄기 희망"
+  },
+  "I0QE": {
+    "label": "Sealed Heavenly King",
+    "k_label": "봉인된 천신왕",
+    "type": "chest",
+    "color": "black"    
+  },
 }

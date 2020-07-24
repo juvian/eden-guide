@@ -268,6 +268,14 @@ let units = {
   "n030": {
     "label": "Great Devil of Chaos(Open)",
     "k_label": "혼돈의 대악마(개방)"
+  },
+  "n05Z": {
+    "label": "Pillar of Hope",
+    "k_label": "희망의 기둥"
+  },
+  "n05Y": {
+    "label": "Heavenly King",
+    "k_label": "천신왕"
   }
 }
 

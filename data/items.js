@@ -115,6 +115,7 @@ class Item {
       else if (stat == "max_mana") return translate("max-mana").replace("{0}", val)
       else if (stat == 'purgatory_damage') return translate("purgatory-effect").replace("{0}", val).replace("{1}", this.stats["purgatory-recovery"]);
       else if (stat == 'bamboo_damage') return translate("bamboo-spear-effect").replace("{0}", val);
+      else if (stat == 'flame') return translate("flame-effect").replace("{0}", val);
       else return ''  
   }
   
