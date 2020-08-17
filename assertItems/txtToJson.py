@@ -50,7 +50,7 @@ class Parser:
 				item = {}
 				item["id"] = id
 			else:
-				if self.isInterestingLine(self.line):
+				if self.isInterestingLine(self.line) and "=" in self.line:
 					item[self.line.split("=")[0].strip()] = self.line.split("=")[1].strip()
 
 		if item:

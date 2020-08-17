@@ -134,7 +134,7 @@ def getProbs(func):
 
 	return start, end		
 
-def funcBefore(idx, depth = 1):
+def funcBefore(idx, depth = 1, process=True):
 	original = idx
 	while depth != 0:
 		newIdx = code.rfind("\n", 0, idx)
@@ -149,7 +149,8 @@ def funcBefore(idx, depth = 1):
 		if depth > 2:
 			raise Exception("unlimited loop " + str(code[original:original+100].encode("utf-8")))
 
-	return line.split("function")[1].split("takes")[0].strip() if "function" in line else line.split("if")[1].split("()")[0].split("then")[0].strip("( ")
+	l = line.split("function")[1].split("takes")[0].strip() if "function" in line else line.split("if")[1].split("()")[0].split("then")[0].strip("( ")
+	return l if l in funcs else line
 
 
 def getGlobalProb(idx):
@@ -178,12 +179,140 @@ def getChest(m, func, itemQty):
 	return chest, chance
 
 def resolveRandom(m, func, key):
+	add = (1 if "GetRandomInt" in func else 0)
 	d = re.search("GetRandom.*\((\d*\.?\d*)\s*,\s*(\d*\.?\d*).*<=\s*(\d*)", func)
 	func = funcBefore(m.start(), 2)		
 	chest = re.search(key, funcs[func]).group(1)
-	chance = (100 / (int(d.group(2)) - int(d.group(1)) + 1)) * int(d.group(3))
-
+	chance = (100 / (float(d.group(2)) - float(d.group(1)) + add)) * float(d.group(3))
 	return chest, chance
+
+
+def processDropFunc(m, drops):
+	func = funcBefore(m.start())
+	chance = 100	
+
+	line = m.group(0)
+
+	if "'" in line:
+		id = line.split("'")[1]
+		func = funcBefore(m.start())
+		done = True
+		
+		if "GetClickedButtonBJ" in func:
+			return
+		if "Item ==" in func:
+			chest, chance = func.split("'")[1], 100
+			drops[chest].append({"id": id, "chance": chance})
+		elif "Random" in func:
+			chest, chance = getChest(m, func, 1)
+			drops[chest].append({"id": id, "chance": chance})
+		elif "== true" in func: #exhange items
+			return	
+		elif "udg_Point" in funcs[func]: #buy item
+			return
+		elif "UnitHasItemOfTypeBJ" in funcs[func]: #echange item
+			return
+		elif "Trig_Point".lower() in func.lower() or "GetSoldItem()" in funcs[func]: #sell item
+			return
+		elif "GetItemCharges" in funcs[func]: #exchange coupons
+			return
+		elif "Chiruno_Event_Bay" in func:
+			return	
+		elif "udg_GOD02_Amor_BTN01" in funcs[func] or "udg_GOD02_Amor_BTN02" in funcs[func] or "udg_GOD01_Bag_Skill_BTN" in funcs[func]:
+			return	
+		elif "udg_GOD_Moster02_Clear_Count" in funcs[func]: #buy item
+			return	
+		elif "<=" in funcs[func]:
+			if "GetRandom" in funcs[func]:
+				chest, chance = resolveRandom(m, funcs[func], "(?:GetManipulatedItem|GetUnitTypeId)[^']*'(....)'")
+			else:	
+				chest, chance = getChest(m, funcs[func], 1)
+			if chest == None:
+				raise Exception(func, funcs[func])	
+			drops[chest].append({"id": id, "chance": chance})
+		elif "CreateItemLoc" not in line:	
+			chest = re.search("GetManipulatedItem[^']*'(....)'", funcs[func]).group(1)
+			drops[chest].append({"id": id, "chance": 100})
+		else:
+			done = False
+		if done:
+			return
+	elif "GetRandomInt" in line:
+		data = re.search("\((.*)\[GetRandomInt\((\d*)\s*,\s*(\d*)", line)
+		name, first, last = data.group(1), int(data.group(2)), int(data.group(3))
+		
+
+		if "Gamble" in name:
+			return
+
+		func = funcBefore(m.start())
+
+		chance = 100/(last - first + 1)
+
+		if re.search("Item == '....'", func):
+			chest = func.split("'")[1]
+		elif re.search("GetManipulatedItem[^']*'(....)'", funcs[func]):
+			chest = re.search("GetManipulatedItem[^']*'(....)'", funcs[func]).group(1)
+		else:	
+			chest, chance = getChest(m, funcs[func], last - first + 1)
+
+		for item in arrays[name][first:last+1]:
+			drops[chest].append({"id": item, "chance": chance})		
+
+
+		if len(arrays[name]) != last - first + 1 and name != "udg_AcAngel_GOD_Item":
+			print("not all chest items are being obtained ", name)	
+
+		return
+
+	if "GetRandomReal" in func:
+		start, end = getProbs(func)
+		chance = (end - start) / 100
+		func = funcBefore(m.start(), 2)
+	if "Item ==" in func:
+		chest = func.split("'")[1]
+	elif "Random" in func:
+		chest, chance = getChest(m, func, 1)
+	elif "GetItemTypeId(GetManipulatedItem())" in func:
+		chest = func.split("GetItemTypeId(GetManipulatedItem())")[1].split("'")[1]
+	elif "udg_Chiruno_P_Unit" in funcs[func] or m.group(1) in ["I0JV", "I012"] or func in ["Trig_sdfsdf_Actions"] or func.startswith("Trig_LoadTyping_Func"):
+		return
+	elif func == "Trig_SSS_Boss_D_Func008Func002C":
+		chest = "e0D8"
+	elif func.startswith("Trig_Itrm_Drop_AcAngel_"):
+		chest = "n027"
+	elif func.startswith("Trig_Itrm_Drop_AcDvil_"):
+		chest = "n02Y"
+	elif func.startswith("Trig_Itrm_Drop_Destroy_GOD_"):
+		chest = 'n03Z'
+	elif func.startswith("Trig_Itrm_Drop_Clean_GOD"):
+		chest = 'n04Q'
+	elif func.startswith("Trig_Acangel_GOD_04_Dead"):
+		chest = "n05Z"
+	elif "GetRandomInt" in funcs[func]:
+		chest, chance = resolveRandom(m, funcs[func], "GetUnitTypeId[^']*'(....)'")
+	elif "GetRandomReal" in funcs[func]:
+		chest, chance = resolveRandom(m, funcs[func], "GetItemTypeId[^']*'(....)'")
+	elif "GetHeroLevel" in funcs[func]:
+		func = funcBefore(m.start(), 2)	
+		chest, chance = re.search("GetUnitTypeId[^']*'(....)'", funcs[func]).group(1), 100
+	elif "GetItemTypeId(GetManipulatedItem())" in funcs[func]:
+		chest = funcs[func].split("GetItemTypeId(GetManipulatedItem())")[1].split("'")[1]
+	else:	
+		chest = funcs[func].split("GetUnitTypeId")[1].split("'")[1]
+
+	if len(m.group(1)) == 4:	
+		drops[chest].append({"id": m.group(1), "chance": float(chance)})	
+	else:
+		raise Exception("error", chest, chance, func, line, m.group(1))
+
+def byId(drops):
+	s = dict()
+	for d in drops:
+		if d["id"] not in s:
+			s[d["id"]] = []
+		s[d["id"]].append("%.2f" % float(d["chance"]))
+	return s
 
 def assertCorrectDropRates():
 	loadCode()
@@ -209,115 +338,25 @@ def assertCorrectDropRates():
 		drops[m.group(3)].append({"id": m.group(1), "chance": float(m.group(2))})
 
 	for m in re.finditer("call CreateItemLoc\('(....)'", code):
-		func = funcBefore(m.start())
-		if "udg_Chiruno_P_Unit" in funcs[func] or m.group(1) in ["I0JV", "I012"]:
-			continue
-
-		chance = 100	
-
-		if func == "Trig_SSS_Boss_D_Func008Func002C":
-			chest = "e0D8"
-		elif func.startswith("Trig_Itrm_Drop_AcAngel_"):
-			chest = "n027"
-		elif func.startswith("Trig_Itrm_Drop_AcDvil_"):
-			chest = "n02Y"
-		elif func.startswith("Trig_Itrm_Drop_Destroy_GOD_"):
-			chest = 'n03Z'
-		elif func.startswith("Trig_Itrm_Drop_Clean_GOD"):
-			chest = 'n04Q'
-		elif func.startswith("Trig_Acangel_GOD_04_Dead"):
-			chest = "n05Z"
-		elif "GetRandomInt" in funcs[func]:
-			chest, chance = resolveRandom(m, funcs[func], "GetUnitTypeId[^']*'(....)'")
-		elif "GetHeroLevel" in funcs[func]:
-			func = funcBefore(m.start(), 2)	
-			chest, chance = re.search("GetUnitTypeId[^']*'(....)'", funcs[func]).group(1), 100
-		else:	
-			chest = funcs[func].split("GetUnitTypeId")[1].split("'")[1]
-
-		drops[chest].append({"id": m.group(1), "chance": float(chance)})	
+		processDropFunc(m, drops)
 
 	for m in re.finditer("call UnitAddItemByIdSwapped(.*)", code):
-		line = m.group(1)
-		if "'" in line:
-			id = line.split("'")[1]
-			func = funcBefore(m.start())
-			
-			if func == "GetClickedButtonBJ":
-				continue
-			if "Item ==" in func:
-				chest, chance = func.split("'")[1], 100
-				drops[chest].append({"id": id, "chance": chance})
-			elif "Random" in func:
-				chest, chance = getChest(m, func, 1)
-				drops[chest].append({"id": id, "chance": chance})
-			elif "== true" in func: #exhange items
-				continue	
-			elif "udg_Point" in funcs[func]: #buy item
-				continue
-			elif "UnitHasItemOfTypeBJ" in funcs[func]: #echange item
-				continue
-			elif "Trig_Point".lower() in func.lower() or "GetSoldItem()" in funcs[func]: #sell item
-				continue
-			elif "GetItemCharges" in funcs[func]: #exchange coupons
-				continue
-			elif "Chiruno_Event_Bay" in func:
-				continue	
-			elif "udg_GOD02_Amor_BTN01" in funcs[func] or "udg_GOD02_Amor_BTN02" in funcs[func] or "udg_GOD01_Bag_Skill_BTN" in funcs[func]:
-				continue	
-			elif "udg_GOD_Moster02_Clear_Count" in funcs[func]: #buy item
-				continue	
-			elif "<=" in funcs[func]:
-				if "GetRandomInt" in funcs[func]:
-					chest, chance = resolveRandom(m, funcs[func], "GetManipulatedItem[^']*'(....)'")
-				else:	
-					chest, chance = getChest(m, funcs[func], 1)
-				drops[chest].append({"id": id, "chance": chance})
-			else:	
-				chest = re.search("GetManipulatedItem[^']*'(....)'", funcs[func]).group(1)
-				drops[chest].append({"id": id, "chance": 100})
-		elif "GetRandomInt" in line:
-			data = re.search("\((.*)\[GetRandomInt\((\d*)\s*,\s*(\d*)", line)
-			name, first, last = data.group(1), int(data.group(2)), int(data.group(3))
-			
-
-			if "Gamble" in name:
-				continue
-
-			if len(arrays[name]) != last - first + 1:
-				print("not all chest items are being obtained ", name)	
-
-			func = funcBefore(m.start())
-
-			chance = 100/(last - first + 1)
-
-			if re.search("Item == '....'", func):
-				chest = func.split("'")[1]
-			elif re.search("GetManipulatedItem[^']*'(....)'", funcs[func]):
-				chest = re.search("GetManipulatedItem[^']*'(....)'", funcs[func]).group(1)
-			else:	
-				chest, chance = getChest(m, funcs[func], last - first + 1)
-	
-
-			for item in arrays[name][first:last+1]:
-				drops[chest].append({"id": item, "chance": chance})		
+		processDropFunc(m, drops)
 
 
 	for chest in drops.keys():
 		if chest in itemsGuide["drops"]:
-			drops[chest] = sorted(drops[chest], key=lambda x: x["id"])
-			itemsGuide["drops"][chest] = sorted(itemsGuide["drops"][chest], key=lambda x: x["id"])
+			jass, gu = byId(drops[chest]), byId(itemsGuide["drops"][chest])
 
-			if len(drops[chest]) == len(itemsGuide["drops"][chest]):
-				for item, guideItem in zip(drops[chest], itemsGuide["drops"][chest]):
-					item["chance"] = str("%.2f" % item["chance"])
-					if item["id"] != guideItem["id"] or item["chance"] != str("%.2f" % float(guideItem["chance"])):
-						print("different id/chance ", item, "(jass)", guideItem, "(guide)", " in ", chest)
-						break
-			else:
-				print("different drops ", chest)
-				print("jass", drops[chest])
-				print("guide", itemsGuide["drops"][chest])			
+			for id in jass:
+				if id not in gu:
+					print("missing in guide", id, jass[id],  "at chest ", chest)
+				elif gu[id] != jass[id]:
+					print("different chances", id, gu[id], "(guide)", jass[id], chest)
+			for id in gu:
+				if id not in jass:
+					print(chest, " does not drop ", id)
+
 		else:
 			print(chest, " not in item guide", drops[chest])	
 
@@ -339,7 +378,7 @@ def processStat(stat, line, val, id, missing):
 		print(id, "not in guide " + id)			
 
 def processLine(line, txt, id, missing):
-	if len(list(filter(lambda x: x in line, ["udg_Plus_Demige", "udg_Minus_Demige", "udg_Shied_Int", "udg_Fire_Amor", "udg_Fire_Amor_Minus", "udg_Gaho_Item_Real", "udg_Save_Stat", "udg_Skill_Damage_UP", "udg_Plus_damage", "udg_HP_And_Dead_Item_PD_Real", "udg_HP_And_Dead_Item_HP_Real", "udg_Citical_Item_real"]))):
+	if len(list(filter(lambda x: x in line, ["udg_Plus_Demige", "udg_Minus_Demige", "udg_Shied_Int", "udg_Fire_Amor", "udg_Fire_Amor_Minus", "udg_Gaho_Item_Real", "udg_Save_Stat", "udg_Skill_Damage_UP", "udg_Plus_damage", "udg_HP_And_Dead_Item_PD_Real", "udg_HP_And_Dead_Item_HP_Real", "udg_Citical_Item_real", "udg_Save_Stat_Str", "udg_Save_Stat_Agi", "udg_Save_Stat_Int", "udg_Save_Stat_HP"]))):
 		try:
 			if "+" in txt:
 				damage = round(float(line.split("+")[1].split(")")[0].strip()) * 100)
@@ -384,7 +423,14 @@ def processLine(line, txt, id, missing):
 		processStat("purgatory_recovery", line, damage * 100, id, missing)
 	elif "udg_Citical_Item_real" in line:
 		processStat("bamboo_damage", line, damage * 100, id, missing)
-
+	elif "udg_Save_Stat_Str[" in line:
+		processStat("str", line, damage / 100, id, missing)
+	elif "udg_Save_Stat_Agi[" in line:
+		processStat("agi", line, damage / 100, id, missing)
+	elif "udg_Save_Stat_Int[" in line:
+		processStat("int", line, damage / 100, id, missing)
+	elif "udg_Save_Stat_HP[" in line:
+		processStat("hp", line, damage / 100, id, missing)	
 
 def processDamage2(missing):
 	for m in re.finditer("Item\s?==\s?'(\w\w\w\w)'", code):
@@ -867,6 +913,7 @@ def assertCorrectScalings():
 	assertItemScaling("I0ID", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0ID'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 110.00", depth = 2)
 	assertItemScaling("I0IE", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IE'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 130.00", depth = 2)
 	assertItemScaling("I0NJ", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0NJ'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 150.00", depth = 2)
+	assertItemScaling("I0QK", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0QK'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 200.00", depth = 2)
 
 	assertItemScaling("I0BD", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BD'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.30")
 	assertItemScaling("I0BD", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BD'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.08")
@@ -996,6 +1043,7 @@ def assertCorrectScalings():
 	assertItemScaling("I0MK", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0MK')", "420000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 380.00")
 
 	assertItemScaling("I0P8", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0P8')", "call GroupimpactDamage(s__TrigVariables_unit15[GlobalTV] , ( 420000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 420.00")
+
 
 
 
