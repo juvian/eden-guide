@@ -9050,7 +9050,7 @@ module.exports = {
   "I0Q0" : {
     "type" : "material",
     "color" : "black",
-    "label" : "Hope",
+    "label" : "A glimmer of hope",
     "k_label": "한줄기 희망"
   },
   "I0QE": {
@@ -9058,5 +9058,211 @@ module.exports = {
     "k_label": "봉인된 천신왕",
     "type": "chest",
     "color": "black"    
+  },
+  "I0QH": {
+		"type" : "artifact",
+		"color" : "god",
+		"stats" : {
+			"str" : 7500,
+			"agi" : 7500,
+			"int" : 7500,
+			"attack_speed" : 400,
+			"movement_speed" : 200
+		},
+		"label" : "Heavenly King Boots",
+    "k_label": "천신왕의 각반",
+		"effects" : ["On Use: Dash forward (2s cd)"],
+		"k_effects" : ["사용시 전방으로 대쉬(쿨타임2초)"],
+    "bugged": true
+  },
+  "I0QI": {
+		"type" : "artifact",
+		"color" : "god",
+		"stats" : {
+			"str" : 7500,
+			"agi" : 7500,
+			"int" : 7500,
+			"hp" : 60000,
+			"armor" : 1300
+		},
+		"label" : "Heavenly King Barrier",
+    "k_label": "천신왕의 방벽",
+		"effects" : ["Generate a shield that can block up to 70000 damage every 10 seconds"],
+		"k_effects" : ["10초마다 70000의 쉴드 생성"]  
+  },
+  "I0QJ": {
+		"type" : "artifact",
+		"color" : "god",
+		"stats" : {
+			"str" : 7500,
+			"agi" : 7500,
+			"int" : 7500,
+			"hp" : 60000
+		},
+		"label" : "Heavenly King Life Wings",
+    "k_label": "천신왕의 생명 날개",
+		"effects" : ["When HP is below 40%, any damage taken will restore 100% of MAX HP", "On use restore 30% of MAX HP every second for 10 seconds (120s cd)"],
+		"k_effects" : ["생명력이 40%이하일때 즉사가 아닌 공격을받을면", "즉시 생명력 100%를 회복하며 10초간 초당 생명력 30% 회복 (쿨타임 120초)"],
+    "bugged": true
+  },
+  "I0QK": {
+		"type" : "artifact",
+		"color" : "god",
+		"stats" : {
+			"str" : 7500,
+			"agi" : 7500,
+			"int" : 7500,
+			"hp" : 60000
+		},
+		"label" : "Heavenly King Blue Wings",
+    "k_label": "천신왕의 푸른 날개",
+		"effects" : ["Allies have 45% movement speed and 200% attack speed increased", "Enemies have 30% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x200 (180s cd)"],
+		"k_effects" : ["주변 적군 공이속 30%감소", "주변 아군 공속 200% 이속 45%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x200)(쿨타임 180초)"],
+    "bugged": true
+  },
+  "I0QL": {
+		"type" : "artifact",
+		"color" : "god",
+		"stats" : {
+			"str" : 7500,
+			"agi" : 7500,
+			"int" : 7500,
+			"damage_increase" : 90
+		},
+		"label" : "Heavenly King Wings",
+    "k_label": "천신왕의 날개",
+		"effects" : ["Allies have 45% movement speed and 200% attack speed increased", "Enemies have 30% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x200 (180s cd)"],
+		"k_effects" : ["주변 적군 공이속 30%감소", "주변 아군 공속 200% 이속 45%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x200)(쿨타임 180초)"]
+  },
+  "I0QM": {
+    "label": "Heavenly King Treasure Chest",
+    "k_label": "천신왕의 보구함",
+    "type": "chest",
+    "color": "black"    
+  },
+  "I0QO": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "str": 500,
+      "agi": 500,
+      "int": 500,
+      "attack_speed": 150,
+      "movement_speed": 150
+		},
+		"label" : "Book of transcendence [Speed]",
+    "k_label": "초월의 서 [신속함]",
+    "effects": ["A skill added to the platelet bag"],
+    "k_effects": ["혈소판 가방에 스킬이 추가됩니다"]
+  },
+  "I0QP": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "str": 500,
+      "agi": 500,
+      "int": 500,
+      "hp": 10000
+		},
+		"label" : "Book of transcendence [Endurance]",
+    "k_label": "초월의 서 [강인함]",
+    "effects": ["A skill added to the platelet bag", "100% magic reduction for 6s (120s cd)", "You cannot unlock items during cooldown when using a skill"],
+    "k_effects": ["혈소판 가방에 스킬이 추가됩니다", "스킬 사용시 6초간 마법데미지 100%감소 (쿨타임 120초)", "스킬 사용시 쿨타임 동안 아이템을 해제할수없습니다",]
+  },
+  "I0QQ": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "str": 500,
+      "agi": 500,
+      "int": 500,
+      "damage_increase": 10
+		},
+		"label" : "Book of transcendence [Power]",
+    "k_label": "초월의 서 [각성]",
+    "effects": ["A skill added to the platelet bag", "40% bonus damage for 15s (120s cd)", "You cannot unlock items during cooldown when using a skill"],
+    "k_effects": ["혈소판 가방에 스킬이 추가됩니다", "스킬 사용시 15초간 추가데미지 40% 증가 (쿨타임 120초)", "스킬 사용시 쿨타임 동안 아이템을 해제할수없습니다",]
+  },
+  "I0QR": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "str": 650,
+      "agi": 650,
+      "int": 650
+		},
+		"label" : "Book of transcendence [Strike]",
+    "k_label": "초월의 서 [일격]",
+    "effects": ["A skill added to the platelet bag", "When using a skill, it inflicts powerful damage within a large range around the hero (proportional stats) (50s cd)", "You cannot unlock items during cooldown when using a skill"],
+    "k_effects": ["혈소판 가방에 스킬이 추가됩니다", "스킬 사용시 영웅주변 큰범위내에 강력한 데미지를 가합니다. (스텟비례) (쿨타임 50초)", "스킬 사용시 쿨타임 동안 아이템을 해제할수없습니다",]
+  },
+  "I0QS": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "str": 500,
+      "agi": 500,
+      "int": 500,
+      "hp": 10000
+		},
+		"label" : "Book of transcendence [Recovery]",
+    "k_label": "초월의 서 [회복]",
+    "effects": ["A skill added to the platelet bag", "When used, restores the hero's HP by 40% (10s cd)", "You cannot unlock items during cooldown when using a skill"],
+    "k_effects": ["혈소판 가방에 스킬이 추가됩니다", "사용시 영웅의 체력을 40%회복시킵니다 (쿨타임 10초)", "스킬 사용시 쿨타임 동안 아이템을 해제할수없습니다",]
+  },
+  "I0QT": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "str": 500,
+      "agi": 500,
+      "int": 500,
+      "hp": 10000
+		},
+		"label" : "Book of transcendence [Recovery]",
+    "k_label": "초월의 서 [회복]",
+    "effects": ["A skill added to the platelet bag", "When used, restores the hero's HP by 40% (10s cd)", "You cannot unlock items during cooldown when using a skill"],
+    "k_effects": ["혈소판 가방에 스킬이 추가됩니다", "사용시 영웅의 체력을 40%회복시킵니다 (쿨타임 10초)", "스킬 사용시 쿨타임 동안 아이템을 해제할수없습니다",]
+  },
+  "I0QT": {
+    "type": "artifact",
+    "color": "green",
+    "stats": {
+      "str": 100,
+      "agi": 100,
+      "int": 100,      
+    },
+    "label": "Watermelon",
+    "k_label": "수박",
+    "disabled": true
+  },
+  "I0QU": {
+    "type": "artifact",
+    "color": "green",
+    "stats": {
+      "str": 100,
+      "agi": 100,
+      "int": 100,      
+    },
+    "label": "Delicious Watermelon",
+    "k_label": "맛있는 수박",
+    "disabled": true
+  },
+  "I0QV": {
+    "type": "artifact",
+    "color": "purple",
+    "stats": {
+      "str": 1000,
+      "agi": 1000,
+      "int": 1000,      
+    },
+    "label": "Sweet and Delicious Watermelon",
+    "k_label": "달고 맛있는 수박",
+  },
+  "I0QN": {
+    "type": "material",
+    "color": "black",
+    "label": "Heavenly King power",
+    "k_label": "천신왕의 권능"
   },
 }
