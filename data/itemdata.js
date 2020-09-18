@@ -1047,8 +1047,7 @@ module.exports = {
 			"damage_increase" : 20
 		},
 		"label" : "Blazing Demonic Ring",
-    "k_label": "타오르는 악마의 반지",
-    "bugged": true
+    "k_label": "타오르는 악마의 반지"
 	},
 	"I06U" : {
 		"type" : "accessory",
@@ -2695,9 +2694,7 @@ module.exports = {
 			"agi" : 5000
 		},
 		"label" : "Waterstone Dirk",
-    "k_label": "세계수의 나뭇가지",
-		"effects" : ["On use, agility +28% for 20 seconds (120s cd)", "Deals AGI x40 to near enemies", "Recovers 20000 HP for each near enemy"],
-		"k_effects" : ["사용시 주변유닛의 정기를 흡수하며 흡수된 수에비례 생명력 회복 20초간 민첩 28% 증가 (쿨타임 120초)"]
+    "k_label": "세계수의 나뭇가지"
 	},
 	"I081" : {
 		"type" : "accessory",
@@ -2746,8 +2743,8 @@ module.exports = {
   "I0AC" : {
     "type" : "material",
     "color" : "black",
-    "label" : "Archangel’s Sigil",
-    "k_label": "대천사의 증표"
+    "label" : "Archangel’s Sigil (Old)",
+    "k_label": "(구)대천사의 증표"
   },
   "I0FB" : {
     "type" : "material",
@@ -4187,7 +4184,7 @@ module.exports = {
 	    "int" : 2700,
       "armor": 1000,
       "hp": 20000,
-      "vampiric": 1.4
+      "vampiric": 26
     },
     "label" : "Vampiric Armor",
     "k_label": "불멸의 갑옷"
@@ -5223,8 +5220,8 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Enchanter]", 
     "k_label": "해방된 힘 [야천의 마도사]",
-    "effects": ["Reduces Unison cd by 10s"],
-    "k_effects": ["유니즌 인의 쿨타임이 10초 감소합니다"]
+    "effects": ["Reduces Unison cd by 8s"],
+    "k_effects": ["유니즌 인의 쿨타임이 8초 감소합니다"]
   },
   "I0JF": {
     "type": "unleash",
@@ -5647,7 +5644,7 @@ module.exports = {
       "magic_resistance": 32
 		},
 		"label" : "Purified Guardian Ring",
-    "k_label": "정화의신의 수호"
+    "k_label": "정화의 신의 수호"
 	}, 
  "I0L6" : {
 		"type" : "accessory",
@@ -5701,7 +5698,7 @@ module.exports = {
 	    "damage_increase" : 90,
 	    "damage_taken" : 30
 	  },
-    "label": "Desctruction Helmet",
+    "label": "Destruction Helmet",
     "k_label": "파멸의 신의 저주",
     "bugged": true
   },
@@ -7702,8 +7699,8 @@ module.exports = {
 	    "damage_increase" : 110,
 	    "damage_taken" : 40
 	  },
-    "label": "Supreme Desctruction Helmet",
-    "k_label": "최상급 신의 저주",
+    "label": "Supreme Destruction Helmet",
+    "k_label": "최상급 파멸의 신의 저주",
     "bugged": true
   },
   "I0NF": {
@@ -7813,7 +7810,7 @@ module.exports = {
 	    	"damage_increase" : 115
 	    },
 	    "label" : "Supreme God's Amplifying Robes",
-      "k_label": "최고급 신의 증폭 로브"
+      "k_label": "최상급 신의 증폭 로브"
   },
   "I03G": {
     "type": "armor",
@@ -7893,7 +7890,7 @@ module.exports = {
 	    "movement_speed" : 300,
       "magic_resistance": 35
 		},
-    "k_label": "최상위 정화의신의 수호",
+    "k_label": "최상급 정화의 신의 수호",
     "label": "Supreme Guardian Ring",
     "bugged": true
   },
@@ -7934,7 +7931,7 @@ module.exports = {
       "agi" : 5500,
       "int" : 5500,
       "hp" : 50000,
-      "vampiric": 2
+      "vampiric": 67
     },
     "label" : "Purified Immortal Armor",
     "k_label": "정화된 불멸의 갑옷",
@@ -7948,7 +7945,7 @@ module.exports = {
       "agi" : 6000,
       "int" : 6000,
       "hp" : 55000,
-      "vampiric": 2.2
+      "vampiric": 82
     },
     "label" : "Supreme Purified Immortal Armor",
     "k_label": "최상급 정화된 불멸의 갑옷"
@@ -8849,8 +8846,8 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Magic Knight]", 
     "k_label": "해방된 힘 [마검사]",
-    "effects": ["The number of blows of uncontrollable anger increases by 12."],
-    "k_effects": ["주체할수 없는 분노의 타격수가 12회 증가합니다.(경직은 기존)"]
+    "effects": ["The number of blows of uncontrollable anger increases by 6."],
+    "k_effects": ["주체할수 없는 분노의 타격수가 6회 증가합니다.(경직은 기존)"]
   },
   "I0Q1": {
     "type": "armor",
@@ -8957,7 +8954,7 @@ module.exports = {
       "agi" : 8000,
       "int" : 8000,
       "hp" : 70000,
-      "vampiric": 2.7
+      "vampiric": 100
     },
     "label": "Heavenly King Immortal Armor",
     "k_label": "천신왕의 불멸의 갑옷"
@@ -9130,9 +9127,7 @@ module.exports = {
 			"damage_increase" : 90
 		},
 		"label" : "Heavenly King Wings",
-    "k_label": "천신왕의 날개",
-		"effects" : ["Allies have 45% movement speed and 200% attack speed increased", "Enemies have 30% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x200 (180s cd)"],
-		"k_effects" : ["주변 적군 공이속 30%감소", "주변 아군 공속 200% 이속 45%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x200)(쿨타임 180초)"]
+    "k_label": "천신왕의 날개"
   },
   "I0QM": {
     "label": "Heavenly King Treasure Chest",
@@ -9193,8 +9188,8 @@ module.exports = {
 		},
 		"label" : "Book of transcendence [Strike]",
     "k_label": "초월의 서 [일격]",
-    "effects": ["A skill added to the platelet bag", "When using a skill, it inflicts powerful damage within a large range around the hero (proportional stats) (50s cd)", "You cannot unlock items during cooldown when using a skill"],
-    "k_effects": ["혈소판 가방에 스킬이 추가됩니다", "스킬 사용시 영웅주변 큰범위내에 강력한 데미지를 가합니다. (스텟비례) (쿨타임 50초)", "스킬 사용시 쿨타임 동안 아이템을 해제할수없습니다",]
+    "effects": ["A skill added to the platelet bag", "When using a skill, it inflicts powerful damage within a large range around the hero (proportional stats) (60s cd)", "You cannot unlock items during cooldown when using a skill"],
+    "k_effects": ["혈소판 가방에 스킬이 추가됩니다", "스킬 사용시 영웅주변 큰범위내에 강력한 데미지를 가합니다. (스텟비례) (쿨타임 60초)", "스킬 사용시 쿨타임 동안 아이템을 해제할수없습니다",]
   },
   "I0QS": {
 		"type" : "token",
@@ -9207,8 +9202,8 @@ module.exports = {
 		},
 		"label" : "Book of transcendence [Recovery]",
     "k_label": "초월의 서 [회복]",
-    "effects": ["A skill added to the platelet bag", "When used, restores the hero's HP by 40% (10s cd)", "You cannot unlock items during cooldown when using a skill"],
-    "k_effects": ["혈소판 가방에 스킬이 추가됩니다", "사용시 영웅의 체력을 40%회복시킵니다 (쿨타임 10초)", "스킬 사용시 쿨타임 동안 아이템을 해제할수없습니다",]
+    "effects": ["A skill added to the platelet bag", "When used, restores the hero's HP by 40% (20s cd)", "You cannot unlock items during cooldown when using a skill"],
+    "k_effects": ["혈소판 가방에 스킬이 추가됩니다", "사용시 영웅의 체력을 40%회복시킵니다 (쿨타임 20초)", "스킬 사용시 쿨타임 동안 아이템을 해제할수없습니다",]
   },
   "I0QT": {
 		"type" : "token",
@@ -9228,9 +9223,10 @@ module.exports = {
     "type": "artifact",
     "color": "green",
     "stats": {
-      "str": 100,
-      "agi": 100,
-      "int": 100,      
+      "str": 200,
+      "agi": 200,
+      "int": 200,      
+      "movement_speed": 150
     },
     "label": "Watermelon",
     "k_label": "수박",
@@ -9240,9 +9236,10 @@ module.exports = {
     "type": "artifact",
     "color": "green",
     "stats": {
-      "str": 100,
-      "agi": 100,
-      "int": 100,      
+      "str": 700,
+      "agi": 700,
+      "int": 700,
+      "movement_speed": 150
     },
     "label": "Delicious Watermelon",
     "k_label": "맛있는 수박",
@@ -9252,12 +9249,14 @@ module.exports = {
     "type": "artifact",
     "color": "purple",
     "stats": {
-      "str": 1000,
-      "agi": 1000,
-      "int": 1000,      
+      "str": 1500,
+      "agi": 1500,
+      "int": 1500,      
+      "movement_speed": 150
     },
     "label": "Sweet and Delicious Watermelon",
     "k_label": "달고 맛있는 수박",
+    "disabled": true
   },
   "I0QN": {
     "type": "material",
@@ -9265,4 +9264,22 @@ module.exports = {
     "label": "Heavenly King power",
     "k_label": "천신왕의 권능"
   },
+  "I0QW": {
+    "type": "material",
+    "color": "black",
+    "label": "Supreme God Weapon Essence",
+    "k_label": "최상급 신의 무기 정수"
+  },
+  "I0QX": {
+    "type": "material",
+    "color": "black",
+    "label": "Supreme God Equipment Essence",
+    "k_label": "최상급 신의 장비 정수"
+  },
+  "I0QY": {
+    "type": "material",
+    "color": "black",
+    "label": "Supreme God Accessory Essence",
+    "k_label": "최상급 신의 룬 정수"
+  },  
 }
