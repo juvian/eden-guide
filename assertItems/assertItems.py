@@ -149,7 +149,7 @@ def funcBefore(idx, depth = 1, process=True):
 		if depth > 2:
 			raise Exception("unlimited loop " + str(code[original:original+100].encode("utf-8")))
 
-	l = line.split("function")[1].split("takes")[0].strip() if "function" in line else line.split("if")[1].split("()")[0].split("then")[0].strip("( ")
+	l = line.split("function")[1].split("takes")[0].strip() if "function" in line else re.split(r' if|\nif', line)[1].split("()")[0].split("then")[0].strip("( ")
 	return l if l in funcs else line
 
 
@@ -196,47 +196,48 @@ def processDropFunc(m, drops):
 	if "'" in line:
 		id = line.split("'")[1]
 		func = funcBefore(m.start())
-		done = True
 		
 		if "GetClickedButtonBJ" in func:
 			return
 		if "Item ==" in func:
 			chest, chance = func.split("'")[1], 100
-			drops[chest].append({"id": id, "chance": chance})
+			return drops[chest].append({"id": id, "chance": chance})
 		elif "Random" in func:
 			chest, chance = getChest(m, func, 1)
-			drops[chest].append({"id": id, "chance": chance})
+			return drops[chest].append({"id": id, "chance": chance})
 		elif "== true" in func: #exhange items
 			return	
-		elif "udg_Point" in funcs[func]: #buy item
-			return
-		elif "UnitHasItemOfTypeBJ" in funcs[func]: #echange item
-			return
-		elif "Trig_Point".lower() in func.lower() or "GetSoldItem()" in funcs[func]: #sell item
-			return
-		elif "GetItemCharges" in funcs[func]: #exchange coupons
-			return
 		elif "Chiruno_Event_Bay" in func:
 			return	
-		elif "udg_GOD02_Amor_BTN01" in funcs[func] or "udg_GOD02_Amor_BTN02" in funcs[func] or "udg_GOD01_Bag_Skill_BTN" in funcs[func]:
-			return	
-		elif "udg_GOD_Moster02_Clear_Count" in funcs[func]: #buy item
-			return	
-		elif "<=" in funcs[func]:
-			if "GetRandom" in funcs[func]:
-				chest, chance = resolveRandom(m, funcs[func], "(?:GetManipulatedItem|GetUnitTypeId)[^']*'(....)'")
-			else:	
-				chest, chance = getChest(m, funcs[func], 1)
-			if chest == None:
-				raise Exception(func, funcs[func])	
-			drops[chest].append({"id": id, "chance": chance})
-		elif "CreateItemLoc" not in line:	
-			chest = re.search("GetManipulatedItem[^']*'(....)'", funcs[func]).group(1)
-			drops[chest].append({"id": id, "chance": 100})
-		else:
-			done = False
-		if done:
+		elif "Trig_Point".lower() in func.lower(): #sell item
 			return
+		elif func.startswith("Trig_Exchange_God_Item"): #exchange
+			return
+		elif func in funcs:
+			if "udg_Point" in funcs[func]: #buy item
+				return
+			elif "GetSoldItem()" in funcs[func]: #sell item
+				return
+			elif "UnitHasItemOfTypeBJ" in funcs[func]: #echange item
+				return
+			elif "GetItemCharges" in funcs[func]: #exchange coupons
+				return
+			elif "udg_GOD02_Amor_BTN01" in funcs[func] or "udg_GOD02_Amor_BTN02" in funcs[func] or "udg_GOD01_Bag_Skill_BTN" in funcs[func]:
+				return	
+			elif "udg_GOD_Moster02_Clear_Count" in funcs[func]: #buy item
+				return	
+			elif "<=" in funcs[func]:
+				if "GetRandom" in funcs[func]:
+					chest, chance = resolveRandom(m, funcs[func], "(?:GetManipulatedItem|GetUnitTypeId)[^']*'(....)'")
+				else:	
+					chest, chance = getChest(m, funcs[func], 1)
+				if chest == None:
+					raise Exception(func, funcs[func])	
+				return drops[chest].append({"id": id, "chance": chance})
+			elif "CreateItemLoc" not in line:	
+				chest = re.search("GetManipulatedItem[^']*'(....)'", funcs[func]).group(1)
+				return drops[chest].append({"id": id, "chance": 100})
+
 	elif "GetRandomInt" in line:
 		data = re.search("\((.*)\[GetRandomInt\((\d*)\s*,\s*(\d*)", line)
 		name, first, last = data.group(1), int(data.group(2)), int(data.group(3))
@@ -265,6 +266,9 @@ def processDropFunc(m, drops):
 
 		return
 
+	if "udg_saveItem[LoadInteger" in line:
+		return
+
 	if "GetRandomReal" in func:
 		start, end = getProbs(func)
 		chance = (end - start) / 100
@@ -275,20 +279,24 @@ def processDropFunc(m, drops):
 		chest, chance = getChest(m, func, 1)
 	elif "GetItemTypeId(GetManipulatedItem())" in func:
 		chest = func.split("GetItemTypeId(GetManipulatedItem())")[1].split("'")[1]
-	elif "udg_Chiruno_P_Unit" in funcs[func] or m.group(1) in ["I0JV", "I012"] or func in ["Trig_sdfsdf_Actions"] or func.startswith("Trig_LoadTyping_Func"):
-		return
 	elif func == "Trig_SSS_Boss_D_Func008Func002C":
 		chest = "e0D8"
-	elif func.startswith("Trig_Itrm_Drop_AcAngel_"):
+	elif func.startswith("Trig_Item_Drop_ArcAngel"):
 		chest = "n027"
-	elif func.startswith("Trig_Itrm_Drop_AcDvil_"):
+	elif func.startswith("Trig_Item_Drop_ArcDevil_"):
 		chest = "n02Y"
-	elif func.startswith("Trig_Itrm_Drop_Destroy_GOD_"):
+	elif func.startswith("Trig_Item_Drop_Destroy_GOD_"):
 		chest = 'n03Z'
-	elif func.startswith("Trig_Itrm_Drop_Clean_GOD"):
+	elif func.startswith("Trig_Item_Drop_Clean_GOD"):
 		chest = 'n04Q'
 	elif func.startswith("Trig_Acangel_GOD_04_Dead"):
 		chest = "n05Z"
+	elif func.startswith("Trig_Item_Drop_Doom_GOD"):
+		chest = "n03Z"
+	elif func.startswith("Trig_Item_Drop_Purify_GOD"):
+		chest = "n04Q"
+	elif "udg_Chiruno_P_Unit" in funcs[func] or m.group(1) in ["I0JV", "I012"] or func in ["Trig_sdfsdf_Actions"] or func.startswith("Trig_LoadTyping_Func"):
+		return
 	elif "GetRandomInt" in funcs[func]:
 		chest, chance = resolveRandom(m, funcs[func], "GetUnitTypeId[^']*'(....)'")
 	elif "GetRandomReal" in funcs[func]:
@@ -301,8 +309,12 @@ def processDropFunc(m, drops):
 	else:	
 		chest = funcs[func].split("GetUnitTypeId")[1].split("'")[1]
 
-	if len(m.group(1)) == 4:	
-		drops[chest].append({"id": m.group(1), "chance": float(chance)})	
+	id = m.group(1)
+	if "'" in id:
+		id = id.split("'")[1]
+
+	if len(id) == 4:	
+		drops[chest].append({"id": id, "chance": float(chance)})	
 	else:
 		raise Exception("error", chest, chance, func, line, m.group(1))
 
@@ -607,20 +619,22 @@ def processProcs(missing):
 	checkSeenUnseen(unseen, seen, "seen")			
 
 	toCheck = {
-		"30000.00 + ( GetHeroInt(udg_hero[ID], true) * udg_Int_Tick_Item_Real[ID] )": 8,
-		"30000.00 + ( GetHeroAgi(udg_hero[ID], true) * udg_Attack_Item_Real[ID]": 20,
-		"30000.00 + ( GetHeroAgi(udg_hero[ID], true) + GetHeroStr(udg_hero[ID], true) ) * udg_Attack_Item_Real[ID]": 16,
-		"30000.00 + ( GetHeroStr(udg_hero[ID], true) * udg_Attack_Item_Real[ID] )": 12,
-		"30000.00 + ( ( GetHeroInt(udg_hero[ID], true) + GetHeroStr(udg_hero[ID], true) ) * udg_Str_Int_Tick_Item_Real[ID]": 8
+		"30000 + GetHeroInt(udg_hero[ID], true) * udg_Int_Tick_Item_Real[ID]": 8,
+		"30000 + GetHeroAgi(udg_hero[ID], true) * udg_Attack_Item_Real[ID]": 20,
+		"30000 + ( ( GetHeroAgi(udg_hero[ID], true) + GetHeroStr(udg_hero[ID], true) ) * udg_Attack_Item_Real[ID]": 16,
+		"30000 + GetHeroStr(udg_hero[ID], true) * udg_Attack_Item_Real[ID]": 12,
+		"30000 + ( GetHeroInt(udg_hero[ID], true) + GetHeroStr(udg_hero[ID], true) ) * udg_Str_Int_Tick_Item_Real[ID]": 8
 	}
 
 	for text in toCheck:
 		idx = code.find(text)
-		idx = code.rfind("GetRandomInt(1, 100) <=", 0, idx)
-		chance = code[idx:idx + 30].split("<=")[1].split(")")[0].strip()
-
-		if chance != str(toCheck[text]):
-			print("wrong chance", chance, toCheck[text])
+		if idx == -1:
+			print(text, "not found")
+		else:
+			idx = code.rfind("GetRandomInt(1, 100) <=", 0, idx)
+			chance = code[idx:idx + 50].split("<=")[1].split("then")[0].strip()
+			if chance != str(toCheck[text]):
+				print("wrong chance", chance, toCheck[text], text)
 
 
 def checkSeenUnseen(s1, s2, msg):
@@ -711,6 +725,8 @@ def assertItemScaling(itemId, text, scaling, qty = 1, percentChance = 0, untilFu
 									funcCodes.append(code[code.find("function " + m.group(1)): code.find("endfunction", code.find("function " + m.group(1)))])
 
 					else:		
+						if itemId == "I0BE":
+							print(funcName)
 						for m in re.finditer("if.*" + funcName + "\(\)", code):
 							funcCode = code[m.start():code.find("endfunction" if untilFunctionEnd else "endif", m.start())]
 							funcName = code[code[:m.start()].rfind("function "):code.find("endfunction", m.start())].split("function ")[1].split(" ")[0].replace("_Conditions", "_Actions")
@@ -730,6 +746,8 @@ def assertItemScaling(itemId, text, scaling, qty = 1, percentChance = 0, untilFu
 			lastRun = [itemId, text, funcCodes]		
 
 	for funcCode in funcCodes:
+		if itemId == "I0BE":
+			print(funcCode)
 		if scaling in funcCode:
 			count += 1
 			if count == qty:
@@ -823,7 +841,7 @@ def assertCorrectScalings():
 
 	assertItemScaling("I0CK", "'I0CK') == true", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.40")
 
-	if "call TriggerRegisterTimerEventPeriodic(gg_trg_Timer_20Sec, 28.00)" not in code:
+	if "call TriggerRegisterTimerEventPeriodic(gg_trg_Timer_28Sec, 28.00)" not in code:
 		print("timer changed")
 
 	assertItemScaling("I0CJ", "GetItemTypeId(GetManipulatedItem()) == 'I0CJ'", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.60")	
@@ -836,10 +854,6 @@ def assertCorrectScalings():
 	assertItemScaling("I088", "GetItemTypeId(GetManipulatedItem()) == 'I088'", "set udg_Shield_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=15000.00")
 
 	assertItemScaling("I08G", "GetItemTypeId(GetManipulatedItem()) == 'I08G'", "set udg_Shield_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=25000.00")
-
-	assertItemScaling("I0BE", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BE')", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.30", 1, 40)
-	assertItemScaling("I0BE", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BE')", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.12")
-	assertItemScaling("I0BE", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BE')", "call s__TrigVariables_SleepForStageNext(GlobalTV,120.00)")
 
 	assertItemScaling("I0AH", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0AH'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 7.50")
 	assertItemScaling("I0AH", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0AH'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) * 5.50", 2)
@@ -915,15 +929,6 @@ def assertCorrectScalings():
 	assertItemScaling("I0NJ", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0NJ'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 150.00", depth = 2)
 	assertItemScaling("I0QK", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0QK'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 200.00", depth = 2)
 
-	assertItemScaling("I0BD", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BD'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.30")
-	assertItemScaling("I0BD", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BD'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.08")
-	assertItemScaling("I0BD", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BD'", "call s__TrigVariables_SleepForStageNext(GlobalTV,120.00)")
-
-	assertItemScaling("I080", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I080'", "I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) * 0.28")
-	assertItemScaling("I080", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I080'", "call s__TrigVariables_SleepForStageNext(GlobalTV,20.00)")
-	assertItemScaling("I080", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I080'", "I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) * 40.00")
-	assertItemScaling("I080", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I080'", "GetUnitStateSwap(UNIT_STATE_LIFE, s__TrigVariables_unit0[GlobalTV]) + 20000.00")
-
 	assertItemScaling("I081", "GetItemTypeId(GetManipulatedItem()) == 'I081'", "set udg_Gaho_Item_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=700.00")
 	assertItemScaling("I081", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I081'", "call s__TrigVariables_Setreal(GlobalTV,0 , 2.00)", depth = 2)
 	assertItemScaling("I0I9", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0I9'", "call s__TrigVariables_Setreal(GlobalTV,0 , 2.50)", depth = 2)
@@ -933,10 +938,6 @@ def assertCorrectScalings():
 	assertItemScaling("I09Z", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I09Z'", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, GetTriggerUnit()) * 0.35")
 
 	assertItemScaling("I03C", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I03C'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.30")
-
-	assertItemScaling("I0BR", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BR'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.30" , 1, 40)
-	assertItemScaling("I0BR", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BR'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.16")
-	assertItemScaling("I0BR", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0BR'", "call s__TrigVariables_SleepForStageNext(GlobalTV,120.00)")
 
 	assertItemScaling("I0BS", "GetItemTypeId(GetManipulatedItem()) == 'I0BS'", "set udg_Shield_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=33000.00")
 
@@ -956,8 +957,8 @@ def assertCorrectScalings():
 
 	assertItemScaling("I0D3", "GetItemTypeId(GetManipulatedItem()) == 'I0D3'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetTriggerUnit()) * 0.30")
 
-	assertItemScaling("I0D8", "GetEventDamageSource(), 'I0D8'", "0.10 * 0.08")
-	assertItemScaling("I0D8", "GetEventDamageSource(), 'I0D8'", "16000.00 + ( 16.00 * I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetEventDamageSource()))], true))")
+	assertItemScaling("I0D8", "UnitHasItemOfTypeBJ(D, 'I0D8')", "GetUnitState(D, UNIT_STATE_MAX_LIFE) * 0.08")
+	assertItemScaling("I0D8", "UnitHasItemOfTypeBJ(D, 'I0D8')", "16000 + 16 * GetHeroAgi(udg_hero[ID]")
 
 	assertItemScaling("SEVERAL", "if ( not ( udg_Fire_Wepon[GetForLoopIndexA()] >= 1 ) ) then", "20000.00 + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, udg_hero[GetForLoopIndexA()], true)) * I2R(udg_Fire_Wepon[GetForLoopIndexA()]")
 
@@ -980,8 +981,8 @@ def assertCorrectScalings():
 	assertItemScaling("I039", "GetItemTypeId(GetManipulatedItem()) == 'I039'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, s__TrigVariables_unit0[GlobalTV]) * 0.02")
 	assertItemScaling("I039", "GetItemTypeId(GetManipulatedItem()) == 'I039'", "set udg_Fire_Wepon[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=14")
 
-	assertItemScaling("I04F", "GetEventDamageSource(), 'I04F'", "GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetEventDamageSource()) * ( 0.10 * 0.08")
-	assertItemScaling("I04F", "GetEventDamageSource(), 'I04F'", "16000.00 + ( 20.00 * I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, udg_hero[GetConvertedPlayerId(GetOwningPlayer(GetEventDamageSource()))], true)) ")
+	assertItemScaling("I04F", "UnitHasItemOfTypeBJ(D, 'I04F')", "GetUnitState(D, UNIT_STATE_MAX_LIFE) * 0.08")
+	assertItemScaling("I04F", "UnitHasItemOfTypeBJ(D, 'I04F')", "16000 + 20 * GetHeroAgi(udg_hero[I")
 
 	assertItemScaling("I0EC", "'I0EC') == true", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.55")
 
@@ -995,17 +996,17 @@ def assertCorrectScalings():
 
 	assertItemScaling("I0EN", "GetItemTypeId(GetManipulatedItem()) == 'I0EN'", "call SetUnitManaPercentBJ(GetTriggerUnit(), 100)", depth = 2)
 
-	assertItemScaling("I0FM", "if UnitHasItemOfTypeBJ(udg_hero[ID], 'I0FM') then", "200000.00 + ( 60.00 * ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, udg_hero[ID], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, udg_hero[ID], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_INT, udg_hero[ID], true))", untilFunctionEnd=True)
+	assertItemScaling("I0FM", "UnitHasItemOfTypeBJ(udg_hero[ID], 'I0FM')", "200000 + 60 * GetHeroStr(udg_hero[ID], true) + GetHeroAgi(udg_hero[ID], true) + GetHeroInt(udg_hero[ID], true))", untilFunctionEnd=True)
 
-	assertItemScaling("I0FA", "UnitHasItemOfTypeBJ(GetEventDamageSource(), 'I0FA'", "I2R(GetHeroStatBJ(bj_HEROSTAT_INT, GetEventDamageSource(), true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetEventDamageSource(), true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, GetEventDamageSource(), true)) ) ) * 80.00 ) + 300000.00")
+	assertItemScaling("I0FA", "UnitHasItemOfTypeBJ(D, 'I0FA')", "300000.0 + 80.0 * I2R(GetHeroStr(D, true) + GetHeroAgi(D, true) + GetHeroInt(D, true))")
 		
-	assertItemScaling("SEVERAL", "if udg_Int_Tick_Item_Real[ID] >= 1.00 then", "if ( GetRandomInt(1, 100) <= 8 ) then")
-	assertItemScaling("SEVERAL", "if udg_Int_Tick_Item_Real[ID] >= 1.00 then", "( 30000.00 + ( GetHeroInt(udg_hero[ID], true) * udg_Int_Tick_Item_Real[ID]")
-	assertItemScaling("SEVERAL", "if udg_Str_Int_Tick_Item_Real[ID] >= 1.00 then", "if ( GetRandomInt(1, 100) <= 8 ) then")
-	assertItemScaling("SEVERAL", "if udg_Str_Int_Tick_Item_Real[ID] >= 1.00 then", "30000.00 + ( ( GetHeroInt(udg_hero[ID], true) + GetHeroStr(udg_hero[ID], true) ) * udg_Str_Int_Tick_Item_Real[ID]")
+	assertItemScaling("SEVERAL", "if udg_Int_Tick_Item_Real[ID] >= 1.0 then", "if GetRandomInt(1, 100) <= 8 then")
+	assertItemScaling("SEVERAL", "if udg_Int_Tick_Item_Real[ID] >= 1.0 then", "30000 + GetHeroInt(udg_hero[ID], true) * udg_Int_Tick_Item_Rea")
+	assertItemScaling("SEVERAL", "if udg_Str_Int_Tick_Item_Real[ID] >= 1.0 then", "if GetRandomInt(1, 100) <= 8 then")
+	assertItemScaling("SEVERAL", "if udg_Str_Int_Tick_Item_Real[ID] >= 1.0 then", "30000 + ( GetHeroInt(udg_hero[ID], true) + GetHeroStr(udg_hero[ID], true) ) * udg_Str_I")
 
 
-	assertItemScaling("SEVERAL", "if ( udg_Attack_Item[ID] == true )", "and ( GetRandomInt(1, 100) <= 12 ) then")
+	assertItemScaling("SEVERAL", "if udg_Attack_Item[ID]", "and GetRandomInt(1, 100) <= 20")
 
 	assertItemScaling("I0I9", "GetItemTypeId(GetManipulatedItem()) == 'I0I9'", "set udg_Gaho_Item_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=1000.00")
 
