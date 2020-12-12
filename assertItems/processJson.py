@@ -52,7 +52,7 @@ for abilityId in abilities:
 		ability["armor"] = int(ability["DataA1"])
 	elif ability["code"] == 'AImm':
 		ability["mp"] = int(ability["DataA1"])
-	elif ability["code"] == 'Arel':
+	elif ability["code"] in ['Arel', 'A04T']:
 		ability["hp_regen"] = int(ability["DataA1"])
 	elif ability["code"] == 'AOcr':
 		ability["critical_hit"] = float(ability["DataB1"])	

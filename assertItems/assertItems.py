@@ -55,6 +55,8 @@ def assertCorrectCraftings():
 			qty = 0
 			recipe = []
 			info = line.replace("(", "").replace(")", "").split(",")[1:]
+			idQty = None
+
 			if "udg" in info[0]:
 				info = info[1:]
 
@@ -66,9 +68,11 @@ def assertCorrectCraftings():
 					for i in range(0, qty):
 						recipe.append(id)
 					id = None	
-			
+					if idQty is None:
+						idQty = qty
+
 			if len(recipe) > 1:
-				recipes[recipe[0]].append({"items": recipe[1:], "chance": eval(info[-1].split("//")[0])})
+				recipes[recipe[0]].append({"items": recipe[idQty:], "chance": eval(info[-1].split("//")[0]), "qty": idQty})
 	
 	for itemID in recipes:
 		if itemID in itemsGuide["craftings"]:
@@ -81,7 +85,7 @@ def assertCorrectCraftings():
 				print("guide", guideRecipes)
 			else:
 				for jassRecipe, guideRecipe in zip(jassRecipes, guideRecipes):
-					if jassRecipe["items"] != guideRecipe["items"] or jassRecipe["chance"] != guideRecipe["chance"]:
+					if jassRecipe["items"] != guideRecipe["items"] or jassRecipe["chance"] != guideRecipe["chance"] or jassRecipe["qty"] != guideRecipe["qty"]:
 						print("different crafting in", itemID)
 						print("jass", jassRecipe)
 						print("guide", guideRecipes)	
@@ -140,10 +144,13 @@ def funcBefore(idx, depth = 1, process=True):
 		newIdx = code.rfind("\n", 0, idx)
 		line = code[newIdx:idx]
 
-		if "endif" in line:
+		if line.strip().startswith('//'):
+			pass
+		elif "endif" in line:
 			depth += 1
 		elif " if" in line or "\nif" in line or "elseif" in line or "function" in line:
 			depth -=1
+
 		idx = newIdx	
 
 		if depth > 2:
@@ -212,6 +219,8 @@ def processDropFunc(m, drops):
 		elif "Trig_Point".lower() in func.lower(): #sell item
 			return
 		elif func.startswith("Trig_Exchange_God_Item"): #exchange
+			return
+		elif func.startswith("Trig_scvscvgo_Func001C"):
 			return
 		elif func in funcs:
 			if "udg_Point" in funcs[func]: #buy item
@@ -295,7 +304,11 @@ def processDropFunc(m, drops):
 		chest = "n03Z"
 	elif func.startswith("Trig_Item_Drop_Purify_GOD"):
 		chest = "n04Q"
-	elif "udg_Chiruno_P_Unit" in funcs[func] or m.group(1) in ["I0JV", "I012"] or func in ["Trig_sdfsdf_Actions"] or func.startswith("Trig_LoadTyping_Func"):
+	elif func.startswith("Trig_Item_Drop_DevilGOD_King"):
+		chest = "n05P"
+	elif func.startswith("Trig_Item_Drop_Dimension_GOD"):
+		chest = "n062"
+	elif "udg_Cirno_P_Unit" in funcs[func] or m.group(1) in ["I0JV", "I012"] or func in ["Trig_sdfsdf_Actions"] or func.startswith("Trig_LoadTyping_Func"):
 		return
 	elif "GetRandomInt" in funcs[func]:
 		chest, chance = resolveRandom(m, funcs[func], "GetUnitTypeId[^']*'(....)'")
@@ -318,12 +331,20 @@ def processDropFunc(m, drops):
 	else:
 		raise Exception("error", chest, chance, func, line, m.group(1))
 
+import decimal
+
 def byId(drops):
 	s = dict()
 	for d in drops:
 		if d["id"] not in s:
 			s[d["id"]] = []
-		s[d["id"]].append("%.2f" % float(d["chance"]))
+		dic = dict(d)
+		dic["chance"] = "%.2f" % (float(d["chance"]) + 10**-10)
+		if "l__r" in dic and dic["l__r"] == None:
+			del dic["l__r"]
+		if "l__r" in dic:
+			dic["l__r"] = "%.2f" % float(dic["l__r"]) 
+		s[d["id"]].append(dic)
 	return s
 
 def assertCorrectDropRates():
@@ -332,6 +353,16 @@ def assertCorrectDropRates():
 	drops = defaultdict(list)	
 
 	for m in re.finditer("call ITD[^']*'(....)'\s*,\s*([^\)]*)", code):
+		l__r = None
+
+		if "* l__r" in m.group(2):
+			idx = code.rfind('set l__r', m.start() - 1000, m.start())
+			lr_increase = code[idx:m.start()].split("\n")[0].split("=")[1]
+			if lr_increase != "l__r + ( ( udg_Boos18_Play_Int - 4 ) * 0.12 )":
+				print("lr_increase changed")
+
+			l__r = float(code[code.rfind('set l__r',  m.start() - 1000, idx):idx].split("\n")[0].split("=")[1])
+
 		id, chance = m.group(1), eval(m.group(2).strip("( "))
 		func = funcBefore(m.start())
 
@@ -344,7 +375,7 @@ def assertCorrectDropRates():
 
 		chest = re.search("GetManipulatedItem[^']*'(....)'", funcCode).group(1)
 
-		drops[chest].append({"id": id, "chance": chance})
+		drops[chest].append({"id": id, "chance": chance, "l__r": l__r})
 	
 	for m in re.finditer("call itemdrop.*'(....)'.*,\s*(\d+\.?\d*).*'(....)'", code):
 		drops[m.group(3)].append({"id": m.group(1), "chance": float(m.group(2))})
@@ -363,8 +394,12 @@ def assertCorrectDropRates():
 			for id in jass:
 				if id not in gu:
 					print("missing in guide", id, jass[id],  "at chest ", chest)
-				elif gu[id] != jass[id]:
-					print("different chances", id, gu[id], "(guide)", jass[id], chest)
+				elif len(jass[id]) != len(gu[id]):
+					print("different lengths", jass[id], gu[id])
+				else:
+					for j, g in zip(jass[id], gu[id]):
+						if j["chance"] != g["chance"] or (("l__r" in j) != ("l__r" in g)) or ("l__r" in j and (g["l__r"] != j["l__r"])):
+							print("different", id, g, "(guide)", j, chest)
 			for id in gu:
 				if id not in jass:
 					print(chest, " does not drop ", id)
@@ -485,7 +520,7 @@ def processDamage2(missing):
 			'pd': 100,
 			'mps': 100,
 			'hpup': 100,
-			'ps': 100,
+			'ps': 1000,
 			'strup' : 100,
 			'agiup' : 100,
 			'intup' : 100
@@ -499,9 +534,10 @@ def processDamage2(missing):
 
 		stat = stats[s]
 		multiplier = 1 if s not in multipliers else multipliers[s]
+		divisor = 10 if s == 'ps' else 1
 
 		damage = float(line.split(",")[-1].split(")")[0])
-		damage = round(damage * multiplier) if multiplier != 1 else damage
+		damage = (round(damage * multiplier) if multiplier != 1 else damage) / divisor
 		processStat(stat, line , damage, id, missing)
 
 
@@ -777,8 +813,8 @@ def assertCorrectScalings():
 
 	assertItemScaling("I06N", "if", "set udg_Str_Int_Tick_Item_Real[IT]=20")
 	
-	assertItemScaling("I06K", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I06K')", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 100.00")
-	assertItemScaling("I06K", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I06K')", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 70.00")
+	assertItemScaling("I06K", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I06K')", "150000.00 + ( s__TrigVariables_real1[GlobalTV] * 100.00")
+	assertItemScaling("I06K", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I06K')", "150000.00 + ( s__TrigVariables_real1[GlobalTV] * 70")
 
 	assertItemScaling("I06P", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I06P')", "300000.00 + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 120.00")
 
@@ -813,8 +849,8 @@ def assertCorrectScalings():
 	assertItemScaling("I084", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I084')", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 5.00")
 	assertItemScaling("I084", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I084'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) * 3.50", 2)
 
-	assertItemScaling("I07Y", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I07Y')", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 160.00")
-	assertItemScaling("I07Y", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I07Y')", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 120.00")
+	assertItemScaling("I07Y", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I07Y')", "150000.00 + ( s__TrigVariables_real1[GlobalTV] * 160.00")
+	assertItemScaling("I07Y", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I07Y')", "150000.00 + ( s__TrigVariables_real1[GlobalTV] * 120.00")
 
 
 	assertItemScaling("I08R", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I08R')", "300000.00 + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 150.00")
@@ -922,12 +958,14 @@ def assertCorrectScalings():
 
 	assertItemScaling("I045", "'I045') == true", "GetUnitStateSwap(UNIT_STATE_MAX_MANA, udg_hero[s__TrigVariables_integer0[GlobalTV]]) * 0.30")
 
-	assertItemScaling("I07F", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I07F'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 70.00", depth = 2)
-	assertItemScaling("I0IC", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IC'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 95.00", depth = 2)
-	assertItemScaling("I0ID", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0ID'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 110.00", depth = 2)
-	assertItemScaling("I0IE", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IE'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 130.00", depth = 2)
-	assertItemScaling("I0NJ", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0NJ'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 150.00", depth = 2)
-	assertItemScaling("I0QK", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0QK'", "150000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 200.00", depth = 2)
+	assertItemScaling("I07F", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I07F'", "150000.00 + ( s__TrigVariables_real0[GlobalTV] * 70.00", depth = 2)
+	assertItemScaling("I0IC", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IC'", "150000.00 + ( s__TrigVariables_real0[GlobalTV] * 95.00", depth = 2)
+	assertItemScaling("I0ID", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0ID'", "150000.00 + ( s__TrigVariables_real0[GlobalTV] * 110.00", depth = 2)
+	assertItemScaling("I0IE", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0IE'", "150000.00 + ( s__TrigVariables_real0[GlobalTV] * 130.00", depth = 2)
+	assertItemScaling("I0NJ", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0NJ'", "150000.00 + ( s__TrigVariables_real0[GlobalTV] * 150.00", depth = 2)
+	assertItemScaling("I0QK", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0QK'", "150000.00 + ( s__TrigVariables_real0[GlobalTV] * 200.00", depth = 2)
+	assertItemScaling("I0SI", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0SI'", "150000.00 + ( s__TrigVariables_real0[GlobalTV] * 220.00", depth = 2)
+	
 
 	assertItemScaling("I081", "GetItemTypeId(GetManipulatedItem()) == 'I081'", "set udg_Gaho_Item_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=700.00")
 	assertItemScaling("I081", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I081'", "call s__TrigVariables_Setreal(GlobalTV,0 , 2.00)", depth = 2)
@@ -1031,19 +1069,19 @@ def assertCorrectScalings():
 	assertItemScaling("I0P3", "UnitHasItemOfTypeBJ(GetTriggerUnit(), 'I0P3'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, GetTriggerUnit(), true)) * 10.00", depth = 2)
 	assertItemScaling("I0P3", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0P3'", "I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) * 6.70", depth = 2)
 
-	assertItemScaling("I09D", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09D')", "300000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 200.00")
+	assertItemScaling("I09D", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09D')", "300000.00 + ( s__TrigVariables_real3[GlobalTV] * 200.00")
 
-	assertItemScaling("I09E", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09E')", "340000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 225.00")
+	assertItemScaling("I09E", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09E')", "340000.00 + ( s__TrigVariables_real3[GlobalTV] * 225.00")
 
-	assertItemScaling("I09F", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09F')", "380000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 250.00")
+	assertItemScaling("I09F", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09F')", "380000.00 + ( s__TrigVariables_real3[GlobalTV] * 250.00")
 
-	assertItemScaling("I09G", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09G')", "420000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 280.00")
+	assertItemScaling("I09G", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I09G')", "420000.00 + ( s__TrigVariables_real3[GlobalTV] * 280.00")
 
-	assertItemScaling("I0HF", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0HF')", "420000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 350.00")
+	assertItemScaling("I0HF", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0HF')", "420000.00 + ( s__TrigVariables_real3[GlobalTV] * 350.00")
 
-	assertItemScaling("I0MK", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0MK')", "420000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 380.00")
+	assertItemScaling("I0MK", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0MK')", "420000.00 + ( s__TrigVariables_real3[GlobalTV] * 380.00")
 
-	assertItemScaling("I0P8", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0P8')", "call GroupimpactDamage(s__TrigVariables_unit15[GlobalTV] , ( 420000.00 + ( ( I2R(GetHeroStatBJ(bj_HEROSTAT_INT, s__TrigVariables_unit0[GlobalTV], true)) + ( I2R(GetHeroStatBJ(bj_HEROSTAT_STR, s__TrigVariables_unit0[GlobalTV], true)) + I2R(GetHeroStatBJ(bj_HEROSTAT_AGI, s__TrigVariables_unit0[GlobalTV], true)) ) ) * 420.00")
+	assertItemScaling("I0P8", "UnitHasItemOfTypeBJ(s__TrigVariables_unit0[GlobalTV], 'I0P8')", "call GroupimpactDamage(s__TrigVariables_unit15[GlobalTV] , ( 420000.00 + ( s__TrigVariables_real3[GlobalTV] * 420.00")
 
 
 
@@ -1053,6 +1091,7 @@ getItemData()
 loadItems()
 
 assertCorrectDropRates()
+
 assertCorrectBonusDamage()
 
 assertCorrectCraftings()
