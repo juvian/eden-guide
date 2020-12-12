@@ -276,6 +276,10 @@ let units = {
   "n05Y": {
     "label": "Heavenly King",
     "k_label": "천신왕"
+  },
+  "n062": {
+    "label": "Dimensional Barrage",
+    "k_label": "차원 안정기"
   }
 }
 

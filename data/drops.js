@@ -1,9 +1,10 @@
 module.exports.chests = [] 
 
 class ItemDrop {
-  constructor(id, chance) {
+  constructor(id, chance, l__r) {
     this.id = id;
     this.chance = Number((chance || 100).toFixed(2));
+    if (l__r) this.l__r = l__r;
   }
 }
 
@@ -14,8 +15,8 @@ class Chest {
     module.exports.chests.push(this);
   }
   
-  add(id, chance) {
-    this.drops.push(new ItemDrop(id, chance));
+  add(id, chance, l__r) {
+    this.drops.push(new ItemDrop(id, chance, l__r));
     return this;
   }
   
@@ -125,7 +126,6 @@ new Chest("I0AB")
   .add("I0FB", 6)
   .add("I0LO", 6)
   .add("I0AQ", 15)
-  .add("I0AB", 15)
   .add("I0A6", 8.5)
   .add("I0BU", 8)
   .addItems(udg_Acangel_Item_S, 9)
@@ -156,8 +156,6 @@ new Chest("I037")
   .add("I0DY", 4)
   .add("I035", 8)
   .add("I0DS", 8)
-  .add("I0KY", 15)
-  .add("I037", 15)
   .addItems(udg_AcDevill_Epic, 10)
   .addItems(udg_AcDevill_Nomal, 91);
 
@@ -174,7 +172,7 @@ new Chest("I035")
   .add("I0DT")
   .addItems(udg_AcDevill_Item02);
 
-let udg_GOD_Item_Int = ["I0IT", "I0IU", "I0IV", "I0IW", "I0J4", "I0JL", "I0J5", "I0J8", "I0J1", "I0JD", "I0J9", "I0JI", "I0JH", "I0J7", "I0J3", "I0J6", "I0JE", "I0J2", "I0JC", "I0JK", "I0JA", "I0JJ", "I0JM", "I0JF", "I0JB", "I0JG", "I0JN", "I0IZ", "I0KB", "I0D5", "I0PY"]
+let udg_GOD_Item_Int = ["I0IT", "I0IU", "I0IV", "I0IW", "I0J4", "I0JL", "I0J5", "I0J8", "I0J1", "I0JD", "I0J9", "I0JI", "I0JH", "I0J7", "I0J3", "I0J6", "I0JE", "I0J2", "I0JC", "I0JK", "I0JA", "I0JJ", "I0JM", "I0JF", "I0JB", "I0JG", "I0JN", "I0IZ", "I0KB", "I0D5", "I0PY", "I0LJ"]
 let udg_GOD02_Item_Int = ["I0KM", "I0KN", "I0KO", "I0KP", "I0KQ", "I0KR", "I0KS", "I0KT", "I0KU", "I0KV", "I0KW", "I03F", "I0NQ"];
 let udg_GOD02_Item_Int2 = ["I0L1", "I0L2", "I0L3", "I0L4", "I0L5", "I0L6", "I0L7", "I0L8", "I0L9", "I0LA", "I0LB", "I0LC", "I0LD", "I0L0", "I0NU"]
 let udg_Event_Item_Int = ["I034", "I06I", "I06Z", "I065", "I05Y", "I06A", "I07K", "I033", "I0CR", "I04H", "I07X"];
@@ -182,6 +180,8 @@ let udg_Masin_Item = ["I0OL", "I0OP", "I0OO", "I0OM", "I0ON", "I0OJ", "I0OK", "I
 let udg_Masin_Item02 = ["I0OW", "I0P8", "I0PA", "I0OX", "I0OY", "I0OZ", "I0P0", "I0P1", "I0P2", "I0OV", "I0P3", "I0P4", "I0P5", "I0P6", "I0P7", "I0P9", "I0PB", "I0PC", "I0PD", "I0PL", "I0PS", "I0PT"];
 let udg_AcAngel_GOD_Item1 = ['I0QB','I0Q2','I0QC','I0Q9','I0Q3','I0Q4','I0Q5','I0QA','I0Q6','I0Q7','I0Q8','I0Q1','I0QD']
 let udg_AcAngel_GOD_Item2 = ['I0QH','I0QL','I0QI','I0QJ','I0QK','I0QQ','I0QP','I0QO','I0QS','I0QR'];
+let udg_Dimension_Item = ["I0ST", "I0SO", "I0SU", "I0SP", "I0SS", "I0SV", "I0SQ", "I0SR", "I0TE", "I0TG"];
+let udg_Dimension_Item02 = ["I0T0", "I0T2", "I0SW", "I0SX", "I0SY", "I0SZ", "I0T1", "I0TD", "I0TF", "I0TH", "I0TC"];
 
 new Chest("I0IX").addItems(udg_GOD_Item_Int);
 
@@ -196,6 +196,10 @@ new Chest("I0PE").add("I0OS").addItems(udg_Masin_Item02);
 new Chest("I0QF").add("I0QG").addItems(udg_AcAngel_GOD_Item1);
 
 new Chest("I0QM").add("I0QG").addItems(udg_AcAngel_GOD_Item2);
+
+new Chest("I0TB").add("I0T8").addItems(udg_Dimension_Item);
+
+new Chest("I0TI").add("I0T8").addItems(udg_Dimension_Item02);
 
 new Chest("I05W")
   .add('I03A' , 14)
@@ -364,31 +368,22 @@ new Chest("I0M7")
 new Chest("I0KY")
   .add("I04B", 3)
   .add("I0KX", 6)
-  .add("I05W", 20)
-  .add("I05X", 20)
-  .add("I06L", 20)
-  .add("I06Y", 20)
-  .add("I071", 20)
-  .add("I072", 20)
-  .add("I076", 20)
-  .add("I07L", 20)
-  .add("I086", 20)
-  .add("I0HA", 15)
-  .add("I0OR", 15)
-  .add("I0QE", 15)
-  .add("I0KL", 15)
-  .add("I0KJ", 15)
   .add("I0LE", 6);
 
 new Chest("I0OR")
-  .add("I0OQ", 5)
-  .add("I0PE", 5)
-  .add("I0OT", 1);
+  .add("I0OQ", 3.5, 0.7)
+  .add("I0PE", 3.5, 0.7)
+  .add("I0OT", 1.4, 0.7);
 
 new Chest("I0QE")
   .add("I0QF", 5)
   .add("I0QM", 5)
   .add("I0QN", 1);
+
+new Chest("I0TA")
+  .add("I0TI", 5)
+  .add("I0TB", 5)
+  .add("I0T9", 2);
 
 new Unit("n00G")
   .add("I021", 100)
@@ -666,4 +661,6 @@ new Unit("n030").add("I0KJ");
 
 new Unit("n05Z").add("I0Q0");
 
-new Unit("n05Y").add("I0QE").add("I0IY")
+new Unit("n05Y").add("I0QE").add("I0IY");
+
+new Unit("n062").add("I0TA");
