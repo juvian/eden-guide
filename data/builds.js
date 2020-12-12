@@ -219,6 +219,15 @@ module.exports.builds = {
       ],
       "type": "int",
       "id": "H08C"
+    },
+    "escanor": {
+      "images": [
+        "https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2Ftheo-murgan-escanorprocess07.jpg?v=1607749340381",
+        "https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2Foriginal.jpg?v=1607749335596",
+        "https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2F40C8CB34-90D1-492B-B791-52DBC0B08AF0-e1588589382544.jpeg?v=1607749322079"
+      ],
+      "type": "str",
+      "id": "E0FD"
     }
 }
 

@@ -133,9 +133,9 @@ module.exports = function (app) {
   
 
   app.get("/test", middlewares.authenticate, middlewares.isAdmin, function(req, res) {
-    
+
   })
-  //"선택"
+  
   
   app.post("/getCode", function (req, res) {
     var code = new CodeLoader();

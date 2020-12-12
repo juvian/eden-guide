@@ -1,9 +1,10 @@
 module.exports.craftings = [];
 
 class Craft {
-  constructor(id, chance) {
+  constructor(id, chance, qty) {
     this.id = id;
     this.chance = chance || 100;
+    this.qty = qty || 1;
     this.items = [];
     module.exports.craftings.push(this);
   }
@@ -26,24 +27,6 @@ new Craft('I0A7', 100.0).add(["I065"]);
 new Craft('I0A7', 100.0).add(["I06A"]);
 
 
-new Craft('I0A7', 100.0).add(["I05Y"]);
-
-
-new Craft('I0A7', 100.0).add(["I034"]);
-
-
-new Craft('I0A7', 100.0).add(["I065"]);
-
-
-new Craft('I0A7', 100.0).add(["I06A"]);
-
-
-new Craft('I0A8', 100.0).add(["I06Z"]);
-
-
-new Craft('I0A8', 100.0).add(["I06I"]);
-
-
 new Craft('I0A8', 100.0).add(["I06Z"]);
 
 
@@ -56,10 +39,16 @@ new Craft('I0A9', 100.0).add(["I04H"]);
 new Craft('I0A9', 100.0).add(["I033"]);
 
 
-new Craft('I0A9', 100.0).add(["I04H"]);
+new Craft('I0A9', 100.0).add(["I07K"]);
 
 
-new Craft('I0A9', 100.0).add(["I033"]);
+new Craft('I0A9', 100.0).add(["I07X"]);
+
+
+new Craft('I0A9', 100.0).add(["I0CR"]);
+
+
+new Craft('I0A9', 100.0, 2).add(["I0EA"]);
 
 
 new Craft('I0EG', 100.0).add(["I0A3", "I0LI", "I0DY", "I0FB", "I0A9", "I0A9", "I0LO"]);
@@ -1258,3 +1247,182 @@ new Craft('I0PR', 100.0).add(["I0PQ", "I04B", "I04I"]);
 
 
 new Craft('I0PK', 100.0).add(["I0PJ", "I04B", "I04I"]);
+
+new Craft('I0QZ', 100.0).add(["I0OW", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0R0', 100.0).add(["I0P8", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0R1', 100.0).add(["I0PL", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0R2', 100.0).add(["I0PA", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0R3', 100.0).add(["I0OX", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0R4', 100.0).add(["I0OY", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0R5', 100.0).add(["I0OZ", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0R6', 100.0).add(["I0P0", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0R7', 100.0).add(["I0P1", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0R8', 100.0).add(["I0P2", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0R9', 100.0).add(["I0PT", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0RA', 100.0).add(["I0P3", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0RB', 100.0).add(["I0OV", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0RC', 100.0).add(["I0P4", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0RD', 100.0).add(["I0P5", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0RE', 100.0).add(["I0P6", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0RF', 100.0).add(["I0P7", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0RG', 100.0).add(["I0PS", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0RI', 100.0).add(["I0P9", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0RH', 100.0).add(["I0PB", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0RJ', 100.0).add(["I0PC", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0RK', 100.0).add(["I0PD", "I0OT", "I0OT", "I0QW"]);
+
+
+new Craft('I0RS', 100.0).add(["I0OD", "I0OT", "I0OT", "I0QY"]);
+
+
+new Craft('I0RT', 100.0).add(["I0OG", "I0OT", "I0OT", "I0QY"]);
+
+
+new Craft('I0RU', 100.0).add(["I0OC", "I0OT", "I0OT", "I0QY"]);
+
+
+new Craft('I0RV', 100.0).add(["I0OE", "I0OT", "I0OT", "I0QY"]);
+
+
+new Craft('I0RW', 100.0).add(["I0OB", "I0OT", "I0OT", "I0QY"]);
+
+
+new Craft('I0RX', 100.0).add(["I0OI", "I0OT", "I0OT", "I0QY"]);
+
+
+new Craft('I0RY', 100.0).add(["I0OH", "I0OT", "I0OT", "I0QY"]);
+
+
+new Craft('I0RZ', 100.0).add(["I0OF", "I0OT", "I0OT", "I0QY"]);
+
+
+new Craft('I0RL', 100.0).add(["I0OP", "I0OT", "I0OT"]);
+
+
+new Craft('I0RM', 100.0).add(["I0OL", "I0OT", "I0OT"]);
+
+
+new Craft('I0RN', 100.0).add(["I0OO", "I0OT", "I0OT"]);
+
+
+new Craft('I0RO', 100.0).add(["I0OM", "I0OT", "I0OT"]);
+
+
+new Craft('I0RP', 100.0).add(["I0ON", "I0OT", "I0OT"]);
+
+
+new Craft('I0RQ', 100.0).add(["I0OJ", "I0OT", "I0OT"]);
+
+
+new Craft('I0RR', 100.0).add(["I0OK", "I0OT", "I0OT"]);
+
+
+new Craft('I0S1', 100.0).add(["I0QB", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0S2', 100.0).add(["I0Q2", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0S3', 100.0).add(["I0QC", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0S4', 100.0).add(["I0Q9", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0S5', 100.0).add(["I0Q3", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0S6', 100.0).add(["I0Q4", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0S7', 100.0).add(["I0Q5", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0S8', 100.0).add(["I0QA", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0S9', 100.0).add(["I0Q6", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0SA', 100.0).add(["I0Q7", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0SB', 100.0).add(["I0Q8", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0SC', 100.0).add(["I0Q1", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0SD', 100.0).add(["I0QD", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0SE', 100.0).add(["I0QH", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0SF', 100.0).add(["I0QL", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0SG', 100.0).add(["I0QI", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0SH', 100.0).add(["I0QJ", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0SI', 100.0).add(["I0QK", "I0QN", "I0QN", "I0QX"]);
+
+
+new Craft('I0SJ', 100.0).add(["I0QQ", "I0QN", "I0QN"]);
+
+
+new Craft('I0SK', 100.0).add(["I0QP", "I0QN", "I0QN"]);
+
+
+new Craft('I0SL', 100.0).add(["I0QO", "I0QN", "I0QN"]);
+
+
+new Craft('I0SM', 100.0).add(["I0QR", "I0QN", "I0QN"]);
+
+
+new Craft('I0SN', 100.0).add(["I0QS", "I0QN", "I0QN"]);

@@ -124,7 +124,7 @@ class Item {
   }
   
   tree (qty) {
-      qty = qty || 1;
+      qty = qty || this.materials().qty || 1;
       var materials = this.materials().items.reduce(function(all, current) {
           all[current] = all[current] || 0;
           all[current] += 1;

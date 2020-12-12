@@ -36,7 +36,7 @@ div.text-left {
     text-transform : capitalize;
 }
 
-.red, .god {
+.red {
   color : red;
 }
 
@@ -44,7 +44,7 @@ div.text-left {
   color : darkred;
 }
 
-.god {
+.god, .slot {
   color: deepskyblue;
 }
 

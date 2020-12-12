@@ -156,16 +156,16 @@ exports.translations = {
     "kor": "삭제"
   },
   "attack-str": {
-    "eng" : "Each attack has a 12% chance to deal 300000 + STR x{0} bonus damage",
-    "kor" : "기본공격시 일정확률로 대천사의 죽음의심판생성 (12% 기회 300000 + STR x{0})"
+    "eng" : "Each attack has a 12% chance to deal 30000 + STR x{0} bonus damage",
+    "kor" : "기본공격시 일정확률로 대천사의 죽음의심판생성 (12% 기회 30000 + STR x{0})"
   },
   "attack-str-agi": {
-    "eng": "Each attack has a 16% chance to deal 300000 + (STR + AGI) x{0} bonus damage",
-    "kor": "공격시 확률적으로 빛의심판 발동 (16% 기회 300000 + (STR + AGI) x{0})"
+    "eng": "Each attack has a 16% chance to deal 30000 + (STR + AGI) x{0} bonus damage",
+    "kor": "공격시 확률적으로 빛의심판 발동 (16% 기회 30000 + (STR + AGI) x{0})"
   },
   "attack-agi": {
-    "eng": "Each attack has 20% chance to deal 300000 + AGI x{0} bonus damage",
-    "kor": "공격시 확률적으로 빛의심판 발동 (20% 기회 300000 + AGI x{0})"
+    "eng": "Each attack has 20% chance to deal 30000 + AGI x{0} bonus damage",
+    "kor": "공격시 확률적으로 빛의심판 발동 (20% 기회 30000 + AGI x{0})"
   },
   "attack-str-int": {
     "eng": "Each spell has a 8% chance to deal 30000 + (STR + INT) x{0} bonus damage",
@@ -285,6 +285,10 @@ exports.translations = {
     "eng": "Revoke approval",
     "kor": "승인 취소"
   },  
+  "slot": {
+    "eng": "Special Slot Item",
+    "kor": "특수 슬롯 아이템"
+  },
   "approve": "승인하다",
   "reject": "받지 않다",
   "status": "상태",
@@ -394,6 +398,7 @@ exports.translations = {
   "satsuki": "키류인 사츠키",
   "shuvi": "슈비",
   "nezuko": "카마도 네즈코",
+  "escanor": "에스카노르",
   "god": "신",
   "Unleash": "해방",
   "unleash": "해방",
