@@ -203,10 +203,10 @@ def processDropFunc(m, drops):
 	if "'" in line:
 		id = line.split("'")[1]
 		func = funcBefore(m.start())
-		
+
 		if "GetClickedButtonBJ" in func:
 			return
-		if "Item ==" in func:
+		if "Item ==" in func or "itemId" in func:
 			chest, chance = func.split("'")[1], 100
 			return drops[chest].append({"id": id, "chance": chance})
 		elif "Random" in func:
@@ -308,6 +308,8 @@ def processDropFunc(m, drops):
 		chest = "n05P"
 	elif func.startswith("Trig_Item_Drop_Dimension_GOD"):
 		chest = "n062"
+	elif func.startswith("Trig_Dead_Func009Func002Func006C"):
+		chest = "n04E"
 	elif "udg_Cirno_P_Unit" in funcs[func] or m.group(1) in ["I0JV", "I012"] or func in ["Trig_sdfsdf_Actions"] or func.startswith("Trig_LoadTyping_Func"):
 		return
 	elif "GetRandomInt" in funcs[func]:
@@ -320,6 +322,7 @@ def processDropFunc(m, drops):
 	elif "GetItemTypeId(GetManipulatedItem())" in funcs[func]:
 		chest = funcs[func].split("GetItemTypeId(GetManipulatedItem())")[1].split("'")[1]
 	else:	
+		print(func, line)
 		chest = funcs[func].split("GetUnitTypeId")[1].split("'")[1]
 
 	id = m.group(1)
@@ -352,7 +355,7 @@ def assertCorrectDropRates():
 	
 	drops = defaultdict(list)	
 
-	for m in re.finditer("call ITD[^']*'(....)'\s*,\s*([^\)]*)", code):
+	for m in re.finditer("call ItemChance[^']*'(....)'\s*,\s*([^\)]*)", code):
 		l__r = None
 
 		if "* l__r" in m.group(2):
@@ -370,8 +373,10 @@ def assertCorrectDropRates():
 			continue
 		if "GetItemTypeId(GetManipulatedItem" in func:
 			funcCode = code[code.rfind('if GetItemTypeId(GetManipulatedItem', 0, m.start()):m.start()].split("\n")[0]
-		else:
+		elif func in funcs:
 			funcCode = 	funcs[func]
+		else:
+			return processDropFunc(m, drops)
 
 		chest = re.search("GetManipulatedItem[^']*'(....)'", funcCode).group(1)
 
@@ -385,7 +390,6 @@ def assertCorrectDropRates():
 
 	for m in re.finditer("call UnitAddItemByIdSwapped(.*)", code):
 		processDropFunc(m, drops)
-
 
 	for chest in drops.keys():
 		if chest in itemsGuide["drops"]:
@@ -612,7 +616,7 @@ def processProcs(missing):
 		'udg_Attack_Item_Real': 'attack_real',
 		'udg_Attack_Item_Str': 'attack_str',
 		'udg_Attack_Item_Str_Aig': 'attack_str_agi',
-		'udg_Contract': 'contract',
+		'udg_ManaProp': 'contract',
 		'udg_Int_Tick_Item': 'int_tick',
 		'udg_Int_Tick_Item_Real': 'attack_int_real',
 		'udg_Str_Int_Tick_Item_Real': 'attack_str_int_real'
@@ -624,7 +628,7 @@ def processProcs(missing):
 	seen = defaultdict(dict)
 	unseen = defaultdict(dict)
 
-	for m in re.finditer("set udg_Attack_Item|set udg_Contract|set udg_Int_Tick_Item|set udg_Str_Int_Tick_Item_Real", code):
+	for m in re.finditer("set udg_Attack_Item|set udg_ManaProp|set udg_Int_Tick_Item|set udg_Str_Int_Tick_Item_Real", code):
 		if m.start() < safeIdx:
 			continue
 		line = code[m.start():code.find("\n", m.start())]
