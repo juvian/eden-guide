@@ -162,14 +162,13 @@ module.exports = {
 		"color" : "purple",
 		"stats" : {
 			"atk" : 60000,
-			"str" : 2300,
-			"int" : 2500
+			"str" : 2500,
+			"int" : 2500,
+      "attack_str_int_real": 20,
+      "int_tick": true   
 		},
 		"label" : "Sword of Resplendent Light",
-    "k_label": "신성한 빛의 전투지팡이",
-		"effects" : ["Each spell has a 8% chance to deal 30000 + (STR + INT) x20 bonus damage"],
-    "k_effects": ["스킬의 모든히트에 확률적으로 빛의심판 발동(8% 기회 30000 + (STR + INT) x20)"],
-    "bugged": true
+    "k_label": "신성한 빛의 전투지팡이"
 	},
 	"I07A" : {
 		"type" : "weapon",
@@ -2328,8 +2327,7 @@ module.exports = {
 			"damage_increase" : 10
 		},
 		"label" : "Insanity's Helmet",
-    "k_label": "광기의 투구",
-    "bugged": true
+    "k_label": "광기의 투구"
 	},
 	"I05Y" : {
 		"type" : "material",
@@ -2486,8 +2484,7 @@ module.exports = {
 			"damage_taken" : -10
 		},
 		"label" : "Waterstone Ring",
-    "k_label": "수호석 반지",
-    "bugged": true
+    "k_label": "수호석 반지"
 	},
 	"I04E" : {
 		"type" : "artifact",
@@ -4625,13 +4622,12 @@ module.exports = {
       "stats": {
         "atk": 500000,
         "str": 9500,
-        "int": 9500
+        "int": 9500,
+        "attack_str_int_real": 72,
+        "int_tick": true
       },
       "label": "God's Staff",
-      "k_label": "신의 일격 지팡이",
-      "effects" : ["Each attack has a 8% chance to deal 30000 + (STR + INT) x72 bonus damage"],
-		  "k_effects" : ["기본공격시 일정확률로 대천사의 죽음의심판생성 (8% 기회 30000 + (STR + INT) x72)"],
-      "bugged": true
+      "k_label": "신의 일격 지팡이"
   },
     "I0HM": {
       "type": "weapon",
@@ -4974,7 +4970,8 @@ module.exports = {
 			"magic_resistance" : 28
 		},
 		"label" : "Chaotic Tree Roots",
-    "k_label": "대혼돈의 수호"
+    "k_label": "대혼돈의 수호",
+    "bugged": true
 	},
   "I0IJ" : {
 		"type" : "accessory",
@@ -5694,12 +5691,10 @@ module.exports = {
       "str": 3500,
       "agi": 3500,
 	    "int" : 3500,
-	    "hp" : 50000,
 	    "damage_increase" : 60
 	  },
     "label": "Strength Helmet",
-    "k_label": "정화의 신의 빛",
-    "bugged": true
+    "k_label": "정화의 신의 빛"
   },
   "I0L9": {
     "type": "helmet",
@@ -5709,13 +5704,11 @@ module.exports = {
       "str": 3500,
       "agi": 3500,
 	    "int" : 3500,
-      "hp": 50000,
 	    "damage_increase" : 90,
 	    "damage_taken" : 30
 	  },
     "label": "Destruction Helmet",
-    "k_label": "파멸의 신의 저주",
-    "bugged": true
+    "k_label": "파멸의 신의 저주"
   },
   "I0LA": {
     "type": "helmet",
@@ -5755,8 +5748,7 @@ module.exports = {
       "magic_resistance" : 27
 	  },
     "label": "Magic Resistance Helmet",
-    "k_label": "신의 저항 투구",
-    "bugged": true
+    "k_label": "신의 저항 투구"
   },  
   "I0LD": {
     "type": "helmet",
@@ -6477,8 +6469,7 @@ module.exports = {
       "int": 50,
       "str": 50,
       "agi": 50
-    },
-    "bugged": true
+    }
   },
   "I010": {
     "label": "Bronze Brooch",
@@ -6943,10 +6934,8 @@ module.exports = {
       "agi": 250,
       "int": 250,
       "str": 250,
-      "armor": 150,
       "movement_speed": 90
-    },
-    "bugged": true
+    }
   },
   "I031": {
     "label": "Alchemist Helmet",
@@ -6954,13 +6943,11 @@ module.exports = {
     "type": "helmet",
     "color": "green",
     "stats": {
-      "hp": 2000,
       "str": 200,
       "int": 200,
       "agi": 200,
       "armor": 150
-    },
-    "bugged": true
+    }
   },
   "I000": {
     "disabled": true,
@@ -7810,12 +7797,10 @@ module.exports = {
       "str": 4000,
       "agi": 4000,
 	    "int" : 4000,
-	    "hp" : 50000,
 	    "damage_increase" : 70
 	  },
     "label": "Supreme Strength Helmet",
-    "k_label": "최상급 정화의 신의 빛",
-    "bugged": true
+    "k_label": "최상급 정화의 신의 빛"
   },
   "I0NE": {
     "type": "helmet",
@@ -7825,13 +7810,11 @@ module.exports = {
       "str": 4000,
       "agi": 4000,
 	    "int" : 4000,
-      "hp": 50000,
 	    "damage_increase" : 110,
 	    "damage_taken" : 40
 	  },
     "label": "Supreme Destruction Helmet",
-    "k_label": "최상급 파멸의 신의 저주",
-    "bugged": true
+    "k_label": "최상급 파멸의 신의 저주"
   },
   "I0NF": {
     "type" : "artifact",
@@ -8022,8 +8005,7 @@ module.exports = {
 			"hp_regen" : 4500
 		},
     "k_label": "차원의 보석",
-    "label": "Dimensional Magic Jewel",
-    "bugged": true
+    "label": "Dimensional Magic Jewel"
   },
   "I0H8": {
     "type": "accessory",
@@ -8877,8 +8859,7 @@ module.exports = {
       "int_tick": true    
 		},
 		"label" : "Demon King Magic Staff",
-    "k_label": "마신왕의 마력 지팡이",
-    "bugged": true,
+    "k_label": "마신왕의 마력 지팡이"
 	},
   "I0R7" : {
 		"type" : "weapon",
@@ -8891,8 +8872,7 @@ module.exports = {
       "int_tick": true    
 		},
 		"label" : "Demon King★Liberation★Magic Staff",
-    "k_label": "★해방★마신왕의 마력 지팡이",
-    "bugged": true
+    "k_label": "★해방★마신왕의 마력 지팡이"
 	},
   "I0P2" : {
 		"type" : "weapon",
@@ -9027,14 +9007,13 @@ module.exports = {
 		"color" : "god",
 		"stats" : {
 			"atk" : 800000,
-			"str" : 12000,
-			"int" : 12000,
+			"str" : 13000,
+			"int" : 13000,
       "int_tick": true,
       "attack_str_int_real": 105  
 		},
 		"label" : "Demon King Judgment Staff",
-    "k_label": "마신왕의 일격 지팡이",
-    "bugged": true
+    "k_label": "마신왕의 일격 지팡이"
 	},
   "I0RF" : {
 		"type" : "weapon",
@@ -9296,8 +9275,7 @@ module.exports = {
       "purgatory_recovery": 36
     },
     "label": "Demon King★Liberation★Boundary",
-    "k_label": "★해방★마신왕의 경계",
-    "bugged": true
+    "k_label": "★해방★마신왕의 경계"
   },
   "I0PM": {
     "type": "weapon",
@@ -9346,11 +9324,10 @@ module.exports = {
       "str": 6000,
       "agi": 6000,
       "int": 6000,
-      "bamboo_damage": 780
+      "bamboo_damage": 800
     },
     "label": "Archangel's Bamboo Spear +3",
-    "k_label": "대천사의 죽창 +3",
-    "bugged": true
+    "k_label": "대천사의 죽창 +3"
   },
   "I0PQ": {
     "type": "weapon",
@@ -9369,29 +9346,27 @@ module.exports = {
     "type": "weapon",
     "color": "god",
     "stats": {
-      "atk": 500000,
+      "atk": 600000,
       "str": 9500,
       "agi": 9500,
       "int": 9500,
       "bamboo_damage": 1100
     },
     "label": "Supreme God's Bamboo Spear",
-    "k_label": "최상급 신의 죽창",
-    "bugged": true
+    "k_label": "최상급 신의 죽창"
   },
   "I0PS": {
     "type": "weapon",
     "color": "god",
     "stats": {
-      "atk": 600000,
+      "atk": 800000,
       "str": 11000,
       "agi": 11000,
       "int": 11000,
       "bamboo_damage": 1300
     },
     "label": "Demon King's Bamboo Spear",
-    "k_label": "마신왕의 죽창",
-    "bugged": true
+    "k_label": "마신왕의 죽창"
   },
   "I0RG": {
     "type": "weapon",
@@ -9410,15 +9385,14 @@ module.exports = {
     "type": "weapon",
     "color": "god",
     "stats": {
-      "atk": 600000,
+      "atk": 800000,
       "int": 16000,
       "hp": 100000
     },
     "label": "Demon King's Life Staff",
     "k_label": "마신왕의 생명 지팡이",
 		"effects" : ["Every 4 spells will recover INT x7.5 HP (10s cd)", "On Use: Restore INT x12 HP of all allies within range(80s cd)"],
-		"k_effects" : ["스킬사용 4회시 생명력 회복 (INT x7.5)(쿨타임 10초)", "사용시 주변 아군을 능력치 비례 만큼의 생명력 회복 (INT x12)(쿨타임 80초)"],
-    "bugged": true
+		"k_effects" : ["스킬사용 4회시 생명력 회복 (INT x7.5)(쿨타임 10초)", "사용시 주변 아군을 능력치 비례 만큼의 생명력 회복 (INT x12)(쿨타임 80초)"]
   },
   "I0R9": {
     "type": "weapon",
@@ -9764,8 +9738,7 @@ module.exports = {
       "flame": 90
     },
     "label": "Heavenly King Flame Armor",
-    "k_label": "천신왕의 불꽃 갑옷",
-    "bugged": true
+    "k_label": "천신왕의 불꽃 갑옷"
   },
   "I0S3": {
     "type": "armor",
@@ -9778,8 +9751,7 @@ module.exports = {
       "flame": 95
     },
     "label": "Heavenly King★Liberation★Flame Armor",
-    "k_label": "★해방★천신왕의 불꽃 갑옷",
-    "bugged": true
+    "k_label": "★해방★천신왕의 불꽃 갑옷"
   },
   "I0QD": {
     "type": "armor",
@@ -9789,8 +9761,7 @@ module.exports = {
       "int": 17500
     },
     "label": "Heavenly King Robes",
-    "k_label": "천신왕의 투기의 로브",
-    "bugged": true
+    "k_label": "천신왕의 투기의 로브"
   },
   "I0SD": {
     "type": "armor",
@@ -9800,8 +9771,7 @@ module.exports = {
       "int": 20000
     },
     "label": "Heavenly King★Liberation★Robes",
-    "k_label": "★해방★천신왕의 투기의 로브",
-    "bugged": true
+    "k_label": "★해방★천신왕의 투기의 로브"
   },
   "I0QF" : {
 	    "type" : "chest",
@@ -9890,8 +9860,7 @@ module.exports = {
 		"label" : "Heavenly King Boots",
     "k_label": "천신왕의 각반",
 		"effects" : ["On Use: Dash forward (2s cd)"],
-		"k_effects" : ["사용시 전방으로 대쉬(쿨타임2초)"],
-    "bugged": true
+		"k_effects" : ["사용시 전방으로 대쉬(쿨타임2초)"]
   },
   "I0SE": {
 		"type" : "artifact",
@@ -9906,8 +9875,7 @@ module.exports = {
 		"label" : "Heavenly King★Liberation★Boots",
     "k_label": "★해방★천신왕의 각반",
 		"effects" : ["On Use: Dash forward (1.8s cd)"],
-		"k_effects" : ["사용시 전방으로 대쉬(쿨타임1.8초)"],
-    "bugged": true
+		"k_effects" : ["사용시 전방으로 대쉬(쿨타임1.8초)"]
   },
   "I0QI": {
 		"type" : "artifact",
@@ -9951,8 +9919,7 @@ module.exports = {
 		"label" : "Heavenly King Life Wings",
     "k_label": "천신왕의 생명 날개",
 		"effects" : ["When HP is below 40%, any damage taken will restore 100% of MAX HP", "On use restore 30% of MAX HP every second for 10 seconds (120s cd)"],
-		"k_effects" : ["생명력이 40%이하일때 즉사가 아닌 공격을받을면", "즉시 생명력 100%를 회복하며 10초간 초당 생명력 30% 회복 (쿨타임 120초)"],
-    "bugged": true
+		"k_effects" : ["생명력이 40%이하일때 즉사가 아닌 공격을받을면", "즉시 생명력 100%를 회복하며 10초간 초당 생명력 30% 회복 (쿨타임 120초)"]
   },
   "I0SH": {
 		"type" : "artifact",
@@ -9966,8 +9933,7 @@ module.exports = {
 		"label" : "Heavenly King★Liberation★Life Wings",
     "k_label": "★해방★천신왕의 생명 날개",
 		"effects" : ["When HP is below 40%, any damage taken will restore 100% of MAX HP", "On use restore 30% of MAX HP every second for 10 seconds (110s cd)"],
-		"k_effects" : ["생명력이 40%이하일때 즉사가 아닌 공격을받을면", "즉시 생명력 100%를 회복하며 10초간 초당 생명력 30% 회복 (쿨타임 110초)"],
-    "bugged": true
+		"k_effects" : ["생명력이 40%이하일때 즉사가 아닌 공격을받을면", "즉시 생명력 100%를 회복하며 10초간 초당 생명력 30% 회복 (쿨타임 110초)"]
   },
   "I0QK": {
 		"type" : "artifact",
@@ -10312,8 +10278,7 @@ module.exports = {
       "agi": 1300
     },
     "label": "Dark Matter [Chaos]",
-    "k_label": "암흑 물질[혼돈]",
-    "bugged": true
+    "k_label": "암흑 물질[혼돈]"
   },
   "I0TG": {
     "type": "slot",
