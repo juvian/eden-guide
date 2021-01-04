@@ -369,7 +369,7 @@ def assertCorrectDropRates():
 		id, chance = m.group(1), eval(m.group(2).strip("( "))
 		func = funcBefore(m.start())
 
-		if "Trig________________________007_Actions" in func:
+		if "Trig________________________007_Actions" in func or func == "ITD":
 			continue
 		if "GetItemTypeId(GetManipulatedItem" in func:
 			funcCode = code[code.rfind('if GetItemTypeId(GetManipulatedItem', 0, m.start()):m.start()].split("\n")[0]
@@ -377,7 +377,6 @@ def assertCorrectDropRates():
 			funcCode = 	funcs[func]
 		else:
 			return processDropFunc(m, drops)
-
 		chest = re.search("GetManipulatedItem[^']*'(....)'", funcCode).group(1)
 
 		drops[chest].append({"id": id, "chance": chance, "l__r": l__r})
