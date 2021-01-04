@@ -3207,12 +3207,10 @@ module.exports = {
 		"stats" : {
 			"atk" : 100000,
 			"int" : 3500,
-      "contract": 0.4,
-      "int_tick": true
+      "damage_increase": 40
 		},
 		"label" : "Shadow Contract",
-    "k_label": "어둠의 계약",
-    bugged: true
+    "k_label": "어둠의 계약"
 	},	
 	"I0CZ" : {
 		"type" : "auxiliary",
@@ -4638,8 +4636,7 @@ module.exports = {
         "damage_increase" : 90
       },
       "label": "God's Amber Staff",
-      "k_label": "신의 증폭 지팡이",
-      "bugged": true
+      "k_label": "신의 증폭 지팡이"
   },
     "I0HN": {
       "type": "weapon",
@@ -4848,13 +4845,12 @@ module.exports = {
 			"agi" : 3500,
 			"int" : 3500,
       "armor": 800,
-			"hp" : 25000
+			"hp" : 30000
 		},
 		"label" : "Chaotic Barrier",
     "k_label": "대혼돈의 방벽",
 		"effects" : ["Generate a shield that can block up to 38000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 38000의 쉴드 생성"],
-    "bugged": true
+		"k_effects" : ["10초마다 38000의 쉴드 생성"]
 	},
   "I0IB" : {
 		"type" : "artifact",
@@ -4967,11 +4963,10 @@ module.exports = {
 			"agi" : 4300,
       "armor": 800,
 			"movement_speed" : 200,
-			"magic_resistance" : 28
+			"magic_resistance" : 27
 		},
 		"label" : "Chaotic Tree Roots",
-    "k_label": "대혼돈의 수호",
-    "bugged": true
+    "k_label": "대혼돈의 수호"
 	},
   "I0IJ" : {
 		"type" : "accessory",
@@ -6067,26 +6062,6 @@ module.exports = {
       "armor": 25
     }
   },
-  "I02A": {
-    "label": "Axe of Massacre",
-    "k_label": "짐승의 털옷",
-    "type": "weapon",
-    "color": "green",
-    "stats": {
-      "atk": 300,
-    },
-    "bugged": true
-  },
-  "I02B": {
-    "label": "Stolen Armor",
-    "k_label": "도적두목의 갑옷",
-    "type": "armor",
-    "color": "green",
-    "stats": {
-      "armor": 30
-    },
-    "bugged": true
-  },
   "I02C": {
     "label": "Shoes of Death",
     "k_label": "탈린숲의 정기",
@@ -6200,16 +6175,6 @@ module.exports = {
       "int": 60,
       "agi": 60
     }
-  },
-  "I02O": {
-    "label": "Wendigo Leather",
-    "k_label": "웬디고 가죽옷",
-    "type": "armor",
-    "color": "green",
-    "stats": {
-      "armor": 50
-    },
-    "bugged": true
   },
   "I02R": {
     "label": "Wendigo’s Bone Wand",
@@ -7022,8 +6987,7 @@ module.exports = {
       "str": 250,
       "armor": 200,
       "damage_increase": 5
-    },
-    "bugged": true
+    }
   },
   "I0IY": {
     "disabled": true,
@@ -10294,12 +10258,11 @@ module.exports = {
     "type": "slot",
     "color": "god",
     "stats": {
-      "str": 1300,
-      "agi": 1300,
-      "int": 1300
+      "str": 1000,
+      "agi": 1000,
+      "int": 1000
     },
     "label": "Dark Matter",
-    "k_label": "암흑의 물질",
-    "bugged": true
+    "k_label": "암흑의 물질"
   }
 }
