@@ -428,7 +428,7 @@ def processStat(stat, line, val, id, missing):
 		print(id, "not in guide " + id)			
 
 def processLine(line, txt, id, missing):
-	if len(list(filter(lambda x: x in line, ["udg_Plus_Demige", "udg_Minus_Demige", "udg_Shied_Int", "udg_Fire_Amor", "udg_Fire_Amor_Minus", "udg_Gaho_Item_Real", "udg_Save_Stat", "udg_Skill_Damage_UP", "udg_Plus_damage", "udg_HP_And_Dead_Item_PD_Real", "udg_HP_And_Dead_Item_HP_Real", "udg_Citical_Item_real", "udg_Save_Stat_Str", "udg_Save_Stat_Agi", "udg_Save_Stat_Int", "udg_Save_Stat_HP"]))):
+	if len(list(filter(lambda x: x in line, ["udg_Plus_Demige", "udg_Minus_Demige", "udg_Shied_Int", "udg_Fire_Amor", "udg_Fire_Amor_Minus", "udg_Gaho_Item_Real", "udg_Save_Stat", "udg_Skill_Damage_UP", "udg_Plus_damage", "udg_HP_And_Dead_Item_PD_Real", "udg_HP_And_Dead_Item_HP_Real", "udg_Critical_Item_real", "udg_Save_Stat_Str", "udg_Save_Stat_Agi", "udg_Save_Stat_Int", "udg_Save_Stat_HP"]))):
 		try:
 			if "+" in txt:
 				damage = round(float(line.split("+")[1].split(")")[0].strip()) * 100)
@@ -471,7 +471,7 @@ def processLine(line, txt, id, missing):
 		processStat("purgatory_damage", line, damage * 100, id, missing)	
 	elif "udg_HP_And_Dead_Item_HP_Real" in line:
 		processStat("purgatory_recovery", line, damage * 100, id, missing)
-	elif "udg_Citical_Item_real" in line:
+	elif "udg_Critical_Item_real" in line:
 		processStat("bamboo_damage", line, damage * 100, id, missing)
 	elif "udg_Save_Stat_Str[" in line:
 		processStat("str", line, damage / 100, id, missing)
@@ -660,7 +660,7 @@ def processProcs(missing):
 	toCheck = {
 		"30000 + GetHeroInt(udg_hero[ID], true) * udg_Int_Tick_Item_Real[ID]": 8,
 		"30000 + GetHeroAgi(udg_hero[ID], true) * udg_Attack_Item_Real[ID]": 20,
-		"30000 + ( ( GetHeroAgi(udg_hero[ID], true) + GetHeroStr(udg_hero[ID], true) ) * udg_Attack_Item_Real[ID]": 16,
+		"30000 + ( GetHeroStr(udg_hero[ID], true) + GetHeroAgi(udg_hero[ID], true) ) * udg_Attack_Item_Real[ID]": 16,
 		"30000 + GetHeroStr(udg_hero[ID], true) * udg_Attack_Item_Real[ID]": 12,
 		"30000 + ( GetHeroInt(udg_hero[ID], true) + GetHeroStr(udg_hero[ID], true) ) * udg_Str_Int_Tick_Item_Real[ID]": 8
 	}
@@ -1039,7 +1039,7 @@ def assertCorrectScalings():
 
 	assertItemScaling("I0FM", "UnitHasItemOfTypeBJ(udg_hero[ID], 'I0FM')", "200000 + 60 * GetHeroStr(udg_hero[ID], true) + GetHeroAgi(udg_hero[ID], true) + GetHeroInt(udg_hero[ID], true))", untilFunctionEnd=True)
 
-	assertItemScaling("I0FA", "UnitHasItemOfTypeBJ(D, 'I0FA')", "300000.0 + 80.0 * I2R(GetHeroStr(D, true) + GetHeroAgi(D, true) + GetHeroInt(D, true))")
+	assertItemScaling("I0FA", "UnitHasItemOfTypeBJ(D, 'I0FA')", "300000 + 80 * I2R(GetHeroStr(D, true) + GetHeroAgi(D, true) + GetHeroInt(D, true))")
 		
 	assertItemScaling("SEVERAL", "if udg_Int_Tick_Item_Real[ID] >= 1.0 then", "if GetRandomInt(1, 100) <= 8 then")
 	assertItemScaling("SEVERAL", "if udg_Int_Tick_Item_Real[ID] >= 1.0 then", "30000 + GetHeroInt(udg_hero[ID], true) * udg_Int_Tick_Item_Rea")
@@ -1055,7 +1055,11 @@ def assertCorrectScalings():
 
 	assertItemScaling("I0IB", "GetItemTypeId(GetManipulatedItem()) == 'I0IB'", "set udg_Shield_Real[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))]=50000.00")
 
-	assertItemScaling("I0J4", "udg_Power_Skill_Enjuy[GetConvertedPlayerId(GetO", "call s__TrigVariables_Setinteger(GlobalTV,0 , 65)")
+	assert """if udg_Power_Skill_Enju[i] then
+            set udg_Enju_Combo[i]=65
+        else
+            set udg_Enju_Combo[i]=50
+        endif""" in code
 
 	assertItemScaling("I0L0", "if", "set udg_Gaho_Item_Real[IT]=2500")
 
