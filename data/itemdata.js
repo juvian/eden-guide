@@ -128,8 +128,7 @@ module.exports = {
       "attack_str": true
 		},
 		"label" : "Sword of Divine Light",
-    "k_label": "신성한 빛의 대검",
-    "bugged": true
+    "k_label": "신성한 빛의 대검"
 	},
 	"I06E" : {
 		"type" : "weapon",
@@ -154,8 +153,7 @@ module.exports = {
       "attack_real": 5
 		},
 		"label" : "Sword of Chaotic Light",
-    "k_label": "혼돈의 빛의 검",
-    "bugged": true
+    "k_label": "혼돈의 빛의 검"
 	},
 	"I06N" : {
 		"type" : "weapon",
@@ -255,8 +253,7 @@ module.exports = {
       "attack_real": 20
 		},
 		"label" : "Black Earth Mace",
-    "k_label": "운석 철퇴",
-    "bugged": true
+    "k_label": "운석 철퇴"
 	},
 	"I075" : {
 		"type" : "weapon",
@@ -345,8 +342,7 @@ module.exports = {
 		"label" : "Chaotic Meteorite Sword",
     "k_label": "혼돈의 운석 검",
 		"effects" : ["On Use: An outward explosion of Black Eart, dealing 300000 + (STR + AGI) x55 damage (120s cd)"],
-    "k_effects": ["사용시 검은대지의 폭발 생성 (300000 + (STR + AGI) x55)(쿨타임 120초)"],
-    "bugged": true
+    "k_effects": ["사용시 검은대지의 폭발 생성 (300000 + (STR + AGI) x55)(쿨타임 120초)"]
 	},
 	"I07E" : {
 		"type" : "weapon",
@@ -509,8 +505,7 @@ module.exports = {
       "attack_real": 30
 		},
 		"label" : "Mjollnir",
-    "k_label": "묠니르",
-    "bugged": true
+    "k_label": "묠니르"
 	},
 	"I08W" : {
 		"type" : "weapon",
@@ -538,8 +533,7 @@ module.exports = {
 		"label" : "Bloody Moonlight Dagger",
     "k_label": "붉은달빛 단검",
 		"effects" : ["On Use: Causes an explosion of moonlight, dealing 300000 + (STR + AGI) x70 (80s cd)"],
-    "k_effects": ["사용시 달빛 폭발 발생 (300000 + (STR + AGI) x70)(쿨타임 80초)"],
-    "bugged": true
+    "k_effects": ["사용시 달빛 폭발 발생 (300000 + (STR + AGI) x70)(쿨타임 80초)"]
 	},
 	"I095" : {
 		"type" : "weapon",
@@ -1423,8 +1417,7 @@ module.exports = {
       "attack_real": 48
 		},
 		"label" : "Archangel's Judgement +1",
-    "k_label": "대천사의 심판 +1",
-    "bugged": true
+    "k_label": "대천사의 심판 +1"
 	},
 	"I0C6" : {
 		"type" : "weapon",
@@ -1457,7 +1450,7 @@ module.exports = {
 			"agi" : 7000,
 			"attack_speed" : 200,
       "attack_agi": true,
-      "attack_real": 42
+      "attack_real": 45
 		},
 		"label" : "Archangel's Dagger +1",
     "k_label": "대천사의 단검 +1"
@@ -1506,7 +1499,7 @@ module.exports = {
     	"stats" : {
 			"atk" : 260000,
 			"str" : 7000,
-			"hp" : 45000
+			"hp" : 65000
 		},
 		"label" : "Angelic Sword of Life +1",
     "k_label": "대천사의 생명검 +1",
@@ -1519,7 +1512,7 @@ module.exports = {
     	"stats" : {
 			"atk" : 260000,
 			"agi" : 7000,
-			"hp" : 45000
+			"hp" : 65000
 		},
 		"label" : "Angelic Bow of Life +1",
     "k_label": "대천사의 생명의활 +1",
@@ -1532,7 +1525,7 @@ module.exports = {
     	"stats" : {
 			"atk" : 260000,
 			"int" : 7000,
-			"hp" : 45000
+			"hp" : 65000
 		},
 		"label" : "Archangel's Life Staff +1",
     "k_label": "대천사의 생명지팡이 +1",
@@ -1552,8 +1545,7 @@ module.exports = {
 		"label" : "Archangel's Sword +1",
     "k_label": "대천사의 소검 +1",
 		"effects" : ["On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x105 damage (80s cd)"],
-    "k_effects": ["사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x105)(쿨타임 80초)"],
-    "bugged": true
+    "k_effects": ["사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x105)(쿨타임 80초)"]
 	},
 	"I09Q" : {
 		"type" : "weapon",
@@ -1628,8 +1620,7 @@ module.exports = {
       "attack_real": 56
 		},
 		"label" : "Archangel's Judgement +2",
-    "k_label": "대천사의 심판 +2",
-    "bugged": true
+    "k_label": "대천사의 심판 +2"
 	},
 	"I0CB" : {
 		"type" : "weapon",
@@ -1649,7 +1640,7 @@ module.exports = {
     "stats" : {
 			"atk" : 300000,
 			"str" : 7500,
-			"hp" : 50000
+			"hp" : 80000
 		},
 		"label" : "Angelic Sword of Life +2",
     "k_label": "대천사의 생명검 +2",
@@ -1678,7 +1669,7 @@ module.exports = {
 			"agi" : 7500,
 			"attack_speed" : 200,
       "attack_agi": true,
-      "attack_real": 48
+      "attack_real": 53
 		},
 		"label" : "Archangel's Dagger +2",
     "k_label": "대천사의 단검 +2"
@@ -1726,7 +1717,7 @@ module.exports = {
     	"stats" : {
 			"atk" : 300000,
 			"agi" : 7500,
-			"hp" : 50000
+			"hp" : 80000
 		},
 		"label" : "Angelic Bow of Life +2",
     "k_label": "대천사의 생명의활 +2",
@@ -1739,7 +1730,7 @@ module.exports = {
     	"stats" : {
 			"atk" : 300000,
 			"int" : 7500,
-			"hp" : 50000
+			"hp" : 80000
 		},
 		"label" : "Archangel's Life Staff +2",
     "k_label": "대천사의 생명지팡이 +2",
@@ -1770,8 +1761,7 @@ module.exports = {
 		"label" : "Archangel's Sword +2",
     "k_label": "대천사의 소검 +2",
 		"effects" : ["On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x120 damage (80s cd)"],
-		"k_effects" : ["사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x120)(쿨타임 80초)"],
-    "bugged": true
+		"k_effects" : ["사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x120)(쿨타임 80초)"]
 	},
 	"I09R" : {
 		"type" : "weapon",
@@ -1833,8 +1823,7 @@ module.exports = {
       "attack_real": 64
 		},
 		"label" : "Archangel's Judgement +3",
-    "k_label": "대천사의 심판 +3",
-    "bugged": true
+    "k_label": "대천사의 심판 +3"
 	},
 	"I0CC" : {
 		"type" : "weapon",
@@ -1854,7 +1843,7 @@ module.exports = {
     	"stats" : {
 			"atk" : 350000,
 			"str" : 8000,
-			"hp" : 55000
+			"hp" : 95000
 		},
 		"label" : "Angelic Sword of Life +3",
     "k_label": "대천사의 생명검 +3",
@@ -1883,7 +1872,7 @@ module.exports = {
 			"agi" : 8000,
 			"attack_speed" : 200,
       "attack_agi": true,
-      "attack_real": 53
+      "attack_real": 61
 		},
 		"label" : "Archangel's Dagger +3",
     "k_label": "대천사의 단검 +3"
@@ -1918,7 +1907,7 @@ module.exports = {
     	"stats" : {
 			"atk" : 350000,
 			"agi" : 8000,
-			"hp" : 55000
+			"hp" : 95000
 		},
 		"label" : "Angelic Bow of Life +3",
     "k_label": "대천사의 생명의활 +3",
@@ -1931,7 +1920,7 @@ module.exports = {
     	"stats" : {
 			"atk" : 350000,
 			"int" : 8000,
-			"hp" : 55000
+			"hp" : 95000
 		},
 		"label" : "Archangel's Life Staff +3",
     "k_label": "대천사의 생명지팡이 +3",
@@ -1951,8 +1940,7 @@ module.exports = {
 		"label" : "Archangel's Sword +3",
     "k_label": "대천사의 소검 +3",
 		"effects" : ["On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x135 damage (80s cd)"],
-		"k_effects" : ["사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x135)(쿨타임 80초)"],
-    "bugged": true
+		"k_effects" : ["사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x135)(쿨타임 80초)"]
 	},
 	"I09S" : {
 		"type" : "weapon",
@@ -2972,7 +2960,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 230000,
 			"str" : 6500,
-			"hp" : 40000
+			"hp" : 50000
 		},
 		"label" : "Angelic Sword of Life",
     "k_label": "대천사의 생명검",
@@ -2985,7 +2973,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 230000,
 			"agi" : 6500,
-			"hp" : 40000
+			"hp" : 50000
 		},
 		"label" : "Angelic Bow of Life",
     "k_label": "대천사의 생명의활",
@@ -2998,7 +2986,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 230000,
 			"int" : 6500,
-			"hp" : 40000
+			"hp" : 50000
 		},
 		"label" : "Archangel’s Staff of Life",
     "k_label": "대천사의 생명지팡이",
@@ -3018,8 +3006,7 @@ module.exports = {
 		"label" : "The Archangel’s Sword",
     "k_label": "대천사의 소검",
 		"effects" : ["On Use: Executes the Archangel of Justice’s Light, dealing 400000 + (STR + AGI) x90 damage (80s cd)"],
-		"k_effects" : ["사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x90)(쿨타임 80초)"],
-    "bugged": true
+		"k_effects" : ["사용시 대천사의 빛의 처형 발동 (400000 + (STR + AGI) x90)(쿨타임 80초)"]
 	},
 	"I09P" : {
 		"type" : "weapon",
@@ -3117,8 +3104,7 @@ module.exports = {
       "attack_real": 40
 		},
 		"label" : "Archangel’s Judgement",
-    "k_label": "대천사의 심판",
-    "bugged": true
+    "k_label": "대천사의 심판"
 	},
 	"I0D3" : {
 		"type" : "auxiliary",
@@ -3207,7 +3193,8 @@ module.exports = {
 		"stats" : {
 			"atk" : 100000,
 			"int" : 3500,
-      "damage_increase": 40
+      "damage_increase": 40,
+      "hp_consume": true      
 		},
 		"label" : "Shadow Contract",
     "k_label": "어둠의 계약"
@@ -3615,8 +3602,7 @@ module.exports = {
       "hp_consume": true      
 		},
 		"label" : "Soul Contract",
-    "k_label": "검은 어둠의 계약",
-    "bugged": true
+    "k_label": "검은 어둠의 계약"
 	},	
 	"I04F" : {
 		"type" : "weapon",
@@ -4468,7 +4454,7 @@ module.exports = {
       "agi": 11000,
       "attack_speed": 300,
       "attack_agi": true,
-      "attack_real": 60
+      "attack_real": 71
     },
     "label": "Sealed God Dagger",
     "k_label": "신의 단검"
@@ -4551,7 +4537,7 @@ module.exports = {
       "stats": {
         "atk": 500000,
         "str": 11000,
-        "hp": 75000
+        "hp": 125000
       },
       "label": "God's Sword of Life",
       "k_label": "신의 생명의검",
@@ -4564,7 +4550,7 @@ module.exports = {
       "stats": {
         "atk": 500000,
         "agi": 11000,
-        "hp": 75000
+        "hp": 125000
       },
       "label": "God's Bow of Life",
       "k_label": "생명의 신궁",
@@ -4577,7 +4563,7 @@ module.exports = {
       "stats": {
         "atk": 500000,
         "int": 11000,
-        "hp": 75000
+        "hp": 125000
       },
       "label": "God's Staff of Life",
       "k_label": "신의 생명 지팡이",
@@ -4597,8 +4583,7 @@ module.exports = {
       "label": "God's Sword",
       "k_label": "신의 소검",
       "effects" : ["On use: 400000 + (STR + AGI) x180 damage"],
-		  "k_effects" : ["사용시 400000 + (STR + AGI) x180 (쿨타임 80초)"],
-      "bugged": true
+		  "k_effects" : ["사용시 400000 + (STR + AGI) x180 (쿨타임 80초)"]
   },
     "I0GD": {
       "type": "weapon",
@@ -4611,8 +4596,7 @@ module.exports = {
         "attack_real": 80
       },
       "label": "God's Judgement",
-      "k_label": "신의 심판",
-      "bugged": true
+      "k_label": "신의 심판"
   },
     "I0HL": {
       "type": "weapon",
@@ -5058,8 +5042,7 @@ module.exports = {
       "hp_consume": true
 		},
 		"label" : "Archangel Contract",
-    "k_label": "대천의 계약",
-    "bugged": true
+    "k_label": "대천의 계약"
 	},
   "I0IQ" : {
 		"type" : "weapon",
@@ -5071,8 +5054,7 @@ module.exports = {
       "hp_consume": true
 		},
 		"label" : "Archangel Contract +1",
-    "k_label": "대천의 계약 +1",
-    "bugged": true
+    "k_label": "대천의 계약 +1"
 	},
   "I0IR" : {
 		"type" : "weapon",
@@ -5084,8 +5066,7 @@ module.exports = {
       "hp_consume": true
     },
 		"label" : "Archangel Contract +2",
-    "k_label": "대천의 계약 +2",
-    "bugged": true
+    "k_label": "대천의 계약 +2"
 	},
   "I0IS" : {
 		"type" : "weapon",
@@ -5097,8 +5078,7 @@ module.exports = {
       "hp_consume": true
 		},
 		"label" : "Archangel Contract +3",
-    "k_label": "대천의 계약 +3",    
-    "bugged": true
+    "k_label": "대천의 계약 +3" 
 	},
   "I0IX" : {
     "type" : "chest",
@@ -5144,8 +5124,8 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Fighter]", 
     "k_label": "해방된 힘 [격투가]",
-    "effects": ["Increases max skill link to 65"],
-    "k_effects": ["스킬연계의 최대치가 65로 증가합니다"]
+    "effects": ["Combo's maximum value is increased by 15"],
+    "k_effects": ["콤보의 최대치가 15 증가합니다"]
   },
   "I0J5": {
     "type": "unleash",
@@ -7105,7 +7085,7 @@ module.exports = {
     "stats": {
       "atk": 600000,
       "agi": 13000,
-      "hp": 80000
+      "hp": 150000
     },
     "effects" : ["Every 10 attacks will recover AGI x6.7 HP (9s cd)", "Every 6 spells will recover AGI x6.7 HP (10s cd)", "On Use: Restores AGI x11 HP (120s cd)"],
     "k_effects" : ["기본공격 10회시 생명력회복 (AGI x6.7)(쿨타임 9초)", "스킬사용 6회시 생명력회복 (AGI x6.7)(쿨타임 10초)", "사용시  생명력회복 (AGI x11)(쿨타임 120초)"]
@@ -7142,7 +7122,7 @@ module.exports = {
       "agi": 13000,
       "attack_speed": 300,
       "attack_agi": true,
-      "attack_real": 64
+      "attack_real": 78
     },
     "k_label": "최상급 신의 단검",
     "label": "Supreme God's Dagger"
@@ -7192,7 +7172,7 @@ module.exports = {
       "stats": {
         "atk": 600000,
         "int": 13000,
-        "hp": 80000
+        "hp": 150000
       },
       "label": "Supreme God's Staff of Life",
       "k_label": "최상급 신의 생명 지팡이",
@@ -7205,7 +7185,7 @@ module.exports = {
       "stats": {
         "atk": 600000,
         "str": 13000,
-        "hp": 80000
+        "hp": 150000
       },
       "label": "Supreme God's Sword of Life",
       "k_label": "최상급 신의 생명의검",
@@ -7225,8 +7205,7 @@ module.exports = {
       "label": "Supreme God's Sword",
       "k_label": "최상급 신의 소검",
       "effects" : ["On use: 400000 + (STR + AGI) x180 damage"],
-		  "k_effects" : ["사용시 400000 + (STR + AGI) x180 (쿨타임 80초)"],
-      "bugged": true
+		  "k_effects" : ["사용시 400000 + (STR + AGI) x180 (쿨타임 80초)"]
   },
   "I0MH": {
       "type": "weapon",
@@ -7251,8 +7230,7 @@ module.exports = {
         "attack_str": true
       },
       "label": "Supreme God's Judgement",
-      "k_label": "최상급 신의 심판",
-      "bugged": true
+      "k_label": "최상급 신의 심판"
   },
   "I0MJ": {
       "type": "weapon",
@@ -8007,7 +7985,7 @@ module.exports = {
       "str" : 3800,
       "agi" : 3800,
       "int" : 3800,
-      "vampiric": 1.6,
+      "vampiric": 40,
       "hp": 30000
     },
     "label" : "Great Demon's Immortal Armor",
@@ -8022,7 +8000,7 @@ module.exports = {
       "agi" : 4400,
       "int" : 4400,
       "hp" : 40000,
-      "vampiric": 1.7
+      "vampiric": 47
     },
     "label" : "Immortal Chaos Armor",
     "k_label": "대혼돈의 불멸 갑옷",
@@ -8673,7 +8651,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 800000,
 			"agi" : 16000,
-			"hp" : 100000
+			"hp" : 190000
 		},
 		"label" : "Demon King Bow of Life",
     "k_label": "마신왕의 생명력이 담긴 활",
@@ -8686,7 +8664,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 1000000,
 			"agi" : 18000,
-			"hp" : 110000
+			"hp" : 220000
 		},
 		"label" : "Demon King★Liberation★Bow of Life",
     "k_label": "★해방★마신왕의 생명의 신궁",
@@ -8749,11 +8727,10 @@ module.exports = {
 			"agi" : 16000,
       "attack_speed": 300,
       "attack_agi": true,
-      "attack_real": 70
+      "attack_real": 87
 		},
 		"label" : "Demon King Dagger",
-    "k_label": "마신왕의 단검",
-    "bugged": true
+    "k_label": "마신왕의 단검"
 	},
   "I0R4" : {
 		"type" : "weapon",
@@ -8763,7 +8740,7 @@ module.exports = {
 			"agi" : 18000,
       "attack_speed": 300,
       "attack_agi": true,
-      "attack_real": 77
+      "attack_real": 94
 		},
 		"label" : "Demon King★Liberation★Dagger",
     "k_label": "★해방★마신왕의 단검"
@@ -8870,7 +8847,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 800000,
 			"str" : 16000,
-      "hp": 100000      
+      "hp": 190000      
 		},
 		"label" : "Demon King Sword of Life",
     "k_label": "마신왕의 생명의 검",
@@ -8883,7 +8860,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 1000000,
 			"str" : 18000,
-      "hp": 110000      
+      "hp": 220000      
 		},
 		"label" : "Demon King★Liberation★Sword of Life",
     "k_label": "★해방★마신왕의 생명의 검",
@@ -9220,14 +9197,13 @@ module.exports = {
     "type": "weapon",
     "color": "god",
     "stats": {
-      "atk": 600000,
+      "atk": 800000,
       "str": 16000,
       "purgatory_damage": 180,
       "purgatory_recovery": 34
     },
     "label": "Demon King's Boundary",
-    "k_label": "마신왕의 경계",
-    "bugged": true
+    "k_label": "마신왕의 경계"
   },
   "I0R1": {
     "type": "weapon",
@@ -9351,7 +9327,7 @@ module.exports = {
     "stats": {
       "atk": 800000,
       "int": 16000,
-      "hp": 100000
+      "hp": 190000
     },
     "label": "Demon King's Life Staff",
     "k_label": "마신왕의 생명 지팡이",
@@ -9364,7 +9340,7 @@ module.exports = {
     "stats": {
       "atk": 1000000,
       "int": 18000,
-      "hp": 110000
+      "hp": 220000
     },
     "label": "Demon King's★Liberation★Life Staff",
     "k_label": "★해방★마신왕의 생명 지팡이",
