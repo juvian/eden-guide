@@ -113,9 +113,13 @@ class Item {
       else if (stat == 'agi_increase') return translate('agi-increase').replace("{0}", val)
       else if (stat == 'int_increase') return translate('int-increase').replace("{0}", val)
       else if (stat == "max_mana") return translate("max-mana").replace("{0}", val)
-      else if (stat == 'purgatory_damage') return translate("purgatory-effect").replace("{0}", val).replace("{1}", this.stats["purgatory-recovery"]);
+      else if (stat == 'purgatory_damage') return translate("purgatory-effect").replace("{0}", val).replace("{1}", this.stats["purgatory_recovery"]);
       else if (stat == 'bamboo_damage') return translate("bamboo-spear-effect").replace("{0}", val);
-      else if (stat == 'flame') return translate("flame-effect").replace("{0}", val);
+      else if (stat == 'flame_weapon') return translate("flame-weapon-effect").replace("{0}", val);
+      else if (stat == 'flame_armor') return translate("flame-armor-effect").replace("{0}", val);
+      else if (stat == 'shield') return translate("shield").replace("{0}", val);
+      else if (stat == 'recovery') return translate("recovery").replace("{0}", val);
+      else if (stat == 'recovery_multiplier') return translate("recovery-use").replace("{0}", val).replace("{0}", this.stats["recovery_duration"]);
       else return ''  
   }
   

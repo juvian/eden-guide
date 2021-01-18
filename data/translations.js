@@ -195,9 +195,13 @@ exports.translations = {
     "eng": "Each attack has 10% chance to deal {0}% bonus damage",
     "kor": "공격시 10%확률로 추가데미지 {0}%"
   },
-  "flame-effect": {
+  "flame-weapon-effect": {
     "eng": "Deals 8000 + STR * {0} per second to nearby enemies",
     "kor": "초당 주변에 데미지 (8000 + STR * {0})"
+  },
+  "flame-armor-effect": {
+    "eng": "Deals 20000 + STR * {0} per second to nearby enemies",
+    "kor": "초당 주변에 데미지 (20000 + STR * {0})"
   },
   "angra-effect": {
     "eng": "Each basic attack or spell hit has a 2% chance to damage enemies in 1500 range<br/>Adds an additional {0}% Bonus Damage for 8s<br/>Does not Stack",
@@ -207,13 +211,25 @@ exports.translations = {
     "eng": "When health falls below 50%, {0}% bonus damage<br/>{1}% damage hp recovery when above 50%",
     "kor": "생명력이 50% 이하일때<br/>추가데미지 {0}%증가<br/>생명력이 50%이상일때 받은데미지 {1}% 회복"
   },
+  "shield": {
+    "eng": "Generate a shield every 10 seconds that blocks up to {0} damage",
+    "kor": "10초마다 {0}의 쉴드 생성"
+  },
+  "recovery": {
+    "eng": "Allies within range gain {0} HP recovery per second",
+    "kor": "범위내 아군 초당 생명력 회복 {0}"
+  },
+  "recovery-use": {
+    "eng": "On Use: Recovers HP every second for {1} seconds (Allstats x {0})(120s cd)",
+    "kor": "사용시 {1}초간 사용지점에 매초마다 정화의 신의 가호 발동(올스텟 x {0})(쿨타임 120초)"
+  },
   "max-mana": {
     "eng": "Max mana increased by {0}%",
     "kor": "최대 마나 {0}%증가"
   },
   "grasp-effect": {
     "eng": "Damages enemies that attack the user (Allstats x {0})",
-    "kor": "적에게 공격을 받을시 적에게 데미지를 가합니다 (올스텟 x 5)"
+    "kor": "적에게 공격을 받을시 적에게 데미지를 가합니다 (올스텟 x {0})"
   },
   "skill-damage": {
     "eng": "Skill damage increased by {0}%",
@@ -399,6 +415,7 @@ exports.translations = {
   "shuvi": "슈비",
   "nezuko": "카마도 네즈코",
   "escanor": "에스카노르",
+  "taiga": "아이사카 타이가",
   "god": "신",
   "Unleash": "해방",
   "unleash": "해방",
