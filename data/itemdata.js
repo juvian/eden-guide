@@ -677,7 +677,7 @@ module.exports = {
 			"str" : 1700,
 			"hp" : 10000,
 			"hp_regen" : -500,
-      "flame": 15
+      "flame_armor": 15
 		},
 		"label" : "Magical Flame Armor",
     "k_label": "마계의 불꽃 갑옷"
@@ -738,7 +738,7 @@ module.exports = {
 			"str" : 2500,
 			"hp" : 15000,
 			"hp_regen" : -800,
-       "flame": 23
+      "flame_armor": 23
 		},
 		"label" : "Black Earth Flame Armor",
     "k_label": "검은 대지의 불꽃 갑옷"
@@ -864,7 +864,7 @@ module.exports = {
 			"str" : 3500,
 			"hp_regen" : -1100,
       "hp": 20000,
-      "flame": 33
+      "flame_armor": 33
 		},
 		"label" : "Hellfire Armor",
     "k_label": "지옥불 갑옷"
@@ -1287,12 +1287,11 @@ module.exports = {
 			"agi" : 900,
 			"int" : 900,
       "armor": 300,
-			"hp" : 8000
+			"hp" : 8000,
+      "shield": 10000
 		},
 		"label" : "Heavenly Spirit Barrier",
-    "k_label": "천상의 수호벽",
-		"effects" : ["Generates a shield that blocks up to 10000 damage every 10 seconds"],
-		"k_effects" : ["초마다 10000의 쉴드 생성"]
+    "k_label": "천상의 수호벽"
 	},	
 	"I04Q" : {
 		"type" : "artifact",
@@ -1329,12 +1328,11 @@ module.exports = {
 			"agi" : 1100,
 			"int" : 1100,
       "armor": 400,
-			"hp" : 13000
+			"hp" : 13000,
+      "shield": 15000
 		},
 		"label" : "Dazzling Heavenly Spirit Barrier",
-    "k_label": "눈부신 천상의 수호벽",
-		"effects" : ["Generates a shield that blocks up to 16000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 16000의 쉴드 생성"]
+    "k_label": "눈부신 천상의 수호벽"
 	},
 	"I08G" : {
 		"type" : "artifact",
@@ -1344,12 +1342,11 @@ module.exports = {
 			"agi" : 2000,
 			"int" : 2000,
       "armor": 500,
-			"hp" : 20000
+			"hp" : 20000,
+      "shield": 25000
 		},
 		"label" : "Rho Aias",
-    "k_label": "로 아이아스",
-		"effects" : ["Generates a shield that blocks up to 25000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 25000의 쉴드 생성"]
+    "k_label": "로 아이아스"
 	},
 	"I08H" : {
 		"type" : "artifact",
@@ -1450,7 +1447,7 @@ module.exports = {
 			"agi" : 7000,
 			"attack_speed" : 200,
       "attack_agi": true,
-      "attack_real": 45
+      "attack_real": 49
 		},
 		"label" : "Archangel's Dagger +1",
     "k_label": "대천사의 단검 +1"
@@ -1669,7 +1666,7 @@ module.exports = {
 			"agi" : 7500,
 			"attack_speed" : 200,
       "attack_agi": true,
-      "attack_real": 53
+      "attack_real": 58
 		},
 		"label" : "Archangel's Dagger +2",
     "k_label": "대천사의 단검 +2"
@@ -1872,7 +1869,7 @@ module.exports = {
 			"agi" : 8000,
 			"attack_speed" : 200,
       "attack_agi": true,
-      "attack_real": 61
+      "attack_real": 65
 		},
 		"label" : "Archangel's Dagger +3",
     "k_label": "대천사의 단검 +3"
@@ -2268,7 +2265,8 @@ module.exports = {
 		"type" : "material",
 		"color" : "black",
 		"label" : "Essence of Destruction",
-    "k_label": "파괴의 본능"
+    "k_label": "파괴의 본능",
+    "disabled": true
 	},
 	"I03J" : {
 		"type" : "armor",
@@ -2321,7 +2319,8 @@ module.exports = {
 		"type" : "material",
 		"color" : "black",
 		"label" : "Essence of Insanity",
-    "k_label": "광기의 기운"
+    "k_label": "광기의 기운",
+    "disabled": true
 	},
 	"I062" : {
 		"type" : "armor",
@@ -2391,7 +2390,8 @@ module.exports = {
 		"type" : "material",
 		"color" : "black",
 		"label" : "Elemental Spirit",
-    "k_label": "정령의 숨결"
+    "k_label": "정령의 숨결",
+    "disabled": true
 	},
 	"I067" : {
 		"type" : "weapon",
@@ -2415,12 +2415,11 @@ module.exports = {
 			"agi" : 600,
 			"int" : 600,
       "armor": 200,
-			"hp" : 5000
+			"hp" : 5000,
+      "shield": 6000
 		},
 		"label" : "Barrier of Light",
-    "k_label": "빛의 방벽",
-		"effects" : ["Generate a shield every 10 seconds that blocks up to 6000 damage"],
-    "k_effects": ["10초마다 6000의 쉴드 생성"]
+    "k_label": "빛의 방벽"
 	},
 	"I069" : {
 		"type" : "helmet",
@@ -2453,13 +2452,15 @@ module.exports = {
 		"type" : "material",
 		"color" : "black",
 		"label" : "Heaven Sigil",
-    "k_label": "가디언의 증표"
+    "k_label": "가디언의 증표",
+    "disabled": true
 	},
 	"I06I" : {
 		"type" : "material",
 		"color" : "black",
 		"label" : "Waterstone Fragment",
-    "k_label": "수호석 핵"
+    "k_label": "수호석 핵",
+    "disabled": true
 	},
 	"I06F" : {
 		"type" : "accessory",
@@ -2557,7 +2558,8 @@ module.exports = {
 		"type" : "material",
 		"color" : "black",
 		"label" : "Mastermind Token",
-    "k_label": "수문장 징표"
+    "k_label": "수문장 징표",
+    "disabled": true
 	},
 	"I07C" : {
 		"type" : "weapon",
@@ -2583,7 +2585,8 @@ module.exports = {
 		"type" : "material",
 		"color" : "black",
 		"label" : "Black Clay Powder",
-    "k_label": "검은 흙가루"
+    "k_label": "검은 흙가루",
+    "disabled": true
 	},
 	"I07M" : {
 		"type" : "stats",
@@ -2609,7 +2612,8 @@ module.exports = {
 		"type" : "material",
 		"color" : "black",
 		"label" : "Crystallized Dragon Eye",
-    "k_label": "드레곤 슬레이어의 증표"
+    "k_label": "드레곤 슬레이어의 증표",
+    "disabled": true
 	},
 	"I07G" : {
 		"type" : "accessory",
@@ -2668,7 +2672,8 @@ module.exports = {
 		"type" : "material",
 		"color" : "black",
 		"label" : "Mother Tree Bark",
-    "k_label": "마더 트리의 뿌리"	
+    "k_label": "마더 트리의 뿌리",
+    "disabled": true
 	},
 	"I087" : {
 		"type" : "stats",
@@ -2694,12 +2699,12 @@ module.exports = {
 			"str" : 1700,
 			"agi" : 1700,
 			"int" : 1700,
-			"hp_regen" : 700
+      "recovery": 700,
+      "recovery_duration": 5,
+      "recovery_multiplier": 2
 		},
 		"label" : "Essence of Life",
-    "k_label": "생명의 가호",
-		"effects" : ["Allies within range gain HP recovery per second +700", "On Use: Recovers (STR + AGI + INT) x2 HP every second for 5 seconds (120s cd)"],
-    "k_effects": ["범위내 아군 초당 생명력 회복 700", "사용시 5초간 사용지점에 매초마다 마더트리의 가호 발동 (STR + AGI + INT) x2)(쿨타임 120초)"]
+    "k_label": "생명의 가호"
 	},
   "I0AQ" : {
     "type" : "material",
@@ -2884,12 +2889,11 @@ module.exports = {
 			"agi" : 2800,
 			"int" : 2800,
       "armor": 700,
-			"hp" : 25000
+			"hp" : 25000,
+      "shield": 33000
 		},
 		"label" : "Archangel’s Barrier",
-    "k_label": "대천사의 방벽",
-		"effects" : ["Generate a shield that can block up to 33000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 33000의 쉴드 생성"]  
+    "k_label": "대천사의 방벽"
 	},
 	"I0BT" : {
 		"type" : "artifact",
@@ -2925,7 +2929,7 @@ module.exports = {
 		  "agi" : 6500,
 			"attack_speed" : 200,
       "attack_agi": true,
-      "attack_real": 37
+      "attack_real": 41
 		},
 		"label" : "The Archangel’s Dagger",
     "k_label": "대천사의 단검"
@@ -3160,18 +3164,20 @@ module.exports = {
 		"color" : "orange",
 		"stats" : {
 			"atk" : 100000,
-			"str" : 3500
+			"str" : 3500,
+      "flame_weapon": 10
 		},
 		"label" : "Hellfire Great Sword",
     "k_label": "지옥불 대검",
-		"effects" : ["Deal 20000 + STR x10 damage to nearby enemies every second", "On use: consume 2% of Maximum HP and deals 50000 + STR x20 damage to nearby enemies every second for 30 seconds"],
-		"k_effects" : ["초마다 주변적들에게 데미지를 가합니다 (20000 + STR x10)", "사용시 30초동안 초당 체력을 2%소모하여 주변에 강력한 데미지를 가합니다 (50000 + STR x20)(쿨타임 80초)"]
+		"effects" : ["On use: consume 2% of Maximum HP and deals 50000 + STR x20 damage to nearby enemies every second for 30 seconds"],
+		"k_effects" : ["사용시 30초동안 초당 체력을 2%소모하여 주변에 강력한 데미지를 가합니다 (50000 + STR x20)(쿨타임 80초)"]
 	},
 	"I0CR" : {
 		"type" : "material",
 		"color" : "black",
 		"label" : "Crystallized Fossil",
-    "k_label": "염화석"
+    "k_label": "염화석",
+    "disabled": true
 	},	
 	"I0D9" : {
 		"type" : "artifact",
@@ -3241,7 +3247,8 @@ module.exports = {
 		"type" : "material",
 		"color" : "black",
 		"label" : "Agony",
-    "k_label": "비명석"
+    "k_label": "비명석",
+    "disabled": true
 	},
 	"I0DB" : {
 		"type" : "accessory",
@@ -3380,7 +3387,7 @@ module.exports = {
 	    	"str" : 4600,
 	    	"hp" : 30000,
 	    	"hp_regen" : -1500,
-        "flame": 45
+        "flame_armor": 45
 	    },
 	    "label" : "Malevolent Flame Armor",
       "k_label": "대악마의 검은불꽃 갑옷"
@@ -3585,12 +3592,13 @@ module.exports = {
 	    "color" : "blue",
 	    "stats" : {
 	    	"str" :5000,
-	    	"atk" :160000
+	    	"atk" :160000,
+        "flame_weapon": 14
 	    },
 	    "label" : "Darkfire Greatsword",
       "k_label": "검은 지옥불대검",
-	    "effects" : ["Deal 20000 + STR x14 damage to nearby enemies every second", "On use: consume 2% of Maximum HP and deals 60000 + STR x25 damage to nearby enemies every second for 30 seconds (80s cd)"],
-	    "k_effects" : ["초마다 주변적들에게 데미지를 가합니다 (20000 + STR x14)", "사용시 30초동안 초당 체력을 2%소모하여 주변에 강력한 데미지를 가합니다 (60000 + STR x25)(쿨타임 80초)"]
+	    "effects" : ["On use: consume 2% of Maximum HP and deals 60000 + STR x25 damage to nearby enemies every second for 30 seconds (80s cd)"],
+	    "k_effects" : ["사용시 30초동안 초당 체력을 2%소모하여 주변에 강력한 데미지를 가합니다 (60000 + STR x25)(쿨타임 80초)"]
 	},
 	"I047" : {
 		"type" : "weapon",
@@ -3673,6 +3681,12 @@ module.exports = {
 	"I0DY" : {
 	    "type" : "material",
 	    "color" : "black",
+	    "label" : "Boundless Twilight (Old)",
+      "k_label": "(구)끝없는 어둠"
+	},
+	"I00R" : {
+	    "type" : "material",
+	    "color" : "black",
 	    "label" : "Boundless Twilight",
       "k_label": "끝없는 어둠"
 	},
@@ -3696,7 +3710,7 @@ module.exports = {
 	    	"str" : 5500,
 	    	"hp" : 35000,
 	    	"hp_regen" : -2000,
-        "flame": 55
+        "flame_armor": 55
 	    },
 	    "label" : "Chaotic Infernal Armor",
       "k_label": "대혼돈의 불꽃 갑옷"
@@ -3817,10 +3831,11 @@ module.exports = {
       "k_label": "대혼돈의 수호 로브"
 	},
 	"I0EA" : {
-	    "type" : "material",
-	    "color" : "black",
-	    "label" : "Chaotic Rune",
-      "k_label": "타오르는 비명석"
+	  "type" : "material",
+	  "color" : "black",
+	  "label" : "Chaotic Rune",
+    "k_label": "타오르는 비명석",
+    "disabled": true
 	},
 	"I0EB" : {
 	    "type" : "accessory",
@@ -4454,7 +4469,7 @@ module.exports = {
       "agi": 11000,
       "attack_speed": 300,
       "attack_agi": true,
-      "attack_real": 71
+      "attack_real": 76
     },
     "label": "Sealed God Dagger",
     "k_label": "신의 단검"
@@ -4651,14 +4666,16 @@ module.exports = {
 		"color" : "darkred",
 		"stats_points" : 14,
 		"label" : "Burning Energy",
-    "k_label": "불타는 에너지"	
+    "k_label": "불타는 에너지",
+    "disabled": true
 	},
   "I0HR" : {
 		"type" : "stats",
 		"color" : "darkred",
 		"stats_points" : 14,
 		"label" : "Suffering Energy",
-    "k_label": "고통의 에니저"
+    "k_label": "고통의 에니저",
+    "disabled": true
   },
   "I0HT": {
     "type": "material",
@@ -4814,12 +4831,12 @@ module.exports = {
 			"str" : 2500,
 			"agi" : 2500,
 			"int" : 2500,
-			"hp_regen" : 1000
+      "recovery": 1000,
+      "recovery_duration": 5,
+      "recovery_multiplier": 2.5
 		},
 		"label" : "Gaia's Essence",
     "k_label": "대지의 가호",
-		"effects" : ["Allies within range gain HP recovery per second +1000", "On Use: Recovers (STR + AGI + INT) x2.5 HP every second for 4 seconds (120s cd)"],
-    "k_effects": ["범위내 아군 초당 생명력 회복 1000", "사용시 4초간 사용지점에 매초마다 마더트리의 가호 발동 (STR + AGI + INT) x2.5)(쿨타임 120초)"]
 	},
   "I0IA" : {
 		"type" : "artifact",
@@ -4829,12 +4846,11 @@ module.exports = {
 			"agi" : 3500,
 			"int" : 3500,
       "armor": 800,
-			"hp" : 30000
+			"hp" : 30000,
+      "shield": 38000
 		},
 		"label" : "Chaotic Barrier",
-    "k_label": "대혼돈의 방벽",
-		"effects" : ["Generate a shield that can block up to 38000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 38000의 쉴드 생성"]
+    "k_label": "대혼돈의 방벽"
 	},
   "I0IB" : {
 		"type" : "artifact",
@@ -4844,12 +4860,11 @@ module.exports = {
 			"agi" : 5000,
 			"int" : 5000,
       "armor": 1000,
-			"hp" : 40000
+			"hp" : 40000,
+      "shield": 50000
 		},
 		"label" : "God's Barrier",
-    "k_label": "신의 방벽",
-		"effects" : ["Generate a shield that can block up to 50000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 50000의 쉴드 생성"]
+    "k_label": "신의 방벽"
 	},
   "I0IC" : {
 		"type" : "artifact",
@@ -4959,12 +4974,12 @@ module.exports = {
 			"str" : 3500,
 			"agi" : 3500,
 			"int" : 3500,
-			"hp_regen" : 1500
-		},
+      "recovery": 1500,
+      "recovery_duration": 5,
+      "recovery_multiplier": 3.5
+    },
 		"label" : "Demonic Essence",
-    "k_label": "대악마의 가호",
-		"effects" : ["Allies within range gain HP recovery per second +1500", "On Use: Recovers (STR + AGI + INT) x3.5 HP every second for 4 seconds (120s cd)"],
-    "k_effects": ["범위내 아군 초당 생명력 회복 1500", "사용시 4초간 사용지점에 매초마다 마더트리의 가호 발동 (STR + AGI + INT) x3.5)(쿨타임 120초)"]   
+    "k_label": "대악마의 가호"
 	},
   "I0IK" : {
 		"type" : "accessory",
@@ -4973,12 +4988,12 @@ module.exports = {
 			"str" : 4300,
 			"agi" : 4300,
 			"int" : 4300,
-			"hp_regen" : 1800
+      "recovery": 1800,
+      "recovery_duration": 5,
+      "recovery_multiplier": 4
 		},
 		"label" : "Chaotic Essence",
-    "k_label": "대혼돈의 가호",
-		"effects" : ["Allies within range gain HP recovery per second +1800", "On Use: Recovers (STR + AGI + INT) x4 HP every second for 4 seconds (120s cd)"],
-    "k_effects": ["범위내 아군 초당 생명력 회복 1500", "사용시 4초간 사용지점에 매초마다 마더트리의 가호 발동 (STR + AGI + INT) x4)(쿨타임 120초)"]
+    "k_label": "대혼돈의 가호"
 	},
   "I0IL" : {
 		"type" : "helmet",
@@ -5402,7 +5417,7 @@ module.exports = {
       "armor": 1600,
       "hp": 50000,
       "hp_regen": -3000,
-      "flame": 70
+      "flame_armor": 70
     },
     "label": "Purified Flame Armor",
     "k_label": "정화의 불꽃 갑옷"
@@ -5559,12 +5574,12 @@ module.exports = {
 			"str" : 5500,
 			"agi" : 5500,
 			"int" : 5500,
-			"hp_regen" : 2500
+      "recovery": 2500,
+      "recovery_duration": 5,
+      "recovery_multiplier": 5
 		},
 		"label" : "Purified Essence",
-    "k_label": "정화의 신의 가호",
-		"effects" : ["Allies within range gain HP recovery per second +2500", "On Use: not implemented "],
-    "k_effects": ["범위내 아군 초당 생명력 회복 2500", "사용시 5초간 사용지점에 매초마다 정화의 신의 가호 발동(능력치비례)(쿨타임 120초)"]
+    "k_label": "정화의 신의 가호"
 	},  
   "I0L1" : {
 		"type" : "accessory",
@@ -5905,13 +5920,15 @@ module.exports = {
     "label": "Burning Soul",
     "k_label": "불타는 영혼",
     "type": "material",
-    "color": "black"
+    "color": "black",
+    "disabled": true
   },
   "I0DV": {
     "label": "Agonizing Soul",
     "k_label": "고통받는 영혼",
     "type": "material",
-    "color": "black"
+    "color": "black",
+    "disabled": true
   },
   "I076": {
     "label": "Spirit of Beresa",
@@ -5935,37 +5952,43 @@ module.exports = {
     "label": "Beresa’s Soul (Small)",
     "k_label": "베레스라의 영혼(스몰)",
     "type": "chest",
-    "color": "black"
+    "color": "black",
+    "disabled": true
   },
   "I0K8": {
     "label": "Spirit of the Blue Dragon (Small)",
     "k_label": "블루드래곤의 영혼(스몰)",
     "type": "chest",
-    "color": "black"
+    "color": "black",
+    "disabled": true
   },
   "I0K6": {
     "label": "Mother Tree’s Seeds (Small)",
     "k_label": "마더트리의 씨앗(스몰)",
     "type": "chest",
-    "color": "black"
+    "color": "black",
+    "disabled": true
   },
   "I0FO": {
     "label": "Lesser Training Certificate",
     "k_label": "하급 수료증",
     "type": "chest",
-    "color": "black"
+    "color": "black",
+    "disabled": true
   },
   "I0KA": {
     "label": "Intermediate Training Certificate",
     "k_label": "중급 수료증",
     "type": "chest",
-    "color": "black"
+    "color": "black",
+    "disabled": true
   },
   "I0BV": {
     "label": "Advanced Training Certificate",
     "k_label": "상급 수료증",
     "type": "chest",
-    "color": "black"
+    "color": "black",
+    "disabled": true
   },
   "I021": {
     "label": "Beast Bone",
@@ -7122,7 +7145,7 @@ module.exports = {
       "agi": 13000,
       "attack_speed": 300,
       "attack_agi": true,
-      "attack_real": 78
+      "attack_real": 86
     },
     "k_label": "최상급 신의 단검",
     "label": "Supreme God's Dagger"
@@ -7405,7 +7428,7 @@ module.exports = {
       "armor": 1700,
       "hp": 55000,
       "hp_regen": -3500,
-      "flame": 80
+      "flame_armor": 80
     },
     "label": "Supreme Purified Flame Armor",
     "k_label": "최상급 정화의 불꽃 갑옷"
@@ -7543,12 +7566,12 @@ module.exports = {
 			"str" : 6000,
 			"agi" : 6000,
 			"int" : 6000,
-			"hp_regen" : 3000
+      "recovery": 3000,
+      "recovery_duration": 5,
+      "recovery_multiplier": 5.5
 		},
 		"label" : "Supreme Purified Essence",
-    "k_label": "최상급 정화의 신의 가호",
-		"effects" : ["Allies within range gain HP recovery per second +2500", "On Use: Recovers HP every second for 5 seconds(Heals in AOE proportionally to stats)(120s cd)"],
-    "k_effects": ["범위내 아군 초당 생명력 회복 2500", "사용시 5초간 사용지점에 매초마다 정화의 신의 가호 발동(능력치비례)(쿨타임 120초)"]    
+    "k_label": "최상급 정화의 신의 가호"
   },
   "I0ST": {
 		"type" : "accessory",
@@ -7557,12 +7580,12 @@ module.exports = {
 			"str" : 7000,
 			"agi" : 7000,
 			"int" : 7000,
-			"hp_regen" : 4000
+      "recovery": 4000,
+      "recovery_duration": 6,
+      "recovery_multiplier": 5.5
 		},
 		"label" : "Dimensional Essence",
-    "k_label": "차원의 가호",
-		"effects" : ["Allies within range gain HP recovery per second +4000", "On Use: Recovers HP every second for 6 seconds (Heals in AOE proportionally to stats)(120s cd)"],
-    "k_effects": ["범위내 아군 초당 생명력 회복 4000", "사용시 6초간 사용지점에 매초마다 정화의 신의 가호 발동(능력치비례)(쿨타임 120초)"]
+    "k_label": "차원의 가호"
   },
   "I0N3": {
     "type" : "auxiliary",
@@ -7795,12 +7818,11 @@ module.exports = {
 			"agi" : 6000,
 			"int" : 6000,
       "armor": 1100,
-			"hp" : 45000
+			"hp" : 45000,
+      "shield": 55000
 		},
 		"label" : "Supreme God's Barrier",
-    "k_label": "최상급 신의 방벽",
-		"effects" : ["Generate a shield that can block up to 55000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 55000의 쉴드 생성"]    
+    "k_label": "최상급 신의 방벽"  
   },
   "I0NI": {
 		"type" : "artifact",
@@ -7892,7 +7914,7 @@ module.exports = {
       },
       "label": "Supreme Staff of Destruction",
       "k_label": "최상급 파멸의 지팡이",
-      "effects": ["49% armor increase to nearby allies"],
+      "effects": ["49% damage increase to nearby allies"],
       "k_effects": ["주변아군 추가데미지 49%증가 오라 생성"]    
   },
   "I04N": {
@@ -8062,6 +8084,7 @@ module.exports = {
     },
     "label" : "Chaos Ambition",
     "k_label": "대혼돈의 패기",
+    "bugged": true
   },
   "I0NU": {
     "type" : "helmet",
@@ -8727,7 +8750,7 @@ module.exports = {
 			"agi" : 16000,
       "attack_speed": 300,
       "attack_agi": true,
-      "attack_real": 87
+      "attack_real": 99
 		},
 		"label" : "Demon King Dagger",
     "k_label": "마신왕의 단검"
@@ -8740,7 +8763,7 @@ module.exports = {
 			"agi" : 18000,
       "attack_speed": 300,
       "attack_agi": true,
-      "attack_real": 94
+      "attack_real": 110
 		},
 		"label" : "Demon King★Liberation★Dagger",
     "k_label": "★해방★마신왕의 단검"
@@ -9675,7 +9698,7 @@ module.exports = {
       "armor": 1900,
       "hp": 70000,
       "hp_regen": -5000,
-      "flame": 90
+      "flame_armor": 90
     },
     "label": "Heavenly King Flame Armor",
     "k_label": "천신왕의 불꽃 갑옷"
@@ -9688,7 +9711,7 @@ module.exports = {
       "armor": 2000,
       "hp": 80000,
       "hp_regen": -5500,
-      "flame": 95
+      "flame_armor": 95
     },
     "label": "Heavenly King★Liberation★Flame Armor",
     "k_label": "★해방★천신왕의 불꽃 갑옷"
@@ -9825,12 +9848,11 @@ module.exports = {
 			"agi" : 7500,
 			"int" : 7500,
 			"hp" : 60000,
-			"armor" : 1300
+			"armor" : 1300,
+      "shield": 70000
 		},
 		"label" : "Heavenly King Barrier",
-    "k_label": "천신왕의 방벽",
-		"effects" : ["Generate a shield that can block up to 70000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 70000의 쉴드 생성"]  
+    "k_label": "천신왕의 방벽"
   },
   "I0SG": {
 		"type" : "artifact",
@@ -9840,12 +9862,11 @@ module.exports = {
 			"agi" : 8500,
 			"int" : 8500,
 			"hp" : 70000,
-			"armor" : 1400
+			"armor" : 1400,
+      "shield": 80000
 		},
 		"label" : "Heavenly King★Liberation★Barrier",
-    "k_label": "★해방★천신왕의 방벽",
-		"effects" : ["Generate a shield that can block up to 80000 damage every 10 seconds"],
-		"k_effects" : ["10초마다 80000의 쉴드 생성"]  
+    "k_label": "★해방★천신왕의 방벽"
   },
   "I0QJ": {
 		"type" : "artifact",

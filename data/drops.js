@@ -128,7 +128,8 @@ new Chest("I0AB")
   .add("I0AQ", 15)
   .add("I0A6", 8.5)
   .add("I0BU", 8)
-  .addItems(udg_Acangel_Item_S, 9)
+  .add("I0EX", 3)
+  .addItems(udg_Acangel_Item_S, 10)
   .addItems(udg_Acangel_Item_ALL, 90);
 
 
@@ -137,7 +138,9 @@ new Chest("I0KL")
   .add("I0LO", 2)
   .add("I0AQ", 5)
   .add("I0A6", 3.5)
-  .add("I0BU", 3);
+  .add("I0BU", 3)
+  .add("I0EX", 2);
+
 
 new Chest("I0A6")
   .add("I04Z")
@@ -153,16 +156,19 @@ let udg_AcDevill_Epic = ["I0D9", "I0DB"];
 let udg_AcDevill_Nomal = ["I0CZ", "I0D3",  "I0CY", "I0D0", "I0D1", "I0D2", "I0D8", "I0D7", "I0D6"];
 
 new Chest("I037")
-  .add("I0DY", 4)
+  .add("I00R", 4)
   .add("I035", 8)
   .add("I0DS", 8)
+  .add("I0EX", 3)
   .addItems(udg_AcDevill_Epic, 10)
-  .addItems(udg_AcDevill_Nomal, 91);
+  .addItems(udg_AcDevill_Nomal, 90);
 
 new Chest("I0KJ")
-  .add("I0DY", 1.5)
+  .add("I00R", 1.5)
   .add("I035", 3)
-  .add("I0DS", 3);
+  .add("I0DS", 3)
+  .add("I0EX", 2);
+
 
 new Chest("I0DS")
   .add("I0DT")
@@ -207,14 +213,18 @@ new Chest("I05W")
   .add('I0A7' , 14.5)
   .add('I041' , 14.5)
   .add('I03I' , 14)
-  .add('I04Y' , 14);
+  .add('I04Y' , 14)
+  .add("I0EX", 1);
+
 
 new Chest("I05X")
   .add('I03Z' , 14)
   .add('I03J' , 14)
   .add('I0A7' , 12.5)
   .add('I046' , 14)
-  .add('I03P' , 14);
+  .add('I03P' , 14)
+  .add("I0EX", 1);
+
 
 
 new Chest("I06L")
@@ -224,7 +234,9 @@ new Chest("I06L")
   .add('I0BD' , 3)
   .add('I0B6' , 12.5)
   .add('I0IL' , 3)
-  .add('I06J' , 24);
+  .add('I06J' , 24)
+  .add("I0EX", 1.5);
+
 
 new Chest("I06Y")
   .add('I04E' , 3)
@@ -233,7 +245,8 @@ new Chest("I06Y")
   .add('I06V' , 12.5)
   .add('I06T' , 12.5)
   .add('I051' , 12.5)
-  .add('I070' , 24);
+  .add('I070' , 24)
+  .add("I0EX", 1.5);
 
 
 new Chest("I071")
@@ -241,7 +254,8 @@ new Chest("I071")
   .add('I069' , 14)
   .add('I0A7' , 14.5)
   .add('I066' , 6)
-  .add('I068' , 14);
+  .add('I068' , 14)
+  .add("I0EX", 1);
 
 
 new Chest("I072")
@@ -250,7 +264,8 @@ new Chest("I072")
   .add('I064' , 12.5)
   .add('I063' , 12.5)
   .add('I0A7' , 12.5)
-  .add('I062' , 12.5);
+  .add('I062' , 12.5)
+  .add("I0EX", 1);
 
 new Chest("I076")
   .add('I0F3' , 0.4)
@@ -264,7 +279,9 @@ new Chest("I076")
   .add('I0D6' , 6)
   .add('I0D9' , 3.5)
   .add('I0F2' , 3)
-  .add('I0FE' , 0.4);
+  .add('I0FE' , 0.4)
+  .add("I0EX", 2);
+
 
 
 new Chest("I07L")
@@ -281,7 +298,9 @@ new Chest("I07L")
   .add('I0CZ' , 6)
   .add('I0D3' , 6)
   .add('I0D0' , 6)
-  .add('I0D2' , 6);
+  .add('I0D2' , 6)
+  .add("I0EX", 2);
+
 
 
 new Chest("I086")
@@ -297,13 +316,17 @@ new Chest("I086")
   .add('I0DB' , 3)
   .add('I0F1' , 3)
   .add('I0FA' , 0.4)
-  .add('I0FM' , 0.4);
+  .add('I0FM' , 0.4)
+  .add("I0EX", 2);
+
   
 new Chest("I0HA")
   .add('I0HT' , 5)
   .add('I0HB' , 5)
   .add('I0HC' , 5)
-  .add('I0IX' , 15);
+  .add('I0IX' , 15)
+  .add("I0EX", 3);
+
 
 
 new Chest("I0LV").add("I0EX", 0.3).add("I0FY");
@@ -353,37 +376,48 @@ new Chest("I0LU")
   .add('I0D6' , ( 3.00 * 0.40 ))
   .add('I0D9' , ( 1.50 * 0.40 ))
   .add('I0F2' , ( 0.20 * 0.40 ))
-  .add('I0FE' , ( 0.20 * 0.40 ));
+  .add('I0FE' , ( 0.20 * 0.40 ))
+  .add("I0EX", 2);
+
 
 new Chest("I0M7")
-  .add("I0DY", 3)
+  .add("I00R", 3)
   .add("I035", 6.5)
   .add("I0DS", 6.5)
   .add("I0FB", 4)
   .add("I0LO", 4)
   .add("I0AQ", 11)
   .add("I0A6", 6)
-  .add("I0BU", 6);
+  .add("I0BU", 6)
+  .add("I0EX", 3);
+
 
 new Chest("I0KY")
   .add("I04B", 3)
   .add("I0KX", 6)
-  .add("I0LE", 6);
+  .add("I0LE", 6)
+  .add("I0EX", 3);
+
 
 new Chest("I0OR")
-  .add("I0OQ", 3.5, 0.7)
-  .add("I0PE", 3.5, 0.7)
-  .add("I0OT", 1.4, 0.7);
+  .add("I0OQ", 5)
+  .add("I0PE", 5)
+  .add("I0OT", 2)
+  .add("I0EX", 5);
 
 new Chest("I0QE")
   .add("I0QF", 5)
   .add("I0QM", 5)
-  .add("I0QN", 1);
+  .add("I0QN", 1)
+  .add("I0EX", 5);
+
 
 new Chest("I0TA")
   .add("I0TI", 5)
   .add("I0TB", 5)
-  .add("I0T9", 2);
+  .add("I0T9", 1.3)
+  .add("I0EX", 5);
+
 
 new Unit("n00G")
   .add("I021", 100)
