@@ -133,7 +133,10 @@ module.exports = function (app) {
   
 
   app.get("/test", middlewares.authenticate, middlewares.isAdmin, function(req, res) {
-
+    var code = new CodeLoader();
+    code.load("AAAAP!qoNUdo(#2A$U29AAAABAA7${AYc7A~FA~[Az@+)A~pAA~A~OAH{AA~AA}AAAA~AAA@-A~A~")
+    code.data.character = 'H00I';
+    console.log(code.save('juvian#1426'))
   })
   
   

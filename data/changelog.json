@@ -1,5 +1,16 @@
 [
   {
+    "version": "4.5.4",
+    "changes": [
+      "Updated to version 5.8H"      
+    ],
+    "k_changes": [
+      "버전 5.8H 로 업데이트되었습니다"
+    ],    
+    "released": "17/1/2021",
+    "commit_urls": ["https://github.com/juvian/eden-guide/commit/2086221f69ccd77fc5527114c18ca53270bd49e7", "https://github.com/juvian/eden-guide/commit/dd09d2fa4cf578a9d9c500e7f5ad883f07aba020"]
+  },
+  {
     "version": "4.5.3",
     "changes": [
       "Updated to version 5.8F"      

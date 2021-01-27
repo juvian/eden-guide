@@ -31,7 +31,7 @@ chests.forEach(chest => {
 let colortags = {"purple": "unique", "blue": "epic", "orange": "legendary", "red": "mythic", "god": "god"}
 
 for (let id in items) {
-  if (items[id].disabled) delete items[id];  
+  if (items[id].disabled && false) delete items[id];  
   else {
     let item = items[id];
       if (!item.tags) item.tags = [];
