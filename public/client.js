@@ -31,7 +31,7 @@ function getFilteredData () {
      if (filters.type && item.type != filters.type) return false;
      if (tagFilters.size && item.tags.every(tag => tagFilters.has(tag) == false)) return false;
      if (filters.raid && item.dropsArray().every(d => d.chest.parent.translatedLabel().toLowerCase() != filters.raid)) return false;
-     return true;
+     return !item.disabled;
   })
 }
 
