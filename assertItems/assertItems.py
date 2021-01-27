@@ -651,7 +651,7 @@ def processProcs(missing):
 			if funcName == "Trig_Item_Tick_GG_Actions":
 				unseen[id][stat] = False
 
-			elif funcName == "Trig_Item_Tick_New_Actions":
+			elif funcName == "Trig_Item_Pick_Actions": 
 				seen[id][stat] = True	
 				processStat(stat, line, val, id, missing)				
 		
@@ -1105,7 +1105,7 @@ def assertCorrectScalings():
 
 
 
-#getItemData()	
+getItemData()	
 
 loadItems()
 
@@ -1115,5 +1115,5 @@ assertCorrectBonusDamage()
 
 assertCorrectCraftings()
 
-#assertCorrectScalings()
+assertCorrectScalings()
 
