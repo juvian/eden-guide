@@ -2651,8 +2651,8 @@ module.exports = {
 		},		
 		"label" : "Blue Dragon’s Wings",
     "k_label": "블루 드레곤 날개",
-		"effects" : ["Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x70 (180s cd)", "Allies have 20% movement speed and 60% attack speed increased", "Enemies have 15% movement speed and attack speed reduced"],
-		"k_effects" : ["주변 적군 공이속 15%감소", "주변 아군 공속 60% 이속 20%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x70)(쿨타임 180초)"]
+		"effects" : ["Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x70 (180s cd)", "Allies have 20% movement speed and 60% attack speed increased", "Enemies have 10% movement speed and attack speed reduced"],
+		"k_effects" : ["주변 적군 공이속 10%감소", "주변 아군 공속 60% 이속 20%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x70)(쿨타임 180초)"]
 	},
 	"I0BD" : {
 		"type" : "artifact",
@@ -2739,7 +2739,7 @@ module.exports = {
   "I0AC" : {
     "type" : "material",
     "color" : "black",
-    "label" : "Archangel’s Sigil (Old)",
+    "label" : "Archangel’s Mark (Old)",
     "k_label": "(구)대천사의 증표"
   },
   "I0FB" : {
@@ -4469,7 +4469,7 @@ module.exports = {
       "agi": 11000,
       "attack_speed": 300,
       "attack_agi": true,
-      "attack_real": 76
+      "attack_real": 79
     },
     "label": "Sealed God Dagger",
     "k_label": "신의 단검"
@@ -4878,8 +4878,8 @@ module.exports = {
 		},		
 		"label" : "Archangel Blue Wings",
     "k_label": "대천사의 푸른날개",
-		"effects" : ["Allies have 30% movement speed and 90% attack speed increased", "Enemies have 20% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x95 (180s cd)"],
-		"k_effects" : ["주변 적군 공이속 20%감소", "주변 아군 공속 90% 이속 30%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x95)(쿨타임 180초)"]   
+		"effects" : ["Allies have 30% movement speed and 90% attack speed increased", "Enemies have 15% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x95 (180s cd)"],
+		"k_effects" : ["주변 적군 공이속 15%감소", "주변 아군 공속 90% 이속 30%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x95)(쿨타임 180초)"]   
 	},
   "I0ID" : {
 		"type" : "artifact",
@@ -4893,8 +4893,8 @@ module.exports = {
 		},		
 		"label" : "Chaotic Blue Wings",
     "k_label": "대혼돈의 푸른날개",
-		"effects" : ["Allies have 35% movement speed and 120% attack speed increased", "Enemies have 25% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x110 (180s cd)"],
-		"k_effects" : ["주변 적군 공이속 25%감소", "주변 아군 공속 120% 이속 35%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x110)(쿨타임 180초)"]
+		"effects" : ["Allies have 35% movement speed and 120% attack speed increased", "Enemies have 20% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x110 (180s cd)"],
+		"k_effects" : ["주변 적군 공이속 20%감소", "주변 아군 공속 120% 이속 35%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x110)(쿨타임 180초)"]
 	},
   "I0IE" : {
 		"type" : "artifact",
@@ -4908,8 +4908,8 @@ module.exports = {
 		},		
 		"label" : "God's Blue Wings",
     "k_label": "신의 푸른 날개",
-		"effects" : ["Allies have 40% movement speed and 150% attack speed increased", "Enemies have 25% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x130 (180s cd)"],
-		"k_effects" : ["주변 적군 공이속 25%감소", "주변 아군 공속 150% 이속 40%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x130)(쿨타임 180초)"]
+		"effects" : ["Allies have 40% movement speed and 170% attack speed increased", "Enemies have 25% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x130 (180s cd)"],
+		"k_effects" : ["주변 적군 공이속 25%감소", "주변 아군 공속 170% 이속 40%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x130)(쿨타임 180초)"]
 	},
   "I0IF" : {
 		"type" : "accessory",
@@ -7018,7 +7018,7 @@ module.exports = {
     "type": "material",
     "color": "black",
     "label": "Archangel Mark",
-    "k_label": "(신)대천사의 증표"
+    "k_label": "대천사의 증표"
   },
   "I0LQ": {
     "type": "material",
@@ -7145,7 +7145,7 @@ module.exports = {
       "agi": 13000,
       "attack_speed": 300,
       "attack_agi": true,
-      "attack_real": 86
+      "attack_real": 90
     },
     "k_label": "최상급 신의 단검",
     "label": "Supreme God's Dagger"
@@ -8750,7 +8750,7 @@ module.exports = {
 			"agi" : 16000,
       "attack_speed": 300,
       "attack_agi": true,
-      "attack_real": 99
+      "attack_real": 105
 		},
 		"label" : "Demon King Dagger",
     "k_label": "마신왕의 단검"
@@ -8763,7 +8763,7 @@ module.exports = {
 			"agi" : 18000,
       "attack_speed": 300,
       "attack_agi": true,
-      "attack_real": 110
+      "attack_real": 120
 		},
 		"label" : "Demon King★Liberation★Dagger",
     "k_label": "★해방★마신왕의 단검"
@@ -9906,8 +9906,8 @@ module.exports = {
 		},
 		"label" : "Heavenly King Blue Wings",
     "k_label": "천신왕의 푸른 날개",
-		"effects" : ["Allies have 45% movement speed and 200% attack speed increased", "Enemies have 30% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x200 (180s cd)"],
-		"k_effects" : ["주변 적군 공이속 30%감소", "주변 아군 공속 200% 이속 45%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x200)(쿨타임 180초)"]
+		"effects" : ["Allies have 45% movement speed and 200% attack speed increased", "Enemies have 25% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x200 (180s cd)"],
+		"k_effects" : ["주변 적군 공이속 25%감소", "주변 아군 공속 200% 이속 45%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x200)(쿨타임 180초)"]
   },
   "I0SI": {
 		"type" : "artifact",
@@ -9919,8 +9919,8 @@ module.exports = {
 		},
 		"label" : "Heavenly King★Liberation★Blue Wings",
     "k_label": "★해방★천신왕의 푸른 날개",
-		"effects" : ["Allies have 50% movement speed and 220% attack speed increased", "Enemies have 30% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x220 (180s cd)"],
-		"k_effects" : ["주변 적군 공이속 30%감소", "주변 아군 공속 220% 이속 50%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x220)(쿨타임 180초)"]
+		"effects" : ["Allies have 50% movement speed and 220% attack speed increased", "Enemies have 25% movement speed and attack speed reduced", "Freeze nearby enemies on use, dealing 150000 + (STR + AGI + INT) x220 (180s cd)"],
+		"k_effects" : ["주변 적군 공이속 25%감소", "주변 아군 공속 220% 이속 50%증가", "사용시 주변 적들을 얼려버림 (150000 + (STR + AGI + INT) x220)(쿨타임 180초)"]
   },
   "I0QL": {
 		"type" : "artifact",

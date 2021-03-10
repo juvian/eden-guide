@@ -14,7 +14,9 @@
     <div class = "col-3">
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
         {{#each types}} 
+          {{#if (lookup @root.byType this)}}
             <a class="nav-link text-capitalize {{#if @first}}active{{/if}}" id="{{this}}-tab" data-toggle="pill" href="#{{this}}" role="tab" aria-controls="{{this}}" aria-expanded="{{@first}}">{{text this @root.lang}}</a>
+        {{/if}}
         {{/each}} 
         {{#if data._id}}
           <ul style='margin-top:20px' class="list-group">

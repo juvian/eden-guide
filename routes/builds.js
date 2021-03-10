@@ -82,7 +82,7 @@ module.exports = function (app) {
   app.get("/custom-build/:id/edit", middlewares.authenticate, middlewares.validBuild, function (req, res) {
     var build = res.locals.build;
     var char = builds[charIdToName[build.char]];
-    build.items = build.items.map(v => items[v]);
+    //build.items = build.items.map(v => items[v]);
     
     return res.render("create-build", {layout: 'custom-build', build: build});
   });  
@@ -139,6 +139,31 @@ module.exports = function (app) {
     console.log(code.save('juvian#1426'))
   })
   
+  const convertions = {
+    'THESCRUBPWNER': 'EnvyGeorge',
+    'Kurosaki_Ruri': 'ReusXMarina',
+    'RUSMAZAFAKA': 'RASSL'
+  }
+  
+  app.post('/convert', function (req, res){
+     try {
+       const code = new CodeLoader();
+       console.log(req.body)
+       code.load(req.body.code);
+       console.log(code.data)
+       
+       let name = Object.keys(convertions).find(name => code.isValidCodeFor(name) || code.isValidCodeFor(convertions[name]));
+       if (name) res.send(code.isValidCodeFor(name) ? code.save(convertions[name]) : code.save(name));
+       else res.send('invalid user');
+       
+     } catch (ex) {
+       res.send(ex.message)
+     }    
+  });
+  
+  app.get("/convert", function(req, res) {
+      return res.render("convert-code");  
+  });
   
   app.post("/getCode", function (req, res) {
     var code = new CodeLoader();

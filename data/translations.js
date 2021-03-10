@@ -239,15 +239,15 @@ exports.translations = {
     "eng": "All stats increased by {0}%",
     "kor": "모든스텟 {0}%증가"
   },
-  "str_increase": {
+  "str-increase": {
     "eng": "Str increased by {0}%",
     "kor": "힘 {0}%증"
   },
-  "agi_increase": {
+  "agi-increase": {
     "eng": "Agi increased by {0}%",
     "kor": "민첩 {0}%증가"
   },
-  "int_increase": {
+  "int-increase": {
     "eng": "Int increased by {0}%",
     "kor": "지능 {0}%증"
   },
