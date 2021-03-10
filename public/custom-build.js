@@ -9,7 +9,7 @@ $(document).on("click", ".add-build", function(){
 $(document).on("language", function () {
   window.items = window.client.items;
   if (window.data) {
-    data.items.forEach(i => addItem(i.id));
+    data.items.forEach(addItem);
     $("#title").val(data.title);
     $("#description").val(data.description);
   }

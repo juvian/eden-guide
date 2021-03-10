@@ -1426,3 +1426,9 @@ new Craft('I0SM', 100.0).add(["I0QR", "I0QN", "I0QN"]);
 
 
 new Craft('I0SN', 100.0).add(["I0QS", "I0QN", "I0QN"]);
+
+
+new Craft('I0LO', 100.0).add(["I04Z", "I04Z", "I04Z", "I04Z", "I04Z"]);
+
+
+new Craft('I00R', 100.0).add(["I0DT", "I0DT", "I0DT", "I0DT", "I0DT", "I0DT", "I0DT", "I0DT", "I0DT", "I0DT", "I0DT", "I0DT", "I0DT", "I0DT", "I0DT"]);

@@ -117,7 +117,7 @@ function initializeColumns() {
       formatter : function (value, item) {
         var html = "";
 
-        if (page == "custom-build" && ["weapon", "armor", "accessory", "helmet", "artifact", "auxiliary", "unleash", "token"].indexOf(item.type) != -1) {
+        if (page == "custom-build" && ["weapon", "armor", "accessory", "helmet", "artifact", "auxiliary", "unleash", "token", "slot"].indexOf(item.type) != -1) {
             html += `<button data-item="${item.id}" class = "btn btn-primary add-build">${translator.translate('add_build')}</button>`  
         }
 

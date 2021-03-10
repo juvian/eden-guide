@@ -117,10 +117,10 @@ new Chest("I0FX")
   .add("I037")
   .add("I0AB");
 
-let udg_Acangel_Item = ["I09D", "I093", "I08Z", "I0A4", "I09W", "I09Y", "I09X", "I099", "I09P", "I09L", "I09H", "I0A5", "I0AS", "I0C5", "I0C9", "I0CF", "I0G4", "I0IP", "I0NW" ,"I0O2", "I0PF", "I0PM"]
-let udg_Acangel_Item2 = ["I0A3", "I09Z", "I0A2", "I0A1", "I0A0", "I03C", "I0BP", "I0BR", "I0BQ", "I0BS", "I0BT", "I0IC"]
+let udg_Acangel_Item = ["I09D", "I093", "I08Z", "I0A4", "I09W", "I09Y", "I09X", "I099", "I09P", "I09L", "I09H", "I0A5", "I0C5", "I0C9", "I0CF", "I0G4", "I0IP", "I0NW" ,"I0O2", "I0PF", "I0PM"]
+let udg_Acangel_Item2 = ["I0A3", "I09Z", "I0A2", "I0A1", "I0A0", "I03C", "I0BR", "I0BQ", "I0BS", "I0BT", "I0IC"]
 let udg_Acangel_Item_S = ["I080", "I04C", "I07F"];
-let udg_Acangel_Item_ALL = ["I07O", "I0BD", "I077", "I081", "I07G", "I045", "I04D", "I04E", "I082", "I087", "I07M"];
+let udg_Acangel_Item_ALL = ["I07O", "I0BD", "I077", "I081", "I07G", "I045", "I04D", "I082", "I087", "I07M"];
 
 new Chest("I0AB")
   .add("I0FB", 6)

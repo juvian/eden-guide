@@ -1,0 +1,25 @@
+<html lang="en">
+  {{> header}}
+  
+  Enter your code: <input class="form-control code" type="text"></input>
+
+<button style="margin: 10px 0px;" class="btn btn-outline-primary get-code" type="button">Get new code</button>
+<div class = "new-code"></div>
+
+ <script>
+   
+   $(".get-code").click(function(){
+     
+     fetch("/convert", {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({code: $(".code").val()})
+    }).then(r => r.text()).then(code => $(".new-code").html(code)).catch(err => alert(err));
+     
+   });
+  </script>
+
+</html>
