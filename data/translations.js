@@ -252,8 +252,8 @@ exports.translations = {
     "kor": "지능 {0}%증"
   },
   "hp-consume": {
-    "eng": "Each spell consumes 6% of HP",
-    "kor": "모든 능력사용시 체력 6% 소모"
+    "eng": "Each spell consumes 3% of HP",
+    "kor": "모든 능력사용시 체력 3% 소모"
   },
   "bugs": {
     "eng": "this item has bugs",

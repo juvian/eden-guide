@@ -228,6 +228,14 @@ module.exports.builds = {
       ],
       "type": "str",
       "id": "E0FD"
+    },
+    "elaina": {
+      "images": [
+        "https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2Ftumblr_489ad9d588f861bf976ff682a57594bd_e33a6a32_1280.jpg?v=1621122354506",
+        "https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2Fwallhaven-6oorzq.jpg?v=1621122357986"
+      ],
+      "type": "int",
+      "id": "H093"
     }
 }
 

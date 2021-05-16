@@ -280,6 +280,14 @@ let units = {
   "n062": {
     "label": "Dimensional Barrage",
     "k_label": "차원 안정기"
+  },
+  "n05F": {
+    "label": "Monument of Chaos",
+    "k_label": "혼돈의 비석"
+  },
+  "n05G": {
+    "label": "Chaos headstone",
+    "k_label": "대혼돈의 비석"
   }
 }
 

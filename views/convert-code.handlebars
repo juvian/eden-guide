@@ -17,7 +17,7 @@
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({code: $(".code").val()})
-    }).then(r => r.text()).then(code => $(".new-code").html(code)).catch(err => alert(err));
+    }).then(r => r.text()).then(code => $(".new-code").text(code)).catch(err => alert(err));
      
    });
   </script>

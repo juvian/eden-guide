@@ -134,15 +134,18 @@ module.exports = function (app) {
 
   app.get("/test", middlewares.authenticate, middlewares.isAdmin, function(req, res) {
     var code = new CodeLoader();
-    code.load("AAAAP!qoNUdo(#2A$U29AAAABAA7${AYc7A~FA~[Az@+)A~pAA~A~OAH{AA~AA}AAAA~AAA@-A~A~")
-    code.data.character = 'H00I';
-    console.log(code.save('juvian#1426'))
+    code.load("AAAAc!qoNOd0g#S&g@rQA-STmAAAAzAAk,n~(x7A1!AdPAzGoWAzXA{7A1'A{7AzIAqoA1>AANAAA@bAAA@]Az,Az/AzdA@,A!sA@jA~ACAz-A1XA1:A12A1mA2ACA@A@A@AAnb[AzKA@fAzuA@VAzAAz]AvAdAE~Sz9!M!lC'z317A~~~A9~")
+    code = new CodeLoader(); code.load(code.save("RASSL").join(''));
+    console.log(code.data)
   })
   
   const convertions = {
     'THESCRUBPWNER': 'EnvyGeorge',
     'Kurosaki_Ruri': 'ReusXMarina',
-    'RUSMAZAFAKA': 'RASSL'
+    'RUSMAZAFAKA': 'RASSL',
+    'relldor': 'reuben',
+    'relleder': 'reuben',
+    'LuckyTurtle': 'TheLuckyTurtle'
   }
   
   app.post('/convert', function (req, res){
