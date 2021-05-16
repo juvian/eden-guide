@@ -137,7 +137,7 @@ module.exports = {
 			"atk" : 60000,
 			"int" : 2600,
       "int_tick": true,
-      "attack_int_real": 42
+      "attack_int_real": 100
 		},
 		"label" : "Staff of Divine Light",
     "k_label": "신성한 빛의 지팡이"
@@ -162,7 +162,7 @@ module.exports = {
 			"atk" : 60000,
 			"str" : 2500,
 			"int" : 2500,
-      "attack_str_int_real": 20,
+      "attack_str_int_real": 45,
       "int_tick": true   
 		},
 		"label" : "Sword of Resplendent Light",
@@ -262,7 +262,7 @@ module.exports = {
 			"atk" : 100000,
 			"int" : 3300,
       "int_tick": true,
-      "attack_int_real": 52      
+      "attack_int_real": 115      
 		},
 		"label" : "Staff of Judgement",
     "k_label": "심판의 지팡이",
@@ -352,7 +352,7 @@ module.exports = {
 			"int" : 2800,
 			"str" : 2600,
       "int_tick": true,
-      "attack_str_int_real": 22
+      "attack_str_int_real": 55
 		},
       "label" : "Judge's Staff of Chaos",
     "k_label": "혼돈의 심판 지팡이"
@@ -543,7 +543,7 @@ module.exports = {
 			"str" : 4000,
 			"int" : 4000,
       "int_tick": true,
-      "attack_str_int_real": 28
+      "attack_str_int_real": 63
 		},
 		"label" : "Hades Chaos Staff",
     "k_label": "하데스의 혼돈지팡이"
@@ -555,7 +555,7 @@ module.exports = {
 			"atk" : 160000,
 			"int" : 5000,
       "int_tick": true,
-      "attack_int_real": 70          
+      "attack_int_real": 130          
 		},
 		"label" : "Hades Staff",
     "k_label": "하데스의 지팡이"
@@ -1552,7 +1552,7 @@ module.exports = {
 			"str" : 5900,
 			"int" : 5900,
       "int_tick": true,
-      "attack_str_int_real": 45.6      
+      "attack_str_int_real": 75      
 		},
 		"label" : "Archangel's Battle Staff +1",
     "k_label": "대천사의 전투지팡이 +1"
@@ -1564,7 +1564,7 @@ module.exports = {
 			"atk" : 260000,
 			"int" : 7000,
       "int_tick": true,
-      "attack_int_real": 114
+      "attack_int_real": 157
 		},
 		"label" : "Archangel's Staff +1",
     "k_label": "대천사의 지팡이 +1"
@@ -1768,7 +1768,7 @@ module.exports = {
 			"str" : 6300,
 			"int" : 6300,
       "int_tick": true,
-      "attack_str_int_real": 50.4       
+      "attack_str_int_real": 81       
 		},
 		"label" : "Archangel's Battle Staff +2",
     "k_label": "대천사의 전투지팡이 +2"
@@ -1780,7 +1780,7 @@ module.exports = {
 			"atk" : 300000,
 			"int" : 7500,
       "int_tick": true,
-      "attack_int_real": 126        
+      "attack_int_real": 170        
 		},
 		"label" : "Archangel's Staff +2",
     "k_label": "대천사의 지팡이 +2"
@@ -1947,7 +1947,7 @@ module.exports = {
 			"str" : 6700,
 			"int" : 6700,
       "int_tick": true,
-      "attack_str_int_real": 60         
+      "attack_str_int_real": 87         
 		},
 		"label" : "Archangel's Battle Staff +3",
     "k_label": "대천사의 전투지팡이 +3"
@@ -1959,7 +1959,7 @@ module.exports = {
 			"atk" : 350000,
 			"int" : 8000,
       "int_tick": true,
-      "attack_int_real": 147            
+      "attack_int_real": 183            
 		},
 		"label" : "Archangel's Staff +3",
     "k_label": "대천사의 지팡이 +3"
@@ -2581,13 +2581,6 @@ module.exports = {
 		"label" : "Black Earth",
     "k_label": "검은 대지의 기운"
 	},
-	"I04H" : {
-		"type" : "material",
-		"color" : "black",
-		"label" : "Black Clay Powder",
-    "k_label": "검은 흙가루",
-    "disabled": true
-	},
 	"I07M" : {
 		"type" : "stats",
 		"color" : "darkred",
@@ -2709,8 +2702,8 @@ module.exports = {
   "I0AQ" : {
     "type" : "material",
     "color" : "black",
-    "label" : "God Essence",
-    "k_label": "신의 금속"
+    "label" : "2000-point coupon",
+    "k_label": "2000포인트 쿠폰"
   },
   "I0A6" : {
     "type" : "chest",
@@ -2739,14 +2732,14 @@ module.exports = {
   "I0AC" : {
     "type" : "material",
     "color" : "black",
-    "label" : "Archangel’s Mark (Old)",
-    "k_label": "(구)대천사의 증표"
+    "label" : "12000-point coupon",
+    "k_label": "12000포인트 쿠폰"
   },
   "I0FB" : {
     "type" : "material",
     "color" : "black",
-    "label" : "Archangel’s Sourcewell",
-    "k_label": "대천사의 힘의 근원"
+    "label" : "12000-point coupon",
+    "k_label": "12000포인트 쿠폰"
   },
   "I04Z" : {
     "type" : "material",
@@ -3020,7 +3013,7 @@ module.exports = {
 			"str" : 5500,
 			"int" : 5500,
       "int_tick": true,
-      "attack_str_int_real": 38.4
+      "attack_str_int_real": 69
 		},
 		"label" : "Archangel’s Battle Staff",
     "k_label": "대천사의 전투지팡이"
@@ -3031,7 +3024,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 230000,
 			"int" : 6500,
-      "attack_int_real": 96,
+      "attack_int_real": 145,
       "int_tick": true
 		},
     "label" : "The Archangel’s Staff",
@@ -4620,7 +4613,7 @@ module.exports = {
         "atk": 500000,
         "str": 9500,
         "int": 9500,
-        "attack_str_int_real": 72,
+        "attack_str_int_real": 94,
         "int_tick": true
       },
       "label": "God's Staff",
@@ -4644,7 +4637,7 @@ module.exports = {
         "atk": 500000,
         "int": 11000,
         "int_tick": true,
-        "attack_int_real": 180         
+        "attack_int_real": 205         
       },
       "label": "God's Judgement Staff",
       "k_label": "신의 심판 지팡이"
@@ -5203,8 +5196,8 @@ module.exports = {
     "color": "god",
     "label": "Unleash Power [Overmind]", 
     "k_label": "해방된 힘 [오버마인드]",
-    "effects": ["Increases Thunder Calling int multiplier by 3%"],
-    "k_effects": ["초월의 룬의 지능증가폭이 3% 증가합니다"]
+    "effects": ["Showtime's cooldown is reduced by 5 seconds"],
+    "k_effects": ["쇼타임의 쿨타임이 5초 감소합니다"]
   },
   "I0JD": {
     "type": "unleash",
@@ -7014,12 +7007,6 @@ module.exports = {
     "label" : "Mythic Auxiliary Essence",
     "k_label": "신화 룬 정수"
   },
-  "I0LO": {
-    "type": "material",
-    "color": "black",
-    "label": "Archangel Mark",
-    "k_label": "대천사의 증표"
-  },
   "I0LQ": {
     "type": "material",
     "color": "black",
@@ -7237,7 +7224,7 @@ module.exports = {
         "atk": 600000,
         "int": 13000,
         "int_tick": true,
-        "attack_int_real": 205           
+        "attack_int_real": 220           
       },
       "label": "Supreme God's Judgement Staff",
       "k_label": "최상급 신의 심판 지팡이"
@@ -7263,7 +7250,7 @@ module.exports = {
         "str": 11000,
         "int": 11000,
         "int_tick": true,
-        "attack_str_int_real": 77                
+        "attack_str_int_real": 102                
       },
       "label": "Supreme God's Staff",
       "k_label": "최상급 신의 일격 지팡이"
@@ -7457,6 +7444,18 @@ module.exports = {
 		"effects" : ["Recover 75% of MAX MP every 28 seconds"],
     "k_effects": ["28초마다 최대마나 75%회복"]    
   },
+  "I016": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"int" : 11000,
+      "mp": 100000
+		},
+		"label" : "★Liberation★ Dimensional Magical Power",
+    "k_label": "★해방★차원의 마력",
+		"effects" : ["Recover 80% of MAX MP every 28 seconds"],
+    "k_effects": ["28초마다 최대마나 80%회복"]    
+  },
   "I0MY": {
 		"type" : "accessory",
 		"color" : "god",
@@ -7485,6 +7484,20 @@ module.exports = {
 		"effects" : ["Increases the damage by 150% for 15s (120s cd)"],
     "k_effects": ["사용시 15초간 추가데미지 150%증가(쿨타임 120초)"]
   },
+  "I018": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 8000,
+			"agi" : 8000,
+			"int" : 8000,
+      "damage_increase": 70
+		},
+		"label" : "★Liberation★ Dimensional Fury Ring",
+    "k_label": "★해방★차원의 분노",
+		"effects" : ["Increases the damage by 165% for 15s (120s cd)"],
+    "k_effects": ["사용시 15초간 추가데미지 165%증가(쿨타임 120초)"]
+  },
   "I0MZ": {
 		"type" : "accessory",
 		"color" : "god",
@@ -7511,6 +7524,19 @@ module.exports = {
 		"label" : "Dimensional Strike",
     "k_label": "차원의 일격"    
   },
+  "I032": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 8000,
+			"agi" : 8000,
+			"int" : 8000,
+      "critical_hit": 7.5,
+      "critical_hit_chance": 25
+		},
+		"label" : "★Liberation★ Dimensional Strike",
+    "k_label": "★해방★차원의 일격"    
+  },
   "I0N0": {
 		"type" : "accessory",
 		"color" : "god",
@@ -7535,6 +7561,18 @@ module.exports = {
 		"label" : "Dimensional Power",
     "k_label": "차원의 힘"    
   },
+  "I033": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 8000,
+			"agi" : 8000,
+			"int" : 8000,
+	    "damage_increase" : 115
+		},
+		"label" : "★Liberation★ Dimensional Power",
+    "k_label": "★해방★차원의 힘"    
+  },
   "I0N1": {
 		"type" : "accessory",
 		"color" : "god",
@@ -7558,6 +7596,18 @@ module.exports = {
     "k_label": "차원의 생명력",
     "effects" : ["Recovers 75% of maximum HP every 28 seconds"],
     "k_effects": ["28초마다 최대체력 75%회복"]    
+  },
+  "I024": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 11000,
+      "hp": 105000
+		},
+		"label" : "★Liberation★Dimensional Life Jewel",
+    "k_label": "★해방★차원의 생명력",
+    "effects" : ["Recovers 80% of maximum HP every 28 seconds"],
+    "k_effects": ["28초마다 최대체력 80%회복"]    
   },
   "I0N2": {
 		"type" : "accessory",
@@ -7586,6 +7636,20 @@ module.exports = {
 		},
 		"label" : "Dimensional Essence",
     "k_label": "차원의 가호"
+  },
+  "I00W": {
+		"type" : "accessory",
+		"color" : "god",
+		"stats" : {
+			"str" : 8000,
+			"agi" : 8000,
+			"int" : 8000,
+      "recovery": 4500,
+      "recovery_duration": 6,
+      "recovery_multiplier": 5.5
+		},
+		"label" : "★Liberation★ Dimensional Essence",
+    "k_label": "★해방★차원의 가호"
   },
   "I0N3": {
     "type" : "auxiliary",
@@ -7688,6 +7752,19 @@ module.exports = {
     "label": "Dimensional Guardian Helmet",
     "k_label": "차원의 수호의 힘"    
   },
+  "I053": {
+    "type": "helmet",
+    "color": "god",
+    "stats" : {
+	    "armor" : 1300,
+      "str": 6000,
+      "agi": 6000,
+	    "int" : 6000,
+	    "damage_taken" : -32
+	  },
+    "label": "★해방★차원의 수호의 힘",
+    "k_label": "★Liberation★ Dimensional Guardian Helmet"    
+  },
   "I0NA": {
     "type": "helmet",
     "color": "god",
@@ -7714,6 +7791,19 @@ module.exports = {
     "label": "Dimensional Resistance Helmet",
     "k_label": "차원의 저항 투구"   
   },
+  "I05I": {
+    "type": "helmet",
+    "color": "god",
+    "stats" : {
+	    "armor" : 2100,
+      "str": 6000,
+      "agi": 6000,
+	    "int" : 6000,
+      "magic_resistance" : 38
+	  },
+    "label": "★Liberation★ Dimensional Resistance Helm",
+    "k_label": "★해방★차원의 저항 투구"   
+  },
   "I0NB": {
     "type": "helmet",
     "color": "god",
@@ -7739,6 +7829,19 @@ module.exports = {
     "k_label": "차원의 지혜",
     "effects": ["Recovers 100% MP on use (70s cd)"],
     "k_effects": ["사용시 MP100% 회복 (쿨타임 70초)"]    
+  },
+  "I05K": {
+    "type": "helmet",
+    "color": "god",
+    "stats" : {
+	    "armor" : 1100,
+	    "int" : 8000,
+      "mp" : 60000
+	  },
+    "label": "★Liberation★ Dimensional Wisdom Helmet",
+    "k_label": "★해방★차원의 지혜",
+    "effects": ["Recovers 100% MP on use (65s cd)"],
+    "k_effects": ["사용시 MP100% 회복 (쿨타임 65초)"]    
   },
   "I0NC": {
     "type": "helmet",
@@ -7971,6 +8074,21 @@ module.exports = {
     "k_label": "차원의 보석",
     "label": "Dimensional Magic Jewel"
   },
+  "I017": {
+    "type": "accessory",
+    "color": "god",
+	  "stats" : {
+			"str" : 8000,
+			"agi" : 8000,
+			"int" : 8000,
+      "mp": 55000,
+      "hp": 75000,
+	    "movement_speed" : 300,
+			"hp_regen" : 5000
+		},
+    "k_label": "★해방★차원의 보석",
+    "label": "★Liberation★Dimensional Magic Jewel"
+  },
   "I0H8": {
     "type": "accessory",
     "color": "god",
@@ -7998,6 +8116,20 @@ module.exports = {
 		},
     "k_label": "차원의 수호",
     "label": "Dimensional Guardian Ring"
+  },
+  "I025": {
+    "type": "accessory",
+    "color": "god",
+	  "stats" : {
+			"str" : 8000,
+			"agi" : 8000,
+			"int" : 8000,
+	    "armor" : 1300,
+	    "movement_speed" : 300,
+      "magic_resistance": 43
+		},
+    "k_label": "★해방★차원의 수호",
+    "label": "★Liberation★ Dimensional Guardian Ring"
   },
   "I0NO": {
     "type" : "armor",
@@ -8130,6 +8262,21 @@ module.exports = {
     },
     "label" : "Dimensional Ambition",
     "k_label": "차원의 패기",
+  },
+  "I05L": {
+    "type" : "helmet",
+    "color" : "god",
+    "stats" : {
+      "armor" : 3500,
+      "str" : 6000,
+      "agi" : 6000,
+      "int" : 6000,
+      "extra_armor": 3500,
+      "extra_armor_cd": 13,
+      "extra_armor_range": 1500
+    },
+    "label" : "★Liberation★Dimensional Ambition",
+    "k_label": "★해방★차원의 패기",
   },
   "I0NW": {
     "type" : "weapon",
@@ -8649,7 +8796,7 @@ module.exports = {
     "type" : "material",
     "color" : "black",
     "label" : "Demon King Treasure Piece",
-    "k_label": "마신왕의 보물조각"
+    "k_label": "마신왕의 편린"
   },  
   "I0OT" : {
     "type" : "material",
@@ -8974,7 +9121,7 @@ module.exports = {
 			"str" : 13000,
 			"int" : 13000,
       "int_tick": true,
-      "attack_str_int_real": 105  
+      "attack_str_int_real": 115  
 		},
 		"label" : "Demon King Judgment Staff",
     "k_label": "마신왕의 일격 지팡이"
@@ -9072,7 +9219,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 800000,
 			"str" : 16000,
-      "str_increase": 30
+      "str_increase": 31
     },
 		"label" : "Demon King Amplifying Sword",
     "k_label": "마신왕의 증폭검"
@@ -9083,7 +9230,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 1000000,
 			"str" : 18000,
-      "str_increase": 33
+      "str_increase": 34
     },
 		"label" : "Demon King★Liberation★Amplifying Sword",
     "k_label": "★해방★마신왕의 증폭검"
@@ -9094,7 +9241,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 800000,
 			"agi" : 16000,
-      "agi_increase": 30
+      "agi_increase": 31
     },
 		"label" : "Demon King Amplifying Dagger",
     "k_label": "마신왕의 증폭단검"
@@ -9105,7 +9252,7 @@ module.exports = {
 		"stats" : {
 			"atk" : 1000000,
 			"agi" : 18000,
-      "agi_increase": 33
+      "agi_increase": 34
     },
 		"label" : "Demon King★Liberation★Amplifying Dagger",
     "k_label": "★해방★마신왕의 증폭단검"
@@ -9746,13 +9893,19 @@ module.exports = {
     "type" : "material",
     "color" : "black",
     "label" : "Heavenly King's Treasure Piece",
-    "k_label": "천신왕의 보물조각"
+    "k_label": "천신왕의 편린"
+  },
+  "I00V" : {
+    "type" : "material",
+    "color" : "black",
+    "label" : "Archangel's Core",
+    "k_label": "대천사의 핵"
   },
   "I0T8" : {
     "type" : "material",
     "color" : "black",
-    "label" : "Dimensional Piece",
-    "k_label": "차원의 조각"
+    "label" : "Dimensional Fragment",
+    "k_label": "차원의 파편"
   },
   "I0T9" : {
     "type" : "material",
@@ -10163,6 +10316,28 @@ module.exports = {
     "effects": ["Rhitta's Magical Power is increased by 1 every 2s"],
     "k_effects": ["2초마다 신부 릿타의 마력이 1 증가합니다"]
   },
+  "I05Z": {
+    "type": "unleash",
+    "color": "god",
+    "label": "Unleash Power [The Ashen Witch]", 
+    "k_label": "해방된 힘 [재의 마녀]",
+    "effects": ["Narcissism (D)'s cooldown is reduced by 15 seconds."],
+    "k_effects": ["나르시즘(D)의 쿨타임이 15초 감소합니다."]
+  },
+  "I04V": {
+    "type": "helmet",
+    "color": "god",
+    "stats" : {
+	    "armor" : 1200,
+      "str": 6000,
+      "agi": 6000,
+	    "int" : 6000
+	  },
+    "effects": ["On use: 100% magic resistance for 14.5 seconds (90s cd)"],
+    "k_effects": ["사용시 14.5초간 마법면역(쿨타임 90초)"],
+    "label": "★Liberation★ Dimensional Resistance Helmet",
+    "k_label": "★해방★차원의 결계"   
+  },
   "I0T0": {
     "type": "helmet",
     "color": "god",
@@ -10190,6 +10365,19 @@ module.exports = {
     "label": "Dimensional Light",
     "k_label": "차원의의 빛"   
   },
+  "I052": {
+    "type": "helmet",
+    "color": "god",
+    "stats" : {
+	    "armor" : 1300,
+      "str": 6000,
+      "agi": 6000,
+	    "int" : 6000,
+      "damage_increase": 90
+	  },
+    "label": "★Liberation★Dimensional Light",
+    "k_label": "★해방★차원의 빛"   
+  },
   "I0T2": {
     "type": "helmet",
     "color": "god",
@@ -10204,6 +10392,20 @@ module.exports = {
     "label": "Dimensional Forbidden Force",
     "k_label": "차원의 금단의 힘"   
   },
+  "I050": {
+    "type": "helmet",
+    "color": "god",
+    "stats" : {
+	    "armor" : 1300,
+      "str": 6000,
+      "agi": 6000,
+	    "int" : 6000,
+      "damage_increase": 145,
+      "damage_taken": 48
+	  },
+    "label": "★Liberation★ Dimensional Forbidden Force",
+    "k_label": "★해방★차원의 금단의 힘"   
+  },
   "I0TC": {
     "type": "slot",
     "color": "god",
@@ -10212,6 +10414,15 @@ module.exports = {
     },
     "label": "Dark Matter [Strength]",
     "k_label": "암흑 물질[힘]"       
+  },
+  "I04U": {
+    "type": "slot",
+    "color": "god",
+    "stats": {
+      "str": 2800
+    },
+    "label": "★Liberation★ Dark Matter [Strength]",
+    "k_label": "★해방★암흑 물질[힘]"       
   },
   "I0TD": {
     "type": "slot",
@@ -10222,6 +10433,15 @@ module.exports = {
     "label": "Dark Matter [Agility]",
     "k_label": "암흑 물질[민첩]"       
   },
+  "I034": {
+    "type": "slot",
+    "color": "god",
+    "stats": {
+      "agi": 2800
+    },
+    "label": "★Liberation★ Dark Matter [Agility]",
+    "k_label": "★해방★암흑 물질[민첩]"       
+  },
   "I0TE": {
     "type": "slot",
     "color": "god",
@@ -10230,6 +10450,15 @@ module.exports = {
     },
     "label": "Dark Matter [Intelligence]",
     "k_label": "암흑 물질[지능]"       
+  },
+  "I03X": {
+    "type": "slot",
+    "color": "god",
+    "stats": {
+      "int": 2800
+    },
+    "label": "★Liberation★ Dark Matter [Intelligence]",
+    "k_label": "★해방★암흑 물질[지능]"       
   },
   "I0TF": {
     "type": "slot",
@@ -10241,6 +10470,16 @@ module.exports = {
     "label": "Dark Matter [Chaos]",
     "k_label": "암흑 물질[혼돈]"
   },
+  "I04H" : {
+    "type": "slot",
+    "color": "god",
+    "stats": {
+      "str": 1800,
+      "agi": 1800
+    },
+    "label": "★Liberation★ Dark Matter [Chaos]",
+    "k_label": "★해방★암흑 물질[혼돈]"
+	},
   "I0TG": {
     "type": "slot",
     "color": "god",
@@ -10248,8 +10487,18 @@ module.exports = {
       "str": 1300,
       "int": 1300
     },
-    "label": "Dark Matter",
-    "k_label": "암흑의 물질"       
+    "label": "Dark Matter [Chaos]",
+    "k_label": "암흑 물질[혼돈]"       
+  },
+  "I048": {
+    "type": "slot",
+    "color": "god",
+    "stats": {
+      "str": 1800,
+      "int": 1800
+    },
+    "label": "★Liberation★ Dark Matter [Chaos]",
+    "k_label": "★해방★암흑 물질[혼돈]"
   },
   "I0TH": {
     "type": "slot",
@@ -10259,7 +10508,18 @@ module.exports = {
       "agi": 1000,
       "int": 1000
     },
-    "label": "Dark Matter",
-    "k_label": "암흑의 물질"
+    "label": "Dark Matter [Chaos]",
+    "k_label": "암흑 물질[혼돈]"
+  },
+  "I05Y": {
+    "type": "slot",
+    "color": "god",
+    "stats": {
+      "str": 1500,
+      "agi": 1500,
+      "int": 1500
+    },
+    "label": "★Liberation★ Dark Matter [Chaos]",
+    "k_label": "★해방★암흑 물질[혼돈]"
   }
 }
