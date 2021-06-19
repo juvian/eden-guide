@@ -1,0 +1,67 @@
+<html lang="en">
+  {{> header}}
+  <script src="https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2Fmpq.js?v=1622924418771"></script>
+
+	<form>
+	  <div class="form-group">
+	    <label>Upload map</label>
+	    <input accept=".mpq, .w3x, .w3m, .j" type="file" class="form-control-file">
+	  </div>
+	</form>
+
+    
+  <div class="alert alert-success" role="alert" style = "visibility:hidden">
+    
+  </div>
+  
+  <div class="alert alert-danger" role="alert" style = "visibility:hidden">
+    
+  </div>
+
+  <script>
+    
+    document.querySelector('input[type="file"]').addEventListener("change", onFileChange);
+
+		function onFileChange(e) {      
+      $(".alert").css("visibility", "hidden").text("");
+
+      const file = e.target.files[0];
+      if (!file) return;
+
+			const reader = new FileReader()
+			reader.onload = async event => {
+        try {
+            FS.writeFile('/example.mpq',  new Uint8Array(event.target.result));
+            const mpq = await MPQ.open('/example.mpq', 'r');
+            const dirs = ['war3map.j', 'scripts\\war3map.j', 'war3map.lua', 'scripts\\war3map.lua'];
+            const dir = dirs.find(d => mpq.hasFile(d));
+
+            if (!dir) throw "Script file not found";
+
+            const file = mpq.openFile(dir);
+            const data = file.read();
+            const script = new TextDecoder().decode(data);
+            const commands = new Set();
+          
+            for (const match of script.matchAll(/TriggerRegisterPlayerChatEvent(.*)/g)) {
+                const txt = match[1].split('"');
+                if (txt.length > 1) commands.add(txt[1]);
+            }
+            
+            for (const match of script.matchAll(/"(-[^"]+)"/g)) {
+                commands.add(match[1]);
+            }
+
+          
+            $(".alert-success").css("visibility", "visible").html('<pre>' + Array.from(commands).join('\n') + '</pre>');
+        } catch (e) {
+          $(".alert-danger").css("visibility", "visible").text(e.message);
+        }        		
+			} 
+			reader.readAsArrayBuffer(file);
+		}
+     
+  </script>
+  
+</html>
+

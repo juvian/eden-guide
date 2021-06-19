@@ -1,5 +1,16 @@
 [
   {
+    "version": "5.1.0",
+    "changes": [
+      "Updated to version s3 1.2G"      
+    ],
+    "k_changes": [
+      "버전 s3 1.2G 로 업데이트되었습니다"
+    ],    
+    "released": "19/6/2021",
+    "commit_urls": []
+  },
+  {
     "version": "5.0.0",
     "changes": [
       "Updated to version s3 1.1i"      
@@ -8,7 +19,7 @@
       "버전 s3 1.1i 로 업데이트되었습니다"
     ],    
     "released": "15/5/2021",
-    "commit_urls": ["https://github.com/juvian/eden-guide/commit/910cd4260e559be4aec7320fee11b054ca6517a7"]
+    "commit_urls": ["https://github.com/juvian/eden-guide/commit/a5f2422effd91688d915711d2bcb0fe37f2d8148", "https://github.com/juvian/eden-guide/commit/910cd4260e559be4aec7320fee11b054ca6517a7"]
   },
   {
     "version": "4.5.6",

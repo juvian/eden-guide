@@ -34,6 +34,14 @@
           <a class="nav-link" href="http://cafe.naver.com/scvrpg/642133" target="_blank">사용방법</a>
         </li>      
       {{/if}}
+      {{#if (eq lang 'eng')}}
+        <li class="nav-item active">
+          <a class="nav-link" href="/utils/script-commands">Map commands</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/utils/commands">utf8tizer</a>
+        </li> 
+      {{/if}}
     </ul>
     <ul class="navbar-nav">
       {{#if loggedIn}}

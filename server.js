@@ -61,6 +61,10 @@ app.get("/chars", function (request, response) {
   response.render('chars', {layout : 'char-build', chars: Object.keys(builds), builds: builds, heroTypes: ["str", "agi", "int"]});
 });
 
+/*app.get('/test2', function(req, res) {
+  res.render('test');
+})*/
+
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {

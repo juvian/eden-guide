@@ -416,6 +416,7 @@ exports.translations = {
   "nezuko": "카마도 네즈코",
   "escanor": "에스카노르",
   "taiga": "아이사카 타이가",
+  "elaina": "일레이나",
   "god": "신",
   "Unleash": "해방",
   "unleash": "해방",

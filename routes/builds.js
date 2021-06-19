@@ -145,7 +145,11 @@ module.exports = function (app) {
     'RUSMAZAFAKA': 'RASSL',
     'relldor': 'reuben',
     'relleder': 'reuben',
-    'LuckyTurtle': 'TheLuckyTurtle'
+    'LuckyTurtle': 'TheLuckyTurtle',
+    'IzuNavi123': 'TheCabbageMan',
+    'Disp1337': 'Dispersion',
+    'POPCORNULTRA1': 'Walrus24',
+    "ColdSylas": "MagicEmpire"
   }
   
   app.post('/convert', function (req, res){
