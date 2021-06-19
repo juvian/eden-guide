@@ -215,7 +215,7 @@ def processDropFunc(m, drops):
 
 	line = m.group(0)
 	#print(line)
-	if "AddAttributedItem(whichUnit , itemId ," in line or "FindAdd(pId , itemId , false)" in line or "eventRefillChance" in func:
+	if "AddAttributedItem(whichUnit , itemId ," in line or "FindAdd(pId , itemId , false)" in line or "eventRefillChance" in func or "AddAttributedItem(pId , i" in line:
 		return
 
 	if "set eventBagChance" in line:
@@ -492,9 +492,9 @@ def processLine(line, id, missing, context = dict()):
 	if len(list(filter(lambda x: x in line, ["udg_Plus_Demige", "udg_Attack_Plus_Item_Real", "udg_Reflect_Item_Real", "udg_Minus_Demige", "udg_Shield_Real", "udg_Shied_Int", "udg_Fire_Amor", "udg_Fire_Wepon", "udg_Fire_Amor_Minus", "udg_Gaho_Item_Real", "udg_Save_Stat", "udg_Skill_Damage_UP", "udg_Plus_damage", "udg_HP_And_Dead_Item_PD_Real", "udg_HP_And_Dead_Item_HP_Real", "udg_Critical_Item_real", "udg_Save_Stat_Str", "udg_Save_Stat_Agi", "udg_Save_Stat_Int", "udg_Save_Stat_HP"]))):
 		try:
 			if "+" in line:
-				damage = round(float(line.split("+")[1].split(")")[0].strip()) * 100)
+				damage = float(line.split("+")[1].split(")")[0].strip()) * 100
 			elif "-" in line:
-				damage = round(float(line.split("-")[1].split(")")[0].strip()) * 100)	
+				damage = float(line.split("-")[1].split(")")[0].strip()) * 100
 			else:
 				damage = float(line.split("=")[-1])
 		except Exception as ex:
@@ -502,7 +502,7 @@ def processLine(line, id, missing, context = dict()):
 			raise ex
 
 		if damage == 0:
-			return			
+			return				
 
 	if ("udg_Plus_Demige" in line or "udg_Plus_damage" in line) and id not in ["I00Z", "I010", "I02X", "I03N"]:
 		processStat("damage_increase", line, damage, id, missing)	
@@ -557,53 +557,53 @@ def processLine(line, id, missing, context = dict()):
 
 
 def processDamage2(missing):
-	for m in re.finditer("Item\s?==\s?'(\w\w\w\w)'", code):
+	for m in re.finditer("itemId\s?==\s?'(\w\w\w\w)'", code):
 		id = m.group(1)
 		idx1 = code.find("endif", m.start())
 		idx2 = code.find("elseif", m.start())
 		text = code[code.find(id, m.start()):min(idx1, idx2)]
 
-		if not ("if" in text and "Item ==" in text):
+		if not ("if" in text and "itemId ==" in text):
 			for line in text.split("\n"):
 				processLine(line, id, missing)
 
-	for m in re.finditer("call SaveReal\(Itemtable, '(\w\w\w\w)', Stri", code):
+	for m in re.finditer("call SaveReal\(Itemtable, '(\w\w\w\w)', \$", code):
 		id = m.group(1)
 		line = code[m.start():code.find('\n', m.start())]
 
 		stats = {
-			'df': 'damage_taken',
-			'md': 'damage_taken',
-			'pd': 'damage_increase',
-			'at': 'atk',
-			'str': 'str',
-			'agi': 'agi',
-			'int': 'int',
-			'amor': 'armor',
-			'hp': 'hp',
-			'mp': 'mp',
-			'hpup': 'max_health',
-			"mps": "mps",
-			'ps': 'skill_damage',
-			'strup' : 'str_increase',
-			'agiup' : 'agi_increase',
-			'intup' : 'int_increase',
-			'hpr': 'hp_regen_percent'
+			'A5021944': 'damage_taken',
+			'258119AC': 'damage_taken',
+			'D8DD5316': 'damage_increase',
+			'7BE3579D': 'atk',
+			'2D297D87': 'str',
+			'9ABDB814': 'agi',
+			'57259F3B': 'int',
+			'821F7B24': 'armor',
+			'FCD961C9': 'hp',
+			'4203D9C2': 'mp',
+			'1C09D134': 'max_health',
+			"7AD88F80": "mps",
+			'EE17A001': 'skill_damage',
+			'334081D1' : 'str_increase',
+			'D2E65B00' : 'agi_increase',
+			'E5E0B3E0' : 'int_increase',
+			'68E9368A': 'hp_regen_percent'
 		}
 
 		multipliers = {
-			'df': -100,
-			'md': 100,
-			'pd': 100,
-			'mps': 100,
-			'hpup': 100,
-			'ps': 1000,
-			'strup' : 100,
-			'agiup' : 100,
-			'intup' : 100
+			'A5021944': -100,
+			'258119AC': 100,
+			'D8DD5316': 100,
+			'7AD88F80': 100,
+			'1C09D134': 100,
+			'EE17A001': 1000,
+			'334081D1' : 100,
+			'D2E65B00' : 100,
+			'E5E0B3E0' : 100
 		}
 
-		s = line.split("StringHash(")[1].split('"')[1].lower()
+		s = line.split("$")[1].split(',')[0]
 
 		if s in ["fd"]:
 			reportBug(id, s)
@@ -611,7 +611,7 @@ def processDamage2(missing):
 
 		stat = stats[s]
 		multiplier = 1 if s not in multipliers else multipliers[s]
-		divisor = 10 if s == 'ps' else 1
+		divisor = 10 if s == 'EE17A001' else 1
 
 		damage = float(line.split(",")[-1].split(")")[0])
 		damage = (round(damage * multiplier) if multiplier != 1 else damage) / divisor
@@ -1142,7 +1142,7 @@ def assertCorrectScalings():
 
 
 
-getItemData()	
+#getItemData()	
 
 loadItems()
 
