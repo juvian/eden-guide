@@ -288,6 +288,10 @@ let units = {
   "n05G": {
     "label": "Chaos headstone",
     "k_label": "대혼돈의 비석"
+  },
+  "n06B": {
+    "label": "Genesis",
+    "k_label": "창세신"
   }
 }
 

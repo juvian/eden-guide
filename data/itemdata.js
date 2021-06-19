@@ -8458,6 +8458,18 @@ module.exports = {
 		"label" : "Demon King★Liberation★Strike Rune",
     "k_label": "★해방★마신왕의 일격룬"    
   },
+  "I0K1": {
+		"type" : "auxiliary",
+		"color" : "god",
+		"stats" : {
+			"str" : 3000,
+			"agi" : 3000,
+			"int" : 3000,
+      "damage_increase": 58
+		},
+		"label" : "Genesis Strike Rune",
+    "k_label": "창세신의 일격룬"    
+  },  
   "I0OC": {
 		"type" : "auxiliary",
 		"color" : "god",
@@ -8482,6 +8494,18 @@ module.exports = {
 		"label" : "Demon King★Liberation★Life Rune",
     "k_label": "★해방★마신왕의 생명룬"    
   },
+  "I0HR": {
+		"type" : "auxiliary",
+		"color" : "god",
+		"stats" : {
+			"str" : 3000,
+			"agi" : 3000,
+			"int" : 3000,
+      "hp": 55000
+		},
+		"label" : "Genesis Life Rune",
+    "k_label": "창세신의 생명룬"    
+  },
   "I0OD": {
 		"type" : "auxiliary",
 		"color" : "god",
@@ -8505,6 +8529,18 @@ module.exports = {
 		},
 		"label" : "Demon King★Liberation★Mana Rune",
     "k_label": "★해방★마신왕의 마나룬"    
+  },
+  "I0H4": {
+		"type" : "auxiliary",
+		"color" : "god",
+		"stats" : {
+			"str" : 3000,
+			"agi" : 3000,
+			"int" : 3000,
+      "mp": 40000
+		},
+		"label" : "Genesis Mana Rune",
+    "k_label": "창세신의 마나룬"    
   },
   "I0OE": {
 		"type" : "auxiliary",
@@ -8532,6 +8568,19 @@ module.exports = {
 		"label" : "Demon King★Liberation★Speed Rune",
     "k_label": "★해방★마신왕의 신속룬"    
   },
+  "I0K0": {
+		"type" : "auxiliary",
+		"color" : "god",
+		"stats" : {
+			"str" : 3800,
+			"agi" : 3800,
+			"int" : 3800,
+      "movement_speed": 150,
+      "attack_speed": 250
+		},
+		"label" : "Genesis Speed Rune",
+    "k_label": "창세신의 신속룬"    
+  },  
   "I0OF": {
 		"type" : "auxiliary",
 		"color" : "god",
@@ -8557,6 +8606,19 @@ module.exports = {
     "k_label": "★해방★마신왕의 포션",
     "effects" : ["On Use: Restore 65% of health (25s cd)"],
     "k_effects" : ["사용시 최대생명력 65%회복 (쿨타임 25초)"]
+  },
+  "I0K4": {
+		"type" : "auxiliary",
+		"color" : "god",
+		"stats" : {
+			"str" : 3000,
+			"agi" : 3000,
+			"int" : 3000
+		},
+		"label" : "Genesis Vitality Potion",
+    "k_label": "창세신의 포션",
+    "effects" : ["On Use: Restore 70% of health (25s cd)"],
+    "k_effects" : ["사용시 최대생명력 70%회복 (쿨타임 25초)"]
   },
   "I0OG": {
 		"type" : "auxiliary",
@@ -8584,6 +8646,19 @@ module.exports = {
     "effects" : ["On Use: Restore 65% of maximum mana (25s cd)"],
     "k_effects" : ["사용시 최대마나 65%회복 (쿨타임 25초)"]    
   },
+  "I0HQ": {
+		"type" : "auxiliary",
+		"color" : "god",
+		"stats" : {
+			"str" : 3000,
+			"agi" : 3000,
+			"int" : 3000
+		},
+		"label" : "Genesis Mana Potion",
+    "k_label": "창세신의 마나포션",
+    "effects" : ["On Use: Restore 70% of maximum mana (25s cd)"],
+    "k_effects" : ["사용시 최대마나 70%회복 (쿨타임 25초)"]    
+  },
   "I0OH": {
 		"type" : "auxiliary",
 		"color" : "god",
@@ -8608,6 +8683,18 @@ module.exports = {
 		"label" : "Demon King★Liberation★Stat Rune",
     "k_label": "★해방★마신왕의 증폭룬"  
   },
+  "I0K3": {
+		"type" : "auxiliary",
+		"color" : "god",
+		"stats" : {
+			"str" : 3000,
+			"agi" : 3000,
+			"int" : 3000,
+      "stats_increase": 8
+		},
+		"label" : "Genesis Stat Rune",
+    "k_label": "창세신의 증폭룬"  
+  },  
   "I0OI": {
 		"type" : "auxiliary",
 		"color" : "god",
@@ -8632,6 +8719,18 @@ module.exports = {
 		"label" : "Demon King★Liberation★Magic Rune",
     "k_label": "★해방★마신왕의 증강룬"
   },
+  "I0K2": {
+		"type" : "auxiliary",
+		"color" : "god",
+		"stats" : {
+			"str" : 3000,
+			"agi" : 3000,
+			"int" : 3000,
+      "skill_damage": 9.5
+		},
+		"label" : "Genesis Magic Rune",
+    "k_label": "창세신의 증강룬"
+  },  
   "I0OJ": {
 		"type" : "token",
 		"color" : "god",
@@ -8641,7 +8740,7 @@ module.exports = {
 		"label" : "Demon King Token [Int]",
     "k_label": "마신왕의 증표[지능]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["지능 10%증가"]
+    "k_effects": ["해방의 힘 전용템"]
   },
   "I0RQ": {
 		"type" : "token",
@@ -8652,7 +8751,18 @@ module.exports = {
 		"label" : "Demon King★Liberation★Token [Int]",
     "k_label": "★해방★마신왕의 증표[지능]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["지능 10%증가"]
+    "k_effects": ["해방의 힘 전용템"]
+  },
+  "I0H2": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "int_increase": 8.5
+		},
+		"label" : "Genesis Token [Int]",
+    "k_label": "창세신의 증표[지능]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["해방의 힘 전용템"]
   },
   "I0OK": {
 		"type" : "token",
@@ -8663,7 +8773,7 @@ module.exports = {
       "label" : "Demon King Token [Str]",
     "k_label": "마신왕의 증표[힘]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["지능 10%증가"]
+    "k_effects": ["해방의 힘 전용템"]
   },
   "I0RR": {
 		"type" : "token",
@@ -8671,10 +8781,21 @@ module.exports = {
 		"stats" : {
       "str_increase": 7
 		},
-      "label" : "Demon King★Liberation★Token [Str]",
+    "label" : "Demon King★Liberation★Token [Str]",
     "k_label": "★해방★마신왕의 증표[힘]",
     "effects": ["Only for the power of liberation"],
-    "k_effects": ["지능 10%증가"]
+    "k_effects": ["해방의 힘 전용템"]
+  },
+  "I0H3": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "str_increase": 8.5
+		},
+    "label" : "Genesis Token [Str]",
+    "k_label": "창세신의 증표[힘]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["해방의 힘 전용템"]
   },
   "I0OL": {
 		"type" : "token",
@@ -8695,6 +8816,17 @@ module.exports = {
 		},
 		"label" : "Demon King★Liberation★Token [Agi]",
     "k_label": "★해방★마신왕의 증표[민첩]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["해방의 힘 전용템"]
+  },
+  "I0GV": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "agi_increase": 8.5
+		},
+		"label" : "Genesis Token [Agi]",
+    "k_label": "창세신의 증표[민첩]",
     "effects": ["Only for the power of liberation"],
     "k_effects": ["해방의 힘 전용템"]
   },
@@ -8742,6 +8874,28 @@ module.exports = {
     "effects": ["Only for the power of liberation"],
     "k_effects": ["해방의 힘 전용템"]
   },
+  "I0H1": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "skill_damage": 11.5
+		},
+		"label" : "Genesis Token [Skill Damage]",
+    "k_label": "창세신의 증표[증강",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["해방의 힘 전용템"]
+  },
+  "I0H0": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "damage_increase": 48
+		},
+		"label" : "Genesis Token [Strike]",
+    "k_label": "창세신의 증표[일격]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["해방의 힘 전용템"]
+  },
   "I0OO": {
 		"type" : "token",
 		"color" : "god",
@@ -8764,6 +8918,17 @@ module.exports = {
     "effects": ["Only for the power of liberation"],
     "k_effects": ["해방의 힘 전용템"]
   },
+  "I0GZ": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "max_health": 8.5
+		},
+		"label" : "Genesis Token [HP]",
+    "k_label": "창세신의 증표[생명]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["해방의 힘 전용템"]
+  },
   "I0OP": {
 		"type" : "token",
 		"color" : "god",
@@ -8783,6 +8948,17 @@ module.exports = {
 		},
 		"label" : "Demon King★Liberation★Token [Mana]",
     "k_label": "★해방★마신왕의 증표[마나]",
+    "effects": ["Only for the power of liberation"],
+    "k_effects": ["해방의 힘 전용템"]
+  },
+  "I0CQ": {
+		"type" : "token",
+		"color" : "god",
+		"stats" : {
+      "max_mana": 8.5
+		},
+		"label" : "Geneis Token [Mana]",
+    "k_label": "창세신의 증표[마나]",
     "effects": ["Only for the power of liberation"],
     "k_effects": ["해방의 힘 전용템"]
   },
@@ -8841,6 +9017,19 @@ module.exports = {
     "effects" : ["Every 10 attacks will recover AGI x6.7 HP (9s cd)", "Every 6 spells will recover AGI x6.7 HP (10s cd)", "On Use: Restores AGI x10 HP (120s cd)"],
 		"k_effects" : ["기본공격 10회시 생명력회복 (AGI x6.7)(쿨타임 9초)", "스킬사용 6회시 생명력회복 (AGI x6.7)(쿨타임 10초)", "사용시  생명력회복 (AGI x10)(쿨타임 120초)"],
 	},
+  "I0FH" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"agi" : 21000,
+			"hp" : 240000
+		},
+		"label" : "Genesis Bow of Life",
+    "k_label": "창세신의 생명의 신궁",
+    "effects" : ["Every 10 attacks will recover AGI x7 HP (9s cd)", "Every 6 spells will recover AGI x7 HP (10s cd)", "On Use: Restores AGI x7 HP (120s cd)"],
+		"k_effects" : ["기본공격 10회시 생명력회복 (AGI x7)(쿨타임 9초)", "스킬사용 6회시 생명력회복 (AGI x7)(쿨타임 10초)", "사용시  생명력회복 (AGI x7)(쿨타임 120초)"],
+	},
   "I0OW" : {
 		"type" : "weapon",
 		"color" : "god",
@@ -8865,6 +9054,18 @@ module.exports = {
 		"label" : "Demon King★Liberation★Gauntlets",
     "k_label": "★해방★마신왕의 건틀릿"
 	},  
+  "I0BV" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"agi" : 21000,
+			"damage_taken" : 68,
+      "damage_increase": 350
+		},
+		"label" : "Genesis Gauntlets",
+    "k_label": "창세신의 건틀릿"
+	},  
 	"I0OX" : {
 		"type" : "weapon",
 		"color" : "god",
@@ -8888,6 +9089,18 @@ module.exports = {
     "k_label": "★해방★마신왕의 권좌",
     "effects": ["Summons the highest level demons, inflicting (INT x 47) damage per hit"],
     "k_effects": ["사용시 최상위 마족을 소환하며, 매 타격마다 (지능 x 47)의 피해를 입힙니다"]
+	},
+  "I0CS" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"int" : 21000
+		},
+		"label" : "Genesis Staff",
+    "k_label": "창세신의 권좌",
+    "effects": ["Summons the highest level demons, inflicting (INT x 49) damage per hit"],
+    "k_effects": ["사용시 최상위 마족을 소환하며, 매 타격마다 (지능 x 49)의 피해를 입힙니다"]
 	},
   "I0OY" : {
 		"type" : "weapon",
@@ -8915,6 +9128,19 @@ module.exports = {
 		"label" : "Demon King★Liberation★Dagger",
     "k_label": "★해방★마신왕의 단검"
 	},
+  "I0D4" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"agi" : 21000,
+      "attack_speed": 300,
+      "attack_agi": true,
+      "attack_real": 140
+		},
+		"label" : "Genesis Dagger",
+    "k_label": "창세신의 단검"
+	},
   "I0OZ" : {
 		"type" : "weapon",
 		"color" : "god",
@@ -8937,6 +9163,17 @@ module.exports = {
 		"label" : "Demon King★Liberation★Great Sword",
     "k_label": "★해방★마신왕의 대검"
 	},
+  "I0DU" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"str" : 21000,
+      "damage_increase": 155
+		},
+		"label" : "Genesis Great Sword",
+    "k_label": "창세신의 대검"
+	},
   "I0P0" : {
 		"type" : "weapon",
 		"color" : "god",
@@ -8958,6 +9195,17 @@ module.exports = {
 		},
 		"label" : "Demon King★Liberation★Sword",
     "k_label": "★해방★마신왕의 도검"
+	},
+  "I0DV" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"agi" : 21000,
+      "damage_increase": 155
+		},
+		"label" : "Genesis Sword",
+    "k_label": "창세신의 도검"
 	},
   "I0P1" : {
 		"type" : "weapon",
@@ -8985,6 +9233,20 @@ module.exports = {
 		"label" : "Demon King★Liberation★Magic Staff",
     "k_label": "★해방★마신왕의 마력 지팡이"
 	},
+  "I0EA" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"int" : 21000,
+      "mp": 75000,
+      "contract": 0.0000072,
+      "int_tick": true    
+		},
+		"label" : "Genesis Magic Staff",
+    "k_label": "창세신의 마력 지팡이",
+    "bugged": true
+	},
   "I0P2" : {
 		"type" : "weapon",
 		"color" : "god",
@@ -9010,6 +9272,19 @@ module.exports = {
 		},
 		"label" : "Demon King★Liberation★Revenge",
     "k_label": "★해방★마신왕의 복수"
+	},
+  "I0ER" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"str" : 14000,
+			"agi" : 14000,
+			"int" : 14000,
+      "angra_dmg": 110      
+		},
+		"label" : "Genesis Revenge",
+    "k_label": "창세신의 복수"
 	},
   "I0P3" : {
 		"type" : "weapon",
@@ -9037,6 +9312,19 @@ module.exports = {
     "effects" : ["Every 10 attacks will recover STR x6.7 HP (9s cd)", "Every 6 spells will recover STR x6.7 HP (10s cd)", "On Use: Restores STR x10 HP (120s cd)"],
     "k_effects" : ["기본공격 10회시 생명력회복 (STR x6.7)(쿨타임 9초)", "스킬사용 6회시 생명력회복 (STR x6.7)(쿨타임 10초)", "사용시  생명력회복 (STR x10)(쿨타임 120초)"]
 	},
+  "I0FC" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"str" : 21000,
+      "hp": 240000      
+		},
+		"label" : "Genesis Sword of Life",
+    "k_label": "창세신의 생명의 검",
+    "effects" : ["Every 10 attacks will recover STR x7 HP (9s cd)", "Every 6 spells will recover STR x7 HP (10s cd)", "On Use: Restores STR x11 HP (120s cd)"],
+    "k_effects" : ["기본공격 10회시 생명력회복 (STR x7)(쿨타임 9초)", "스킬사용 6회시 생명력회복 (STR x7)(쿨타임 10초)", "사용시  생명력회복 (STR x11)(쿨타임 120초)"]
+	},
   "I0P4" : {
 		"type" : "weapon",
 		"color" : "god",
@@ -9063,6 +9351,19 @@ module.exports = {
 		"label" : "Demon King★Liberation★Punishment",
     "k_label": "★해방★마신왕의 신벌"
 	},
+  "I0FN" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"str" : 14000,
+			"agi" : 14000,
+			"int" : 14000,
+      "grasp": 17
+		},
+		"label" : "Genesis Punishment",
+    "k_label": "창세신의 신벌"
+	},
   "I0P5" : {
 		"type" : "weapon",
 		"color" : "god",
@@ -9086,6 +9387,18 @@ module.exports = {
 		},
 		"label" : "Demon King★Liberation★Staff",
     "k_label": "★해방★마신왕의 심판 지팡이"
+	},
+  "I0FO" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"int" : 21000,
+      "int_tick": true,
+      "attack_int_real": 290  
+		},
+		"label" : "Genesis Staff",
+    "k_label": "창세신의 심판 지팡이"
 	},
   "I0P6" : {
 		"type" : "weapon",
@@ -9139,6 +9452,19 @@ module.exports = {
 		"label" : "Demon King★Liberation★Judgment Staff",
     "k_label": "★해방★마신왕의 일격 지팡이"
 	},
+  "I0GT" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"str" : 17500,
+			"int" : 17500,
+      "int_tick": true,
+      "attack_str_int_real": 140  
+		},
+		"label" : "Genesis Judgment Staff",
+    "k_label": "창세신의 일격 지팡이"
+	},
   "I0P8" : {
 		"type" : "weapon",
 		"color" : "god",
@@ -9166,6 +9492,20 @@ module.exports = {
     "k_label": "★해방★마신왕의 검",
     "effects": ["Deals 420000 + All Stats * 440 when used (120s cd)"],
     "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(420000 + 힘/민/지 * 440)"]        
+	},
+  "I0CP" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"str" : 14000,
+			"agi" : 14000,
+			"int" : 14000,  
+		},
+		"label" : "Genesis Longsword",
+    "k_label": "창세신의 검",
+    "effects": ["Deals 420000 + All Stats * 455 when used (120s cd)"],
+    "k_effects": ["사용시 신의 일격 시전 (쿨타임 120초)(420000 + 힘/민/지 * 455)"]        
 	},
   "I0P9" : {
 		"type" : "weapon",
@@ -9213,6 +9553,18 @@ module.exports = {
 		"label" : "Demon King★Liberation★Contract",
     "k_label": "★해방★마신왕의 계약"
 	},
+  "I0CR" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"int" : 21000,
+      "damage_increase": 350,
+      "hp_consume": true     
+    },
+		"label" : "Genesis Contract",
+    "k_label": "창세신의 계약"
+	},
   "I0PB" : {
 		"type" : "weapon",
 		"color" : "god",
@@ -9234,6 +9586,17 @@ module.exports = {
     },
 		"label" : "Demon King★Liberation★Amplifying Sword",
     "k_label": "★해방★마신왕의 증폭검"
+	},
+  "I0GW" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"str" : 21000,
+      "str_increase": 38
+    },
+		"label" : "Genesis Amplifying Sword",
+    "k_label": "창세신의 증폭 검"
 	},
   "I0PC" : {
 		"type" : "weapon",
@@ -9257,6 +9620,17 @@ module.exports = {
 		"label" : "Demon King★Liberation★Amplifying Dagger",
     "k_label": "★해방★마신왕의 증폭단검"
 	},
+  "I0GX" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"agi" : 21000,
+      "agi_increase": 38
+    },
+		"label" : "Genesis Amplifying Dagger",
+    "k_label": "창세신의 증폭 단검"
+	},  
   "I0PD" : {
 		"type" : "weapon",
 		"color" : "god",
@@ -9278,6 +9652,17 @@ module.exports = {
     },
 		"label" : "Demon King★Liberation★Amplifying Staff",
     "k_label": "★해방★마신왕의 지능 지팡이"
+	},
+  "I0GY" : {
+		"type" : "weapon",
+		"color" : "god",
+		"stats" : {
+			"atk" : 1000000,
+			"int" : 21000,
+      "int_increase": 30
+    },
+		"label" : "Genesis Amplifying Staff",
+    "k_label": "창세신의 증폭 지팡이"
 	},
   "I0PE": {
     "label": "Demon King's Weapons",
@@ -9491,6 +9876,19 @@ module.exports = {
     "label": "Demon King's★Liberation★Bamboo Spear",
     "k_label": "★해방★마신왕의 죽창"
   },
+  "I0GU": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 1000000,
+      "str": 14000,
+      "agi": 14000,
+      "int": 14000,
+      "bamboo_damage": 1550
+    },
+    "label": "Genesis Bamboo Spear",
+    "k_label": "창세신의 죽창"
+  },  
   "I0PT": {
     "type": "weapon",
     "color": "god",
@@ -9514,6 +9912,19 @@ module.exports = {
     },
     "label": "Demon King's★Liberation★Life Staff",
     "k_label": "★해방★마신왕의 생명 지팡이",
+		"effects" : ["TODO", "Every 4 spells will recover INT x7.5 HP (10s cd)", "On Use: Restore INT x12 HP of all allies within range(80s cd)"],
+		"k_effects" : ["스킬사용 4회시 생명력 회복 (INT x7.5)(쿨타임 10초)", "사용시 주변 아군을 능력치 비례 만큼의 생명력 회복 (INT x12)(쿨타임 80초)"]
+  },
+  "I0ES": {
+    "type": "weapon",
+    "color": "god",
+    "stats": {
+      "atk": 1000000,
+      "int": 21000,
+      "hp": 240000
+    },
+    "label": "Genesis Life Staff",
+    "k_label": "창세신의 생명 지팡이",
 		"effects" : ["TODO", "Every 4 spells will recover INT x7.5 HP (10s cd)", "On Use: Restore INT x12 HP of all allies within range(80s cd)"],
 		"k_effects" : ["스킬사용 4회시 생명력 회복 (INT x7.5)(쿨타임 10초)", "사용시 주변 아군을 능력치 비례 만큼의 생명력 회복 (INT x12)(쿨타임 80초)"]
   },
@@ -10307,6 +10718,18 @@ module.exports = {
     "color": "black",
     "label": "Supreme God Accessory Essence",
     "k_label": "최상급 신의 룬 정수"
+  },
+  "I0K5": {
+    "type": "material",
+    "color": "black",
+    "label": "World Stone Carving",
+    "k_label": "세계석 조각"
+  },  
+  "I0K6": {
+    "type": "material",
+    "color": "black",
+    "label": "Crack Fragments",
+    "k_label": "균열 파편"
   },  
   "I0LJ": {
     "type": "unleash",

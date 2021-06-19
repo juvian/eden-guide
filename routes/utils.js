@@ -4,4 +4,8 @@ module.exports = function(app){
     return response.render('commands');
   });
   
+  app.get("/utils/script-commands", function(req, res) {
+    return res.render('script-commands');
+  });
+  
 }
