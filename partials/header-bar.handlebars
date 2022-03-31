@@ -35,12 +35,16 @@
         </li>      
       {{/if}}
       {{#if (eq lang 'eng')}}
-        <li class="nav-item active">
-          <a class="nav-link" href="/utils/script-commands">Map commands</a>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utils</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown02">
+            <a class="dropdown-item" href="/utils/script-commands">Map commands</a>
+            <a class="dropdown-item" href="/utils/script-list-file">Map Listfile</a>
+            <a class="dropdown-item" href="/utils/commands">utf8tizer</a>
+            <a class="dropdown-item" href="/convert">Convert code</a>
+            <a class="dropdown-item" href="/utils/translate">Translate Map</a>
+          </div>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/utils/commands">utf8tizer</a>
-        </li> 
       {{/if}}
     </ul>
     <ul class="navbar-nav">

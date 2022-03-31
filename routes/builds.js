@@ -149,22 +149,64 @@ module.exports = function (app) {
     'IzuNavi123': 'TheCabbageMan',
     'Disp1337': 'Dispersion',
     'POPCORNULTRA1': 'Walrus24',
-    "ColdSylas": "MagicEmpire"
+    "ColdSylas": "MagicEmpire",
+    'MinkyMi': 'Mink'
   }
   
-  app.post('/convert', function (req, res){
+  const heroes = {
+    'E0ER': 'rosalia',
+    'E0CS': 'flandre',
+    'E0FA': 'kaguya',
+    'H07H': 'mashiro',
+    'H08P': 'nico Yazawa',
+    'H080': 'kaguya',
+    'H01H': 'mashiro swimsuit',
+    'E08P': 'hurk',
+    'E090': 'krul',
+    'E0B7': 'satsuki',
+    'H05Q': 'mashiro',
+    'H03G': 'kaede',
+    'H018': 'mashiro',
+    'H05Q': 'shuvi'
+  }
+  
+  const skins = {
+    'E08P-E0ER': ['Catsoup', 'Lucky'], // hurk-rosalia
+    'E090-E0CS': ['Walrus24'], //krul-flandre
+    'E0B7-E0FA': ['Tierrez'], //satsuki-kagaya
+    'H05Q-H07H': ['Mink'], //shuvi-mashiro
+    'H03G-H08P': ['TamakiS'], //Kaede-nico Yazawa
+    'H018-H080': ['Kirsha'], //mashiro-kaguya
+    'H018-H01H': ['Kirsha', 'juvian'] //mashiro-mashiro swimsuit
+  }
+  
+  app.post('/convert', function (req, res, next){
      try {
        const code = new CodeLoader();
        console.log(req.body)
        code.load(req.body.code);
        console.log(code.data)
+       const result = {};
        
-       let name = Object.keys(convertions).find(name => code.isValidCodeFor(name) || code.isValidCodeFor(convertions[name]));
-       if (name) res.send(code.isValidCodeFor(name) ? code.save(convertions[name]) : code.save(name));
-       else res.send('invalid user');
+       for (const [skin, players] of Object.entries(skins)) {
+         const [from, to] = skin.split('-');
+         const player = players.find(p => code.isValidCodeFor(p));
+         if (skin.includes(code.data.character) && player) {
+           const char = code.data.character == from ? to : from;
+           const c = new CodeLoader(); c.load(req.body.code); c.data.character = char; result[heroes[char]] = c.save(player);
+         }  
+       }
        
+       for (const name of Object.keys(convertions)) {
+         if (code.isValidCodeFor(name)) result[convertions[name]] = code.save(convertions[name]);
+         else if (code.isValidCodeFor(convertions[name])) result[name] = code.save(name);
+       }
+       
+       if (Object.keys(result).length == 0) return next(new Error('invalid user'));
+       else res.send(result);
      } catch (ex) {
-       res.send(ex.message)
+       console.log(ex);
+       return next(new Error(ex.message));
      }    
   });
   

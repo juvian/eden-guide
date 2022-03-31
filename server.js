@@ -7,7 +7,7 @@ var cookieSession = require('cookie-session')
 var bodyParser = require('body-parser')
 var fs = require("fs"),
     json;
-
+const cors = require('cors');
 var builds = require('./data/builds').builds;
 var changeLog = require('./data/changelog.json');
 
@@ -61,9 +61,15 @@ app.get("/chars", function (request, response) {
   response.render('chars', {layout : 'char-build', chars: Object.keys(builds), builds: builds, heroTypes: ["str", "agi", "int"]});
 });
 
-/*app.get('/test2', function(req, res) {
+app.get('/test2', function(req, res) {
   res.render('test');
-})*/
+})
+
+app.get('/test3.json', cors({
+    origin: '*'
+}), function(req, res) {
+  return res.send({"code": 200, "msg": "JTdCJTIyc3RhdHVzJTIyJTNBdHJ1ZSUyQyUyMmV4cGlyZVRpbWUlMjIlM0EyNjQ3ODE5MDAzMDc2JTdE"})
+})
 
 
 // listen for requests :)
