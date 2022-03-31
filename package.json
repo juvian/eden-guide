@@ -2,7 +2,6 @@
   "//1": "describes your app and its dependencies",
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
-
   "name": "eden-item-guide",
   "version": "0.0.1",
   "description": "Item guide for eden rpg warcraft 3",
@@ -12,16 +11,17 @@
   },
   "dependencies": {
     "express": "^4.15.2",
-    "nedb" : "*",
+    "nedb": "*",
     "express-handlebars": "*",
     "cookie-session": "*",
     "body-parser": "*",
     "password-hash": "*",
     "legacy-encoding": "*",
-    "browserify": "*"
+    "browserify": "*",
+    "cors": "*"
   },
   "engines": {
-    "node": "6.10.x"
+    "node": "14.x.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/welcome-project"

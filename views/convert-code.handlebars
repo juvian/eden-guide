@@ -4,7 +4,7 @@
   Enter your code: <input class="form-control code" type="text"></input>
 
 <button style="margin: 10px 0px;" class="btn btn-outline-primary get-code" type="button">Get new code</button>
-<div class = "new-code"></div>
+<pre class = "new-code"></pre>
 
  <script>
    
@@ -17,7 +17,7 @@
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({code: $(".code").val()})
-    }).then(r => r.text()).then(code => $(".new-code").text(code)).catch(err => alert(err));
+    }).then(r => r.json()).then(code => $(".new-code").text(code.error ? code.error : Object.keys(code).map(k => k + '\n' + code[k].join('\n')).join('\n'))).catch(err => $(".new-code").text(err));
      
    });
   </script>

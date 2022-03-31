@@ -1,0 +1,203 @@
+<html lang="en">
+  {{> header}}
+  <script src="https://cdn.glitch.com/8c45d4b3-df9c-4351-8246-870093fc35d2%2Fmpq.js?v=1622924418771"></script>
+
+	<form>
+	  <div class="form-group">
+	    <label>Upload map</label>
+	    <input accept=".mpq, .w3x, .w3m" type="file" class="form-control-file">
+	  </div>
+	</form>
+
+    
+  <div class="alert alert-success" role="alert" style = "visibility:hidden">
+    
+  </div>
+  
+  <div class="alert alert-danger" role="alert" style = "visibility:hidden">
+    
+  </div>
+
+  <script>
+    
+    const fileRegex = /\.(blp|mdx|mp3|mdl|tga|dds|wav|slk|txt)/g
+
+const shouldScan = (file) => {
+    return file.endsWith('mdx') || file.includes('war3map') || file.endsWith('.txt');
+}
+
+const checkFile = (map, file, seen, foundFiles) => {
+    if (seen.has(file) || !file.trim()) return;
+
+    seen.add(file);
+
+    if (map.hasFile(file)) {
+        foundFiles.add(file);
+        if (shouldScan(file)) scanFile(map, file, seen, foundFiles);
+    }
+
+    if (file.endsWith('.mdx')) checkFile(map, file.slice(-4) + '_portrait.mdx', seen, foundFiles);
+}
+
+const checkFiles = (map, files, seen, foundFiles) => {
+    files.forEach(f => checkFile(map, f, seen, foundFiles));
+}
+
+const scanFile = (map, file, seen, foundFiles) => {
+    const buffer = map.readFile(file);
+
+    if (buffer) {
+        const str = new TextDecoder().decode(buffer);
+
+        if (file == '(listfile)') checkFiles(map, str.split(/\r\n/), seen, foundFiles);
+        else {
+            const separator = (file.endsWith('war3map.j') || file.endsWith('war3map.lua')) ? '"' : (file.endsWith('.txt') ? '=' : '\0');
+
+            for (const candidate of str.matchAll(fileRegex)) {
+                const idx = Math.max(str.lastIndexOf(separator, candidate.index), 0);
+                const file = str.substring(idx + 1, candidate.index + candidate[0].length).replace(/\.mdl$/, '.mdx').replace(/\\+/g, '\\');
+                checkFile(map, file, seen, foundFiles);
+            }
+        }
+    } else {
+        foundFiles.delete(file);
+    }
+}
+
+class Map {
+  
+  constructor(mpq) {
+    this.mpq = mpq;
+  }
+  
+  hasFile(name) {
+    return this.mpq.hasFile(name.replace(/\//g, '\\'))
+  }
+  
+  readFile(file) {
+        try {
+            let buffer;
+            
+            if (this.hasFile(file)) {
+                  const f = this.mpq.openFile(file.replace(/\//g, '\\'));
+                  buffer = f.read();
+                  f.close();
+            }
+            
+            return buffer;
+        } catch (ex) {
+            console.error('Failed to read file ' + file, ex.message);
+        }
+    }
+}
+
+const fileList = `(listfile)
+(signature)
+(attributes)
+war3map.w3e
+war3map.w3i
+war3map.wtg
+war3map.wct
+war3map.wts
+war3map.j
+scripts/war3map.j
+war3map.lua
+scripts/war3map.lua
+war3map.shd
+war3mapMap.blp
+war3mapMap.b00
+war3mapMap.tga
+war3mapPreview.tga
+war3map.mmp
+war3mapPath.tga
+war3map.wpm
+war3map.doo
+war3mapUnits.doo
+war3map.w3r
+war3map.w3c
+war3map.w3s
+war3map.w3u
+war3map.w3t
+war3map.w3a
+war3map.w3b
+war3map.w3d
+war3map.w3q
+war3mapMisc.txt
+war3mapSkin.txt
+war3mapExtra.txt
+war3map.imp
+Units\\AbilityBuffData.slk
+Units\\AbilityData.slk
+Units\\CampaignAbilityFunc.txt
+Units\\CampaignAbilityStrings.txt
+Units\\CampaignUnitFunc.txt
+Units\\CampaignUnitStrings.txt
+Units\\CommonAbilityFunc.txt
+Units\\CommonAbilityStrings.txt
+Units\\HumanAbilityFunc.txt
+Units\\HumanAbilityStrings.txt
+Units\\HumanUnitFunc.txt
+Units\\HumanUnitStrings.txt
+Units\\ItemAbilityFunc.txt
+Units\\ItemAbilityStrings.txt
+Units\\ItemData.slk
+Units\\ItemFunc.txt
+Units\\ItemStrings.txt
+Units\\NeutralAbilityFunc.txt
+Units\\NeutralAbilityStrings.txt
+Units\\NeutralUnitFunc.txt
+Units\\NeutralUnitStrings.txt
+Units\\NightElfAbilityFunc.txt
+Units\\NightElfAbilityStrings.txt
+Units\\NightElfUnitFunc.txt
+Units\\NightElfUnitStrings.txt
+Units\\OrcAbilityFunc.txt
+Units\\OrcAbilityStrings.txt
+Units\\OrcUnitFunc.txt
+Units\\OrcUnitStrings.txt
+Units\\UndeadAbilityFunc.txt
+Units\\UndeadAbilityStrings.txt
+Units\\UndeadUnitFunc.txt
+Units\\UndeadUnitStrings.txt
+Units\\UnitAbilities.slk
+Units\\UnitBalance.slk
+Units\\UnitData.slk
+Units\\unitUI.slk
+Units\\UnitWeapons.slk
+scripts\\blizzard.j
+scripts\\HumanMelee.pld
+scripts\\NightElfMelee.pld
+scripts\\OrcMelee.pld
+scripts\\UndeadMelee.pld`.split('\n')
+    
+    document.querySelector('input[type="file"]').addEventListener("change", onFileChange);
+
+		function onFileChange(e) {      
+      $(".alert").css("visibility", "hidden").text("");
+
+      const file = e.target.files[0];
+      if (!file) return;
+
+			const reader = new FileReader()
+			reader.onload = async event => {
+        try {
+            FS.writeFile('/example.mpq',  new Uint8Array(event.target.result));
+            const mpq = await MPQ.open('/example.mpq', 'r');
+            
+            const foundFiles = new Set();
+            const seen = new Set();
+
+            checkFiles(new Map(mpq), new Set(fileList), seen, foundFiles);
+
+            $(".alert-success").css("visibility", "visible").html('<pre>' + Array.from(foundFiles).join('\n') + '</pre>');
+        } catch (e) {
+          $(".alert-danger").css("visibility", "visible").text(e.message);
+        }        		
+			} 
+			reader.readAsArrayBuffer(file);
+		}
+     
+  </script>
+  
+</html>
+

@@ -8,7 +8,7 @@
       "버전 s3 1.2G 로 업데이트되었습니다"
     ],    
     "released": "19/6/2021",
-    "commit_urls": []
+    "commit_urls": ["https://github.com/juvian/eden-guide/commit/78a64f4de910a673e0ff369ecbb1f336c3bf3f4a", "https://github.com/juvian/eden-guide/commit/0b61009bcb459fd379765daf531dcba4504c5583"]
   },
   {
     "version": "5.0.0",

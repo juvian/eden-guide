@@ -1,0 +1,182 @@
+<html lang="en">
+  {{> header}}
+  <form>
+    <textarea style="width:100%;margin-bottom:20px" class="extra-listfile" placeholder="Place extra file names to check from external listfiles like ladik, one per line"></textarea>
+		<div class="custom-file d-none">
+		  <input accept=".mpq, .w3x, .w3m" type="file" class="custom-file-input map-file" id="customFile">
+		  <label class="custom-file-label" for="customFile">Choose Map</label>
+		</div>
+	</form>
+  
+  <style>
+    .msg a.dl {
+      display:block;
+    }
+  </style>
+
+	<div class = "msg"></div>
+
+
+	<div class = "actions d-none">
+    <div class = "token-files d-none">
+      <h4>Files to export tokens</h4>
+    </div>
+		<button type="button" class="btn btn-primary btn-sm export-tokens d-none">Download tokens</button>
+		<input accept=".txt" type="file" class="custom-file-input d-none" id="token-file">
+		<button type="button" class="btn btn-primary btn-sm import-tokens d-none">Import translated tokens</button>
+		<button type="button" class="btn btn-primary btn-sm download-yaml d-none">Download Yaml</button>
+		<input accept=".yaml" type="file" class="custom-file-input d-none" id="yaml-file">
+		<button type="button" class="btn btn-primary btn-sm import-yaml d-none">Import Yaml</button>
+		<button type="button" class="btn btn-primary btn-sm download-map d-none">Download Map</button>
+		<input accept=".mpq, .w3x, .w3m" type="file" class="custom-file-input d-none" id="obj-file">
+		<button type="button" class="btn btn-primary btn-sm import-obj-map d-none">Import Object Map</button>
+	</div>
+
+  
+
+	<script>
+		let file;
+		let extension;
+		let filename;
+		let importQty;
+
+
+		const worker = new Worker('/worker.js');
+		worker.onerror = (e) => console.log(e.data)
+		worker.onmessage = (e) => {
+			if (e.data.type == "message") {
+				if (e.data.key && document.querySelector('.msg .' + e.data.key)) document.querySelector('.msg .' + e.data.key).remove();
+				document.querySelector('.msg').innerHTML += `<div class="${e.data.key}">${e.data.message}</div>`;
+			} else if (e.data.type == "deprotected-map") {
+				const link = saveByteArray(filename + '_deprotected' + extension, e.data.message);
+				document.querySelector('.msg').appendChild(link);
+			} else if (e.data.type == "slk-map") {
+				const link = saveByteArray(filename + '_slk' + extension, e.data.message);
+				document.querySelector('.msg').appendChild(link);
+        document.querySelector('.import-obj-map').classList.remove('d-none');	
+			} else if (e.data.type == "obj-map") {
+				const link = saveByteArray(filename + '_obj' + extension, e.data.message);
+				document.querySelector('.msg').appendChild(link);
+			} else if (e.data.type == "yaml") {
+				saveByteArray(filename + '.yaml', e.data.message).click();
+			} else if (e.data.type == "tokens") {
+				saveByteArray(filename + '_tokens.txt', e.data.message).click();
+			} else if (e.data.type == "map") {
+				saveByteArray(filename + '_translated' + extension, e.data.message).click();
+			} else if (e.data.type == 'init') {
+        document.querySelector('.custom-file').classList.remove('d-none');
+      }
+      
+      for (const action of e.data.actions || []) {
+        if (action == "enable-actions") {
+				  document.querySelector('.actions').classList.remove('d-none');				
+        } else if (action == "done-importing") {
+          for (const el of document.querySelectorAll('.download-yaml,.import-yaml,.download-map')) el.classList.remove('d-none');
+        } else if (action == "enable-tokens") {
+          document.querySelector('.export-tokens').classList.remove('d-none');
+          document.querySelector('.token-files').classList.remove('d-none');
+        } 
+      }
+      
+      for (const file of e.data.files || []) {
+        document.querySelector('.token-files').innerHTML += `<div class="form-check"><input id="${file}" type="checkbox" class="form-check-input" checked></input><label class="form-check-label" for="${file}">${file}</label></div>`;
+      }
+		}
+
+		document.querySelector('.export-tokens').onclick = function() {
+			worker.postMessage({type: "export-tokens", files: Array.from(document.querySelectorAll('.token-files input:checked')).map(i => i.id)});
+			this.classList.add('d-none');
+      document.querySelector('.token-files').classList.add('d-none');
+			document.querySelector('.import-tokens').classList.remove('d-none');
+		}
+
+		document.querySelector('.import-tokens').onclick = function() {
+			document.querySelector('#token-file').click();
+		}
+
+		document.querySelector('.download-yaml').onclick = function() {
+			worker.postMessage({type: "download-yaml"});
+		}
+
+		document.querySelector('.import-yaml').onclick = function() {
+			document.querySelector('#yaml-file').click();
+		}
+
+		document.querySelector('.download-map').onclick = function() {
+			worker.postMessage({type: "download-map"});
+		}
+    
+    document.querySelector('.import-obj-map').onclick = function() {
+			document.querySelector('#obj-file').click();
+		}
+
+
+		function saveByteArray(reportName, byte) {
+		    var blob = new Blob([byte], {type: "application/binary"});
+		    var link = document.createElement('a');
+        link.classList.add('dl');
+		    link.href = window.URL.createObjectURL(blob);
+		    var fileName = reportName;
+		    link.download = fileName;
+		    link.innerText = fileName;
+		    return link;
+		};
+
+
+		document.querySelector('input.map-file').onchange = function(e) {
+			file = e.target.files[0];
+			const idx = file.name.lastIndexOf('.');
+			filename = file.name.substr(0, idx);
+			extension = file.name.substr(idx, file.name.length);
+			importQty = 0;
+
+			const reader = new FileReader();
+
+			reader.onload = event => {
+				worker.postMessage({type: "load-map", message: event.target.result, listfile: document.querySelector('.extra-listfile').value.split('\n')});
+			} 
+
+			reader.readAsArrayBuffer(file);
+			this.value = null;
+		}
+
+		document.querySelector('input#token-file').onchange = function(e) {
+			document.querySelector('.import-tokens').classList.add('d-none');
+
+			const reader = new FileReader();
+
+			reader.onload = event => {
+				worker.postMessage({type: "import-tokens", message: event.target.result, importQty: ++importQty});
+			} 
+
+			reader.readAsText(e.target.files[0]);
+			this.value = null;
+		}
+
+
+		document.querySelector('input#yaml-file').onchange = function(e) {
+			const reader = new FileReader();
+
+			reader.onload = event => {
+				worker.postMessage({type: "import-yaml", message: event.target.result});
+			} 
+
+			reader.readAsText(e.target.files[0]);
+			this.value = null;
+		}
+    
+    document.querySelector('input#obj-file').onchange = function(e) {
+      const reader = new FileReader();
+
+			reader.onload = event => {
+        document.querySelector('.import-obj-map').classList.add('d-none');
+				worker.postMessage({type: "import-map", message: event.target.result});
+			} 
+
+			reader.readAsArrayBuffer(e.target.files[0]);
+      this.value = null;
+    }
+
+	</script>
+  
+</html>
