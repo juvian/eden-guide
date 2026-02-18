@@ -1,5 +1,5 @@
 global = {window: {}};
-importScripts('https://cdn.glitch.global/8c45d4b3-df9c-4351-8246-870093fc35d2/mpq.js?v=1643826341860');
+importScripts('/assets/mpq.js');
 const MPQ = global.window.MPQ;
 const tokenizer = global.window.tokenizer;
 const listfile = global.window.listfile;
