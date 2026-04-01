@@ -10,7 +10,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "nedb": "*",
     "express-handlebars": "*",
     "cookie-session": "*",
